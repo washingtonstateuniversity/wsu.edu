@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Provide a cache breaking script version for the theme.
+ *
+ * @return string Current script version
+ */
+function wsu_home_script_version() {
+	return spine_get_script_version() . '0.0.1';
+}
+
+
 add_action( 'wp_enqueue_scripts', 'spine_child_enqueue_scripts', 11 );
 
 function spine_child_enqueue_scripts() {
