@@ -11,6 +11,7 @@ class WSU_Home_Theme {
 	 */
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
+		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
 	}
 
 	/*
@@ -26,6 +27,17 @@ class WSU_Home_Theme {
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'wsu-home-typekit', 'https://use.typekit.net/roi0hte.js', array(), false, false );
 		wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/script.js', array( 'wsu-home-typekit' ), wsu_home_script_version(), true );
+	}
+
+	/**
+	 * Register the additional menus used by the WSU Home theme on top of those
+	 * provided by default in the Spine Parent Theme.
+	 */
+	public function register_menus() {
+		register_nav_menu( 'mega-menu', 'Mega Menu' );
+		register_nav_menu( 'fat-footer', 'Fat Footer' );
+		register_nav_menu( 'quick-links', 'Quick Links' );
+		register_nav_menu( 'top-level-links', 'Top Level Links' );
 	}
 }
 new WSU_Home_Theme();
