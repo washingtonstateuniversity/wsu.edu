@@ -46,15 +46,18 @@ if ( is_front_page() ) :
 			<?php wp_nav_menu( $wsu_fat_footer_args ); ?>
 		</div>
 	</section>
+
+	<!-- Campus links, hidden by default until interaction in header -->
 	<section class="single row" id="campus-modal">
 		<div class="column one">
 			<?php wp_nav_menu( $wsu_campus_args ); ?>
 		</div>
 	</section>
+
+	<!-- Search interface, hidden by default until interaction in header -->
 	<section class="single row" id="search-modal">
 		<div class="column one">
-			Search stuff
-
+			Search Interface
 			<div class="quick-links-label">Quick Links</div>
 			<?php wp_nav_menu( $wsu_search_args ); ?>
 		</div>
