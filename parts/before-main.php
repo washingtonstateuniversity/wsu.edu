@@ -17,12 +17,16 @@ if ( is_front_page() ) :
 		'depth'           => 5,
 	);
 ?>
-<section class="single row mega-menu">
+<header class="triptych row wsu-home-navigation">
 	<div class="column one">
+		<div class="wsu-logo">WSU LOGO</div>
+	</div>
+	<div class="column two wsu-mega-nav-placeholder">
 		<?php wp_nav_menu( $mega_menu_args ); ?>
-
+	</div>
+	<div class="column three wsu-other-nav-placeholder">
 		<div class="top-level-links-label">WSU Campuses</div>
 		<div class="search-label">Search</div>
 	</div>
-</section>
+</header>
 <?php endif;
