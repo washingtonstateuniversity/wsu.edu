@@ -7,3 +7,14 @@
  Template:       spine
  Version:        0.0.1
 */
+
+body {
+	font-family: 'proxima-nova', "Lucida Sans", sans-serif;
+	font-weight: 400;
+	background-color: #fff;
+	color: #2a3033;
+}
+
+.home #spine {
+	display: none;
+}
