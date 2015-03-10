@@ -41,6 +41,11 @@ if ( is_front_page() ) :
 		'depth'           => 2,
 	);
 ?>
+	<section class="single row wsu-125-mark">
+		<div class="column one">
+			<img src="<?php echo get_stylesheet_directory_uri() . '/images/wsu-125-footer-temporary.png'; ?>" />
+		</div>
+	</section>
 	<section class="single row fat-footer-menu">
 		<div class="column one">
 			<?php wp_nav_menu( $wsu_fat_footer_args ); ?>
