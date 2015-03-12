@@ -8,6 +8,7 @@ class WSUWP_Media_Wall {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_shortcode( 'wsu_media_wall', array( $this, 'handle_media_wall' ) );
 	}
 
@@ -46,6 +47,33 @@ class WSUWP_Media_Wall {
 		);
 
 		register_post_type( $this->wall_slug, $args );
+	}
+
+	/**
+	 * Add the meta box used to capture URLs for the media wall.
+	 */
+	public function add_meta_boxes() {
+		add_meta_box( 'media_wall_capture', 'Build Media Wall', array( $this, 'display_media_wall_meta_box' ), $this->wall_slug, 'normal' );
+	}
+
+	/**
+	 * Display the meta box used to capture URLs for the media wall.
+	 */
+	public function display_media_wall_meta_box( $post ) {
+		$wall_images = (array) get_post_meta( $post->ID, '_wsu_media_wall_assets', true );
+		?>
+		<label for="capture-media-url">Add Media:</label>
+		<input name="media_url" id="capture-media-url" value="" style="width: 50%;" />
+		<input type="submit" class="button button-primary button-large">
+
+		<div class="current-media" style="min-height: 200px;">
+			<?php
+			foreach( $wall_images as $w ) {
+				echo '<img src="' . esc_url( $w ) . '">';
+			}
+			?>
+		</div>
+		<?php
 	}
 
 	/**
