@@ -85,6 +85,16 @@ class WSUWP_Media_Wall {
 		<?php
 	}
 
+	/**
+	 * Given a URL for an image, download that URL and sideload it into
+	 * the uploads directory for future use. This skips the media sideload
+	 * handling provided by default in Core so that these images do not
+	 * appear in the media library.
+	 *
+	 * @param string $url
+	 *
+	 * @return mixed|\WP_Error
+	 */
 	private function sideload_image( $url ) {
 		// Set variables for storage, fix file filename for query strings.
 		preg_match( '/[^\?]+\.(jpe?g|jpe|gif|png)\b/i', $url, $matches );
