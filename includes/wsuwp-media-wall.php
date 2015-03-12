@@ -8,6 +8,7 @@ class WSUWP_Media_Wall {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
+		add_shortcode( 'wsu_media_wall', array( $this, 'handle_media_wall' ) );
 	}
 
 	/**
@@ -45,6 +46,30 @@ class WSUWP_Media_Wall {
 		);
 
 		register_post_type( $this->wall_slug, $args );
+	}
+
+	/**
+	 * Display the media associated with a media wall when the shortcode is used
+	 * on a post or page.
+	 *
+	 * @param array $atts Arguments passed with the shortcode.
+	 *
+	 * @return string HTML output for the media wall.
+	 */
+	public function handle_media_wall( $atts ) {
+		if ( ! isset( $atts['id'] ) || 0 === absint( $atts['id'] ) ) {
+			return '';
+		}
+
+		$wall_id = absint( $atts['id'] );
+		$wall_images = (array) get_post_meta( $wall_id, '_wsu_media_wall_assets', true );
+
+		$wall_html = '';
+		foreach( $wall_images as $wall_image ) {
+			$wall_html .= '<img src="' . esc_url( $wall_image ) . '">';
+		}
+
+		return $wall_html;
 	}
 }
 new WSUWP_Media_Wall();
