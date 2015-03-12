@@ -77,6 +77,53 @@ class WSUWP_Media_Wall {
 	}
 
 	/**
+	 * Retrieve image data from an Instagram media URL. Stores the response in cache for
+	 * 5 hours to prevent any accidental slamming of the Instagram API.
+	 *
+	 * @param string $media_url
+	 *
+	 * @return bool|array False if not successful. Otherwise an array of data.
+	 */
+	private function retrieve_instagram_media( $media_url = '' ) {
+		$client_id = apply_filters( 'wsu_instagram_client_id', '' );
+		if ( '' === $client_id ) {
+			return false;
+		}
+
+		$url = set_url_scheme( 'https://instagram.com/p/zmJjTiv96r/', 'https' );
+		if ( 0 === preg_match( '#https://instagram.com/p/(.*)#i', $url, $matches ) ) {
+			return false;
+		}
+
+		$media_id = untrailingslashit( $matches[1] );
+
+		if ( $image_data = wp_cache_get( $media_id, 'wsu_media_wall' ) ) {
+			return $image_data;
+		}
+
+		$api_url = esc_url( 'https://api.instagram.com/v1/media/shortcode/' . $media_id .'?client_id=' . $client_id );
+
+		$response = wp_remote_get( $api_url );
+		$body = wp_remote_retrieve_body( $response );
+
+		$response_data = json_decode( $body );
+
+		if ( isset( $response_data->data->images->standard_resolution ) ) {
+			$image_data = array();
+			$image_data['original_share_url'] = esc_url( $response_data->data->link );
+			$image_data['original_image_url'] = esc_url( $response_data->data->images->standard_resolution->url );
+			$image_data['username'] = $response_data->data->user->username;
+		} else {
+			return false;
+		}
+
+		// Cache any successful lookup for 5 hours.
+		wp_cache_add( $media_id, $image_data, 'wsu_media_wall', 18000 );
+
+		return $image_data;
+	}
+
+	/**
 	 * Display the media associated with a media wall when the shortcode is used
 	 * on a post or page.
 	 *
