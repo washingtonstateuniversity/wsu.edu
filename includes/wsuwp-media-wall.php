@@ -172,6 +172,13 @@ class WSUWP_Media_Wall {
 	 * @return string HTML output for the media wall.
 	 */
 	public function handle_media_wall( $atts ) {
+		$default_atts = array(
+			'id' => '',
+			'width' => '250',
+			'height' => '',
+		);
+		$atts = shortcode_atts( $default_atts, $atts );
+
 		if ( ! isset( $atts['id'] ) || 0 === absint( $atts['id'] ) ) {
 			return '';
 		}
@@ -180,11 +187,24 @@ class WSUWP_Media_Wall {
 		$wall_images = (array) get_post_meta( $wall_id, '_wsu_media_wall_assets', true );
 
 		$wall_html = '';
+
+		if ( ! empty( $atts['width'] ) ) {
+			$width = ' width="' . absint( $atts['width'] ) . '" ';
+		} else {
+			$width = '';
+		}
+
+		if ( ! empty( $atts['height'] ) ) {
+			$height = ' height="' . absint( $atts['height'] ) . '" ';
+		} else {
+			$height = '';
+		}
+
 		foreach( $wall_images as $w => $v ) {
 			if ( empty ( $w ) ) {
 				continue;
 			}
-			$wall_html .= '<img src="' . esc_url( $v['hosted_image_url'] ) . '">';
+			$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $v['hosted_image_url'] ) . '">';
 		}
 
 		return $wall_html;
