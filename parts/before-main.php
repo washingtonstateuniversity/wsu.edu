@@ -32,7 +32,9 @@ if ( is_front_page() ) :
 <header class="main-header wsu-home-navigation">
 	<section class="single triptych row header-shelf">
 		<div class="column one">
-			<div class="wsu-logo">WSU LOGO</div>
+			<div class="wsu-logo">
+				<img src="https://repo.wsu.edu/spine/1/marks/wsu-signature-standard.svg">
+			</div>
 		</div>
 		<div class="column two">
 			<!-- Empty with purpose. -->
