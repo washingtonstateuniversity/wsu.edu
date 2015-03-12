@@ -30,7 +30,7 @@ if ( is_front_page() ) :
 	);
 ?>
 <header class="main-header wsu-home-navigation">
-	<section class="single triptych row">
+	<section class="single triptych row header-shelf">
 		<div class="column one">
 			<div class="wsu-logo">WSU LOGO</div>
 		</div>
@@ -42,7 +42,7 @@ if ( is_front_page() ) :
 			<div class="search-label">Search</div>
 		</div>
 	</section>
-	<section class="single triptych row">
+	<section class="single triptych row header-drawer">
 		<div class="column one wsu-signature-nav-container">
 			<?php wp_nav_menu( $signature_menu_args ); ?>
 		</div>
