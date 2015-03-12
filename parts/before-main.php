@@ -16,6 +16,18 @@ if ( is_front_page() ) :
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 5,
 	);
+
+	$signature_menu_args = array(
+		'theme_location'  => 'signature-menu',
+		'menu'            => 'signature-menu',
+		'container'       => 'div',
+		'container_class' => false,
+		'container_id'    => 'signature-menu',
+		'menu_class'      => null,
+		'menu_id'         => null,
+		'items_wrap'      => '<ul>%3$s</ul>',
+		'depth'           => 1,
+	);
 ?>
 <header class="triptych row wsu-home-navigation">
 	<div class="column one">
