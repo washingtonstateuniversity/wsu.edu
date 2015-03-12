@@ -78,7 +78,16 @@ class WSUWP_Media_Wall {
 				if ( empty( $w ) ) {
 					continue;
 				}
-				echo '<img width="250" src="' . esc_url( $v['hosted_image_url'] ) . '">';
+				?>
+					<div class="instagram-image">
+						<figure>
+							<img width="200" src="<?php echo esc_url( $v['hosted_image_url'] ); ?>">
+							<figcaption>
+								<a href="<?php echo esc_url( $v['original_share_url'] ); ?>"><?php echo esc_html( $v['username'] ); ?></a>
+							</figcaption>
+						</figure>
+					</div>
+				<?php
 			}
 			?>
 		</div>
