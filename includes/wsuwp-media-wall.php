@@ -180,8 +180,11 @@ class WSUWP_Media_Wall {
 		$wall_images = (array) get_post_meta( $wall_id, '_wsu_media_wall_assets', true );
 
 		$wall_html = '';
-		foreach( $wall_images as $wall_image ) {
-			$wall_html .= '<img src="' . esc_url( $wall_image ) . '">';
+		foreach( $wall_images as $w => $v ) {
+			if ( empty ( $w ) ) {
+				continue;
+			}
+			$wall_html .= '<img src="' . esc_url( $v['hosted_image_url'] ) . '">';
 		}
 
 		return $wall_html;
