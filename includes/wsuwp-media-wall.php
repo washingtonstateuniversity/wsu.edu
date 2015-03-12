@@ -6,6 +6,11 @@ class WSUWP_Media_Wall {
 	 */
 	var $wall_slug = 'wsuwp-media-wall';
 
+	/**
+	 * @var string Used in cache groups to help bust cache on previous data.
+	 */
+	var $object_cache_version = '002';
+
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
@@ -66,14 +71,42 @@ class WSUWP_Media_Wall {
 		<input name="media_url" id="capture-media-url" value="" style="width: 50%;" />
 		<input type="submit" class="button button-primary button-large">
 
+
 		<div class="current-media" style="min-height: 200px;">
 			<?php
-			foreach( $wall_images as $w ) {
-				echo '<img src="' . esc_url( $w ) . '">';
+			foreach( $wall_images as $w => $v ) {
+				if ( empty( $w ) ) {
+					continue;
+				}
+				echo '<img width="250" src="' . esc_url( $v['hosted_image_url'] ) . '">';
 			}
 			?>
 		</div>
 		<?php
+	}
+
+	private function sideload_image( $url ) {
+		// Set variables for storage, fix file filename for query strings.
+		preg_match( '/[^\?]+\.(jpe?g|jpe|gif|png)\b/i', $url, $matches );
+		$file_array = array();
+		$file_array['name'] = basename( $matches[0] );
+
+		// Download file to temp location.
+		$file_array['tmp_name'] = download_url( $url );
+
+		// If error storing temporarily, return the error.
+		if ( is_wp_error( $file_array['tmp_name'] ) ) {
+			return $file_array['tmp_name'];
+		}
+
+		$overrides = array('test_form'=>false);
+		$time = current_time( 'mysql' );
+
+		$file = wp_handle_sideload( $file_array, $overrides, $time );
+		if ( isset($file['error']) )
+			return new WP_Error( 'upload_error', $file['error'] );
+
+		return $file['url'];
 	}
 
 	/**
@@ -97,7 +130,7 @@ class WSUWP_Media_Wall {
 
 		$media_id = untrailingslashit( $matches[1] );
 
-		if ( $image_data = wp_cache_get( $media_id, 'wsu_media_wall' ) ) {
+		if ( $image_data = wp_cache_get( $media_id, 'wsu_media_wall' . $this->object_cache_version ) ) {
 			return $image_data;
 		}
 
@@ -112,13 +145,20 @@ class WSUWP_Media_Wall {
 			$image_data = array();
 			$image_data['original_share_url'] = esc_url( $response_data->data->link );
 			$image_data['original_image_url'] = esc_url( $response_data->data->images->standard_resolution->url );
+			$image_data['hosted_image_url'] = esc_url( $this->sideload_image( $image_data['original_image_url'] ) );
 			$image_data['username'] = $response_data->data->user->username;
 		} else {
 			return false;
 		}
 
+		// Append this image to the existing array of assets attached to a wall. This will also
+		// overwrite an existing asset with new information if a duplicate fetch.
+		$wall_images = (array) get_post_meta( get_the_ID(), '_wsu_media_wall_assets', true );
+		$wall_images[ $media_id ] = $image_data;
+		update_post_meta( get_the_ID(), '_wsu_media_wall_assets', $wall_images );
+
 		// Cache any successful lookup for 5 hours.
-		wp_cache_add( $media_id, $image_data, 'wsu_media_wall', 18000 );
+		wp_cache_add( $media_id, $image_data, 'wsu_media_wall' . $this->object_cache_version, 18000 );
 
 		return $image_data;
 	}
