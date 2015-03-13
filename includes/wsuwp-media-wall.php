@@ -175,7 +175,7 @@ class WSUWP_Media_Wall {
 			return false;
 		}
 
-		$url = set_url_scheme( 'https://instagram.com/p/zmJjTiv96r/', 'https' );
+		$url = set_url_scheme( $media_url, 'https' );
 		if ( 0 === preg_match( '#https://instagram.com/p/(.*)#i', $url, $matches ) ) {
 			return false;
 		}
