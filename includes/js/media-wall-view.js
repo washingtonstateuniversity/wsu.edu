@@ -11,6 +11,7 @@ var wsuMediaWall = wsuMediaWall || {};
 		// Setup the events used in the overall application view.
 		events: {
 			'click #submit-media-url': 'submitURL',
+			'click .item-remove': 'removeItem'
 		},
 
 		/**
@@ -48,12 +49,13 @@ var wsuMediaWall = wsuMediaWall || {};
 				} else {
 					response_data = response;
 
-					if ( false == respone_data.data ) {
+					if ( false == response_data.data ) {
 						console.log( 'empty data received' );
 						return;
 					}
 
 					var item = new wsuMediaWall.item({
+						mediaID: response_data.data.media_id,
 						imageSource: response_data.data.hosted_image_url,
 						imageSourceURL: response_data.data.original_share_url,
 						imageUserName: response_data.data.username
@@ -61,6 +63,29 @@ var wsuMediaWall = wsuMediaWall || {};
 					wsuMediaWall.app.addOne(item);
 				}
 			});
+		},
+
+		removeItem: function(evt) {
+			var target = $(evt.target),
+				media_id = target.data('media-id');
+
+			if ( undefined === media_id || '' === media_id ) {
+				console.log( 'Missing media ID.' );
+				return;
+			}
+			var data = {
+				'action': 'wsuwp_media_wall_remove_item',
+				'_ajax_nonce' : wsuMediaWall.nonce,
+				'post_id': wsuMediaWall.post_id,
+				'media_id': media_id
+			};
+			$.post(ajaxurl, data, function(response) {
+				if ( false === response['success'] ) {
+					console.log('Bad removal request received' );
+				} else {
+					target.parent().remove();
+				}
+			})
 		}
 	});
 })(window, Backbone, jQuery, _, wsuMediaWall);

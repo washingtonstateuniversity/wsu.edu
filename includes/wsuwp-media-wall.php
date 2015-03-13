@@ -9,7 +9,7 @@ class WSUWP_Media_Wall {
 	/**
 	 * @var string Used in cache groups to help bust cache on previous data.
 	 */
-	var $object_cache_version = '004';
+	var $object_cache_version = '005';
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
@@ -17,6 +17,7 @@ class WSUWP_Media_Wall {
 		add_shortcode( 'wsu_media_wall', array( $this, 'handle_media_wall' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_action( 'wp_ajax_wsuwp_media_wall_item', array( $this, 'ajax_save_media_item' ) );
+		add_action( 'wp_ajax_wsuwp_media_wall_remove_item', array( $this, 'ajax_remove_media_item' ) );
 	}
 
 	public function admin_enqueue_scripts() {
@@ -88,6 +89,7 @@ class WSUWP_Media_Wall {
 				}
 				?>
 					<div class="instagram-image">
+						<div class="item-remove" data-media-id="<?php echo esc_attr( $v['media_id'] ); ?>">X</div>
 						<figure>
 							<img width="200" src="<?php echo esc_url( $v['hosted_image_url'] ); ?>">
 							<figcaption>
@@ -109,6 +111,7 @@ class WSUWP_Media_Wall {
 		</style>
 		<script type="text/template" id="media-wall-single-template">
 			<div class="instagram-image">
+				<div class="item-remove" data-media-id="<%= mediaID %>">X</div>
 				<figure>
 					<img width="200" src="<%= imageSource %>">
 					<figcaption>
@@ -138,6 +141,29 @@ class WSUWP_Media_Wall {
 		$image_data = $this->retrieve_instagram_media( $url, $post_id );
 
 		wp_send_json_success( $image_data );
+	}
+
+	public function ajax_remove_media_item() {
+		check_ajax_referer( 'wsu-media-wall' );
+
+		$media_id = sanitize_text_field( $_POST['media_id'] );
+		$post_id = absint( $_POST['post_id'] );
+
+		if ( 0 === $post_id ) {
+			wp_send_json_error( 'Invalid Post' );
+		}
+
+		if ( empty( $media_id ) ) {
+			wp_send_json_error( 'Invalid Media ID' );
+		}
+
+		$wall_images = (array) get_post_meta( $post_id, '_wsu_media_wall_assets', true );
+
+		unset( $wall_images[ $media_id ] );
+
+		update_post_meta( $post_id, '_wsu_media_wall_assets', $wall_images );
+
+		wp_send_json_success( 'Success' );
 	}
 
 	/**
@@ -208,6 +234,7 @@ class WSUWP_Media_Wall {
 
 		if ( isset( $response_data->data->images->standard_resolution ) ) {
 			$image_data = array();
+			$image_data['media_id'] = esc_attr( $media_id );
 			$image_data['original_share_url'] = esc_url( $response_data->data->link );
 			$image_data['original_image_url'] = esc_url( $response_data->data->images->standard_resolution->url );
 			$image_data['hosted_image_url'] = esc_url( $this->sideload_image( $image_data['original_image_url'] ) );

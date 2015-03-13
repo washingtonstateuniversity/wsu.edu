@@ -6,6 +6,7 @@ var wsuMediaWall = wsuMediaWall || {};
 
 	wsuMediaWall.item = Backbone.Model.extend({
 		default: {
+			mediaID: '',
 			imageSource: '',
 			imageSourceURL: '',
 			imageUserName: ''
