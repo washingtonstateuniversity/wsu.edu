@@ -11,6 +11,9 @@ class WSUWP_Media_Wall {
 	 */
 	var $object_cache_version = '005';
 
+	/**
+	 * Setup the hooks.
+	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
@@ -20,6 +23,9 @@ class WSUWP_Media_Wall {
 		add_action( 'wp_ajax_wsuwp_media_wall_remove_item', array( $this, 'ajax_remove_media_item' ) );
 	}
 
+	/**
+	 * Enqueue the scripts used by the plugin. Output nonce and post ID data to the DOM for use by scripts.
+	 */
 	public function admin_enqueue_scripts() {
 		wp_enqueue_script( 'wsu-media-wall', get_stylesheet_directory_uri() . '/includes/js/media-wall.min.js', array( 'backbone' ), $this->object_cache_version, true );
 		$ajax_nonce = wp_create_nonce( 'wsu-media-wall' );
@@ -151,6 +157,9 @@ class WSUWP_Media_Wall {
 		<?php
 	}
 
+	/**
+	 * Handle an ajax request to save a media item to a media wall via its URL.
+	 */
 	public function ajax_save_media_item() {
 		check_ajax_referer( 'wsu-media-wall' );
 
@@ -170,6 +179,9 @@ class WSUWP_Media_Wall {
 		wp_send_json_success( $image_data );
 	}
 
+	/**
+	 * Handle an ajax request to remove an existing media item from a wall.
+	 */
 	public function ajax_remove_media_item() {
 		check_ajax_referer( 'wsu-media-wall' );
 
