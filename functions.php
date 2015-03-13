@@ -1,5 +1,8 @@
 <?php
 
+// Include the WSUWP Media Wall plugin.
+include_once( __DIR__ . '/includes/wsuwp-media-wall.php' );
+
 class WSU_Home_Theme {
 	/**
 	 * @var string The version of the WSU Home theme for cache breaking.
