@@ -99,6 +99,14 @@ class WSUWP_Media_Wall {
 			}
 			?>
 		</div>
+		<div class="clear"></div>
+		<style>
+			.instagram-image {
+				width: 200px;
+				float: left;
+				padding: 5px;
+			}
+		</style>
 		<script type="text/template" id="media-wall-single-template">
 			<div class="instagram-image">
 				<figure>
