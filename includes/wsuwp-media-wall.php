@@ -221,26 +221,27 @@ class WSUWP_Media_Wall {
 
 		$media_id = untrailingslashit( $matches[1] );
 
-		if ( $image_data = wp_cache_get( $media_id, 'wsu_media_wall' . $this->object_cache_version ) ) {
-			return $image_data;
-		}
+		if ( ! $image_data = wp_cache_get( $media_id, 'wsu_media_wall' . $this->object_cache_version ) ) {
+			$api_url = esc_url( 'https://api.instagram.com/v1/media/shortcode/' . $media_id .'?client_id=' . $client_id );
 
-		$api_url = esc_url( 'https://api.instagram.com/v1/media/shortcode/' . $media_id .'?client_id=' . $client_id );
+			$response = wp_remote_get( $api_url );
+			$body = wp_remote_retrieve_body( $response );
 
-		$response = wp_remote_get( $api_url );
-		$body = wp_remote_retrieve_body( $response );
+			$response_data = json_decode( $body );
 
-		$response_data = json_decode( $body );
+			if ( isset( $response_data->data->images->standard_resolution ) ) {
+				$image_data = array();
+				$image_data['media_id'] = esc_attr( $media_id );
+				$image_data['original_share_url'] = esc_url( $response_data->data->link );
+				$image_data['original_image_url'] = esc_url( $response_data->data->images->standard_resolution->url );
+				$image_data['hosted_image_url'] = esc_url( $this->sideload_image( $image_data['original_image_url'] ) );
+				$image_data['username'] = $response_data->data->user->username;
+			} else {
+				return false;
+			}
 
-		if ( isset( $response_data->data->images->standard_resolution ) ) {
-			$image_data = array();
-			$image_data['media_id'] = esc_attr( $media_id );
-			$image_data['original_share_url'] = esc_url( $response_data->data->link );
-			$image_data['original_image_url'] = esc_url( $response_data->data->images->standard_resolution->url );
-			$image_data['hosted_image_url'] = esc_url( $this->sideload_image( $image_data['original_image_url'] ) );
-			$image_data['username'] = $response_data->data->user->username;
-		} else {
-			return false;
+			// Cache any successful lookup for 5 hours.
+			wp_cache_add( $media_id, $image_data, 'wsu_media_wall' . $this->object_cache_version, 18000 );
 		}
 
 		// Append this image to the existing array of assets attached to a wall. This will also
@@ -249,9 +250,6 @@ class WSUWP_Media_Wall {
 
 		$wall_images[ $media_id ] = $image_data;
 		update_post_meta( $post_id, '_wsu_media_wall_assets', $wall_images );
-
-		// Cache any successful lookup for 5 hours.
-		wp_cache_add( $media_id, $image_data, 'wsu_media_wall' . $this->object_cache_version, 18000 );
 
 		return $image_data;
 	}
