@@ -33,7 +33,8 @@ var wsuMediaWall = wsuMediaWall || {};
 
 			var data = {
 				'action': 'wsuwp_media_wall_item',
-				'_ajax_nonce' : wsuMediaWall_nonce,
+				'_ajax_nonce' : wsuMediaWall.nonce,
+				'post_id': wsuMediaWall.post_id,
 				'url': url
 			};
 

@@ -9,7 +9,7 @@ class WSUWP_Media_Wall {
 	/**
 	 * @var string Used in cache groups to help bust cache on previous data.
 	 */
-	var $object_cache_version = '002';
+	var $object_cache_version = '004';
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
@@ -22,7 +22,7 @@ class WSUWP_Media_Wall {
 	public function admin_enqueue_scripts() {
 		wp_enqueue_script( 'wsu-media-wall', get_stylesheet_directory_uri() . '/includes/js/media-wall.min.js', array( 'backbone' ), $this->object_cache_version, true );
 		$ajax_nonce = wp_create_nonce( 'wsu-media-wall' );
-		wp_localize_script( 'wsu-media-wall', 'wsuMediaWall_nonce', $ajax_nonce );
+		wp_localize_script( 'wsu-media-wall', 'wsuMediaWall', array( 'nonce' => $ajax_nonce, 'post_id' => get_the_ID() ) );
 	}
 
 	/**
@@ -117,12 +117,17 @@ class WSUWP_Media_Wall {
 		check_ajax_referer( 'wsu-media-wall' );
 
 		$url = esc_url( $_POST['url'] );
+		$post_id = absint( $_POST['post_id'] );
 
 		if ( '' === $url ) {
 			wp_send_json_error( 'Invalid URL' );
 		}
 
-		$image_data = $this->retrieve_instagram_media( $url );
+		if ( 0 === $post_id ) {
+			wp_send_json_error( 'Invalid Post ID' );
+		}
+
+		$image_data = $this->retrieve_instagram_media( $url, $post_id );
 
 		wp_send_json_success( $image_data );
 	}
@@ -169,7 +174,7 @@ class WSUWP_Media_Wall {
 	 *
 	 * @return bool|array False if not successful. Otherwise an array of data.
 	 */
-	private function retrieve_instagram_media( $media_url = '' ) {
+	private function retrieve_instagram_media( $media_url = '',  $post_id ) {
 		$client_id = apply_filters( 'wsu_instagram_client_id', '' );
 		if ( '' === $client_id ) {
 			return false;
@@ -205,9 +210,10 @@ class WSUWP_Media_Wall {
 
 		// Append this image to the existing array of assets attached to a wall. This will also
 		// overwrite an existing asset with new information if a duplicate fetch.
-		$wall_images = (array) get_post_meta( get_the_ID(), '_wsu_media_wall_assets', true );
+		$wall_images = (array) get_post_meta( $post_id, '_wsu_media_wall_assets', true );
+
 		$wall_images[ $media_id ] = $image_data;
-		update_post_meta( get_the_ID(), '_wsu_media_wall_assets', $wall_images );
+		update_post_meta( $post_id, '_wsu_media_wall_assets', $wall_images );
 
 		// Cache any successful lookup for 5 hours.
 		wp_cache_add( $media_id, $image_data, 'wsu_media_wall' . $this->object_cache_version, 18000 );
