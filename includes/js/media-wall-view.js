@@ -27,6 +27,8 @@ var wsuMediaWall = wsuMediaWall || {};
 
 			var url = $('#capture-media-url').val();
 
+			$('#capture-media-url').val('');
+
 			if ( '' === url ) {
 				return;
 			}
@@ -46,7 +48,10 @@ var wsuMediaWall = wsuMediaWall || {};
 				} else {
 					response_data = response;
 
-					console.log( response_data );
+					if ( false == respone_data.data ) {
+						console.log( 'empty data received' );
+						return;
+					}
 
 					var item = new wsuMediaWall.item({
 						imageSource: response_data.data.hosted_image_url,
