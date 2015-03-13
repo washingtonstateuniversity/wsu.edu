@@ -89,7 +89,7 @@ class WSUWP_Media_Wall {
 				}
 				?>
 					<div class="instagram-image">
-						<div class="item-remove" data-media-id="<?php echo esc_attr( $v['media_id'] ); ?>">X</div>
+						<div class="item-remove dashicons-no-alt" data-media-id="<?php echo esc_attr( $v['media_id'] ); ?>"></div>
 						<figure>
 							<img width="200" src="<?php echo esc_url( $v['hosted_image_url'] ); ?>">
 							<figcaption>
@@ -103,15 +103,42 @@ class WSUWP_Media_Wall {
 		</div>
 		<div class="clear"></div>
 		<style>
+			.current-media {
+				margin-top: 20px;
+			}
+
 			.instagram-image {
+				position: relative;
 				width: 200px;
 				float: left;
 				padding: 5px;
 			}
+
+			.instagram-image figure {
+				margin: 0;
+			}
+
+			.instagram-image .item-remove {
+				position: absolute;
+				display: none;
+			}
+
+			.instagram-image:hover .item-remove {
+				font-family: dashicons;
+				cursor: pointer;
+				display: block;
+				right: 7px;
+				top: 7px;
+				background: rgba(255,255,255,0.7);
+				width: 40px;
+				height: 40px;
+				font-size: 40px;
+				line-height: 40px;
+			}
 		</style>
 		<script type="text/template" id="media-wall-single-template">
 			<div class="instagram-image">
-				<div class="item-remove" data-media-id="<%= mediaID %>">X</div>
+				<div class="item-remove dashicons-no-alt" data-media-id="<%= mediaID %>"></div>
 				<figure>
 					<img width="200" src="<%= imageSource %>">
 					<figcaption>
