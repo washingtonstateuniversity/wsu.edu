@@ -15,6 +15,14 @@ class WSUWP_Media_Wall {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_shortcode( 'wsu_media_wall', array( $this, 'handle_media_wall' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+		add_action( 'wp_ajax_wsuwp_media_wall_item', array( $this, 'ajax_save_media_item' ) );
+	}
+
+	public function admin_enqueue_scripts() {
+		wp_enqueue_script( 'wsu-media-wall', get_stylesheet_directory_uri() . '/includes/js/media-wall.min.js', array( 'backbone' ), $this->object_cache_version, true );
+		$ajax_nonce = wp_create_nonce( 'wsu-media-wall' );
+		wp_localize_script( 'wsu-media-wall', 'wsuMediaWall_nonce', $ajax_nonce );
 	}
 
 	/**
@@ -67,10 +75,10 @@ class WSUWP_Media_Wall {
 	public function display_media_wall_meta_box( $post ) {
 		$wall_images = (array) get_post_meta( $post->ID, '_wsu_media_wall_assets', true );
 		?>
+		<div id="media-wall-curation">
 		<label for="capture-media-url">Add Media:</label>
 		<input name="media_url" id="capture-media-url" value="" style="width: 50%;" />
-		<input type="submit" class="button button-primary button-large">
-
+		<div id="submit-media-url" class="button button-primary button-large">Add</div>
 
 		<div class="current-media" style="min-height: 200px;">
 			<?php
@@ -91,7 +99,32 @@ class WSUWP_Media_Wall {
 			}
 			?>
 		</div>
+		<script type="text/template" id="media-wall-single-template">
+			<div class="instagram-image">
+				<figure>
+					<img width="200" src="<%= imageSource %>">
+					<figcaption>
+						<a href="<%= imageSourceURL %>"><%= imageUserName %></a>
+					</figcaption>
+				</figure>
+			</div>
+		</script>
+		</div>
 		<?php
+	}
+
+	public function ajax_save_media_item() {
+		check_ajax_referer( 'wsu-media-wall' );
+
+		$url = esc_url( $_POST['url'] );
+
+		if ( '' === $url ) {
+			wp_send_json_error( 'Invalid URL' );
+		}
+
+		$image_data = $this->retrieve_instagram_media( $url );
+
+		wp_send_json_success( $image_data );
 	}
 
 	/**
