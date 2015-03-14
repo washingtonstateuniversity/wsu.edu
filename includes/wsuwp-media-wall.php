@@ -354,7 +354,7 @@ class WSUWP_Media_Wall {
 		} else {
 			$column_count = count( $columns );
 			for( $x = 0; $x < $column_count; $x++ ) {
-				$wall_html .= '<div class="media-wall-column">';
+				$wall_html .= '<div class="media-wall-column media-wall-column-' . $x . '">';
 				if ( isset( $columns[ $x ] ) && 0 < count( $columns[ $x ] ) ) {
 					$image_count = $columns[ $x ];
 					$z = 0;
