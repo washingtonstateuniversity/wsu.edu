@@ -360,13 +360,11 @@ class WSUWP_Media_Wall {
 				$wall_html .= '<div class="media-wall-column media-wall-column-' . $x . '">';
 				if ( isset( $columns[ $x ] ) && 0 < count( $columns[ $x ] ) ) {
 					$image_count = $columns[ $x ];
-					$z = 0;
-					while ( $z < $image_count ) {
+					for ( $z = 0; $z < $image_count; $z++ ) {
 						$current_image = array_pop( $wall_images );
 						if ( isset( $current_image['hosted_image_url'] ) ) {
 							$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">';
 						}
-						$z++;
 					}
 				}
 				$wall_html .= '</div>';
