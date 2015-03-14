@@ -308,6 +308,7 @@ class WSUWP_Media_Wall {
 	public function handle_media_wall( $atts ) {
 		$default_atts = array(
 			'id' => '',
+			'columns' => '',
 			'width' => '250',
 			'height' => '',
 		);
@@ -334,11 +335,37 @@ class WSUWP_Media_Wall {
 			$height = '';
 		}
 
-		foreach( $wall_images as $w => $v ) {
-			if ( empty ( $w ) ) {
-				continue;
+		if ( ! empty( $atts['columns'] ) ) {
+			$columns = explode( ',', $atts['columns'] );
+			$columns = array_filter( $columns, 'absint' );
+		} else {
+			$columns = false;
+		}
+
+		if ( false === $columns ) {
+			$wall_html .= '<div class="media-wall-column">';
+			foreach( $wall_images as $w => $v ) {
+				if ( empty ( $w ) ) {
+					continue;
+				}
+				$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $v['hosted_image_url'] ) . '">';
 			}
-			$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $v['hosted_image_url'] ) . '">';
+			$wall_html .= '</div>';
+		} else {
+			$column_count = count( $columns );
+			for( $x = 0; $x < $column_count; $x++ ) {
+				$wall_html .= '<div class="media-wall-column">';
+				if ( isset( $columns[ $x ] ) && 0 < count( $columns[ $x ] ) ) {
+					$image_count = $columns[ $x ];
+					$z = 0;
+					while ( $z < $image_count ) {
+						$current_image = array_pop( $wall_images );
+						$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">';
+						$z++;
+					}
+				}
+				$wall_html .= '</div>';
+			}
 		}
 
 		return $wall_html;
