@@ -342,6 +342,7 @@ class WSUWP_Media_Wall {
 			$columns = false;
 		}
 
+		// If columns are not specified, output all of the images in a single column.
 		if ( false === $columns ) {
 			$wall_html .= '<div class="media-wall-column">';
 			foreach( $wall_images as $w => $v ) {
@@ -352,6 +353,8 @@ class WSUWP_Media_Wall {
 			}
 			$wall_html .= '</div>';
 		} else {
+			// If columns are specified, loop through each and output the number of images
+			// allocated to that individual column.
 			$column_count = count( $columns );
 			for( $x = 0; $x < $column_count; $x++ ) {
 				$wall_html .= '<div class="media-wall-column media-wall-column-' . $x . '">';
