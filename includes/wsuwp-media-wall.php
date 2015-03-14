@@ -360,7 +360,9 @@ class WSUWP_Media_Wall {
 					$z = 0;
 					while ( $z < $image_count ) {
 						$current_image = array_pop( $wall_images );
-						$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">';
+						if ( isset( $current_image['hosted_image_url'] ) ) {
+							$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">';
+						}
 						$z++;
 					}
 				}
