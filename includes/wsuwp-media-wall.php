@@ -17,7 +17,11 @@ class WSUWP_Media_Wall {
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+
+		// Provide the [wsu_media_wall] shortcode.
 		add_shortcode( 'wsu_media_wall', array( $this, 'handle_media_wall' ) );
+
+		// Provide the scripting and AJAX behavior for adding and managing media items.
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_action( 'wp_ajax_wsuwp_media_wall_item', array( $this, 'ajax_save_media_item' ) );
 		add_action( 'wp_ajax_wsuwp_media_wall_remove_item', array( $this, 'ajax_remove_media_item' ) );
@@ -304,6 +308,7 @@ class WSUWP_Media_Wall {
 	public function handle_media_wall( $atts ) {
 		$default_atts = array(
 			'id' => '',
+			'columns' => '',
 			'width' => '250',
 			'height' => '',
 		);
@@ -330,11 +335,43 @@ class WSUWP_Media_Wall {
 			$height = '';
 		}
 
-		foreach( $wall_images as $w => $v ) {
-			if ( empty ( $w ) ) {
-				continue;
+		if ( ! empty( $atts['columns'] ) ) {
+			$columns = explode( ',', $atts['columns'] );
+			$columns = array_filter( $columns, 'absint' );
+		} else {
+			$columns = false;
+		}
+
+		// If columns are not specified, output all of the images in a single column.
+		if ( false === $columns ) {
+			$wall_html .= '<div class="media-wall-column">';
+			foreach( $wall_images as $w => $v ) {
+				if ( empty ( $w ) ) {
+					continue;
+				}
+				$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $v['hosted_image_url'] ) . '">';
 			}
-			$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $v['hosted_image_url'] ) . '">';
+			$wall_html .= '</div>';
+		} else {
+			// If columns are specified, loop through each and output the number of images
+			// allocated to that individual column.
+			$column_count = count( $columns );
+			for( $x = 0; $x < $column_count; $x++ ) {
+				$wall_html .= '<div class="media-wall-column media-wall-column-' . $x . '">';
+				if ( isset( $columns[ $x ] ) && 0 < count( $columns[ $x ] ) ) {
+					$image_count = $columns[ $x ];
+					for ( $z = 0; $z < $image_count; $z++ ) {
+						$current_image = array_pop( $wall_images );
+						if ( isset( $current_image['hosted_image_url'] ) ) {
+							$wall_html .= '
+								<a href="' . $current_image['original_share_url'] . '">
+									<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">
+								</a>';
+						}
+					}
+				}
+				$wall_html .= '</div>';
+			}
 		}
 
 		return $wall_html;
