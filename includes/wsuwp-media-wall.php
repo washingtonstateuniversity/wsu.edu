@@ -363,7 +363,10 @@ class WSUWP_Media_Wall {
 					for ( $z = 0; $z < $image_count; $z++ ) {
 						$current_image = array_pop( $wall_images );
 						if ( isset( $current_image['hosted_image_url'] ) ) {
-							$wall_html .= '<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">';
+							$wall_html .= '
+								<a href="' . $current_image['original_share_url'] . '">
+									<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">
+								</a>';
 						}
 					}
 				}
