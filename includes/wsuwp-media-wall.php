@@ -17,7 +17,11 @@ class WSUWP_Media_Wall {
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+
+		// Provide the [wsu_media_wall] shortcode.
 		add_shortcode( 'wsu_media_wall', array( $this, 'handle_media_wall' ) );
+
+		// Provide the scripting and AJAX behavior for adding and managing media items.
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_action( 'wp_ajax_wsuwp_media_wall_item', array( $this, 'ajax_save_media_item' ) );
 		add_action( 'wp_ajax_wsuwp_media_wall_remove_item', array( $this, 'ajax_remove_media_item' ) );
