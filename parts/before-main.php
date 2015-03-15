@@ -46,7 +46,7 @@ if ( is_front_page() ) :
 			</div>
 		</section>
 	</div>
-	<div class="header-drawer-wrapper">
+	<div class="header-drawer-wrapper header-drawer-wrapper-hide">
 		<section class="single triptych row header-drawer">
 			<div class="column one wsu-signature-nav-container">
 				<?php wp_nav_menu( $signature_menu_args ); ?>
