@@ -40,3 +40,15 @@ body {
 	display: none;
 	margin: 0;
 }
+
+.header-search-wrapper-hide {
+	display: none;
+}
+
+.header-search-wrapper {
+	height: 224px;
+}
+
+.search-label {
+	cursor: pointer;
+}

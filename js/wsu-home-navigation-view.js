@@ -9,7 +9,8 @@ var wsuNavigation = wsuNavigation || {};
 
 		// Setup the events used in the overall application view.
 		events: {
-			'click #mega-menu ul li a': 'toggleNav'
+			'click #mega-menu ul li a': 'toggleNav',
+			'click .search-label': 'toggleSearch'
 		},
 
 		toggleNav: function(evt){
@@ -23,6 +24,18 @@ var wsuNavigation = wsuNavigation || {};
 				} else {
 					$nav_wrapper.addClass('header-drawer-wrapper-hide');
 				}
+			}
+		},
+
+		toggleSearch: function(evt){
+			evt.preventDefault();
+
+			var $search_wrapper = $('.header-search-wrapper');
+
+			if ( $search_wrapper.hasClass('header-search-wrapper-hide') ) {
+				$search_wrapper.removeClass('header-search-wrapper-hide');
+			} else {
+				$search_wrapper.addClass('header-search-wrapper-hide');
 			}
 		}
 	});

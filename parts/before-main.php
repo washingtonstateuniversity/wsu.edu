@@ -28,6 +28,18 @@ if ( is_front_page() ) :
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 1,
 	);
+
+	$wsu_search_args = array(
+		'theme_location'  => 'quick-links',
+		'menu'            => 'quick-links',
+		'container'       => 'div',
+		'container_class' => false,
+		'container_id'    => 'quick-links',
+		'menu_class'      => null,
+		'menu_id'         => null,
+		'items_wrap'      => '<ul>%3$s</ul>',
+		'depth'           => 2,
+	);
 ?>
 <header class="main-header wsu-home-navigation">
 	<div class="header-shelf-wrapper">
@@ -56,6 +68,16 @@ if ( is_front_page() ) :
 			</div>
 			<div class="column three">
 				<!-- Empty with purpose. -->
+			</div>
+		</section>
+	</div>
+	<!-- Search interface, hidden by default until interaction in header -->
+	<div class="header-search-wrapper header-search-wrapper-hide">
+		<section class="single row" id="search-modal">
+			<div class="column one">
+				Search Interface
+				<div class="quick-links-label">Quick Links</div>
+				<?php wp_nav_menu( $wsu_search_args ); ?>
 			</div>
 		</section>
 	</div>
