@@ -97,3 +97,15 @@ body {
 	color: #000;
 	background: #ececec;
 }
+
+.fos .fos-label {
+	cursor: pointer;
+}
+
+.fos .fos-item {
+	display: none;
+}
+
+.fos-open .fos-item {
+	display: block;
+}
