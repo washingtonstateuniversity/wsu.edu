@@ -10,7 +10,9 @@ var wsuNavigation = wsuNavigation || {};
 		// Setup the events used in the overall application view.
 		events: {
 			'click #mega-menu ul li a': 'toggleNav',
-			'click .search-label': 'toggleSearch'
+			'click .search-label': 'toggleSearch',
+			'click .top-level-links-label': 'toggleCampuses',
+			'click .campus-links-close': 'toggleCampuses'
 		},
 
 		toggleNav: function(evt){
@@ -36,6 +38,18 @@ var wsuNavigation = wsuNavigation || {};
 				$search_wrapper.removeClass('header-search-wrapper-hide');
 			} else {
 				$search_wrapper.addClass('header-search-wrapper-hide');
+			}
+		},
+
+		toggleCampuses: function(evt){
+			evt.preventDefault();
+
+			var $campus_wrapper = $('.campus-links-full-page-wrapper');
+
+			if ( $campus_wrapper.hasClass('campus-links-hide') ) {
+				$campus_wrapper.removeClass('campus-links-hide');
+			} else {
+				$campus_wrapper.addClass('campus-links-hide');
 			}
 		}
 	});

@@ -40,6 +40,18 @@ if ( is_front_page() ) :
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 2,
 	);
+
+	$wsu_campus_args = array(
+		'theme_location'  => 'top-level-links',
+		'menu'            => 'top-level-links',
+		'container'       => 'div',
+		'container_class' => false,
+		'container_id'    => 'top-level-links',
+		'menu_class'      => null,
+		'menu_id'         => null,
+		'items_wrap'      => '<ul>%3$s</ul>',
+		'depth'           => 1,
+	);
 ?>
 <header class="main-header wsu-home-navigation">
 	<div class="header-shelf-wrapper">
@@ -88,6 +100,18 @@ if ( is_front_page() ) :
 				<?php wp_nav_menu( $wsu_search_args ); ?>
 			</div>
 		</section>
+	</div>
+
+	<!-- Campus links, hidden by default until interaction in header -->
+	<div class="campus-links-full-page-wrapper campus-links-hide">
+		<div class="campus-links-close">Temporary Close</div>
+		<div class="campus-links-internal-wrapper">
+			<section class="single row" id="campus-modal">
+				<div class="column one">
+					<?php wp_nav_menu( $wsu_campus_args ); ?>
+				</div>
+			</section>
+		</div>
 	</div>
 </header>
 <?php endif;
