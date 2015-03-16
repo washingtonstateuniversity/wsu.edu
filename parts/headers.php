@@ -1,24 +1,9 @@
 <?php
 
-/**
- * Retrieve an array of values to be used in the header.
- *
- * site_name
- * site_tagline
- * page_title
- * post_title
- * section_title
- * subsection_title
- * posts_page_title
- * sup_header_default
- * sub_header_default
- * sup_header_alternate
- * sub_header_alternate
- */
-$spine_main_header_values = spine_get_main_header();
 
 if ( false === is_front_page() && spine_get_option( 'main_header_show' ) == 'true' ) :
 
+	$spine_main_header_values = spine_get_main_header();
 	?>
 	<header class="main-header">
 		<div class="header-group hgroup guttered padded-bottom short">
@@ -29,4 +14,4 @@ if ( false === is_front_page() && spine_get_option( 'main_header_show' ) == 'tru
 		</div>
 	</header>
 
-<?php endif; ?>
+<?php endif;
