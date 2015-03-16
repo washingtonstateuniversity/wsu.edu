@@ -1,7 +1,17 @@
 <?php
 
-
-if ( false === is_front_page() && spine_get_option( 'main_header_show' ) == 'true' ) :
+// Single pages with the feature-impact and feature-inspiration categories should
+// show information from the page headlines plugin.
+if ( function_exists( 'wsu_home_get_page_headline' ) && is_singular( 'page' ) && has_category( array( 'feature-impact', 'feature-inspiration' ) ) ) {
+	?>
+	<header class="main-header">
+		<div class="header-group hgroup guttered padded-bottom short">
+			<?php if ( $home_page_headline = wsu_home_get_page_headline() ) : ?><h1 class="page-headline"><?php echo wp_kses_post( $home_page_headline ); ?></h1><?php endif; ?>
+			<?php if ( $home_page_subtitle = wsu_home_get_page_subtitle() ) : ?><div class="page-subtitle"><?php echo wp_kses_post( $home_page_subtitle ); ?></div><?php endif; ?>
+		</div>
+	</header>
+	<?php
+} elseif ( false === is_front_page() && spine_get_option( 'main_header_show' ) == 'true' ) {
 
 	$spine_main_header_values = spine_get_main_header();
 	?>
@@ -13,5 +23,5 @@ if ( false === is_front_page() && spine_get_option( 'main_header_show' ) == 'tru
 
 		</div>
 	</header>
-
-<?php endif;
+	<?php
+}
