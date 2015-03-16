@@ -73,10 +73,18 @@ if ( is_front_page() ) :
 	</div>
 	<!-- Search interface, hidden by default until interaction in header -->
 	<div class="header-search-wrapper header-search-wrapper-hide">
-		<section class="single row" id="search-modal">
+		<section class="side-right row" id="search-modal">
 			<div class="column one">
-				Search Interface
-				<div class="quick-links-label">Quick Links</div>
+				<div class="header-search-input-wrapper">
+					<label for="header-search">Search</label>
+					<input type="text" value="" placeholder="Search" class="header-search-input" />
+				</div>
+				<div class="header-search-a-z-wrapper">
+					<span class="search-a-z"><a href="http://index.wsu.edu/">A-Z Index</a></span>
+				</div>
+			</div>
+			<div class="column two">
+				<div class="quick-links-label">Common Searches</div>
 				<?php wp_nav_menu( $wsu_search_args ); ?>
 			</div>
 		</section>
