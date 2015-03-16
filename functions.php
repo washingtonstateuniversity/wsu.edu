@@ -14,6 +14,7 @@ class WSU_Home_Theme {
 	 */
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
 	}
 
@@ -31,6 +32,10 @@ class WSU_Home_Theme {
 		wp_enqueue_script( 'wsu-home-typekit', 'https://use.typekit.net/roi0hte.js', array(), false, false );
 		wp_enqueue_script( 'wsu-home-nav', get_stylesheet_directory_uri() . '/js/wsu-home-navigation-view.js', array( 'backbone' ), $this->script_version(), true );
 		wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/script.js', array( 'wsu-home-typekit' ), $this->script_version(), true );
+	}
+
+	public function temp_enqueue_style() {
+		wp_enqueue_style( 'wsu-life-temp', 'https://lilley.wsu.edu/life-css/?custom-css=1&ver=0.19.4-1.2.0-31478#038;csblog=684&cscache=6&csrev=123', array(), $this->script_version() );
 	}
 
 	/**
