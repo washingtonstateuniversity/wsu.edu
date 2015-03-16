@@ -1,6 +1,6 @@
 try{Typekit.load();}catch(e){}
 
-(function($){
+(function($, wsuNavigation){
 	populate_headline_meta = function() {
 		var $home_headlines = $('.home-headline'),
 			html = '<ul class="home-headline-nav">';
@@ -19,5 +19,9 @@ try{Typekit.load();}catch(e){}
 		$('.features-container').append( html );
 	};
 
-	$(document).ready( populate_headline_meta );
-})(jQuery);
+	$(document).ready(
+		populate_headline_meta
+	);
+
+	wsuNavigation.app = new wsuNavigation.appView();
+})(jQuery, wsuNavigation);

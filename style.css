@@ -18,3 +18,82 @@ body {
 .home #spine {
 	display: none;
 }
+
+.header-drawer-wrapper-hide .header-drawer {
+	height: 0;
+}
+
+.header-drawer-wrapper-hide .wsu-signature-nav-container {
+	height: 1px;
+}
+
+.header-drawer-wrapper-hide .wsu-mega-nav-container {
+	height:0;
+	padding: 0;
+}
+
+.header-drawer-wrapper-hide #signature-menu ul {
+	display: none;
+}
+
+.header-drawer-wrapper-hide #mega-menu ul li .sub-menu {
+	display: none;
+	margin: 0;
+}
+
+.header-search-wrapper-hide {
+	display: none;
+}
+
+.header-search-wrapper {
+	height: 224px;
+}
+
+.top-level-links-label,
+.search-label {
+	cursor: pointer;
+}
+
+.campus-links-close {
+	cursor: pointer;
+	color: #fff;
+	font-size: 36px;
+	position: absolute;
+	top: 10%;
+}
+
+.campus-links-hide {
+	display: none;
+}
+
+.campus-links-full-page-wrapper {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba( 42, 48, 51, .9 );
+}
+
+.campus-links-internal-wrapper {
+	position: static;
+	top:50%;
+	left: 0;
+	width: 50px;
+	background: #fff;
+}
+
+.campus-links-internal-wrapper {
+	position: absolute;
+	top: 25%;
+	left: 0;
+	width: 100%;
+}
+
+.campus-links-internal-wrapper li {
+	height: 50px;
+	width: 100%;
+	color: #000;
+	background: #ececec;
+}
