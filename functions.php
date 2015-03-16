@@ -16,6 +16,7 @@ class WSU_Home_Theme {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
+		add_filter( 'body_class', array( $this, 'site_body_class' ), 11 );
 	}
 
 	/*
@@ -48,6 +49,30 @@ class WSU_Home_Theme {
 		register_nav_menu( 'fat-footer', 'Fat Footer' );
 		register_nav_menu( 'quick-links', 'Quick Links' );
 		register_nav_menu( 'top-level-links', 'Top Level Links' );
+	}
+
+	/**
+	 * Add body classes for the site domain and path to help with targeting on multiple
+	 * sites using this theme.
+	 *
+	 * @param array $classes
+	 *
+	 * @return array
+	 */
+	public function site_body_class( $classes ) {
+		$site = wsuwp_get_current_site();
+		$site_domain = 'domain-' . sanitize_title_with_dashes( $site->domain );
+		$site_path = 'path-' . sanitize_title_with_dashes( $site->path );
+
+		if ( ! isset( $classes[ $site_domain ] ) ) {
+			$classes[] = $site_domain;
+		}
+
+		if ( ! isset( $classes[ $site_path ] ) ) {
+			$classes[] = $site_path;
+		}
+
+		return $classes;
 	}
 }
 new WSU_Home_Theme();
