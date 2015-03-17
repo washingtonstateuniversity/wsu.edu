@@ -17,6 +17,18 @@ if ( is_front_page() ) :
 		'depth'           => 5,
 	);
 
+	$header_mega_menu_args = array(
+		'theme_location'  => 'mega-menu',
+		'menu'            => 'mega-menu',
+		'container'       => 'div',
+		'container_class' => 'mega-menu-labels-wrapper',
+		'container_id'    => 'mega-menu-labels',
+		'menu_class'      => null,
+		'menu_id'         => null,
+		'items_wrap'      => '<ul>%3$s</ul>',
+		'depth'           => 1,
+	);
+
 	$signature_menu_args = array(
 		'theme_location'  => 'signature-menu',
 		'menu'            => 'signature-menu',
@@ -61,8 +73,8 @@ if ( is_front_page() ) :
 					<img src="https://repo.wsu.edu/spine/1/marks/wsu-signature-standard.svg">
 				</div>
 			</div>
-			<div class="column two">
-				<!-- Empty with purpose. -->
+			<div class="column two wsu-mega-nav-labels">
+				<?php wp_nav_menu( $header_mega_menu_args ); ?>
 			</div>
 			<div class="column three wsu-other-nav-placeholder">
 				<div class="top-level-links-label">WSU Campuses</div>
