@@ -13,12 +13,12 @@ var wsuFOS = wsuFOS || {};
 		},
 
 		toggleAcademic: function(evt) {
-			var $container = $(evt.target).parent('.fos');
-console.log('hi', $container);
-			if ( $container.hasClass( 'fos-open' ) ) {
-				$container.addClass('fos-open');
+			var $container = $(evt.target).parent();
+
+			if ( $($container).hasClass( 'fos-open' ) ) {
+				$($container).removeClass('fos-open');
 			} else {
-				$container.removeClass('fos-open');
+				$($container).addClass('fos-open');
 			}
 		}
 	});

@@ -98,6 +98,26 @@ body {
 	background: #ececec;
 }
 
+.find-fos-wrapper {
+	position: relative;
+	height: 50px;
+}
+
+.find-fos {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.find-fos-alpha-wrapper {
+	margin-top: 25px;
+}
+
+.fos {
+	float: left;
+}
+
 .fos .fos-label {
 	cursor: pointer;
 }
