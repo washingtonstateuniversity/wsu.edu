@@ -2,7 +2,8 @@ try{Typekit.load();}catch(e){}
 
 (function($, wsuNavigation){
 	populate_headline_meta = function() {
-		var $home_headlines = $('.home-headline'),
+		var $features_container = $('.features-container'),
+			$home_headlines = $features_container.find('.home-headline'),
 			html = '<ul class="home-headline-nav">';
 
 		$home_headlines.each( function() {
@@ -16,7 +17,7 @@ try{Typekit.load();}catch(e){}
 		});
 
 		html += '<li><span class="home-headline-nav-date"><a href="/features">...</a></span></li></ul>';
-		$('.features-container').append( html );
+		$features_container.append( html );
 	};
 
 	$(document).ready(
