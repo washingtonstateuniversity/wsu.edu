@@ -1,7 +1,7 @@
 <?php
 
 /*
- * On the home page, we display a series of navigation menus at the top.
+ * On the home page, we display fat footer navigation area on the bottom.
  */
 if ( is_front_page() ) :
 
