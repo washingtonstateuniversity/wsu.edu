@@ -20,6 +20,7 @@ class WSU_Home_Theme {
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
 		add_filter( 'body_class', array( $this, 'site_body_class' ), 11 );
+		add_action( 'wp_update_nav_menu', array( $this, 'update_nav_menu' ), 10, 1 );
 	}
 
 	/*
@@ -79,6 +80,33 @@ class WSU_Home_Theme {
 	}
 
 	/**
+	 * When a nav menu is updated in the dashboard, force a regeneration of that menu's
+	 * cache on the next front end page view by bumping its incrementer.
+	 *
+	 * @param int $menu_id ID of the menu being saved.
+	 */
+	public function update_nav_menu( $menu_id ) {
+		$theme_mods_option = 'theme_mods_' . sanitize_key( get_stylesheet() );
+		$menu_assignments = get_option( $theme_mods_option, array() );
+
+		if ( ! isset( $menu_assignments['nav_menu_locations'] ) ) {
+			return;
+		}
+
+		foreach( $menu_assignments['nav_menu_locations'] as $location => $id ) {
+			if ( $menu_id !== $id ) {
+				continue;
+			}
+
+			$menu_incr_key = md5( $location );
+			$nav_cache_incr = wp_cache_incr( $menu_incr_key, 1, 'wsu-home-nav' );
+			if ( empty( $nav_cache_incr ) || 1000 < $nav_cache_incr ) {
+				wp_cache_set( $menu_incr_key, 0, 'wsu-home-nav' );
+			}
+		}
+	}
+
+	/**
 	 * Serve a cached version of the nav menu if it exists. Cache nav menus as
 	 * they are generated for future immediate use.
 	 *
@@ -87,9 +115,14 @@ class WSU_Home_Theme {
 	 * @return string HTML output for the menu.
 	 */
 	public function get_menu( $menu_args ) {
+		$cache_incr_key = md5( $menu_args['theme_location'] );
 		$cache_key = md5( serialize( $menu_args ) );
 
-		if ( $nav_menu = wp_cache_get( $cache_key, 'wsu-home-nav' ) ) {
+		if ( ! $cache_incr = wp_cache_get( $cache_incr_key, 'wsu-home-nav' ) ) {
+			$cache_incr = '';
+		}
+
+		if ( $nav_menu = wp_cache_get( $cache_key . $cache_incr, 'wsu-home-nav' ) ) {
 			return $nav_menu;
 		}
 
@@ -98,7 +131,7 @@ class WSU_Home_Theme {
 		$nav_menu = ob_get_contents();
 		ob_end_clean();
 
-		wp_cache_set( $cache_key, $nav_menu, 'wsu-home-nav', 600 );
+		wp_cache_set( $cache_key . $cache_incr, $nav_menu, 'wsu-home-nav', 600 );
 
 		return $nav_menu;
 	}
