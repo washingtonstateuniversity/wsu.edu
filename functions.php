@@ -77,5 +77,42 @@ class WSU_Home_Theme {
 
 		return $classes;
 	}
+
+	/**
+	 * Serve a cached version of the nav menu if it exists. Cache nav menus as
+	 * they are generated for future immediate use.
+	 *
+	 * @param array $menu_args List of arguments for the menu. Used for the menu and the cache key.
+	 *
+	 * @return string HTML output for the menu.
+	 */
+	public function get_menu( $menu_args ) {
+		$cache_key = md5( serialize( $menu_args ) );
+
+		if ( $nav_menu = wp_cache_get( $cache_key, 'wsu-home-nav' ) ) {
+			return $nav_menu;
+		}
+
+		ob_start();
+		wp_nav_menu( $menu_args );
+		$nav_menu = ob_get_contents();
+		ob_end_clean();
+
+		wp_cache_set( $cache_key, $nav_menu, 'wsu-home-nav', 600 );
+
+		return $nav_menu;
+	}
 }
-new WSU_Home_Theme();
+$wsu_home_theme = new WSU_Home_Theme();
+
+/**
+ * Retrieve the HTML for a nav menu.
+ *
+ * @param $menu_args
+ *
+ * @return string
+ */
+function wsu_home_get_menu( $menu_args ) {
+	global $wsu_home_theme;
+	return $wsu_home_theme->get_menu( $menu_args );
+}

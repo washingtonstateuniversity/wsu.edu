@@ -74,7 +74,7 @@ if ( is_front_page() ) :
 				</div>
 			</div>
 			<div class="column two wsu-mega-nav-labels">
-				<?php wp_nav_menu( $header_mega_menu_args ); ?>
+				<?php echo wsu_home_get_menu( $header_mega_menu_args ); ?>
 			</div>
 			<div class="column three wsu-other-nav-placeholder">
 				<div class="top-level-links-label">WSU Campuses</div>
@@ -85,10 +85,10 @@ if ( is_front_page() ) :
 	<div class="header-drawer-wrapper header-drawer-wrapper-hide">
 		<section class="single triptych row header-drawer">
 			<div class="column one wsu-signature-nav-container">
-				<?php wp_nav_menu( $signature_menu_args ); ?>
+				<?php echo wsu_home_get_menu( $signature_menu_args ); ?>
 			</div>
 			<div class="column two wsu-mega-nav-container">
-				<?php wp_nav_menu( $mega_menu_args ); ?>
+				<?php echo wsu_home_get_menu( $mega_menu_args ); ?>
 			</div>
 			<div class="column three">
 				<!-- Empty with purpose. -->
@@ -109,7 +109,7 @@ if ( is_front_page() ) :
 			</div>
 			<div class="column two">
 				<div class="quick-links-label">Common Searches</div>
-				<?php wp_nav_menu( $wsu_search_args ); ?>
+				<?php echo wsu_home_get_menu( $wsu_search_args ); ?>
 			</div>
 		</section>
 	</div>
@@ -120,7 +120,7 @@ if ( is_front_page() ) :
 		<div class="campus-links-internal-wrapper">
 			<section class="single row" id="campus-modal">
 				<div class="column one">
-					<?php wp_nav_menu( $wsu_campus_args ); ?>
+					<?php echo wsu_home_get_menu( $wsu_campus_args ); ?>
 				</div>
 			</section>
 		</div>
