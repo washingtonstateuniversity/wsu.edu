@@ -118,7 +118,7 @@ if ( is_front_page() ) :
 	<div class="campus-links-full-page-wrapper campus-links-hide">
 		<div class="campus-links-close">Close</div>
 		<div class="campus-links-internal-wrapper">
-			<section class="single row" id="campus-modal">
+			<section class="single full row" id="campus-modal">
 				<div class="column one">
 					<?php echo wsu_home_get_menu( $wsu_campus_args ); ?>
 				</div>
