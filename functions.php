@@ -131,7 +131,7 @@ class WSU_Home_Theme {
 		$nav_menu = ob_get_contents();
 		ob_end_clean();
 
-		wp_cache_set( $cache_key . $cache_incr, $nav_menu, 'wsu-home-nav', 600 );
+		wp_cache_set( $cache_key . $cache_incr, $nav_menu, 'wsu-home-nav', 3600 );
 
 		return $nav_menu;
 	}
