@@ -19,7 +19,7 @@ if ( is_front_page() ) :
 ?>
 	<section class="single row fat-footer-menu">
 		<div class="column one">
-			<?php wp_nav_menu( $wsu_fat_footer_args ); ?>
+			<?php echo wsu_home_get_menu( $wsu_fat_footer_args ); ?>
 		</div>
 	</section>
 <?php endif;
