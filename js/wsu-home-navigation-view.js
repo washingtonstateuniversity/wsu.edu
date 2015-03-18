@@ -20,7 +20,6 @@ var wsuNavigation = wsuNavigation || {};
 			var $nav_wrapper = $('.header-drawer-wrapper');
 
 			if ( $nav_wrapper.hasClass('header-drawer-wrapper-hide') ) {
-				$nav_wrapper.parent('li').find('.sub-menu li a').css('color','#fff');
 				$nav_wrapper.removeClass('header-drawer-wrapper-hide');
 			} else {
 				$nav_wrapper.addClass('header-drawer-wrapper-hide');
