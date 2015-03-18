@@ -20,9 +20,9 @@ var wsuNavigation = wsuNavigation || {};
 			var $nav_wrapper = $('.header-drawer-wrapper');
 
 			if ( $nav_wrapper.hasClass('header-drawer-wrapper-hide') ) {
-				$nav_wrapper.removeClass('header-drawer-wrapper-hide');
+				$nav_wrapper.addClass('header-drawer-wrapper-open').removeClass('header-drawer-wrapper-hide');
 			} else {
-				$nav_wrapper.addClass('header-drawer-wrapper-hide');
+				$nav_wrapper.addClass('header-drawer-wrapper-hide').removeClass('header-drawer-wrapper-open');
 			}
 		},
 
