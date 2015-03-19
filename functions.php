@@ -60,7 +60,10 @@ class WSU_Home_Theme {
 	}
 
 	public function temp_enqueue_style() {
-		wp_enqueue_style( 'wsu-life-temp', 'https://lilley.wsu.edu/life-css/?custom-css=1&ver=0.19.4-1.2.0-31478#038;csblog=684&cscache=6&csrev=123', array(), $this->script_version() );
+		if ( ! is_front_page() ) {
+			wp_enqueue_style( 'wsu-life-temp', 'https://lilley.wsu.edu/life-css/?custom-css=1&ver=0.19.4-1.2.0-31478#038;csblog=684&cscache=6&csrev=123', array(), $this->script_version() );
+			wp_enqueue_style( 'wsu-charles-temp', 'https://lilley.wsu.edu/charles-css/?custom-css=1&ver=0.19.5-1.2.0-31478#038;csblog=695&cscache=6&csrev=1', array(), $this->script_version() );
+		}
 	}
 
 	/**
