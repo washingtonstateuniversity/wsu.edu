@@ -18,9 +18,9 @@ if ( ! is_front_page() ) :
 		'depth'           => 3,
 	);
 	?>
-	<section class="single row fat-footer-menu">
+	<footer class="single row fat-footer-menu">
 		<div class="column one">
 			<?php echo wsu_home_get_menu( $wsu_fat_footer_args ); ?>
 		</div>
-	</section>
+	</footer>
 <?php endif;
