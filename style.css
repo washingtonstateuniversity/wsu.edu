@@ -151,7 +151,7 @@ body {
 
 .features-container .wsu-home-headline-wrapper-open {
 	display: block;
-	-webkit-animation: easeOut 1.5s;
+	-webkit-animation: fadeIn 1.5s;
 	animation: fadeIn 1.5s;
 }
 
