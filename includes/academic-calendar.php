@@ -39,7 +39,7 @@ class WSU_Home_Academic_Calendar {
 
 			$content .= '<li><span class="wsu-ac-month">' . $month . '</span> <span class="wsu-ac-day">' . $day . '</span> <span class="wsu-ac-text">' . $text . '</span></li>';
 		}
-		$content = '</ul>';
+		$content .= '</ul>';
 
 		return $content;
 	}
