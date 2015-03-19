@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 			},
 			home_scripts: {
 				src: [
-					'includes/js/fos-view.js',
+					'js/wsu-home-fos-view.js',
 					'js/wsu-home-navigation-view.js',
 					'js/wsu-home-primary.js'
 				],
@@ -48,6 +48,7 @@ module.exports = function(grunt) {
 				'includes/js/media-wall-item-view.js',
 				'includes/js/media-wall-view.js',
 				'includes/js/media-wall.js',
+				'js/wsu-home-fos-view.js',
 				'js/wsu-home-navigation-view.js',
 				'js/wsu-home-primary.js'
 			],
