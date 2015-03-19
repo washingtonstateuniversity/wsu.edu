@@ -3,14 +3,8 @@
 class WSU_Home_Fields_Of_Study {
 	public function __construct() {
 		add_shortcode( 'wsu_fields_of_study', array( $this, 'display_fields_of_study' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 	}
 
-	public function enqueue_scripts() {
-		if ( is_front_page() ) {
-			wp_enqueue_script( 'wsu-fos', get_stylesheet_directory_uri() . '/includes/js/fos-view.js', array( 'backbone' ), spine_get_script_version(), true );
-		}
-	}
 	public function display_fields_of_study( $atts ) {
 		ob_start();
 		?>

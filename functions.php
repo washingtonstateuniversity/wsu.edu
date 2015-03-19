@@ -35,8 +35,7 @@ class WSU_Home_Theme {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'wsu-home-typekit', 'https://use.typekit.net/roi0hte.js', array(), false, false );
-		wp_enqueue_script( 'wsu-home-nav', get_stylesheet_directory_uri() . '/js/wsu-home-navigation-view.js', array( 'backbone' ), $this->script_version(), true );
-		wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/wsu-home-primary.js', array( 'wsu-home-typekit' ), $this->script_version(), true );
+		wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/wsu-home.min.js', array( 'backbone', 'wsu-home-typekit' ), $this->script_version(), true );
 	}
 
 	public function temp_enqueue_style() {
