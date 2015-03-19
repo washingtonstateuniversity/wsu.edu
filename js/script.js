@@ -46,9 +46,13 @@ try{Typekit.load();}catch(e){}
 
 	};
 
-	$(document).ready(
-		populate_headline_meta
-	);
+	$(document).ready( function() {
+		var $drawer_wrapper = $('.header-drawer-wrapper'),
+			drawer_height = $drawer_wrapper.height();
+
+		$drawer_wrapper.css('margin-top', '-' + drawer_height + 'px' );
+		populate_headline_meta();
+	});
 
 	wsuNavigation.app = new wsuNavigation.appView();
 })(jQuery, wsuNavigation);

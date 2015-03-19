@@ -19,10 +19,12 @@ var wsuNavigation = wsuNavigation || {};
 			evt.preventDefault();
 			var $nav_wrapper = $('.header-drawer-wrapper');
 
-			if ( $nav_wrapper.hasClass('header-drawer-wrapper-hide') ) {
-				$nav_wrapper.addClass('header-drawer-wrapper-open').removeClass('header-drawer-wrapper-hide');
+			if ( $nav_wrapper.hasClass('header-drawer-wrapper-open') ) {
+				$nav_wrapper.removeClass('header-drawer-wrapper-open');
+				$nav_wrapper.css('margin-top', '-' + $nav_wrapper.height() + 'px');
 			} else {
-				$nav_wrapper.addClass('header-drawer-wrapper-hide').removeClass('header-drawer-wrapper-open');
+				$nav_wrapper.addClass('header-drawer-wrapper-open');
+				$nav_wrapper.css('margin-top', '0' );
 			}
 		},
 
