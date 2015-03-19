@@ -21,7 +21,7 @@ var wsuNavigation = wsuNavigation || {};
 
 			if ( $nav_wrapper.hasClass('header-drawer-wrapper-open') ) {
 				$nav_wrapper.removeClass('header-drawer-wrapper-open');
-				$nav_wrapper.css('margin-top', '-' + $nav_wrapper.height() + 'px');
+				$nav_wrapper.css('margin-top', '-' + ( $nav_wrapper.height() + 5 ) + 'px');
 			} else {
 				$nav_wrapper.addClass('header-drawer-wrapper-open');
 				$nav_wrapper.css('margin-top', '0' );

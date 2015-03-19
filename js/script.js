@@ -50,7 +50,7 @@ try{Typekit.load();}catch(e){}
 		var $drawer_wrapper = $('.header-drawer-wrapper'),
 			drawer_height = $drawer_wrapper.height();
 
-		$drawer_wrapper.css('margin-top', '-' + drawer_height + 'px' );
+		$drawer_wrapper.css('margin-top', '-' + ( drawer_height + 5 ) + 'px' );
 		populate_headline_meta();
 	});
 
