@@ -11,6 +11,14 @@ module.exports = function(grunt) {
 					'includes/js/media-wall.js'
 				],
 				dest: 'includes/js/media-wall.full.js'
+			},
+			home_scripts: {
+				src: [
+					'includes/js/fos-view.js',
+					'js/wsu-home-navigation-view.js',
+					'js/wsu-home-primary.js'
+				],
+				dest: 'js/wsu-home.js'
 			}
 		},
 
@@ -18,12 +26,19 @@ module.exports = function(grunt) {
 			media_wall: {
 				src: 'includes/js/media-wall.full.js',
 				dest: 'includes/js/media-wall.min.js'
+			},
+			home_scripts: {
+				src: 'js/wsu-home.js',
+				dest: 'js/wsu-home.min.js'
 			}
 		},
 
 		clean: {
 			temporary: {
-				src: 'includes/js/media-wall.full.js'
+				src: [
+					'includes/js/media-wall.full.js',
+					'js/wsu-home.js'
+				]
 			}
 		},
 
@@ -32,7 +47,9 @@ module.exports = function(grunt) {
 				'includes/js/media-wall-item-model.js',
 				'includes/js/media-wall-item-view.js',
 				'includes/js/media-wall-view.js',
-				'includes/js/media-wall.js'
+				'includes/js/media-wall.js',
+				'js/wsu-home-navigation-view.js',
+				'js/wsu-home-primary.js'
 			],
 			tasks: ['default']
 		}
