@@ -16,6 +16,7 @@ class WSU_Home_Theme {
 	 * Configure our default hooks.
 	 */
 	public function __construct() {
+		add_action( 'wp_head', array( $this, 'prefetch_dns' ), 5 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
@@ -28,6 +29,25 @@ class WSU_Home_Theme {
 	 */
 	public function script_version() {
 		return spine_get_script_version() . $this->version;
+	}
+
+	/**
+	 * Add a list of domains to prefetch DNS in the document head.
+	 */
+	public function prefetch_dns() {
+		$domains = array(
+			'repo.wsu.edu',
+			'use.typekit.net',
+			'ajax.googleapis.com',
+			'beta.maps.wsu.edu',
+			'lilley.news.wsu.edu',
+			'maps.googleapis.com',
+			'maps.gstatic.com',
+		);
+
+		foreach( $domains as $domain ) {
+			echo '<link rel="dns-prefetch" href="' . $domain . '">' . "\n";
+		}
 	}
 
 	/**
