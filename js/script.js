@@ -17,7 +17,7 @@ try{Typekit.load();}catch(e){}
 					'<span class="home-headline-nav-date">' + date + '</span></li>';
 		});
 
-		html += '<li><span class="home-headline-nav-date"><a href="/features">...</a></span></li></ul>';
+		html += '<li><span class="home-headline-nav-date home-headline-nav-more"><a href="/features">...</a></span></li></ul>';
 		$features_container.append( html );
 
 		$('.home-headline-nav').on('click', function(evt) {

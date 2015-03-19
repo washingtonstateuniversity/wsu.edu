@@ -130,6 +130,16 @@ body {
 	display: block;
 }
 
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
 .features-container .wsu-home-headline-wrapper,
 .features-start .wsu-home-headline-wrapper {
 	display: none;
@@ -141,6 +151,8 @@ body {
 
 .features-container .wsu-home-headline-wrapper-open {
 	display: block;
+	-webkit-animation: easeOut 1.5s;
+	animation: fadeIn 1.5s;
 }
 
 .features-container .wsu-home-headline-wrapper .headline-has-background {
