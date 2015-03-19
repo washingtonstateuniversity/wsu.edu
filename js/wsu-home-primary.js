@@ -1,6 +1,6 @@
 try{Typekit.load();}catch(e){}
 
-(function($, wsuNavigation){
+(function($, wsuNavigation, wsuFOS){
 	populate_headline_meta = function() {
 		var $features_container = $('.features-container'),
 			$home_headlines = $features_container.find('.home-headline'),
@@ -55,4 +55,5 @@ try{Typekit.load();}catch(e){}
 	});
 
 	wsuNavigation.app = new wsuNavigation.appView();
-})(jQuery, wsuNavigation);
+	wsuFOS.app = new wsuFOS.appView();
+})(jQuery, wsuNavigation, wsuFOS);

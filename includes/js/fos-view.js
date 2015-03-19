@@ -22,5 +22,4 @@ var wsuFOS = wsuFOS || {};
 			}
 		}
 	});
-	wsuFOS.app = new wsuFOS.appView();
 })(window, Backbone, jQuery, _, wsuFOS);
