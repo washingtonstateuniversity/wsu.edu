@@ -82,7 +82,7 @@ if ( is_front_page() ) :
 			</div>
 		</section>
 	</div>
-	<div class="header-drawer-wrapper header-drawer-wrapper-hide">
+	<div class="header-drawer-wrapper">
 		<section class="single triptych row header-drawer">
 			<div class="column one wsu-signature-nav-container">
 				<?php echo wsu_home_get_menu( $signature_menu_args ); ?>
