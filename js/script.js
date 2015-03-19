@@ -17,20 +17,28 @@ try{Typekit.load();}catch(e){}
 					'<span class="home-headline-nav-date">' + date + '</span></li>';
 		});
 
-		html += '<li><span class="home-headline-nav-date"><a href="/features">...</a></span></li></ul>';
+		html += '<li><span class="home-headline-nav-date home-headline-nav-more"><a href="/features">...</a></span></li></ul>';
 		$features_container.append( html );
 
 		$('.home-headline-nav').on('click', function(evt) {
+			var id = false;
 			evt.preventDefault();
 
-			var id = $(evt.target).parent('li').data('id');
+			var $target = $(evt.target);
+
+			if ( $target.is('li') ) {
+				id = $target.data('id');
+			} else {
+				id = $target.parents('li').data('id');
+			}
 
 			if ( undefined === id ) {
 				return;
 			}
 
-			if ( $('.features-container').hasClass('features-start') ) {
-				$('.features-container').removeClass('features-start');
+			var $features_container = $('.features-container');
+			if ( $features_container.hasClass('features-start') ) {
+				$features_container.removeClass('features-start');
 			}
 			$('.wsu-home-headline-wrapper-open').removeClass('wsu-home-headline-wrapper-open');
 			$('#' + id).addClass('wsu-home-headline-wrapper-open');
