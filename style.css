@@ -129,3 +129,22 @@ body {
 .fos-open .fos-item {
 	display: block;
 }
+
+.features-container .wsu-home-headline-wrapper,
+.features-start .wsu-home-headline-wrapper {
+	display: none;
+}
+
+.features-start .wsu-home-headline-wrapper:first-of-type {
+	display: block;
+}
+
+.features-container .wsu-home-headline-wrapper-open {
+	display: block;
+}
+
+.features-container .wsu-home-headline-wrapper .headline-has-background {
+	min-height: 600px;
+	background-size: cover;
+	background-position: center right;
+}
