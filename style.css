@@ -26,11 +26,7 @@ body {
 }
 
 .header-drawer-wrapper {
-	transition: margin-top .5s ease-in-out;
-}
-
-.header-drawer-wrapper-open {
-	transition: margin-top .5s ease-in-out;
+	display: none;
 }
 
 .header-search-wrapper-hide {
