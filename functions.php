@@ -52,16 +52,50 @@ class WSU_Home_Theme {
 	}
 
 	/**
+	 * Determine what site is being shown when using the theme on several sites.
+	 *
+	 * @param $name
+	 *
+	 * @return bool
+	 */
+	public function is_wsu_site( $name ) {
+		$site = get_blog_details();
+
+		if ( 'lilley.wsu.edu' === $site->domain && '/' === $site->path && is_front_page() ) {
+			if ( 'wsu-home' === $name ) {
+				return true;
+			} elseif( 'wsu-internal' === $name ) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		if( 'wsu-home' === $name && 'wp.wsu.dev' === $site->$domain && is_front_page() ) {
+			return true;
+		}
+
+		if ( 'wsu-features' === $name && 'lilley.wsu.edu' === $site->domain && '/features/' === $site->path ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	 * Enqueue scripts used on the front end.
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'wsu-home-typekit', 'https://use.typekit.net/roi0hte.js', array(), false, false );
-		wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/wsu-home.min.js', array( 'backbone', 'wsu-home-typekit' ), $this->script_version(), true );
+
+		if ( $this->is_wsu_site( 'wsu-home' ) && is_front_page() ) {
+			wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/wsu-home.min.js', array( 'backbone', 'wsu-home-typekit' ), $this->script_version(), true );
+		}
 	}
 
 	public function temp_enqueue_style() {
-		if ( ! is_front_page() ) {
-			wp_enqueue_style( 'wsu-life-temp', 'https://lilley.wsu.edu/life-css/?custom-css=1&ver=0.19.4-1.2.0-31478#038;csblog=684&cscache=6&csrev=123', array(), $this->script_version() );
+		if ( $this->is_wsu_site( 'wsu-home' ) && ! is_front_page() ) {
+			wp_enqueue_style( 'wsu-courtney-temp', 'https://lilley.wsu.edu/life-css/?custom-css=1&ver=0.19.4-1.2.0-31478#038;csblog=684&cscache=6&csrev=123', array(), $this->script_version() );
 			wp_enqueue_style( 'wsu-charles-temp', 'https://lilley.wsu.edu/charles-css/?custom-css=1&ver=0.19.5-1.2.0-31478#038;csblog=695&cscache=6&csrev=1', array(), $this->script_version() );
 		}
 	}
