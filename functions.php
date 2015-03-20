@@ -71,7 +71,7 @@ class WSU_Home_Theme {
 			}
 		}
 
-		if( 'wsu-home' === $name && 'wp.wsu.dev' === $site->$domain && is_front_page() ) {
+		if( 'wsu-home' === $name && 'wp.wsu.dev' === $site->domain && is_front_page() ) {
 			return true;
 		}
 
