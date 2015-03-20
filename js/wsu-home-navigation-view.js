@@ -33,10 +33,11 @@ var wsuNavigation = wsuNavigation || {};
 
 			var $search_wrapper = $('.header-search-wrapper');
 
-			if ( $search_wrapper.hasClass('header-search-wrapper-hide') ) {
-				$search_wrapper.removeClass('header-search-wrapper-hide');
+			if ( $search_wrapper.hasClass('header-search-wrapper-open') ) {
+				$search_wrapper.removeClass('header-search-wrapper-open');
 			} else {
-				$search_wrapper.addClass('header-search-wrapper-hide');
+				$search_wrapper.addClass('header-search-wrapper-open');
+				$('.header-search-input').focus();
 			}
 		},
 

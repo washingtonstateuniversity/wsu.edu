@@ -100,8 +100,14 @@ if ( is_front_page() ) :
 		<section class="side-right row" id="search-modal">
 			<div class="column one">
 				<div class="header-search-input-wrapper">
-					<label for="header-search">Search</label>
-					<input type="text" value="" placeholder="Search" class="header-search-input" />
+					<form method="get" action="http://search.wsu.edu/Default.aspx">
+						<input name="cx" value="013644890599324097824:kbqgwamjoxq" type="hidden">
+						<input name="cof" value="FORID:11" type="hidden">
+						<input name="sa" value="Search" type="hidden">
+						<input name="fp" value="true" type="hidden">
+						<label for="header-search">Search</label>
+						<input type="text" value="" name="q" placeholder="Search" class="header-search-input" />
+					</form>
 				</div>
 				<div class="header-search-a-z-wrapper">
 					<span class="search-a-z"><a href="http://index.wsu.edu/">A-Z Index</a></span>
