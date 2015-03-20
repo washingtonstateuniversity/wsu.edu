@@ -25,6 +25,7 @@ class WSU_Home_Theme {
 		add_filter( 'body_class', array( $this, 'site_body_class' ), 11 );
 		add_action( 'wp_update_nav_menu', array( $this, 'update_nav_menu' ), 10, 1 );
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
+		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
 	}
 
 	/*
@@ -220,6 +221,19 @@ class WSU_Home_Theme {
 		}
 
 		return $item_classes;
+	}
+
+	/**
+	 * Replace paragraphs wrapped around lone images with figure.
+	 *
+	 * @param string $content Original content being stored.
+	 *
+	 * @return string Modified content.
+	 */
+	public function replace_p_with_figure( $content ) {
+		$content = preg_replace('/<p[^>]*>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\/p>/', '<figure class=\"wsu-p-replaced\">$1</figure>', $content);
+
+		return $content;
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
