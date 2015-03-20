@@ -24,6 +24,7 @@ class WSU_Home_Theme {
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
 		add_filter( 'body_class', array( $this, 'site_body_class' ), 11 );
 		add_action( 'wp_update_nav_menu', array( $this, 'update_nav_menu' ), 10, 1 );
+		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
 	}
 
 	/*
@@ -189,6 +190,26 @@ class WSU_Home_Theme {
 		wp_cache_set( $cache_key . $cache_incr, $nav_menu, 'wsu-home-nav', 3600 );
 
 		return $nav_menu;
+	}
+
+	/**
+	 * Filter the list item classes to manually add current and dogeared when necessary.
+	 *
+	 * @param array   $item_classes List of classes assigned to the list item.
+	 * @param WP_Post $page         Post object for the current page.
+	 *
+	 * @return array
+	 */
+	public function bu_navigation_filter_item_attrs( $item_classes, $page ) {
+		if ( in_array( 'current_page_item', $item_classes ) || in_array( 'current_page_parent', $item_classes ) ) {
+			$item_classes[] = 'current';
+		}
+
+		if ( is_singular() && get_the_ID() == $page->ID ) {
+			$item_classes[] = 'dogeared';
+		}
+
+		return $item_classes;
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
