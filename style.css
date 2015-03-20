@@ -29,12 +29,16 @@ body {
 	display: none;
 }
 
-.header-search-wrapper-hide {
+.header-search-wrapper {
 	display: none;
+	position: absolute;
+	z-index: 125;
+	width: 100%;
+	height: 224px;
 }
 
-.header-search-wrapper {
-	height: 224px;
+.header-search-wrapper-open {
+	display: block;
 }
 
 .top-level-links-label,
