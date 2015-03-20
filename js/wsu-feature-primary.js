@@ -1,3 +1,5 @@
+try{Typekit.load();}catch(e){}
+
 (function($, window){
 	play_video = function(evt) {
 		evt.target.play();
