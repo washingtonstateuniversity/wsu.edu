@@ -52,9 +52,21 @@ var wsuFOS = wsuFOS || {};
 		$('.media-wall-image').each( function() { $(this).attr('src', $(this).data('src') ); });
 	};
 
+	process_section_backgrounds = function() {
+		var $bg_sections = $('.has-section-background');
+
+		$bg_sections.each( function() {
+			var background_image = $(this).data('background');
+			console.log( background_image );
+			console.log( $( this));
+			$(this).css('background-image', 'url(' + background_image + ')' );
+		});
+	};
+
 	$(document).ready( function() {
 		populate_headline_meta();
 		populate_media_wall();
+		process_section_backgrounds();
 	});
 
 	if ( undefined !== wsuNavigation.appView ) {
