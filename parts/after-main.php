@@ -24,7 +24,9 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 	if ( wsu_home_is_site( 'wsu-features' ) ) {
 		$feature_site = wsuwp_get_current_site();
 		if ( isset( $feature_site->domain ) ) {
-			$home_site = get_blog_details( array( 'domain' => $feature_site->domain, 'path' => '/' ) );
+			// Allow a local override for development.
+			$home_path = apply_filters( 'wsu_home_path', '/' );
+			$home_site = get_blog_details( array( 'domain' => $feature_site->domain, 'path' => $home_path ) );
 			if ( isset( $home_site->blog_id ) ) {
 				switch_to_blog( $home_site->blog_id );
 			}
