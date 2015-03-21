@@ -64,25 +64,18 @@ class WSU_Home_Theme {
 	public function is_wsu_site( $name ) {
 		$site = get_blog_details();
 
-		if ( 'lilley.wsu.edu' === $site->domain && '/' === $site->path ) {
-			if ( 'wsu-home' === $name && is_front_page() ) {
-				return true;
-			} elseif( 'wsu-internal' === $name && ! is_front_page() ) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+		$home_path = apply_filters( 'wsu_home_path', '/' );
+		$features_path = apply_filters( 'wsu_home_feature_path', '/features/' );
 
-		if( 'wsu-home' === $name && 'wp.wsu.dev' === $site->domain && is_front_page() ) {
+		if ( 'wsu-home' === $name && $home_path === $site->path && is_front_page() ) {
 			return true;
 		}
 
-		if ( 'wsu-features' === $name && 'lilley.wsu.edu' === $site->domain && '/features/' === $site->path ) {
+		if ( 'wsu-internal' === $name && $home_path === $site->path && ! is_front_page() ) {
 			return true;
 		}
 
-		if ( 'wsu-features' === $name && 'wp.wsu.dev' === $site->domain && '/features/' === $site->path ) {
+		if ( 'wsu-features' === $name && $features_path === $site->path ) {
 			return true;
 		}
 
