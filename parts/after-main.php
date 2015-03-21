@@ -38,6 +38,12 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 			<?php echo wsu_home_get_menu( $wsu_fat_footer_args ); ?>
 		</div>
 	</footer>
+	<section class="single row full footer-bar">
+		<div class="column one">
+			<div class="footer-contact-us"><a href="/about/contact/">Contact Us</a></div>
+			<div class="footer-copyright">&copy; Washington State University</div>
+		</div>
+	</section>
 <?php
 
 if ( ms_is_switched() ) {
