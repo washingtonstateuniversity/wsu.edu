@@ -4,7 +4,7 @@
  * On all inside pages, we show the fat footer navigation area within
  * the primary `main` element.
  */
-if ( ! is_front_page() ) :
+if ( wsu_home_is_site( 'wsu-internal' ) ) :
 
 	$wsu_fat_footer_args = array(
 		'theme_location'  => 'fat-footer',
