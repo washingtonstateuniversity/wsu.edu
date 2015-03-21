@@ -3,7 +3,7 @@
 /*
  * On the home page, we display a series of navigation menus at the top.
  */
-if ( is_front_page() ) :
+if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 
 	$mega_menu_args = array(
 		'theme_location'  => 'mega-menu',
@@ -64,6 +64,20 @@ if ( is_front_page() ) :
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 1,
 	);
+
+	/**
+	 * If this is the features site, we'd like to use the entire menu area from the
+	 * home site.
+	 */
+	if ( wsu_home_is_site( 'wsu-features' ) ) {
+		$feature_site = wsuwp_get_current_site();
+		if ( isset( $feature_site->domain ) ) {
+			$home_site = get_blog_details( array( 'domain' => $feature_site->domain, 'path' => '/' ) );
+			if ( isset( $home_site->blog_id ) ) {
+				switch_to_blog( $home_site->blog_id );
+			}
+		}
+	}
 ?>
 <header class="main-header wsu-home-navigation">
 	<div class="header-shelf-wrapper">
@@ -132,4 +146,10 @@ if ( is_front_page() ) :
 		</div>
 	</div>
 </header>
-<?php endif;
+<?php
+
+if ( ms_is_switched() ) {
+	restore_current_blog();
+}
+
+endif;
