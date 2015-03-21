@@ -249,3 +249,15 @@ function wsu_home_get_menu( $menu_args ) {
 	global $wsu_home_theme;
 	return $wsu_home_theme->get_menu( $menu_args );
 }
+
+/**
+ * Check if a specific site is being loaded.
+ *
+ * @param string $name Name representing the site.
+ *
+ * @return bool True if yes. False if no.
+ */
+function wsu_home_is_site( $name ) {
+	global $wsu_home_theme;
+	return $wsu_home_theme->is_wsu_site( $name );
+}
