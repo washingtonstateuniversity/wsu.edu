@@ -19,19 +19,10 @@ class WSUWP_Home_Map_Shortcode {
 			return '';
 		}
 
-		if ( empty( $atts['version'] ) ) {
-			$map_server = 'maps.wsu.edu';
-		} else {
-			$map_server = 'beta.maps.wsu.edu';
-		}
+		$content = '<div id="map-embed-' . $map_path . '" class="WSU_MAPS_NS" style="width:100%;padding-top:66%;min-height: 0px;"></div>';
+		$content .= '<script>var map_view_scripts_block = true; var map_view_id = "map-embed-' . esc_js( $map_path ) .'";</script>';
 
-		if ( 'http' === $atts['scheme'] ) {
-			$map_scheme = 'http://';
-		} else {
-			$map_scheme = 'https://';
-		}
-
-		return '<script type="text/javascript" src="' . $map_scheme . $map_server . '/embed/' . $map_path .'"></script>';
+		return $content;
 	}
 }
 new WSUWP_Home_Map_Shortcode();
