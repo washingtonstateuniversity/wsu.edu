@@ -16,8 +16,11 @@
 	 */
 	setup_exit_video = function() {
 		$video = $('.exit-video').find('video');
-		$video.on('hover', play_video);
-		$video.on('click', play_video);
+
+		if ( 0 < $video.length ) {
+			$video.on('hover', play_video);
+			$video.on('click', play_video);
+		}
 	};
 
 	/**
