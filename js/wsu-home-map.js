@@ -67,4 +67,4 @@ if( map_view.map_view_scripts_block === false ){
 			}
 		}
 	};
-})(window,document,'script',map_scripts,"WSU_MAPS_NS");
+})(window,document,'script',map_scripts,map_view.view_id);
