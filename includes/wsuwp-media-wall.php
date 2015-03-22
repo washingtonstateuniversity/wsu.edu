@@ -309,8 +309,8 @@ class WSUWP_Media_Wall {
 		$default_atts = array(
 			'id' => '',
 			'columns' => '',
-			'width' => '250',
-			'height' => '',
+			'width' => '690',
+			'height' => '690',
 		);
 		$atts = shortcode_atts( $default_atts, $atts );
 
@@ -365,7 +365,7 @@ class WSUWP_Media_Wall {
 						if ( isset( $current_image['hosted_image_url'] ) ) {
 							$wall_html .= '
 								<a href="' . $current_image['original_share_url'] . '">
-									<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">
+									<img ' . $width . $height . ' src="' . esc_url( get_stylesheet_directory_uri() . '/images/blank.gif' ) . '" data-src="' . esc_url( $current_image['hosted_image_url'] ) . '" class="media-wall-image">
 								</a>';
 						}
 					}
