@@ -309,13 +309,20 @@ class WSUWP_Media_Wall {
 		$default_atts = array(
 			'id' => '',
 			'columns' => '',
-			'width' => '250',
-			'height' => '',
+			'width' => '690',
+			'height' => '690',
+			'cache_bust' => '',
 		);
 		$atts = shortcode_atts( $default_atts, $atts );
 
 		if ( ! isset( $atts['id'] ) || 0 === absint( $atts['id'] ) ) {
 			return '';
+		}
+
+		$atts_key = md5( serialize( $atts ) );
+
+		if ( $content = wp_cache_get( $atts_key, 'wsuwp_media_wall' ) ) {
+			return $content;
 		}
 
 		$wall_id = absint( $atts['id'] );
@@ -365,7 +372,7 @@ class WSUWP_Media_Wall {
 						if ( isset( $current_image['hosted_image_url'] ) ) {
 							$wall_html .= '
 								<a href="' . $current_image['original_share_url'] . '">
-									<img ' . $width . $height . 'src="' . esc_url( $current_image['hosted_image_url'] ) . '">
+									<img ' . $width . $height . ' src="' . esc_url( get_stylesheet_directory_uri() . '/images/blank.gif' ) . '" data-src="' . esc_url( $current_image['hosted_image_url'] ) . '" class="media-wall-image">
 								</a>';
 						}
 					}
@@ -373,6 +380,8 @@ class WSUWP_Media_Wall {
 				$wall_html .= '</div>';
 			}
 		}
+
+		wp_cache_add( $atts_key, $wall_html, 'wsuwp_media_wall', 600 );
 
 		return $wall_html;
 	}

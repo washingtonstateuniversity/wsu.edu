@@ -48,8 +48,13 @@ var wsuFOS = wsuFOS || {};
 
 	};
 
+	populate_media_wall = function() {
+		$('.media-wall-image').each( function() { $(this).attr('src', $(this).data('src') ); });
+	};
+
 	$(document).ready( function() {
 		populate_headline_meta();
+		populate_media_wall();
 	});
 
 	if ( undefined !== wsuNavigation.appView ) {
