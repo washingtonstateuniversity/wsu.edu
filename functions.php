@@ -26,6 +26,7 @@ class WSU_Home_Theme {
 		add_action( 'wp_update_nav_menu', array( $this, 'update_nav_menu' ), 10, 1 );
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
 		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
+		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_source_element' ), 10 );
 	}
 
 	/*
@@ -227,6 +228,24 @@ class WSU_Home_Theme {
 		$content = preg_replace('/<p[^>]*>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\/p>/', '<figure class=\"wsu-p-replaced\">$1</figure>', $content);
 
 		return $content;
+	}
+
+	/**
+	 * Allow the source tag to be used. This is required for extended use of the `video` and
+	 * `audio` HTML5 elements to provide multiple sources for a media file.
+	 *
+	 * @param array $tags List of elements and attributes allowed.
+	 *
+	 * @return mixed Modified list of elements and attributes.
+	 */
+	public function allow_source_element( $tags ) {
+		$tags['source'] = array(
+			'src' => true,
+			'type' => true,
+			'media' => true,
+		);
+
+		return $tags;
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
