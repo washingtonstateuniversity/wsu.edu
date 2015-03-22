@@ -33,14 +33,6 @@
 	};
 
 	/**
-	 * Hold the YouTube Player objects created during the page load for
-	 * playback.
-	 *
-	 * @type {Array}
-	 */
-	var players = [];
-
-	/**
 	 * Callback function expected by the YouTube Iframe API. Without a function
 	 * with this name available in the global space, our use of the YouTube API
 	 * does not work.
@@ -54,8 +46,7 @@
 				video_height = $(this).data('video-height'),
 				video_width = $(this).data('video-width');
 
-			players.push(video_id);
-			players[video_id] = new YT.Player( 'youtube-video-' + video_id, {
+			new YT.Player( 'youtube-video-' + video_id, {
 				height: video_height,
 				width: video_width,
 				videoId: video_id,
