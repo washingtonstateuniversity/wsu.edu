@@ -311,11 +311,18 @@ class WSUWP_Media_Wall {
 			'columns' => '',
 			'width' => '690',
 			'height' => '690',
+			'cache_bust' => '',
 		);
 		$atts = shortcode_atts( $default_atts, $atts );
 
 		if ( ! isset( $atts['id'] ) || 0 === absint( $atts['id'] ) ) {
 			return '';
+		}
+
+		$atts_key = md5( serialize( $atts ) );
+
+		if ( $content = wp_cache_get( $atts_key, 'wsuwp_media_wall' ) ) {
+			return $content;
 		}
 
 		$wall_id = absint( $atts['id'] );
@@ -373,6 +380,8 @@ class WSUWP_Media_Wall {
 				$wall_html .= '</div>';
 			}
 		}
+
+		wp_cache_add( $atts_key, $wall_html, 'wsuwp_media_wall', 600 );
 
 		return $wall_html;
 	}
