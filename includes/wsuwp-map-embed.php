@@ -19,7 +19,7 @@ class WSUWP_Home_Map_Shortcode {
 			return '';
 		}
 
-		$content = '<div id="map-embed-' . $map_path . '" class="WSU_MAPS_NS" style="width:100%;padding-top:66%;min-height: 0px;"></div>';
+		$content = '<div id="map-embed-' . $map_path . '"></div>';
 		$content .= '<script>var map_view_scripts_block = true; var map_view_id = "map-embed-' . esc_js( $map_path ) .'";</script>';
 
 		return $content;
