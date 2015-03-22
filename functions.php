@@ -89,10 +89,15 @@ class WSU_Home_Theme {
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'wsu-home-typekit', 'https://use.typekit.net/roi0hte.js', array(), false, false );
 
-		if ( $this->is_wsu_site( 'wsu-features' ) || $this->is_wsu_site( 'wsu-home' ) ) {
+		if ( $this->is_wsu_site( 'wsu-home' ) ) {
 			wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/wsu-home.min.js', array( 'backbone', 'wsu-home-typekit' ), $this->script_version(), true );
-			wp_enqueue_script( 'wsu-features', get_stylesheet_directory_uri() . '/js/wsu-feature.min.js', array( 'jquery' ), $this->script_version(), true );
-		} else {
+		}
+
+		if ( $this->is_wsu_site( 'wsu-features' ) ) {
+			wp_enqueue_script( 'wsu-features', get_stylesheet_directory_uri() . '/js/wsu-feature.min.js', array( 'backbone' ), $this->script_version(), true );
+		}
+
+		if ( $this->is_wsu_site( 'wsu-internal' ) ) {
 			wp_enqueue_script( 'wsu-home-internal', get_stylesheet_directory_uri() . '/js/wsu-home-internal.js', array( 'wsu-home-typekit' ), $this->script_version(), true );
 		}
 	}

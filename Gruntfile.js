@@ -22,6 +22,8 @@ module.exports = function(grunt) {
 			},
 			feature_scripts: {
 				src: [
+					'js/wsu-home-navigation-view.js',
+					'js/wsu-home-primary.js',
 					'js/wsu-feature-primary.js'
 				],
 				dest: 'js/wsu-feature.js'

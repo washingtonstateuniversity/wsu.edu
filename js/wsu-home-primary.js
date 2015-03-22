@@ -1,4 +1,6 @@
 try{Typekit.load();}catch(e){}
+var wsuNavigation = wsuNavigation || {};
+var wsuFOS = wsuFOS || {};
 
 (function($, wsuNavigation, wsuFOS){
 	populate_headline_meta = function() {
@@ -50,6 +52,11 @@ try{Typekit.load();}catch(e){}
 		populate_headline_meta();
 	});
 
-	wsuNavigation.app = new wsuNavigation.appView();
-	wsuFOS.app = new wsuFOS.appView();
+	if ( undefined !== wsuNavigation.appView ) {
+		wsuNavigation.app = new wsuNavigation.appView();
+	}
+
+	if ( undefined !== wsuFOS.appView ) {
+		wsuFOS.app = new wsuFOS.appView();
+	}
 })(jQuery, wsuNavigation, wsuFOS);
