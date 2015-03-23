@@ -5,6 +5,8 @@
  */
 if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 
+	$wsu_home_is_features = wsu_home_is_site( 'wsu-features' );
+
 	$mega_menu_args = array(
 		'theme_location'  => 'mega-menu',
 		'menu'            => 'mega-menu',
@@ -86,9 +88,9 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 		<section class="single triptych row header-shelf">
 			<div class="column one">
 				<div class="wsu-logo">
-					<?php if ( false === wsu_home_is_site( 'wsu-home') ) : ?><a href="https://wsu.edu/"><?php endif; ?>
+					<?php if ( $wsu_home_is_features ) : ?><a href="https://wsu.edu/"><?php endif; ?>
 					<img src="https://repo.wsu.edu/spine/1/marks/wsu-signature-standard.svg">
-					<?php if ( false === wsu_home_is_site( 'wsu-home' ) ) : ?></a><?php endif; ?>
+					<?php if ( $wsu_home_is_features ) : ?></a><?php endif; ?>
 				</div>
 			</div>
 			<div class="column two wsu-mega-nav-labels">
