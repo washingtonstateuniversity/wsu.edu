@@ -20,10 +20,6 @@ body {
 	border-top: 5px solid #981e32;
 }
 
-#binder {
-	max-width: 100% !important;
-}
-
 .home section {
 	margin: 0 auto;
 }
