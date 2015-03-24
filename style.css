@@ -383,3 +383,11 @@ section#search-modal {
 	background-size: cover;
 	background-position: center right;
 }
+
+.fixedbg {
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 500px;
+}

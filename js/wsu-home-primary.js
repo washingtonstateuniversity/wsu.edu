@@ -53,7 +53,7 @@ var wsuFOS = wsuFOS || {};
 	};
 
 	process_section_backgrounds = function() {
-		var $bg_sections = $('.has-section-background');
+		var $bg_sections = $('.section-wrapper-has-background');
 
 		$bg_sections.each( function() {
 			var background_image = $(this).data('background');
