@@ -28,6 +28,7 @@ class WSU_Home_Theme {
 		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_source_element' ), 10 );
 		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10, 4 );
+		add_action( 'wp_footer', array( $this, 'footer_pixels' ) );
 	}
 
 	/*
@@ -334,6 +335,50 @@ class WSU_Home_Theme {
 		}
 
 		return $view_title . ' Washington State University';
+	}
+
+	public function footer_pixels() {
+		if ( $this->is_wsu_site( 'wsu-home' ) ) {
+			?>
+			<!--
+			Start of DoubleClick Floodlight Tag: Please do not remove
+			Activity name of this tag: IP157494 WSU Homepage~IP157494
+			URL of the webpage where the tag is expected to be placed: https://wsu.edu/
+			This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+			Creation Date: 03/17/2015
+			-->
+			<script type="text/javascript">
+				var axel = Math.random() + "";
+				var a = axel * 10000000000000;
+				document.write('<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip1570;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+			</script>
+			<noscript>
+				<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip1570;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+			</noscript>
+			<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+			<?php
+		}
+
+		if ( $this->is_wsu_site( 'wsu-features' ) && is_front_page() ) {
+			?>
+			<!--
+			Start of DoubleClick Floodlight Tag: Please do not remove
+			Activity name of this tag: IP157494 WSU 125~IP157494
+			URL of the webpage where the tag is expected to be placed: https://wsu.edu/125
+			This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+			Creation Date: 03/17/2015
+			-->
+			<script type="text/javascript">
+				var axel = Math.random() + "";
+				var a = axel * 10000000000000;
+				document.write('<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip15700;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+			</script>
+			<noscript>
+				<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip15700;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+			</noscript>
+			<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+			<?php
+		}
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
