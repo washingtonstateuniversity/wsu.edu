@@ -286,51 +286,6 @@ section#search-modal {
 }
 
 
-/*---------- CAMPUS LINKS ------------------*/
-.campus-links-close {
-	cursor: pointer;
-	color: #fff;
-	font-size: 36px;
-	position: absolute;
-	top: 10%;
-}
-
-.campus-links-hide {
-	display: none;
-}
-
-.campus-links-full-page-wrapper {
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: rgba( 42, 48, 51, .9 );
-}
-
-.campus-links-internal-wrapper {
-	position: static;
-	top:50%;
-	left: 0;
-	width: 50px;
-	background: #fff;
-}
-
-.campus-links-internal-wrapper {
-	position: absolute;
-	top: 25%;
-	left: 0;
-	width: 100%;
-}
-
-.campus-links-internal-wrapper li {
-	height: 50px;
-	width: 100%;
-	color: #000;
-	background: #ececec;
-}
-
 .top-level-links-label,
 .search-label {
 	cursor: pointer;
@@ -363,82 +318,6 @@ section#search-modal {
 	margin: 0 -.25rem 0 .5rem;
 	position: relative;
 	top: .125rem;
-}
-
-/* Campus overlay */
-.campus-links-full-page-wrapper {
-	background: #981e32;
-}
-
-.campus-links-internal-wrapper {
-	background: none;
-	top: 15%;
-}
-
-.campus-links-internal-wrapper ul {
-	list-style: none;
-	padding: 0;
-}
-
-.campus-links-internal-wrapper li {
-	font-size: 4rem;
-	float: left;
-	background: none;
-	text-align: center;
-	padding: 0;
-	height: auto;
-}
-
-.campus-links-internal-wrapper li a {
-	font-weight: 300;
-	display: block;
-	text-align: center;
-	width: 100%;
-	border-top: 1px solid rgba(0,0,0,.1);
-	line-height: 1;
-	padding: 1rem 0;
-}
-
-.campus-links-internal-wrapper li a:hover {
-	background: rgba(0,0,0,.05);
-}
-
-.menu-wsu-campuses-container li:nth-child(4) {
-	border-bottom: 1px solid rgba(0,0,0,.1);
-	margin-bottom: 3rem;
-}
-
-.menu-wsu-campuses-container li:nth-child(n+5) a {
-	border: none;
-	font-size: 2.5rem;
-	margin-top: 0;
-}
-
-.menu-wsu-campuses-container li:last-child a {
-}
-
-.menu-wsu-campuses-container li:nth-child(n+5) {
-	width: 100%;
-	padding: 0 3rem;
-	box-sizing: border-box;
-}
-
-.campus-links-close {
-	visibility: hidden;
-	width: 100%;
-}
-
-.campus-links-close:after {
-	content: "X";
-	position: absolute;
-	color: #fff;
-	visibility: visible;
-	right: 5%;
-	font-size: 3rem;
-	line-height: 0;
-	top: 20%;
-	cursor: pointer;
-	font-weight: 300;
 }
 
 /*-------- WSU HOME FEATURE PIECES ------ */
