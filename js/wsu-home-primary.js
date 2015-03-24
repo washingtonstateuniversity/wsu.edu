@@ -57,8 +57,6 @@ var wsuFOS = wsuFOS || {};
 
 		$bg_sections.each( function() {
 			var background_image = $(this).data('background');
-			console.log( background_image );
-			console.log( $( this));
 			$(this).css('background-image', 'url(' + background_image + ')' );
 		});
 	};
