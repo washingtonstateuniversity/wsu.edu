@@ -325,6 +325,14 @@ class WSU_Home_Theme {
 			return 'Washington State University';
 		}
 
+		if ( $this->is_wsu_site( 'wsu-features' ) && is_front_page() ) {
+			return 'WSU 125';
+		}
+
+		if ( $this->is_wsu_site( 'wsu-features' ) && ! is_front_page() ) {
+			return $view_title . ' | WSU 125 | Washington State University';
+		}
+
 		return $view_title . ' | Washington State University';
 	}
 }
