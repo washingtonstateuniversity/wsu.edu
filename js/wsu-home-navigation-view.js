@@ -10,7 +10,9 @@ var wsuNavigation = wsuNavigation || {};
 		// Setup the events used in the overall application view.
 		events: {
 			'click #mega-menu-labels  ul li a': 'toggleNav',
+			'click .close-header-drawer': 'toggleNav',
 			'click .search-label': 'toggleSearch',
+			'click .close-header-search': 'toggleSearch',
 			'click .top-level-links-label': 'toggleCampuses',
 			'click .campus-links-close': 'toggleCampuses'
 		},

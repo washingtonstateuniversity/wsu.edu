@@ -116,6 +116,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 				<!-- Empty with purpose. -->
 			</div>
 		</section>
+		<div class="close-header-drawer">x</div>
 	</div>
 	<!-- Search interface, hidden by default until interaction in header -->
 	<div class="header-search-wrapper header-search-wrapper-hide">
@@ -140,6 +141,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 				<?php echo wsu_home_get_menu( $wsu_search_args ); ?>
 			</div>
 		</section>
+		<div class="close-header-search">x</div>
 	</div>
 
 	<!-- Campus links, hidden by default until interaction in header -->
