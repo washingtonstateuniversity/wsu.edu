@@ -146,7 +146,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 
 	<!-- Campus links, hidden by default until interaction in header -->
 	<div class="campus-links-full-page-wrapper campus-links-hide">
-		<div class="campus-links-close">Close</div>
+		<div class="campus-links-close">x</div>
 		<div class="campus-links-internal-wrapper">
 			<section class="single full row" id="campus-modal">
 				<div class="column one">
