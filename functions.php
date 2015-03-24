@@ -326,14 +326,14 @@ class WSU_Home_Theme {
 		}
 
 		if ( $this->is_wsu_site( 'wsu-features' ) && is_front_page() ) {
-			return 'WSU 125';
+			return '125 | Washington State University';
 		}
 
 		if ( $this->is_wsu_site( 'wsu-features' ) && ! is_front_page() ) {
-			return $view_title . ' | WSU 125 | Washington State University';
+			return $view_title . ' 125 | Washington State University';
 		}
 
-		return $view_title . ' | Washington State University';
+		return $view_title . ' Washington State University';
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
