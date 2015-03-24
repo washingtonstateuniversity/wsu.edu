@@ -46,7 +46,7 @@ class WSU_Home_Theme {
 			'use.typekit.net',
 			'ajax.googleapis.com',
 			'beta.maps.wsu.edu',
-			'lilley.news.wsu.edu',
+			'news.wsu.edu',
 			'maps.googleapis.com',
 			'maps.gstatic.com',
 		);
