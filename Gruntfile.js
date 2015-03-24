@@ -63,8 +63,7 @@ module.exports = function(grunt) {
 				'includes/js/media-wall.js',
 				'js/wsu-home-fos-view.js',
 				'js/wsu-home-navigation-view.js',
-				'js/wsu-home-primary.js',
-				'js/wsu-feature.js'
+				'js/wsu-home-primary.js'
 			],
 			tasks: ['default']
 		}
