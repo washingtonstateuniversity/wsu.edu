@@ -34,6 +34,30 @@ body {
 	padding: 0;
 }
 
+.wsu-home-alert {
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background: #f15d22;
+	font-size: 1rem;
+}
+
+.wsu-home-alert h1 {
+	font-size: 1.7em;
+	margin: 0;
+	padding: 10px 0 0 0;
+	width: 100%;
+	text-align: center;
+	background: none;
+}
+
+.wsu-home-alert a {
+	font-size: 1.5em;
+	line-height: 1.6em;
+	color: #efefef;
+}
+
 /*---------------------------- header ----------------------------*/
 .home .main-header {
 	background: #fff;

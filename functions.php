@@ -259,6 +259,51 @@ class WSU_Home_Theme {
 
 		return $tags;
 	}
+
+	/**
+	 * Set the time to cache a feed.
+	 *
+	 * @return int Time in seconds.
+	 */
+	public function modify_feed_cache() {
+		return 60;
+	}
+
+	public function display_alert() {
+		if ( $current_alert = wp_cache_get( 'wsu-home-alert', 'wsu-home' ) ) {
+			return $current_alert;
+		}
+
+		// Modify the default SimplePie cache time.
+		add_filter( 'wp_feed_cache_transient_lifetime', array( $this, 'modify_feed_cache' ) );
+
+		// Check the emergency alert feed for WSU.
+		$feed = fetch_feed( 'http://dev.alert.wsu.edu/alerts/?feed=rss2&cat=3' );
+
+		// Reset the default cache time.
+		remove_filter( 'wp_feed_cache_transient_lifetime', array( $this, 'modify_feed_cache' ) );
+
+		$current_alert = '';
+		$html = '';
+		if ( ! is_wp_error( $feed ) ) {
+			$feed_item_count = $feed->get_item_quantity( 1 );
+
+			if ( 0 !== $feed_item_count ) {
+				$feed_items = $feed->get_items( 0, $feed_item_count );
+
+				foreach( $feed_items as $feed_item ) {
+					$item_title = $feed_item->get_title();
+					$html .= $item_title;
+				}
+
+				$current_alert = '<div class="wsu-home-alert"><h1>WSU Alert</h1><a href="http://alert.wsu.edu">' . esc_html( $html ) . '</a></div>';
+			}
+		}
+
+		wp_cache_set( 'wsu-home-alert', $current_alert, 'wsu-home', 60 );
+
+		return $current_alert;
+	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
 
@@ -284,4 +329,9 @@ function wsu_home_get_menu( $menu_args ) {
 function wsu_home_is_site( $name ) {
 	global $wsu_home_theme;
 	return $wsu_home_theme->is_wsu_site( $name );
+}
+
+function wsu_home_get_alert() {
+	global $wsu_home_theme;
+	return $wsu_home_theme->display_alert();
 }
