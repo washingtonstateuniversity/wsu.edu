@@ -1875,3 +1875,12 @@ figure {
 		display: none;
 	}
 }
+
+@media screen and (max-width: 900px){
+	.fixedbg {
+		background-attachment: scroll;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
