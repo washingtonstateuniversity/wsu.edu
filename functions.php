@@ -66,7 +66,7 @@ class WSU_Home_Theme {
 		$site = get_blog_details();
 
 		$home_path = apply_filters( 'wsu_home_path', '/' );
-		$features_path = apply_filters( 'wsu_home_feature_path', '/features/' );
+		$features_path = apply_filters( 'wsu_home_feature_path', '/125/' );
 
 		if ( 'wsu-home' === $name && $home_path === $site->path && is_front_page() ) {
 			return true;
