@@ -1,0 +1,502 @@
+/** --- LIFE CSS --- */
+
+/*---------------------------- type ----------------------------*/
+html body.page main {
+	font-family: 'proxima-nova', "Lucida Sans", sans-serif;
+	font-weight: 400;
+	background-color: #fff;
+	color: #2a3033;
+}
+
+.section-life main ul, .section-life main ol, .section-about main ul, .section-about main ol, .section-admission main ul, .section-admission main ol, .section-academics main ul, .section-academics main ol, .section-research main ul, .section-research main ol, .section-services main ol, .section-services main ul {
+	font-size: 1.2em;
+}
+
+.section-life h3 a, .section-about h3 a, .section-admission h3 a, .section-academics h3 a, .section-research h3 a {
+	color: #2a3033;
+}
+
+.section-life h4, .section-about h4, .section-admission h4, .section-academics h4, .section-research h4 {
+	text-transform: none;
+}
+
+.section-life h5, .section-about h5, .section-admission h5, .section-academics h5, .section-research h5 {
+	color: #2a3033;
+	font-weight: 500;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	letter-spacing: 1.25px;
+	line-height: .85em;
+	margin: 1em 0 .25em;
+}
+
+.section-life main .textcenter, .section-about main .textcenter, .section-admission main .textcenter, .section-academics main h1, .section-research main .textcenter {
+	text-align: center;
+}
+
+.subsection_gray_background {
+	background-color: #eff0f1;
+}
+
+.subsection_white {
+	background-color: white;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+h2.subheader {
+	color: #2a3033;
+	font-weight: 300;
+	font-size: 3em;
+	margin: .5em 0;
+	line-height: 1em;
+	padding-bottom: 0;
+}
+
+p.numbers {
+	color: #981e32;
+	font-size: 4em;
+	font-weight: 600;
+	padding: 10px;
+	vertical-align: center;
+	line-height: .75em;
+}
+
+h1.numbers {
+	color: white;
+	font-size: 4em;
+	background-color: #981e32;
+	font-weight: 700;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 1.25rem 0 0;
+}
+
+p.subnumber {
+	color: #2a3033;
+	font-weight: 400;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 1.4em;
+	margin: 0 0 1em;
+}
+
+p.number-border {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #981e32;
+	padding: 5px;
+	color: #981e32;
+	font-size: 2em;
+	font-weight: 400;
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+	width: 45px;
+}
+
+h2.image_section_header {
+	color: #981e32;
+	font-weight: 400;
+	letter-spacing: 0;
+	font-size: 2.5em;
+	line-height: 5.5em;
+	background-color: white;
+	padding: .2em;
+	display: inline;
+}
+
+.section-about .tablepress tr td {
+	padding-left: 15px;
+	width: 25%;
+}
+
+.section-about .tablepress tr td.column-2 {
+	text-align: right;
+}
+
+.section-about table.tablepress {
+	font-size: 1.25em;
+	font-weight: 300;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*------------Images----------------*/
+.full-img img {
+	width: 100%;
+}
+
+/*------------subsection featured images------------*/
+.visit-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Screen-Shot-2015-03-18-at-11.05.46-AM.png);
+	height: 260px;
+	background-position: center;
+	text-align: center;
+}
+
+.community-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Community-SectionHeader1.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center middle;
+	text-align: center;
+}
+
+.activelife-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Recreation-Active.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center middle;
+	text-align: center;
+}
+
+.grandchallenge-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/research4.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center middle;
+	text-align: center;
+}
+
+.careersprof-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Careers-Professionals.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.careersstud-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Careers-StudentJobs1.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}
+
+.showscampus-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Shows-OnCampus1.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.showsoffcampus-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Shows-OffCampus.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.buytix-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Tickets-BuyTickets3.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center middle;
+	text-align: center;
+}
+
+.shoponline-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Shopping-Online.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}
+
+.difference-research-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/WSUDifference-Research.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}
+
+.difference-statewide-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/WSUDifference-GiveBack.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.excellence-statewide-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/AcademicExcellence-Nursing.jpg);
+	height: 260px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}
+
+div.pad-top {
+	padding-top: 2em;
+}
+
+div.pad-bottom {
+	padding-bottom: 2em;
+}
+
+/*---- CHARLES CSS ---- */
+.section-life main figure, .section-about main figure, .section-admission main figure, .section-academics main figure, .section-research main figure, .section-services main figure {
+	box-sizing: inherit;
+}
+
+.section-life main figure figcaption, .section-about main figure figcaption, .section-admission main figure figcaption, .section-academics main figure figcaption, .section-research main figure figcaption, .section-services main figure figcaption {
+	border: 0;
+	font-style: italic;
+	color: #464e54;
+	text-align: left;
+	box-sizing: inherit;
+	padding: 12px;
+	line-height: 1.2em;
+	border-left: 2px solid #EFF0F1;
+}
+
+.crimson-bordered {
+	border: 2px solid #981e32;
+	border-left: 0;
+	border-right: 0;
+}
+
+.crimson-border-top {
+	border: 2px solid #981e32;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+.crimson-border-bottom {
+	border: 2px solid #981e32;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+}
+
+.two.qlinks {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.qlinks h3, .qlinks h5 {
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.qlinks ul {
+	text-align: center;
+}
+
+.qlinks ul li {
+	border-bottom: 1px solid #d5d5d5;
+	list-style: none;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.qlinks ul li:last-of-type {
+	border-bottom: 0;
+}
+
+.qlinks ul li a {
+	color: #4d4d4d;
+	box-shadow: none;
+	border-bottom: 0;
+	text-decoration: none;
+}
+
+.qlinks ul li a:hover {
+	background-color: #E4E4E4;
+	color: #981e32;
+}
+
+.qfactslead h2 {
+	color: #2a3033;
+	font-size: 1.4em;
+	line-height: 1.6em;
+}
+
+.section-life header.main-header, .section-about header.main-header, .section-admission header.main-header, .section-academics header.main-header, .section-research header.main-header, .section-services header.main-header {
+	background-size: cover;
+	background-position: bottom center;
+	background-repeat: none;
+	height: 387px;
+}
+
+.section-life header.main-header .header-group:not(.unset), .section-about header.main-header .header-group:not(.unset), .section-admission header.main-header .header-group:not(.unset), .section-academics header.main-header .header-group:not(.unset), .section-research header.main-header .header-group:not(.unset), .section-services header.main-header .header-group:not(.unset) {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1474px;
+	max-width: 100%;
+	padding: 0;
+}
+
+.section-life .main-header sup.sup-header, .section-about .main-header sup.sup-header, .section-admission .main-header sup.sup-header, .section-academics .main-header sup.sup-header, .section-research .main-header sup.sup-header, .section-services .main-header sup.sup-header {
+	display: none;
+}
+
+.section-life .main-header sub.sub-header, .section-about .main-header sub.sub-header, .section-admission .main-header sub.sub-header, .section-academics .main-header sub.sub-header, .section-research .main-header sub.sub-header, .section-services .main-header sub.sub-header {
+	text-align: center;
+	background-color: #981e32;
+	font-size: 4em;
+	font-weight: 700;
+	text-transform: uppercase;
+	max-width: 70%;
+	padding: 5px 2rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.section-life main .bottom-figures a.home-link-wrap div {
+	width: 100%;
+	height: 296px;
+	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.page-overview main .bottom-figures a.home-link-wrap div {
+	height: 408px;
+}
+
+.section-life main .bottom-figures a div div:hover {
+	transition: background-color ease .5s;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.section-life main .bottom-figures a.home-link-wrap div div .home-subtitle {
+	display: none;
+}
+
+.section-life main .bottom-figures a {
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+.section-life main .bottom-figures a div div h2 {
+	width: 90%;
+	text-align: center;
+	color: white;
+	font-weight: 700;
+	text-transform: uppercase;
+	position: absolute;
+	top: calc(50% - .75rem);
+	left: 50%;
+	margin-left: -45%;
+	vertical-align: text-top;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.5rem;
+	background: rgba(0,0,0,.2);
+	transition: background .3s ease;
+}
+
+.section-life main .bottom-figures a div div:hover h2 {
+	background: rgba(0,0,0,0);
+}
+
+.section-life.page-history main section {
+	border-bottom: 1px solid #eff0f1;
+}
+
+.section-life.page-history main section .column figure img, .section-life.page-sightseeing main section figure img, .section-life.page-sports main section figure img, .section-life.page-restaurants-shopping main section figure img {
+	display: block;
+}
+
+.section-life.page-history main h3 {
+	padding-bottom: 1em;
+}
+
+.section-life.page-history main h4 {
+	margin-top: 0;
+}
+
+.column.one.split-figure {
+	padding: 0 0 0 .5rem;
+}
+
+.column.two.split-figure {
+	padding: 0 .5rem 0 0;
+}
+
+.section-life.page-sightseeing main section.row.halves .split-figure figure, .section-life.page-restaurants-shopping main section.row.halves .split-figure figure {
+	width: 50% !important;
+	float: left;
+	box-sizing: inherit;
+	padding: 0 .5rem;
+}
+
+.section-life.page-sightseeing main section.row.halves .split-figure figure:last-of-type, .section-life.page-restaurants-shopping main section.row.halves .split-figure figure:last-of-type {
+	margin-right: 0;
+}
+
+.section-life.page-sightseeing main section.row.halves .split-figure figure img,.section-life.page-restaurants-shopping main section.row.halves .split-figure figure img {
+	width: 100%;
+}
+
+blockquote {
+	font-family: 'proxima-nova', "Lucida Sans", sans-serif;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	border: 1px solid #5e6a71;
+	border-left: 0;
+	border-right: 0;
+	color: #5e6a71;
+	font-style: italic;
+	font-weight: 300;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+blockquote p {
+	padding-bottom: 0;
+	font-size: 1.1rem;
+}
+
+blockquote p + p {
+	font-size: .9rem;
+	padding-top: 12px;
+}
+
+@media (max-width: 791px) {
+	.bottom-figures.pad-top .column {
+		padding-top: 0;
+	}
+
+	.section-life .main-header sub.sub-header, .section-about .main-header sub.sub-header, .section-admission .main-header sub.sub-header, .section-academics .main-header sub.sub-header, .section-research .main-header sub.sub-header, .section-services .main-header sub.sub-header {
+		font-size: 6vmin;
+	}
+
+	.section-life .main-header sub.sub-header, .section-about .main-header sub.sub-header, .section-admission .main-header sub.sub-header, .section-academics .main-header sub.sub-header, .section-research .main-header sub.sub-header, .section-services .main-header sub.sub-header {
+		width: 100%;
+	}
+}

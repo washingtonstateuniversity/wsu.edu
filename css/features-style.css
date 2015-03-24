@@ -1,0 +1,1068 @@
+/*
+Welcome to custom CSS for the WSU Spine Theme!
+
+You may delete these comments and get started with your custom stylesheet.
+Before doing so, please review the WSU web standards:
+
+http://brand.wsu.edu/media/web/web-standards/
+
+As a general rule of thumb, if your styles target aspects of the spine
+(#spine), that's against standard, whereas if you're styling elsewhere on
+the page, it's all good.
+*/
+/*----------spine overrides for spineless----------*/
+body {
+	color: #464e54;
+}
+
+main {
+	background: #fff;
+	margin-left: 0;
+	width: 100% !important;
+}
+
+#jacket {
+	border-top: 5px solid #981e32;
+}
+
+#spine {
+	display: none;
+}
+
+.depth-1 section.row {
+	margin: 0 auto;
+	max-width: 650px !important;
+}
+
+section.row.full {
+	max-width: 100% !important;
+}
+
+/*section.row.full .column {
+	padding: 0 !important;
+}*/
+.pad-top .column,
+.padded-top {
+	padding-top: 0;
+}
+
+/* Home overrides */
+.campus-links-hide {
+	display: none;
+}
+
+.depth-1 .header-search-wrapper section.row {
+	max-width: 1386px !important;
+}
+
+/*---------- Features home ---------*/
+.main-feature-top {
+	text-align: center;
+}
+
+.main-feature-top figure {
+	background: #981e32;
+	width: 3rem;
+	padding: 2rem .5rem .5rem;
+	margin: 0 auto;
+}
+
+.main-feature-top .hero {
+	margin-top: 4rem;
+}
+
+.main-feature-top h2 {
+	margin-top: 0;
+	font-size: 2rem;
+}
+
+section.home-text {
+	max-width: 980px !important;
+	margin-top: 3rem;
+	margin-bottom: 8rem;
+}
+
+section.home-text .column {
+	padding: 0 2rem;
+}
+
+.home-text img.wsu125 {
+	width: 220px;
+	margin-top: 2rem;
+}
+
+.row.features-container:nth-child(even) .column.one {
+	float: right;
+}
+
+.fluid .row.side-right .column.one,
+.fluid .row.side-left .column.two {
+	width: 60%;
+}
+
+.fluid .row.side-left .column.one,
+.fluid .row.side-right .column.two {
+	width: 40%;
+}
+
+.home section.features-container.row {
+	background: #e4e4e4;
+	margin-bottom: 4rem;
+	max-width: 1188px !important;
+}
+
+.features-container h2 {
+	font-size: 4vw;
+	border-left: 2vw solid #981e32;
+	font-weight: 800;
+	text-transform: uppercase;
+	padding: 0 0 0 1vw;
+	line-height: .9;
+	margin-top: 4rem;
+}
+
+.features-container .home-subtitle {
+	font-size: .8rem;
+	padding: 0 1rem 0 3vw;
+	margin-bottom: 2rem;
+}
+
+.features-container .home-cta a,
+.features-container .home-cta a:hover {
+	color: #981e32;
+	border: none;
+	box-shadow: none;
+	padding: .5rem 1rem;
+	border: 1px solid #981e32;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-left: 3vw;
+}
+
+.home-headline-nav {
+	display: none;
+}
+
+.features-container figure {
+	line-height: 0;
+}
+
+/*--------- main header ---------*/
+/*---------- top header ----------*/
+/*///////*/
+.categorized-feature-impact .main-header.wsu-home-navigation {
+	background-image: none;
+	height: auto;
+	min-height: 0;
+}
+
+.path-features .header-shelf-wrapper {
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.path-features .header-shelf {
+	padding: 0 1rem;
+}
+
+.home .fluid .header-shelf.row.triptych .column.one {
+	border: none;
+}
+
+.home .fluid .main-header .row.triptych.header-shelf .column.two,
+.home .fluid .main-header .row.triptych.header-shelf .column.three,
+.path-features .fluid .main-header .row.triptych.header-shelf .column.three {
+	padding: 1.1rem 1.5rem 1rem;
+	position: relative;
+	left: inherit;
+	bottom: 0;
+}
+
+.path-features .fluid .main-header .row.triptych.header-shelf .column.three {
+	padding: 1rem 1.5rem;
+}
+
+.path-features .wsu-logo {
+	background: #981e32 url(https://lilley.wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat center center;
+	background-size: 35px;
+	width: 40px;
+	padding: 1.75rem 0;
+	transition: background .3s ease;
+}
+
+.path-features .wsu-logo:hover {
+	background-color: #ab0d24;
+}
+
+.wsu-logo a {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+}
+
+.wsu-home-navigation section.row.header-shelf,
+.wsu-home-navigation section.row.header-drawer {
+	max-width: 1188px !important;
+	width: 100% !important;
+}
+
+.home .fluid .main-header .row.triptych .column.three {
+	border: none;
+}
+
+.search-label {
+	position: relative;
+	bottom: auto;
+	padding: 0;
+}
+
+.path-features .fluid .row.triptych .column.two.wsu-mega-nav-labels,
+.home .path-features .fluid .row.triptych .column.two.wsu-mega-nav-labels,
+.home .fluid .row.triptych .column.two,
+.path-features .fluid .row.triptych .column.two {
+	width: 65%;
+}
+
+.path-features .fluid .row.triptych .column.three,
+.home .fluid .main-header .row.triptych .column.three {
+	width: 10%;
+}
+
+.path-features header.main-header.wsu-home-navigation {
+	margin-top: 0;
+}
+
+.wsu-logo img {
+	display: none;
+}
+
+.top-level-links-label {
+	display: none;
+}
+
+.header-shelf .column.three {
+	position: relative;
+}
+
+.column.two.wsu-mega-nav-labels,
+.header-drawer .column > div {
+	padding: 1.1rem 1.5rem 1rem;
+}
+
+.header-drawer .column > div {
+	padding-top: 1.5rem;
+}
+
+/*----------header section----------*/
+.categorized-feature-impact header.main-header {
+	/*background: url(/wp-content/uploads/sites/672/2015/03/floricel-main.jpg) no-repeat;*/
+	background-size: cover;
+	background-position: right center;
+	background-repeat: no-repeat;
+	min-height: 600px;
+	margin-top: 0;
+}
+
+.main-header sub:not(.unset) *,
+.main-header sub:not(.unset) a,
+.main-header sup:not(.unset) a {
+	font-size: inherit;
+}
+
+.main-header .header-group:not(.unset) h1 {
+	border-left: 2.5rem solid #981e32;
+	font-size: 5rem;
+	text-transform: uppercase;
+	font-family: proxima-nova;
+	font-weight: 800;
+	padding: 0 0 0 1rem;
+	top: 25%;
+	bottom: inherit;
+	margin: 0;
+	color: #fff;
+	line-height: .85;
+}
+
+.categorized-feature-impact .page-subtitle {
+	font-family: proxima-nova;
+	margin-top: 2rem;
+	padding-left: 3.7rem;
+	width: 40%;
+	color: #fff;
+	font-weight: 300;
+	font-size: 1.35rem;
+	line-height: 1.75;
+}
+
+.categorized-feature-impact .main-header .header-group {
+	position: absolute;
+	top: 25%;
+	max-width: 100%;
+	padding: 0;
+}
+
+.main-header sup:not(.unset) {
+	font-size: inherit;
+}
+
+.main-header sub:not(.unset) {
+	font-size: inherit;
+}
+
+.padded-bottom.short {
+	padding-bottom: 0;
+}
+
+.campaign-mark {
+	text-align: center;
+	border-top: 2rem solid #e4e4e4;
+	padding: 1.5rem 0 1rem;
+	background: #fff;
+	max-width: 100% !important;
+}
+
+/*----------typography----------*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: proxima-nova;
+}
+
+h1 {
+	color: #2a3033;
+	font-size: 4em;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 2.5rem 0 0;
+}
+
+.hero {
+	font-size: 7em;
+	font-weight: 800;
+	line-height: .85em;
+	text-transform: uppercase;
+	color: #2a3033;
+	margin-top: 1em;
+}
+
+h2 {
+	font-size: 3em;
+	color: #981e32;
+	margin: 2.5rem 0 1.5rem;
+	font-weight: 300;
+}
+
+header h2 {
+	margin-top: 0;
+}
+
+h3 {
+	color: #2a3033;
+	font-weight: 400;
+	font-size: 1.75em;
+	margin: 1em 0 .5em;
+	line-height: 1em;
+}
+
+h2 + h3 {
+	margin-top: 0;
+}
+
+h4,
+h5 {
+	color: #981e32;
+	font-weight: 700;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: .85em;
+	margin: 1em 0 .25em;
+}
+
+h5 {
+	color: #2a3033;
+}
+
+h6 {
+	font-weight: 700;
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+p {
+	font-family: proxima-nova;
+	font-weight: 400;
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+.intro {
+	font-size: 1.7em;
+	line-height: 1.5em;
+	font-weight: 300;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.highlight {
+	color: #fff;
+	background-color: #981e32;
+	padding: 2px;
+}
+
+blockquote {
+	font-family: proxima-nova;
+}
+
+/*---------------------------- links ----------------------------*/
+main a {
+	color: #981e32;
+	border-bottom: 3px solid #dddddd;
+	box-shadow: inset 0 -5px 0 #dddddd;
+	transition: background .5s cubic-bezier(.33,.66,.66,1);
+	transition: border 1s ease (.33,.66,.66,1);
+}
+
+main a:hover {
+	color: #981e32;
+	background-color: #f2f2f2;
+	border-bottom: 3px solid #f2f2f2;
+	box-shadow: inset 0 -5px 0 #f2f2f2;
+	padding: 2px 0 0;
+}
+
+/*----------main content----------*/
+.main-header strong {
+	font-weight: 300;
+	background: #981e32;
+	background: rgba(152,30,50,0.9);
+	box-shadow: 5px 0 0 rgba(152,30,50,0.9), -5px 0 0 rgba(152,30,50,0.9);
+	padding: 2px 1px;
+}
+
+section.full .column {
+	width: 100%;
+}
+
+.depth-1 section.wider {
+	max-width: 1188px !important;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.wider blockquote {
+	padding: 0;
+}
+
+.wider blockquote p {
+	font-weight: 300;
+	font-size: 2rem;
+	line-height: 1.5;
+	text-align: center;
+	padding: 4rem 0;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.wider blockquote p:before,
+.wider blockquote p:after {
+	border-top: 1px solid #ddd;
+	content: "";
+	display: block;
+	width: 33%;
+	margin: 3rem auto;
+}
+
+div.staticbg + .wider blockquote p:before {
+	/*display: none;*/
+}
+
+section.bodycopy {
+	margin: 0 30% 0 20%;
+	width: 50% !important;
+}
+
+.wider h2,
+.staticbg h2 {
+	display: none;
+}
+
+/*.biglove.family {
+	background: url("https://www.apple.com/v/your-verse/organizing-a-movement/a/images/movement_bg_bottom_foreground.png") center bottom no-repeat;
+	padding-bottom: 900px;
+}*/
+blockquote.pullquote {
+	border-left: 1px solid #ddd;
+	padding: 0 0 0 1rem;
+	margin: 1rem -35% 1rem 2rem;
+	float: right;
+	box-sizing: border-box;
+	color: #981e32;
+	font-size: 1.6em;
+	font-weight: 300;
+	line-height: 1.5em;
+	position: relative;
+	width: 70%;
+}
+
+blockquote.pullquote p {
+	padding: 0;
+	font-weight: 300;
+}
+
+div.staticbg + section.bodycopy {
+	margin-top: 8rem;
+}
+
+section.bodycopy + div.staticbg {
+	margin-top: 8rem;
+}
+
+section.row.bodycopy .column img {
+	margin: 2rem -20% 2rem 0;
+	width: 120%;
+	max-width: 120%;
+}
+
+/*----------static bg slides----------*/
+.staticbg {
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 500px;
+}
+
+.fg-opportunity {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Floricel-grandfather.jpg);
+}
+
+.fg-transition {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Floricel-grandfather.jpg);
+}
+
+.fg-family {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Terrell-Dome.jpg);
+}
+
+.fg-discovery {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/gonzalez-gray1.jpg);
+}
+
+.fg-next {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Floricel-atrium.jpg);
+}
+
+.hv-curiosity {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-Sleep-lab.jpg);
+}
+
+.hv-foundational {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-clip2.jpg);
+}
+
+.hv-impact {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-lab2.jpg);
+}
+
+.hv-cost {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-withAssistant.jpg);
+}
+
+.hv-rewards {
+	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-lab1.jpg);
+}
+
+/*----------image----------*/
+section.row.bodycopy .column .imgoutright {
+	float: right;
+	width: 70%;
+	margin: 1rem -35% 1rem 2rem;
+}
+
+/*----------media players----------*/
+.videoouterwrap {
+	float: right;
+	width: 70%;
+	margin: .5rem -35% 1rem 2rem;
+}
+
+.videowrapside {
+	position: relative;
+	padding-bottom: 56.25%;
+	/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoouterwrap,
+.audiowrap {
+	padding: 0 0 0 1rem;
+}
+
+.videowrapside iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.audiowrap {
+	float: right;
+	margin: .5rem -25% 1rem 1rem;
+	width: 50%;
+}
+
+.sidebar-content-wrap {
+	float: right;
+	width: 50%;
+	margin: 1rem -30% 1rem 2rem;
+	border-left: 5px solid #ddd;
+	padding: 1rem 2rem;
+	font-size: .75rem;
+}
+
+main .mejs-container a {
+	color: inherit;
+	border-bottom: none;
+	box-shadow: none;
+	transition: none;
+	transition: none;
+}
+
+main .mejs-container a:hover {
+	color: inherit;
+	background-color: inherit;
+	border-bottom: none;
+	box-shadow: none;
+	padding: 0;
+}
+
+video#bigend {
+	width: 100%;
+	height: auto;
+	background: transparent url('/wp-content/uploads/sites/672/2015/03/Floricel-atrium.jpg') no-repeat 0 0;
+	background-size: cover;
+	margin-top: 4rem;
+}
+
+.photocall {
+	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/photo.png) no-repeat center left;
+	transition: background .5s cubic-bezier(.33,.66,.66,1);
+	padding: 2px 2px 2px 25px;
+}
+
+.photocall:hover {
+	background: #ebebeb url(/features/wp-content/uploads/sites/672/2015/03/photo.png) no-repeat center lef;
+}
+
+.videocall {
+	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/video.png) no-repeat center left;
+	transition: background .5s linear(.33,.66,.66,1);
+	padding: 2px 2px 2px 25px;
+}
+
+.videocall:hover {
+	background: #ebebeb url(/features/wp-content/uploads/sites/672/2015/03/video.png) no-repeat center left;
+}
+
+.audiocall {
+	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
+	transition: background .5s cubic-bezier(.33,.66,.66,1);
+	padding: 2px 2px 2px 25px;
+}
+
+.audioocall:hover {
+	background: #ebebeb url(/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
+}
+
+.audiocall:hover, .photocall:hover, .videocall:hover {
+	cursor: pointer;
+}
+
+.mejs-container,
+.mejs-embed,
+.mejs-embed body,
+.mejs-container .mejs-controls {
+	background: #929292 !important;
+}
+
+/*---------- Campaign Mark ----------*/
+main .campaign-mark a,
+main .campaign-mark a:hover {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	background: none;
+}
+
+/*--------- Fat Footer ---------*/
+.fat-footer-menu {
+	background: #e4e4e4 url(https://lilley.wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat;
+	background-size: 15%;
+	background-position: 95% 80%;
+	padding: 3rem 0;
+	font-size: .8rem;
+	max-width: 100% !important;
+}
+
+/*.fat-footer-menu {
+	margin-top: 3rem;
+}*/
+.home .fat-footer-menu {
+	margin-top: 0;
+}
+
+.fat-footer-menu ul {
+	font-size: .8rem !important;
+}
+
+.fat-footer-menu .column.one {
+	float: none;
+	width: 1386px !important;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 2rem;
+}
+
+#fat-footer > ul {
+	max-width: 1188px;
+	margin: 0 auto;
+}
+
+#fat-footer ul {
+	list-style: none;
+	padding: 0;
+}
+
+.nav-section-head > a:first-child {
+	font-weight: 700;
+	cursor: default;
+	text-transform: uppercase;
+}
+
+.nav-section-head {
+	margin: 1rem 0 .25rem;
+}
+
+.sub-menu {
+	margin-top: .5rem;
+}
+
+.ff-125 {
+	margin-top: 1.25rem;
+}
+
+#fat-footer,
+#fat-footer a {
+	color: #2a3033;
+}
+
+#fat-footer,
+#fat-footer .sub-menu a:hover {
+	color: #981e32;
+}
+
+#fat-footer .sub-menu {
+	padding-right: .3rem;
+}
+
+.ff-alumni,
+.ff-index,
+.ff-services,
+.ff-faculty,
+.ff-athletics,
+.ff-policies {
+	width: 25%;
+	float: left;
+}
+
+/* footer bar */
+.footer-bar {
+	background: #981e32;
+	color: #fff;
+	font-size: .7rem;
+	text-align: right;
+}
+
+.footer-bar .column.one {
+	padding: .5rem 2rem;
+}
+
+.footer-bar .column.one div {
+	display: inline-block;
+	margin: 0 0 0 2rem;
+}
+
+.footer-contact-us a {
+	color: #fff;
+	text-transform: uppercase;
+}
+
+/* - closing Xs - */
+.close-header-drawer,
+.close-header-search,
+.campus-links-close {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 300;
+	cursor: pointer;
+	transition: color .3s ease;
+}
+
+.campus-links-close {
+	top: 2rem;
+	bottom: inherit;
+	right: 2rem;
+	font-size: 4rem;
+}
+
+@media screen and (min-width: 1188px) {
+	.features-container h2 {
+		font-size: 48px;
+		border-left: 23px solid #981e32;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.main-header .header-group:not(.unset) h1 {
+		font-size: 8vw;
+		border-left: 6vw solid #981e32;
+	}
+}
+
+@media screen and (max-width: 989px) {
+	#binder.fluid main {
+		margin-left: 0;
+	}
+
+	.home .fluid .header-shelf.row.triptych .column.one,
+	.home .fluid .header-shelf.row.triptych .column.three,
+	.fluid .row.triptych .column,
+	section.single.triptych.row.header-drawer:before {
+		width: 15%;
+	}
+
+	.path-features .fluid .row.triptych .column.two.wsu-mega-nav-labels,
+	.home .path-features .fluid .row.triptych .column.two.wsu-mega-nav-labels,
+	.home .fluid .row.triptych .column.two,
+	.path-features .fluid .row.triptych .column.two {
+		width: 70%;
+	}
+
+	.mega-menu-labels-wrapper > ul > li > a {
+		font-size: .8rem;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.staticbg {
+		background-attachment: scroll;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	.fluid .row.side-right .column.one,
+	.fluid .row.side-left .column.two,
+	.fluid .row.side-left .column.one,
+	.fluid .row.side-right .column.two {
+		width: 100%;
+	}
+
+	.row.features-container:nth-child(even) .column.one {
+		float: none;
+	}
+
+	.features-container img {
+		width: 100%;
+	}
+
+	.home-cta {
+		margin-bottom: 2rem;
+	}
+
+	.videoouterwrap {
+		width: 120%;
+		margin: 2rem -10%;
+	}
+
+	.audiowrap {
+		margin: 1rem;
+		width: 50%;
+	}
+
+	.videoouterwrap,
+	.audiowrap {
+		padding: 0;
+		border-left: none;
+	}
+
+	blockquote.pullquote {
+		padding: 1em;
+		margin: 2rem 1rem;
+		width: 100%;
+	}
+
+	.wider blockquote p {
+		padding: 2rem 0;
+		width: 90%;
+	}
+
+	section.bodycopy {
+		margin: 0 15%;
+		width: 70% !important;
+	}
+}
+
+@media screen and (max-width: 791px) {
+	#binder.fluid main,
+	#binder.hybrid main {
+		margin-top: 0;
+	}
+
+	.hero {
+		font-size: 12vw;
+	}
+
+	.mega-menu-labels-wrapper > ul > li > a {
+		font-size: .7rem;
+	}
+
+	.path-features .fluid .row.triptych .column.two.wsu-mega-nav-labels,
+	.home .path-features .fluid .row.triptych .column.two.wsu-mega-nav-labels,
+	.home .fluid .row.triptych .column.two,
+	.path-features .fluid .row.triptych .column.two {
+		width: 85%;
+	}
+
+	.path-features .fluid .main-header .row.triptych.header-shelf .column.three,
+	.signature-menu-wrapper ul {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#binder.fluid main,
+	#binder.hybrid main {
+		margin-top: 45px;
+	}
+
+	.path-features .wsu-home-navigation {
+		display: none;
+	}
+
+	.path-features #spine {
+		display: block;
+	}
+
+	.path-features .spine-header {
+		border-bottom: 1px solid #e4e4e4;
+	}
+}
+
+@media screen and (max-width: 693px) {
+	.fluid .row.side-right.feature-photo-left .column.one,
+	.fluid .row.side-left.feature-photo-right .column.two,
+	.fluid .row.side-left.feature-photo-right .column.one,
+	.fluid .row.side-right.feature-photo-left .column.two {
+		width: 100%;
+	}
+
+	.home-cta {
+		margin-bottom: 2rem;
+	}
+
+	.features-container h2 {
+		font-size: 8vw;
+		border-left: 4vw solid #981e32;
+	}
+
+	.categorized-feature-impact header.main-header {
+		background-position: center center;
+		min-height: 400px;
+	}
+
+	.categorized-feature-impact .page-subtitle {
+		margin-top: 2rem;
+		padding-left: calc(6vw + 1rem);
+		width: 60%;
+		color: #fff;
+		font-weight: 400;
+		font-size: 1.1rem;
+		line-height: 1.5;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	h2 {
+		font-size: 2em;
+	}
+
+	.staticbg {
+		min-height: 250px;
+	}
+
+	.videoouterwrap {
+		width: 100%;
+		margin: 2rem 0;
+	}
+
+	.audiowrap {
+		float: none;
+		margin: 2rem 0;
+		width: 100%;
+	}
+
+	blockquote.pullquote {
+		padding: 1em;
+		margin: 2rem 1rem;
+		width: 100%;
+	}
+
+	.wider blockquote p {
+		font-size: 1.5rem;
+		padding: 2rem 0;
+		width: 100%;
+	}
+
+	section.bodycopy {
+		margin: 0;
+		width: 100% !important;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.categorized-feature-impact header.main-header {
+		min-height: 400px;
+	}
+
+	.categorized-feature-impact header.main-header > div {
+		bottom: 15%;
+		top: inherit;
+	}
+
+	h1.page-headline {
+		font-size: 10vw;
+	}
+
+	.page-cta,
+	.page-headline-nav,
+	.fat-footer-menu {
+		display: none;
+	}
+}
+
+#builder-section-1426880416715 {
+	min-height: 400px;
+}
