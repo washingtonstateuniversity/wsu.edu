@@ -24,7 +24,6 @@ var wsuFOS = wsuFOS || {};
 
 		$('.home-headline-nav').on('click', function(evt) {
 			var id = false;
-			evt.preventDefault();
 
 			var $target = $(evt.target);
 
