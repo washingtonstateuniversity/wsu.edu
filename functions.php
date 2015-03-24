@@ -27,7 +27,7 @@ class WSU_Home_Theme {
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
 		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_source_element' ), 10 );
-		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10 );
+		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10, 4 );
 	}
 
 	/*
@@ -320,12 +320,12 @@ class WSU_Home_Theme {
 	 *
 	 * @return string
 	 */
-	public function set_home_title( $title ) {
+	public function set_home_title( $title, $site_part, $global_part, $view_title ) {
 		if ( $this->is_wsu_site( 'wsu-home' ) && is_front_page() ) {
 			return 'Washington State University';
 		}
 
-		return $title;
+		return $view_title . ' | Washington State University';
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
