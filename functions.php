@@ -12,7 +12,7 @@ class WSU_Home_Theme {
 	/**
 	 * @var string The version of the WSU Home theme for cache breaking.
 	 */
-	var $version = '0.7.2';
+	var $version = '0.7.3';
 
 	/**
 	 * Configure our default hooks.
