@@ -60,10 +60,21 @@ var wsuFOS = wsuFOS || {};
 		});
 	};
 
+	fix_no_svg_support = function() {
+		svg_imgs = $('.lt-ie9').find('img[src$=".svg"]');
+
+		if(svg_imgs.length){
+			$.each(svg_imgs,function(){
+				$(this).attr("src",$(this).attr("src").replace(".svg",".png"));
+			});
+		}
+	};
+
 	$(document).ready( function() {
 		populate_headline_meta();
 		populate_media_wall();
 		process_section_backgrounds();
+		fix_no_svg_support();
 	});
 
 	if ( undefined !== wsuNavigation.appView ) {
