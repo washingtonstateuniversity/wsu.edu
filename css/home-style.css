@@ -1156,7 +1156,7 @@ span.wsu-ac-day {
 
 /*---------- Athletics ---------*/
 .athletics {
-	background: #f2f2f2;
+	background: #fff;
 }
 
 .athletics .column.one {
@@ -1750,7 +1750,7 @@ figure {
 	}
 
 	.athletics {
-		background: #981e32;
+		background: #fff;
 	}
 
 	.athletics .action-img {
