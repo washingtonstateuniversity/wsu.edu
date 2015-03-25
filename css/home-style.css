@@ -1156,7 +1156,7 @@ span.wsu-ac-day {
 
 /*---------- Athletics ---------*/
 .athletics {
-	background: #f2f2f2;
+	background: #fff;
 }
 
 .athletics .column.one {
@@ -1227,7 +1227,7 @@ main .athletics li a:hover {
 
 .locationcap:before {
 	content: "";
-	background-image: url(/wp-content/uploads/sites/625/2015/03/cougarhead-map-marker.png);
+	background-image: url(../images/wsu-home-map-marker.png);
 	background-repeat: no-repeat;
 	position: relative;
 	display: block;
@@ -1437,7 +1437,7 @@ main .campaign-mark a:hover {
 
 /*--------- Fat Footer ---------*/
 .fat-footer-menu {
-	background: #e4e4e4 url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat;
+	background: #e4e4e4 url(../images/wsu-home-cougar-head-white.svg) no-repeat;
 	background-size: 15%;
 	background-position: 95% 80%;
 	padding: 3rem 0;
@@ -1750,7 +1750,7 @@ figure {
 	}
 
 	.athletics {
-		background: #981e32;
+		background: #fff;
 	}
 
 	.athletics .action-img {
