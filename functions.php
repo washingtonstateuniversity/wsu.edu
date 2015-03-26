@@ -29,6 +29,7 @@ class WSU_Home_Theme {
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_source_element' ), 10 );
 		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10, 4 );
 		add_action( 'wp_footer', array( $this, 'footer_pixels' ) );
+		add_filter( 'wsu_analytics_events_override', '__return_true' );
 	}
 
 	/*
