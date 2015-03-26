@@ -78,7 +78,7 @@
 				mode:"event",
 				category:"mega menu",
 				action:function(ele){
-					return $(".header-drawer-wrapper").is($('.header-drawer-wrapper-open')) ?"opening":"closing");
+					return $(".header-drawer-wrapper").is($('.header-drawer-wrapper-open')) ?"opening":"closing";
 				},	
 				label:"lable used",
 				overwrites:"true"
