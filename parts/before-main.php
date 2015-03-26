@@ -99,7 +99,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 				<?php echo wsu_home_get_menu( $header_mega_menu_args ); ?>
 			</div>
 			<div class="column three wsu-other-nav-placeholder">
-				<div class="top-level-links-label">WSU Campuses</div>
+				<div class="top-level-links-label">WSU Locations</div>
 				<div class="search-label">Search</div>
 			</div>
 		</section>
