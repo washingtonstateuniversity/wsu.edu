@@ -54,7 +54,7 @@ class WSU_Home_Theme {
 		);
 
 		foreach( $domains as $domain ) {
-			echo '<link rel="dns-prefetch" href="' . $domain . '">' . "\n";
+			echo '<link rel="dns-prefetch" href="//' . $domain . '">' . "\n";
 		}
 	}
 
