@@ -14,14 +14,17 @@ var wsuFOS = wsuFOS || {};
 				id = $this.data('id'),
 				url = $this.data('anchor'),
 				headline = $this.data('headline'),
-				date = $this.data('date');
+				date = $this.data('date'),
+				active_class = 'active-feature';
 
 			if ( false === populate_now ) {
 				date = 'Now';
 				populate_now = true;
+			} else {
+				active_class = '';
 			}
 
-			html += '<li data-id="' + id + '"><span class="home-headline-nav-headline"><a href="' + url + '">' + headline + '</a></span>' +
+			html += '<li data-id="' + id + '" class="' + active_class + '"><span class="home-headline-nav-headline"><a href="' + url + '">' + headline + '</a></span>' +
 					'<span class="home-headline-nav-date">' + date + '</span></li>';
 		});
 
@@ -33,10 +36,14 @@ var wsuFOS = wsuFOS || {};
 
 			var $target = $(evt.target);
 
+			$('.home-headline-nav').find('.active-feature').removeClass('active-feature');
+
 			if ( $target.is('li') ) {
 				id = $target.data('id');
+				$target.addClass('active-feature');
 			} else {
 				id = $target.parents('li').data('id');
+				$target.parents('li').addClass('active-feature');
 			}
 
 			if ( undefined === id ) {
