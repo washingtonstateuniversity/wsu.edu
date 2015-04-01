@@ -6,7 +6,8 @@ var wsuFOS = wsuFOS || {};
 	populate_headline_meta = function() {
 		var $features_container = $('.features-container'),
 			$home_headlines = $features_container.find('.home-headline'),
-			html = '<ul class="home-headline-nav">';
+			html = '<ul class="home-headline-nav">',
+			populate_now = false;
 
 		$home_headlines.each( function() {
 			var $this = $(this),
@@ -14,6 +15,11 @@ var wsuFOS = wsuFOS || {};
 				url = $this.data('anchor'),
 				headline = $this.data('headline'),
 				date = $this.data('date');
+
+			if ( false === populate_now ) {
+				date = 'Now';
+				populate_now = true;
+			}
 
 			html += '<li data-id="' + id + '"><span class="home-headline-nav-headline"><a href="' + url + '">' + headline + '</a></span>' +
 					'<span class="home-headline-nav-date">' + date + '</span></li>';
