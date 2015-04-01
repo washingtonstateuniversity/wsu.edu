@@ -6,16 +6,25 @@ var wsuFOS = wsuFOS || {};
 	populate_headline_meta = function() {
 		var $features_container = $('.features-container'),
 			$home_headlines = $features_container.find('.home-headline'),
-			html = '<ul class="home-headline-nav">';
+			html = '<ul class="home-headline-nav">',
+			populate_now = false;
 
 		$home_headlines.each( function() {
 			var $this = $(this),
 				id = $this.data('id'),
 				url = $this.data('anchor'),
 				headline = $this.data('headline'),
-				date = $this.data('date');
+				date = $this.data('date'),
+				active_class = 'active-feature';
 
-			html += '<li data-id="' + id + '"><span class="home-headline-nav-headline"><a href="' + url + '">' + headline + '</a></span>' +
+			if ( false === populate_now ) {
+				date = 'Now';
+				populate_now = true;
+			} else {
+				active_class = '';
+			}
+
+			html += '<li data-id="' + id + '" class="' + active_class + '"><span class="home-headline-nav-headline"><a href="' + url + '">' + headline + '</a></span>' +
 					'<span class="home-headline-nav-date">' + date + '</span></li>';
 		});
 
@@ -27,10 +36,14 @@ var wsuFOS = wsuFOS || {};
 
 			var $target = $(evt.target);
 
+			$('.home-headline-nav').find('.active-feature').removeClass('active-feature');
+
 			if ( $target.is('li') ) {
 				id = $target.data('id');
+				$target.addClass('active-feature');
 			} else {
 				id = $target.parents('li').data('id');
+				$target.parents('li').addClass('active-feature');
 			}
 
 			if ( undefined === id ) {
