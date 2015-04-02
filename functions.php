@@ -23,7 +23,6 @@ class WSU_Home_Theme {
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
 		add_action( 'wp_update_nav_menu', array( $this, 'update_nav_menu' ), 10, 1 );
-		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
 		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_source_element' ), 10 );
 		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10, 4 );
@@ -192,26 +191,6 @@ class WSU_Home_Theme {
 		wp_cache_set( $cache_key . $cache_incr, $nav_menu, 'wsu-home-nav', 3600 );
 
 		return $nav_menu;
-	}
-
-	/**
-	 * Filter the list item classes to manually add current and dogeared when necessary.
-	 *
-	 * @param array   $item_classes List of classes assigned to the list item.
-	 * @param WP_Post $page         Post object for the current page.
-	 *
-	 * @return array
-	 */
-	public function bu_navigation_filter_item_attrs( $item_classes, $page ) {
-		if ( in_array( 'current_page_item', $item_classes ) || in_array( 'current_page_parent', $item_classes ) ) {
-			$item_classes[] = 'current';
-		}
-
-		if ( is_singular() && get_the_ID() == $page->ID ) {
-			$item_classes[] = 'dogeared';
-		}
-
-		return $item_classes;
 	}
 
 	/**
