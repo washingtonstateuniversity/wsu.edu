@@ -6,8 +6,9 @@
 			element:"a[href*='wsu.edu']:not([href*='//wsu.edu']), .track.internal",
 			options:{
 				skip_internal:"true",
-				mode:"event,_link",
+				mode:"event",
 				category:"internal",
+				action:"click",
 				overwrites:"true"
 			}
 		},
@@ -22,6 +23,7 @@
 				skip_internal:"true",
 				overwrites:"true",
 				mode:"event",
+				action:"click",
 				category:"internal-query-intolerant"
 
 			}
@@ -35,6 +37,7 @@
 				skip_internal:"true",
 				overwrites:"true",
 				mode:"event",
+				action:"click",
 				category:"outbound-query-intolerant"
 
 			}
