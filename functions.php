@@ -68,6 +68,7 @@ class WSU_Home_Theme {
 
 		$home_path = apply_filters( 'wsu_home_path', '/' );
 		$features_path = apply_filters( 'wsu_home_feature_path', '/125/' );
+		$impact_path = apply_filters( 'wsu_home_impact_path', '/impact/' );
 
 		if ( 'wsu-home' === $name && $home_path === $site->path && is_front_page() ) {
 			return true;
@@ -78,6 +79,10 @@ class WSU_Home_Theme {
 		}
 
 		if ( 'wsu-features' === $name && $features_path === $site->path ) {
+			return true;
+		}
+
+		if ( 'wsu-impact' === $name && $impact_path === $site->path ) {
 			return true;
 		}
 
@@ -101,7 +106,7 @@ class WSU_Home_Theme {
 			}
 		}
 
-		if ( $this->is_wsu_site( 'wsu-features' ) ) {
+		if ( $this->is_wsu_site( 'wsu-features' ) || $this->is_wsu_site( 'wsu-impact' ) ) {
 			wp_enqueue_script( 'wsu-features', get_stylesheet_directory_uri() . '/js/wsu-feature.min.js', array( 'backbone' ), $this->script_version(), true );
 		}
 
@@ -119,7 +124,7 @@ class WSU_Home_Theme {
 			wp_enqueue_style( 'wsu-internal-style', get_stylesheet_directory_uri() . '/css/internal-style.css', array(), $this->script_version() );
 		}
 
-		if ( $this->is_wsu_site( 'wsu-features' ) ) {
+		if ( $this->is_wsu_site( 'wsu-features' ) || $this->is_wsu_site( 'wsu-impact' ) ) {
 			wp_enqueue_style( 'wsu-features-style', get_stylesheet_directory_uri() . '/css/features-style.css', array(), $this->script_version() );
 		}
 	}
@@ -287,6 +292,14 @@ class WSU_Home_Theme {
 
 		if ( $this->is_wsu_site( 'wsu-features' ) && ! is_front_page() ) {
 			return $view_title . ' 125 | Washington State University';
+		}
+
+		if ( $this->is_wsu_site( 'wsu-impact' ) && is_front_page() ) {
+			return 'Impact | Washington State University';
+		}
+
+		if ( $this->is_wsu_site( 'wsu-impact' ) && ! is_front_page() ) {
+			return $view_title . ' Impact | Washington State University';
 		}
 
 		return $view_title . ' Washington State University';
