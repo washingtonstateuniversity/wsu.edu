@@ -73,7 +73,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 
 	 * If this is the features site, we'd like to use the entire menu area from the
 	 * home site.
 	 */
-	if ( wsu_home_is_site( 'wsu-features' ) ) {
+	if ( $wsu_home_is_features ) {
 		$feature_site = wsuwp_get_current_site();
 		if ( isset( $feature_site->domain ) ) {
 			// Allow a local override for development.
