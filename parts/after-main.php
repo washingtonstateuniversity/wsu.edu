@@ -3,7 +3,7 @@
 /*
  * On the home page, we display fat footer navigation area on the bottom.
  */
-if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
+if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) ) :
 
 	$wsu_fat_footer_args = array(
 		'theme_location'  => 'fat-footer',
@@ -21,7 +21,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) ) :
 	 * If this is the features site, we'd like to use the entire menu area from the
 	 * home site.
 	 */
-	if ( wsu_home_is_site( 'wsu-features' ) ) {
+	if ( wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) ) {
 		$feature_site = wsuwp_get_current_site();
 		if ( isset( $feature_site->domain ) ) {
 			// Allow a local override for development.

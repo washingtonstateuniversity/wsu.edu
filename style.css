@@ -64,6 +64,7 @@ body {
 	height: auto;
 }
 
+.path-impact #spine,
 .path-125 #spine,
 .home #spine {
 	display: none;
