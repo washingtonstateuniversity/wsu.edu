@@ -2,10 +2,6 @@
 
 echo wsu_home_get_alert();
 
-if ( wsu_home_is_site( 'wsu-home' ) || wsu_home_is_site( 'wsu-internal' ) ) {
-	?><div id="power" style="background:#f6861f;padding:.5rem; width:100%;text-align:center;font-size:14px;color:#fff;"><strong>Please note:</strong> Some WSU websites will be offline from 6:30-9:30 pm (PDT) today. We apologize for the inconvenience.</div><?php
-}
-
 /*
  * On the home page, we display a series of navigation menus at the top.
  */
