@@ -22,11 +22,10 @@
 	var has_visited = C.get(cookie_name);
 
 	/**
-	 * Hide the overlay completely. We don't need to account for the overlay
-	 * reappearing at this time.
+	 * Remove `noscroll` from the body, hiding the overlay completely. We do not
+	 * need to account for the overlay reappearing at this time.
 	 */
 	function hide_overlay() {
-		jQuery('.overlay-wrapper').addClass('overlay-hidden');
 		jQuery('body').removeClass('noscroll');
 		C.set(cookie_name, 'dismissed', { 'expires': expiry_time } );
 	}

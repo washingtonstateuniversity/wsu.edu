@@ -5,8 +5,13 @@
 	position: fixed;
 }
 
+.overlay-wrapper {
+	display: none;
+}
+
 .noscroll .overlay-wrapper {
 	position: fixed;
+	display: block;
 	z-index: 19560301;
 	background-color: #2a3033;
 	top: 0;
@@ -27,8 +32,4 @@
 
 .noscroll .overlay-dismiss:hover {
 	cursor: pointer;
-}
-
-.overlay-hidden {
-	display: none;
 }
