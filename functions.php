@@ -2,7 +2,7 @@
 
 // Include the WSUWP Media Wall plugin.
 include_once( __DIR__ . '/includes/wsuwp-media-wall.php' );
-
+include_once( __DIR__ . '/includes/wsu-home-overlay.php' );
 include_once( __DIR__ . '/includes/fields-of-study.php' );
 include_once( __DIR__ . '/includes/academic-calendar.php' );
 include_once( __DIR__ . '/includes/wsuwp-map-embed.php' );
@@ -378,4 +378,9 @@ function wsu_home_is_site( $name ) {
 function wsu_home_get_alert() {
 	global $wsu_home_theme;
 	return $wsu_home_theme->display_alert();
+}
+
+function wsu_home_script_version() {
+	global $wsu_home_theme;
+	return $wsu_home_theme->script_version();
 }

@@ -1,0 +1,35 @@
+.noscroll {
+	overflow: hidden;
+	height: 100%;;
+	width: 100%;
+	position: fixed;
+}
+
+.overlay-wrapper {
+	display: none;
+}
+
+.noscroll .overlay-wrapper {
+	position: fixed;
+	display: block;
+	z-index: 19560301;
+	background-color: #2a3033;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow-y: scroll;
+}
+
+.noscroll .overlay-wrapper section {
+	position: static;
+}
+
+.noscroll .overlay-dismiss {
+	color: #fff;
+	font-size: 18px;
+}
+
+.noscroll .overlay-dismiss:hover {
+	cursor: pointer;
+}
