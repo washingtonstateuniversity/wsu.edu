@@ -14,7 +14,7 @@
 	 *
 	 * @type {number}
 	 */
-	var expiry_time = 90;
+	var expiry_time = 1;
 
 	/**
 	 * Check if the visitor has previously dismissed the overlay.
@@ -38,7 +38,7 @@
 		$('body').addClass('noscroll');
 
 		$(document).ready(function() {
-			$('.overlay-wrapper section').append('<div class="overlay-dismiss">Close</div>');
+			$('.overlay-wrapper section').append('<div class="overlay-dismiss">x</div>');
 			jQuery('.overlay-dismiss').on('click', function() {
 				hide_overlay();
 			})
