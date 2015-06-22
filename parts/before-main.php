@@ -127,7 +127,6 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 
 						<input name="cx" value="013644890599324097824:kbqgwamjoxq" type="hidden">
 						<input name="cof" value="FORID:11" type="hidden">
 						<input name="sa" value="Search" type="hidden">
-						<input name="fp" value="true" type="hidden">
 						<label for="header-search">Search</label>
 						<input type="text" value="" name="q" placeholder="Search" class="header-search-input" />
 					</form>
