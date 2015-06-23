@@ -124,7 +124,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 
 			<div class="column one">
 				<div class="header-search-input-wrapper">
 					<form method="get" action="https://search.wsu.edu/Default.aspx">
-						<input name="cx" value="004677039204386950923:xvo7gapmrrg" type="hidden">
+						<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
 						<input name="cof" value="FORID:11" type="hidden">
 						<input name="sa" value="Search" type="hidden">
 						<label for="header-search">Search</label>
