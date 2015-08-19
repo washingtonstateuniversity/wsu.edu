@@ -1,5 +1,5 @@
 <?php
 
 if ( wsu_home_is_site( 'wsu-home' ) || wsu_home_is_site( 'wsu-internal' ) ) {
-	?><div id="power"><strong>Please note:</strong> Some WSU websites will be offline from 6:30-9:30 pm (PDT) today. We apologize for the inconvenience.</div><?php
+	?><div id="power">Please be aware that both myWSU and Blackboard portals are experiencing intermittent outages as a result of a series of preventative maintenance tasks in preparation for the beginning of the fall semester.</div><?php
 }
