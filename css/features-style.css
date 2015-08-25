@@ -648,7 +648,7 @@ main .mejs-container a:hover {
 video#bigend {
 	width: 100%;
 	height: auto;
-	background: transparent url('/wp-content/uploads/sites/672/2015/03/Floricel-atrium.jpg') no-repeat 0 0;
+	background: transparent;
 	background-size: cover;
 	margin-top: 4rem;
 }
