@@ -324,6 +324,21 @@ class WSU_Home_Theme {
 				<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip1570;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
 			</noscript>
 			<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+			<!-- Start of Seattle Times tag -->
+			<script type="text/javascript">
+				(function () {
+					var tagjs = document.createElement("script");
+					var s = document.getElementsByTagName("script")[0];
+					tagjs.async = true;
+					tagjs.src = "https://s.btstatic.com/tag.js#site=dcKDAzq";
+					s.parentNode.insertBefore(tagjs, s);
+				}());
+			</script>
+			<noscript>
+				<iframe src="https://s.thebrighttag.com/iframe?c=dcKDAzq" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			</noscript>
+			<!-- End of Seattle Times tag -->
 			<?php
 		}
 
