@@ -327,13 +327,6 @@ div.pad-bottom {
 	border-bottom: 0;
 }
 
-.qlinks ul li a {
-	color: #4d4d4d;
-	box-shadow: none;
-	border-bottom: 0;
-	text-decoration: none;
-}
-
 .qlinks ul li a:hover {
 	background-color: #E4E4E4;
 	color: #981e32;
