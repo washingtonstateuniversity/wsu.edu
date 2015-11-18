@@ -1,5 +1,5 @@
 <?php
 
 if ( wsu_home_is_site( 'wsu-home' ) || wsu_home_is_site( 'wsu-internal' ) ) {
-	?><div id="power">Please be aware that both myWSU and Blackboard portals are experiencing intermittent outages as a result of a series of preventative maintenance tasks in preparation for the beginning of the fall semester.</div><?php
+	?><div id="power">Due to power outages from high winds, classes and all non-essential operations are suspended this morning.  Normal schedule should resume at 1:00pm.  Only essential personnel should report to work before 1:00.</div><?php
 }
