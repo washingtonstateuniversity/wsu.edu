@@ -165,7 +165,11 @@ class WSUWP_Media_Wall {
 	 * Handle an ajax request to save a media item to a media wall via its URL.
 	 */
 	public function ajax_save_media_item() {
-		check_ajax_referer( 'wsu-media-wall' );
+		$check_result = check_ajax_referer( 'wsu-media-wall', false, false );
+
+		if ( ! $check_result ) {
+			wp_send_json_error( 'Nonce check failed.' );
+		}
 
 		$url = esc_url( $_POST['url'] );
 		$post_id = absint( $_POST['post_id'] );
