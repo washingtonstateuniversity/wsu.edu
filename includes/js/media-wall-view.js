@@ -26,9 +26,10 @@ var wsuMediaWall = wsuMediaWall || {};
 		submitURL: function(evt) {
 			evt.preventDefault();
 
-			var url = $('#capture-media-url').val();
+			// Remove any previous error messages.
+			$( "#poststuff" ).find( ".error" ).remove();
 
-			$('#capture-media-url').val('');
+			var url = $('#capture-media-url').val();
 
 			if ( '' === url ) {
 				return;
@@ -45,7 +46,9 @@ var wsuMediaWall = wsuMediaWall || {};
 
 			$.post(ajaxurl, data, function(response) {
 				if ( response['success'] === false ) {
+					$( '#poststuff' ).prepend( '<div class="error">' + response.data + '</div>' );
 					// @todo output response.data in an error message template.
+					console.log( response.data );
 				} else {
 					response_data = response;
 
@@ -53,6 +56,8 @@ var wsuMediaWall = wsuMediaWall || {};
 						console.log( 'empty data received' );
 						return;
 					}
+
+					$('#capture-media-url').val('');
 
 					var item = new wsuMediaWall.item({
 						mediaID: response_data.data.media_id,

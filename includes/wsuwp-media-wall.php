@@ -165,7 +165,11 @@ class WSUWP_Media_Wall {
 	 * Handle an ajax request to save a media item to a media wall via its URL.
 	 */
 	public function ajax_save_media_item() {
-		check_ajax_referer( 'wsu-media-wall' );
+		$check_result = check_ajax_referer( 'wsu-media-wall', false, false );
+
+		if ( ! $check_result ) {
+			wp_send_json_error( 'Initial nonce security check failed' );
+		}
 
 		$url = esc_url( $_POST['url'] );
 		$post_id = absint( $_POST['post_id'] );
@@ -180,7 +184,11 @@ class WSUWP_Media_Wall {
 
 		$image_data = $this->retrieve_instagram_media( $url, $post_id );
 
-		wp_send_json_success( $image_data );
+		if ( isset( $image_data['error'] ) && ! empty( $image_data['error'] ) ) {
+			wp_send_json_error( $image_data['error'] );
+		} else {
+			wp_send_json_success( $image_data );
+		}
 	}
 
 	/**
@@ -254,12 +262,12 @@ class WSUWP_Media_Wall {
 	private function retrieve_instagram_media( $media_url = '',  $post_id ) {
 		$client_id = apply_filters( 'wsu_instagram_client_id', '' );
 		if ( '' === $client_id ) {
-			return false;
+			return array( 'error' => 'Missing Instagram client ID' );
 		}
 
 		$url = set_url_scheme( $media_url, 'https' );
 		if ( 0 === preg_match( '#https://instagram.com/p/(.*)#i', $url, $matches ) ) {
-			return false;
+			return array( 'error' => 'Invalid Instagram URL' );
 		}
 
 		$media_id = untrailingslashit( $matches[1] );
@@ -279,8 +287,10 @@ class WSUWP_Media_Wall {
 				$image_data['original_image_url'] = esc_url( $response_data->data->images->standard_resolution->url );
 				$image_data['hosted_image_url'] = esc_url( $this->sideload_image( $image_data['original_image_url'] ) );
 				$image_data['username'] = $response_data->data->user->username;
+			} elseif ( isset( $response_data->meta->error_message ) ) {
+				return array( 'error' => 'Instagram API Error: ' . $response_data->meta->error_message );
 			} else {
-				return false;
+				return array( 'error' => 'Invalid response structure from Instagram.' );
 			}
 
 			// Cache any successful lookup for 5 hours.
