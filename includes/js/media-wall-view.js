@@ -46,6 +46,7 @@ var wsuMediaWall = wsuMediaWall || {};
 			$.post(ajaxurl, data, function(response) {
 				if ( response['success'] === false ) {
 					// @todo output response.data in an error message template.
+					console.log( response.data );
 				} else {
 					response_data = response;
 
