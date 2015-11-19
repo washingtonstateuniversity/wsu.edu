@@ -31,9 +31,11 @@ class WSUWP_Media_Wall {
 	 * Enqueue the scripts used by the plugin. Output nonce and post ID data to the DOM for use by scripts.
 	 */
 	public function admin_enqueue_scripts() {
-		wp_enqueue_script( 'wsu-media-wall', get_stylesheet_directory_uri() . '/includes/js/media-wall.min.js', array( 'backbone' ), $this->object_cache_version, true );
-		$ajax_nonce = wp_create_nonce( 'wsu-media-wall' );
-		wp_localize_script( 'wsu-media-wall', 'wsuMediaWall', array( 'nonce' => $ajax_nonce, 'post_id' => get_the_ID() ) );
+		if ( get_current_screen() && 'wsuwp-media-wall' === get_current_screen()->id ) {
+			wp_enqueue_script( 'wsu-media-wall', get_stylesheet_directory_uri() . '/includes/js/media-wall.min.js', array( 'backbone' ), $this->object_cache_version, true );
+			$ajax_nonce = wp_create_nonce( 'wsu-media-wall' );
+			wp_localize_script( 'wsu-media-wall', 'wsuMediaWall', array( 'nonce' => $ajax_nonce, 'post_id' => get_the_ID() ) );
+		}
 	}
 
 	/**
