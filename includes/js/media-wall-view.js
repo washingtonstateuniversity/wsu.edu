@@ -26,6 +26,9 @@ var wsuMediaWall = wsuMediaWall || {};
 		submitURL: function(evt) {
 			evt.preventDefault();
 
+			// Remove any previous error messages.
+			$( "#poststuff" ).find( ".error" ).remove();
+
 			var url = $('#capture-media-url').val();
 
 			$('#capture-media-url').val('');
@@ -45,6 +48,7 @@ var wsuMediaWall = wsuMediaWall || {};
 
 			$.post(ajaxurl, data, function(response) {
 				if ( response['success'] === false ) {
+					$( '#poststuff' ).prepend( '<div class="error">' + response.data + '</div>' );
 					// @todo output response.data in an error message template.
 					console.log( response.data );
 				} else {
