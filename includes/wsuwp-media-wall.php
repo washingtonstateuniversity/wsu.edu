@@ -287,6 +287,8 @@ class WSUWP_Media_Wall {
 				$image_data['original_image_url'] = esc_url( $response_data->data->images->standard_resolution->url );
 				$image_data['hosted_image_url'] = esc_url( $this->sideload_image( $image_data['original_image_url'] ) );
 				$image_data['username'] = $response_data->data->user->username;
+			} elseif ( isset( $response_data->meta->error_message ) ) {
+				return array( 'error' => 'Instagram API Error: ' . $response_data->meta->error_message );
 			} else {
 				return array( 'error' => 'Invalid response structure from Instagram.' );
 			}
