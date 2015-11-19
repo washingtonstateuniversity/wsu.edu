@@ -31,8 +31,6 @@ var wsuMediaWall = wsuMediaWall || {};
 
 			var url = $('#capture-media-url').val();
 
-			$('#capture-media-url').val('');
-
 			if ( '' === url ) {
 				return;
 			}
@@ -58,6 +56,8 @@ var wsuMediaWall = wsuMediaWall || {};
 						console.log( 'empty data received' );
 						return;
 					}
+
+					$('#capture-media-url').val('');
 
 					var item = new wsuMediaWall.item({
 						mediaID: response_data.data.media_id,
