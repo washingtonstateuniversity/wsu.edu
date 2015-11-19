@@ -268,6 +268,8 @@ class WSUWP_Media_Wall {
 		}
 
 		$url = set_url_scheme( $media_url, 'https' );
+		$url = str_replace( '//www.', '//', $url );
+
 		if ( 0 === preg_match( '#https://instagram.com/p/(.*)#i', $url, $matches ) ) {
 			return array( 'error' => 'Invalid Instagram URL' );
 		}
