@@ -66,6 +66,23 @@ module.exports = function(grunt) {
 				'js/wsu-home-primary.js'
 			],
 			tasks: ['default']
+		},
+
+		serve: {
+			options: {
+				port: 9000
+			}
+		},
+
+		open : {
+			dev : {
+				path: 'http://127.0.0.1:9000/style-guide'
+			},
+			custom: {
+				path : function () {
+					return grunt.option('path');
+				}
+			}
 		}
 	});
 
@@ -73,7 +90,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-serve');
+	grunt.loadNpmTasks('grunt-open');
 
 	// Default task(s).
 	grunt.registerTask('default', ['concat', 'uglify', 'clean']);
+	grunt.registerTask('browser', ['open:dev', 'serve'] );
 };
