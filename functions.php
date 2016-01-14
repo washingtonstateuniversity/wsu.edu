@@ -342,6 +342,16 @@ class WSU_Home_Theme {
 			<?php
 		}
 
+		if ( $this->is_wsu_site( 'wsu-home' ) && is_page( 'admission' ) ) {
+			?>
+			<!-- View Thru Conversion from Seattle Times added 20160114-->
+			<img height="1" width="1" style="border-style:none;" alt="" src="https://insight.adsrvr.org/track/conv/?adv=u69oksi&ct=0:22ph6er&fmt=3"/>
+
+			<!-- WSU Retargeting from Seattle Times added 20160114 -->
+			<img height="1" width="1" style="border-style:none;" alt="" src="https://insight.adsrvr.org/track/evnt/?adv=u69oksi&ct=0:p7y61lb&fmt=3"/>
+			<?php
+		}
+
 		if ( $this->is_wsu_site( 'wsu-features' ) && is_front_page() ) {
 			?>
 			<!--
