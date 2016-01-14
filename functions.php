@@ -342,7 +342,7 @@ class WSU_Home_Theme {
 			<?php
 		}
 
-		if ( $this->is_wsu_site( 'wsu-home' ) && is_page( 'admission' ) ) {
+		if ( $this->is_wsu_site( 'wsu-internal' ) && is_page( 'admission' ) ) {
 			?>
 			<!-- View Thru Conversion from Seattle Times added 20160114-->
 			<img height="1" width="1" style="border-style:none;" alt="" src="https://insight.adsrvr.org/track/conv/?adv=u69oksi&ct=0:22ph6er&fmt=3"/>
