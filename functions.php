@@ -19,6 +19,7 @@ class WSU_Home_Theme {
 	 */
 	public function __construct() {
 		add_action( 'wp_head', array( $this, 'prefetch_dns' ), 5 );
+		add_action( 'wp_head', array( $this, 'og_image_url' ), 99 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 30 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
@@ -53,6 +54,27 @@ class WSU_Home_Theme {
 
 		foreach( $domains as $domain ) {
 			echo '<link rel="dns-prefetch" href="//' . $domain . '">' . "\n";
+		}
+	}
+
+	/**
+	 * Add an og:image meta tag containing the proper featured image associated with a page.
+	 *
+	 * @since 0.10.0
+	 */
+	public function og_image_url() {
+		if ( spine_has_featured_image() ) {
+			$og_image = spine_get_featured_image_src();
+		} elseif ( spine_has_background_image() ) {
+			$og_image = spine_get_background_image_src();
+		} elseif( spine_has_thumbnail_image() ) {
+			$og_image = spine_get_thumbnail_image_src();
+		} else {
+			$og_image = false;
+		}
+
+		if ( $og_image ) {
+			echo '<meta property="og:image" content="' . esc_url( $og_image ) . '">';
 		}
 	}
 
