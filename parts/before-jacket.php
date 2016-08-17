@@ -1,5 +1,5 @@
 <?php
 
 if ( wsu_home_is_site( 'wsu-home' ) || wsu_home_is_site( 'wsu-internal' ) ) {
-	?><div id="power">Due to power outages from high winds, classes and all non-essential operations are suspended this morning.  Normal schedule should resume at 1:00pm.  Only essential personnel should report to work before 1:00.</div><?php
+	?><div id="power"><a href="https://news.wsu.edu/2016/08/16/wsu-pullman-temporarily-suspends-parking-permit-sales/">WSU Pullman temporarily suspends parking permit sales</a></div><?php
 }
