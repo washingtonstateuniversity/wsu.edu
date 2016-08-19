@@ -29,6 +29,8 @@ class WSU_Home_Theme {
 		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10, 4 );
 		add_action( 'wp_footer', array( $this, 'footer_pixels' ) );
 		add_filter( 'wsu_analytics_events_override', '__return_true' );
+		add_action( 'admin_init', array( $this, 'register_settings' ) );
+		add_action( 'admin_menu', array( $this, 'add_settings_fields' ) );
 	}
 
 	/*
@@ -394,6 +396,49 @@ class WSU_Home_Theme {
 			<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
 			<?php
 		}
+	}
+
+	/**
+	 * Register settings used with the theme.
+	 *
+	 * @since 0.10.3
+	 */
+	public function register_settings() {
+		register_setting( 'general', 'wsu_home_alert', array( $this, 'sanitize_wsu_home_alert' ) );
+	}
+
+	/**
+	 * Add settings fields used to capture registered settings.
+	 *
+	 * @since 0.10.3
+	 */
+	public function add_settings_fields() {
+		add_settings_field( 'wsu-home-message', 'WSU Home Alert Message', array( $this, 'display_wsu_home_alert_message' ), 'general', 'default', array( 'label_for' => 'wsu_home_alert' ) );
+	}
+
+	/**
+	 * Display the textarea used to capture the wsu_home_alert option.
+	 *
+	 * @since 0.10.3
+	 */
+	public function display_wsu_home_alert_message() {
+		?>
+		<textarea name="wsu_home_alert" id="wsu-home-alert" rows="4" style="width:75%;"><?php echo esc_textarea( get_option( 'wsu_home_alert' ) ); ?></textarea>
+		<p class="description">Enter HTML to be output in the alert DIV at the top of the WSU homepage and internal wsu.edu pages.</p>
+		<?php
+	}
+
+	/**
+	 * Sanitize the wsu_home_alert option when saved.
+	 *
+	 * @since 0.10.3
+	 *
+	 * @param string $option Data to sanitize for option.
+	 *
+	 * @return string Sanitized option.
+	 */
+	public function sanitize_wsu_home_alert( $option ) {
+		return wp_kses_post( $option );
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
