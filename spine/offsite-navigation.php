@@ -2,7 +2,7 @@
 	<?php
 
 	if ( false === wsu_home_is_site( 'wsu-home' ) && false === wsu_home_is_site( 'wsu-internal' ) ) {
-		$switch_site = get_blog_details( array( 'domain' => wsuwp_get_current_site()->domain, 'path' => '/' ) );
+		$switch_site = get_blog_details( array( 'domain' => get_site()->domain, 'path' => '/' ) );
 		switch_to_blog( $switch_site->blog_id );
 	}
 
