@@ -22,7 +22,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 
 	 * home site.
 	 */
 	if ( wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) ) {
-		$feature_site = wsuwp_get_current_site();
+		$feature_site = get_site();
 		if ( isset( $feature_site->domain ) ) {
 			// Allow a local override for development.
 			$home_path = apply_filters( 'wsu_home_path', '/' );
