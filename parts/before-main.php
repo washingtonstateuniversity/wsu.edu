@@ -91,7 +91,7 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 
 			<div class="column one">
 				<div class="wsu-logo">
 					<?php if ( $wsu_home_is_features ) : ?><a href="https://wsu.edu/"><?php endif; ?>
-					<img src="<?php echo get_stylesheet_directory_uri() . '/images/wsu-home-logo.svg'; ?>">
+					<img src="<?php echo get_stylesheet_directory_uri() . '/images/wsu-home-logo.svg'; ?>" alt="Washington State University">
 					<?php if ( $wsu_home_is_features ) : ?></a><?php endif; ?>
 				</div>
 			</div>
