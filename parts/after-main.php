@@ -35,7 +35,11 @@ if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 
 ?>
 	<footer class="single row fat-footer-menu">
 		<div class="column one">
-			<?php echo wsu_home_get_menu( $wsu_fat_footer_args ); ?>
+			<?php
+			// @codingStandardsIgnoreStart
+			echo wsu_home_get_menu( $wsu_fat_footer_args );
+			// @codingStandardsIgnoreEnd
+			?>
 		</div>
 	</footer>
 	<section class="single row full footer-bar">

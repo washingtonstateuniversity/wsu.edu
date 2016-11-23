@@ -17,10 +17,11 @@ if ( wsu_home_is_site( 'wsu-internal' ) ) :
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 3,
 	);
+	// @codingStandardsIgnoreStart
 	?>
 	<footer class="single row fat-footer-menu">
 		<div class="column one">
 			<?php echo wsu_home_get_menu( $wsu_fat_footer_args ); ?>
 		</div>
 	</footer>
-<?php endif;
+<?php endif; // @codingStandardsIgnoreEnd

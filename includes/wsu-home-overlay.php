@@ -18,7 +18,7 @@ class WSU_Home_Overlay {
 	 * @param WP_Post $post      The post object of the post being edited.
 	 */
 	public function add_meta_boxes( $post_type, $post ) {
-		if ( 'page' !== $post_type && $post->ID != get_option( 'page_on_front', false ) ) {
+		if ( 'page' !== $post_type && absint( get_option( 'page_on_front', false ) ) !== $post->ID ) {
 			return;
 		}
 		add_meta_box( 'wsu_overlay_toggle', 'Enable Overlay', array( $this, 'display_overlay_toggle' ), 'page', 'side' );
@@ -32,7 +32,7 @@ class WSU_Home_Overlay {
 	public function display_overlay_toggle( $post ) {
 		$overlay_type = get_post_meta( $post->ID, '_wsu_display_home_overlay', true );
 
-		if ( ! in_array( $overlay_type, array( 'takeover', 'none' ) ) ) {
+		if ( ! in_array( $overlay_type, array( 'takeover', 'none' ), true ) ) {
 			$overlay_type = 'none';
 		}
 
@@ -62,15 +62,17 @@ class WSU_Home_Overlay {
 			return;
 		}
 
+		// @codingStandardsIgnoreStart
 		if ( ! isset( $_POST['overlay_select'] ) ) {
 			return;
 		}
 
-		if ( in_array( $_POST['overlay_select'], array( 'none', 'takeover' ) ) ) {
+		if ( in_array( $_POST['overlay_select'], array( 'none', 'takeover' ), true ) ) {
 			update_post_meta( $post_id, '_wsu_display_home_overlay', sanitize_text_field( $_POST['overlay_select'] ) );
 		} else {
 			update_post_meta( $post_id, '_wsu_display_home_overlay', 'none' );
 		}
+		// @codingStandardsIgnoreEnd
 
 		return;
 	}
@@ -81,7 +83,7 @@ class WSU_Home_Overlay {
 	 * @return bool|string The type of overlay if enabled. False if not.
 	 */
 	public function overlay_type() {
-		if ( get_the_ID() != get_option( 'page_on_front', false ) ) {
+		if ( get_the_ID() !== absint( get_option( 'page_on_front', false ) ) ) {
 			return false;
 		}
 

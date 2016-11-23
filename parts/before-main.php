@@ -1,5 +1,6 @@
 <?php
 
+// @codingStandardsIgnoreStart
 echo wsu_home_get_alert();
 
 /*
@@ -162,3 +163,5 @@ if ( ms_is_switched() ) {
 }
 
 endif;
+
+// @codingStandardsIgnoreStart

@@ -52,8 +52,8 @@ class WSU_Home_Theme {
 			'maps.gstatic.com',
 		);
 
-		foreach( $domains as $domain ) {
-			echo '<link rel="dns-prefetch" href="//' . $domain . '">' . "\n";
+		foreach ( $domains as $domain ) {
+			echo '<link rel="dns-prefetch" href="//' . esc_attr( $domain ) . '">' . "\n";
 		}
 	}
 
@@ -67,7 +67,7 @@ class WSU_Home_Theme {
 			$og_image = spine_get_featured_image_src();
 		} elseif ( spine_has_background_image() ) {
 			$og_image = spine_get_background_image_src();
-		} elseif( spine_has_thumbnail_image() ) {
+		} elseif ( spine_has_thumbnail_image() ) {
 			$og_image = spine_get_thumbnail_image_src();
 		} else {
 			$og_image = false;
@@ -177,7 +177,7 @@ class WSU_Home_Theme {
 			return;
 		}
 
-		foreach( $menu_assignments['nav_menu_locations'] as $location => $id ) {
+		foreach ( $menu_assignments['nav_menu_locations'] as $location => $id ) {
 			if ( $menu_id !== $id ) {
 				continue;
 			}
@@ -228,7 +228,7 @@ class WSU_Home_Theme {
 	 * @return string Modified content.
 	 */
 	public function replace_p_with_figure( $content ) {
-		$content = preg_replace('/<p[^>]*>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\/p>/', '<figure class=\"wsu-p-replaced\">$1</figure>', $content);
+		$content = preg_replace( '/<p[^>]*>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\/p>/', '<figure class=\"wsu-p-replaced\">$1</figure>', $content );
 
 		return $content;
 	}
@@ -282,7 +282,7 @@ class WSU_Home_Theme {
 			if ( 0 !== $feed_item_count ) {
 				$feed_items = $feed->get_items( 0, $feed_item_count );
 
-				foreach( $feed_items as $feed_item ) {
+				foreach ( $feed_items as $feed_item ) {
 					$item_title = $feed_item->get_title();
 					$html .= $item_title;
 				}
