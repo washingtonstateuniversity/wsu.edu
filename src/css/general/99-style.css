@@ -1,5 +1,5 @@
 body {
-	font-family: 'proxima-nova', "Lucida Sans", sans-serif;
+	font-family: proxima-nova, "Lucida Sans", sans-serif;
 	font-weight: 400;
 	background-color: #fff;
 	color: #2a3033;
@@ -36,7 +36,7 @@ body {
 .wsu-home-alert h1 {
 	font-size: 1.7em;
 	margin: 0;
-	padding: 10px 0 0 0;
+	padding: 10px 0 0;
 	width: 100%;
 	text-align: center;
 	background: none;
@@ -68,6 +68,7 @@ body {
 }
 
 /* ----- header-shelf -----*/
+
 /* column one */
 .home .fluid .header-shelf.row.triptych .column.one {
 	border: 1px solid #dbdbdb;
@@ -155,7 +156,7 @@ section.single.triptych.row.header-drawer:before {
 	position: absolute;
 	content: "";
 	visibility: visible;
-	background: rgba(0,0,0,.1);
+	background: rgba(0, 0, 0, .1);
 	height: 100%;
 	width: 25%;
 	left: 0;
@@ -240,7 +241,7 @@ section.single.triptych.row.header-drawer:before {
 	display: none;
 }
 
-.header-search-input-wrapper input[type=text] {
+.header-search-input-wrapper input[type="text"] {
 	font-size: 1.5rem;
 	font-weight: 300;
 	font-family: Proxima-Nova;
@@ -345,13 +346,25 @@ section#search-modal {
 }
 
 @-webkit-keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 .features-container .wsu-home-headline-wrapper,
@@ -365,7 +378,7 @@ section#search-modal {
 
 .features-container .wsu-home-headline-wrapper-open {
 	display: block;
-	-webkit-animation: fadeIn 1.5s;
+	-webkit-animation: fadein 1.5s;
 	animation: fadeIn 1.5s;
 }
 

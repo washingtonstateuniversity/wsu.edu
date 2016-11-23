@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "css/*.css" ]
+			src: [ "src/css/*/*.css" ]
 		},
 
 		concat: {
@@ -185,6 +185,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jscs", "jshint", "concat", "uglify", "clean" ] );
+	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "uglify", "clean" ] );
 	grunt.registerTask( "serve", [ "connect", "watch" ] );
 };
