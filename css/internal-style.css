@@ -35,7 +35,7 @@ html body.page main {
 }
 
 .subsection_gray_background {
-	background-color: #eff0f1;
+	background-color: rgba(0, 0, 0, .015);
 }
 
 .subsection_white {
