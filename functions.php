@@ -1,7 +1,5 @@
 <?php
 
-// Include the WSUWP Media Wall plugin.
-include_once( __DIR__ . '/includes/wsuwp-media-wall.php' );
 include_once( __DIR__ . '/includes/wsu-home-overlay.php' );
 include_once( __DIR__ . '/includes/fields-of-study.php' );
 include_once( __DIR__ . '/includes/academic-calendar.php' );
