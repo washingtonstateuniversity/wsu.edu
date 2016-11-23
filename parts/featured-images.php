@@ -12,7 +12,7 @@ if ( spine_has_background_image() ) {
 
 <?php if ( spine_has_featured_image() ) {
 	$featured_image_src = spine_get_featured_image_src(); ?>
-	<figure class="featured-image" style="background-image: url('<?php echo $featured_image_src ?>');">
+	<figure class="featured-image" style="background-image: url('<?php echo esc_attr( $featured_image_src ); ?>');">
 		<?php spine_the_featured_image(); ?>
 	</figure>
-<?php } ?>
+<?php }

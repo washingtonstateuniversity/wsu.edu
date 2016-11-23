@@ -24,29 +24,6 @@ class WSU_Home_YouTube_Embed {
 		);
 		$atts = shortcode_atts( $defaults, $atts );
 
-		if ( empty( $atts['src'] ) ) {
-			//return '';
-		}
-
-		if ( ! empty( absint( $atts['width'] ) ) ) {
-			$width = 'width="' . absint( $atts['width'] ) . '"';
-		} else {
-			$width = '';
-		}
-
-		if ( ! empty( absint( $atts['height'] ) ) ) {
-			$height = 'height="' . absint( $atts['height'] ) . '"';
-		} else {
-			$height = '';
-		}
-
-		$url_parts = parse_url( $atts['src'] );
-		if ( ! isset( $url_parts['host'] ) || ! in_array( $url_parts['host'], array( 'www.youtube.com', 'youtube.com' ) ) ) {
-		//	return '';
-		}
-
-		$url = esc_url_raw( $atts['src'] );
-		//$content = '<iframe ' . $width . ' ' . $height . ' src="' . $url . '" frameborder="0" allowfullscreen></iframe>';
 		/**
 		 * [wsu_feature_youtube video_id="OmN5coh0heM" width="560" height="315"]
 		 */
