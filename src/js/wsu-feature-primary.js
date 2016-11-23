@@ -1,10 +1,11 @@
+/* global YT, onPlayerReady */
 ( function( $, window ) {
 	/**
 	 * Play a given video and clean up once it has played.
 	 *
 	 * @param evt
 	 */
-	play_video = function( evt ) {
+	var play_video = function( evt ) {
 		evt.target.play();
 		evt.target.addEventListener( "ended", function() { this.load(); } );
 		$( "video" ).unbind( "hover" );
@@ -14,8 +15,8 @@
 	 * Look for an exit video in the document and bind necessary events to
 	 * it when found.
 	 */
-	setup_exit_video = function() {
-		$video = $( ".exit-video" ).find( "video" );
+	var setup_exit_video = function() {
+		var $video = $( ".exit-video" ).find( "video" );
 
 		if ( 0 < $video.length ) {
 			$video.on( "hover", play_video );
@@ -27,7 +28,7 @@
 	 * Create a script element to load in the YouTube iFrame API and insert it
 	 * into the document.
 	 */
-	load_youtube = function() {
+	var load_youtube = function() {
 		var tag = document.createElement( "script" );
 
 		tag.src = "https://www.youtube.com/iframe_api";
