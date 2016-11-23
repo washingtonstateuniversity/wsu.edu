@@ -9,6 +9,10 @@ module.exports = function( grunt ) {
 		},
 
 		concat: {
+			general_styles: {
+				src: "src/css/general/*.css",
+				dest: "tmp-style.css"
+			},
 			home_scripts: {
 				src: [
 					"src/js/wsu-home-fos-view.js",
@@ -185,6 +189,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "uglify", "clean" ] );
+	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "postcss", "csslint", "uglify", "clean" ] );
 	grunt.registerTask( "serve", [ "connect", "watch" ] );
 };
