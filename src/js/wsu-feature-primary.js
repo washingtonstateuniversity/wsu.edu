@@ -1,13 +1,13 @@
-(function($, window){
+( function( $, window ) {
 	/**
 	 * Play a given video and clean up once it has played.
 	 *
 	 * @param evt
 	 */
-	play_video = function(evt) {
+	play_video = function( evt ) {
 		evt.target.play();
-		evt.target.addEventListener('ended', function() { this.load(); });
-		$('video').unbind('hover');
+		evt.target.addEventListener( "ended", function() { this.load(); } );
+		$( "video" ).unbind( "hover" );
 	};
 
 	/**
@@ -15,11 +15,11 @@
 	 * it when found.
 	 */
 	setup_exit_video = function() {
-		$video = $('.exit-video').find('video');
+		$video = $( ".exit-video" ).find( "video" );
 
 		if ( 0 < $video.length ) {
-			$video.on('hover', play_video);
-			$video.on('click', play_video);
+			$video.on( "hover", play_video );
+			$video.on( "click", play_video );
 		}
 	};
 
@@ -28,11 +28,11 @@
 	 * into the document.
 	 */
 	load_youtube = function() {
-		var tag = document.createElement('script');
+		var tag = document.createElement( "script" );
 
 		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var firstScriptTag = document.getElementsByTagName( "script" )[ 0 ];
+		firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
 	};
 
 	/**
@@ -44,12 +44,12 @@
 	 * and set up objects representing the videos.
 	 */
 	window.onYouTubeIframeAPIReady = function() {
-		$('.inline-youtube-video').each(function(){
-			var video_id = $(this).data('video-id'),
-				video_height = $(this).data('video-height'),
-				video_width = $(this).data('video-width');
+		$( ".inline-youtube-video" ).each( function() {
+			var video_id = $( this ).data( "video-id" ),
+				video_height = $( this ).data( "video-height" ),
+				video_width = $( this ).data( "video-width" );
 
-			new YT.Player( 'youtube-video-' + video_id, {
+			new YT.Player( "youtube-video-" + video_id, {
 				height: video_height,
 				width: video_width,
 				videoId: video_id,
@@ -60,10 +60,10 @@
 					rel: 0
 				},
 				events: {
-					'onReady': onPlayerReady
+					"onReady": onPlayerReady
 				}
-			});
-		});
+			} );
+		} );
 	};
 
 	/**
@@ -74,18 +74,18 @@
 	 *
 	 * @param event
 	 */
-	window.onPlayerReady = function(event) {
-		$('.start-' + event.target.h.id).on('click', function() {
+	window.onPlayerReady = function( event ) {
+		$( ".start-" + event.target.h.id ).on( "click", function() {
 			event.target.playVideo();
-		})
+		} );
 	};
 
 	/**
 	 * Fire any actions that we need to happen once the document is ready.
 	 */
-	$(document).ready(function() {
+	$( document ).ready( function() {
 		load_youtube();
 		setup_exit_video();
-	});
+	} );
 
-})(jQuery, window);
+} )( jQuery, window );
