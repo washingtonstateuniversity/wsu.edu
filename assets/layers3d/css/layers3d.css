@@ -1,0 +1,110 @@
+/* Layers 3D Style */
+
+.l3d-container {
+	visibility: hidden;
+}
+
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	background-color: #fff;	
+	height: 100%;
+	overflow-x: hidden;
+}
+
+#footer {
+		height: 38px;
+		width: 100%;
+		background-color: #891e32;
+		position:fixed;
+		bottom:0;
+		z-index:999999;
+		margin: 0 auto;
+}
+
+
+/* Layers 3D Custom Styles */
+
+.layer6 img {
+	left: 0px;
+	top: 0px;
+}
+
+.layers3d {
+	left: 0px;
+	top: 25px;
+}
+
+.layer6 {
+	margin: 0px auto;
+	width: 100%;
+}
+
+.layer6, .layer6 img {
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;	
+}
+
+/* SNOW/SMOKE CSS */
+
+.smokeContainer {
+	background: url(../../img/blank.png) no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+	position: relative;
+	z-index: 99999999;	
+}
+
+.smoke {
+	position: absolute;
+	width: 100%;
+	-webkit-animation: movesmoke 15s linear infinite;
+	-moz-animation: movesmoke 15s linear infinite;
+	-o-animation: movesmoke 15s linear infinite;
+}
+
+.smoke2 {
+	background-image: url(../../img/smoke2.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%;
+	-webkit-animation: movesmoke2 25s linear infinite;
+	-moz-animation: movesmoke2 25s linear infinite;
+	-o-animation: movesmoke2 25s linear infinite;
+}
+
+@-webkit-keyframes movesmoke {
+	0% {margin-top: -2000px;}
+	100% {margin-top: 500px;}
+}
+
+@-moz-keyframes moveclouds {
+	0% {margin-top: -2000px;}
+	100% {margin-top: 500px;}
+}
+
+@-o-keyframes moveclouds {
+	0% {margin-top: -2000px;}
+	100% {margin-top: 500px;}
+}
+
+@-webkit-keyframes movesmoke2 {
+	0% {margin-top: -2000px;}
+	100% {margin-top: 1000px;}
+}
+
+@-moz-keyframes moveclouds2 {
+	0% {margin-top: -2000px;}
+	100% {margin-top: 1000px;}
+}
+
+@-o-keyframes moveclouds {
+	0% {margin-top: -2000px;}
+	100% {margin-top: 1000px;}
+}
+
