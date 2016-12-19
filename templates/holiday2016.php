@@ -1,4 +1,6 @@
-<?php /* Template Name: Holiday Card 2016 */ ?>
+<?php /* Template Name: Holiday Card 2016 */
+// @codingStandardsIgnoreFile
+?>
 
 <!DOCTYPE HTML>
 <html>
@@ -27,9 +29,6 @@
 
 <body>
 
-
-
-
 <ol class="curtains">
 	<li id="section-home" class="cover">
 
@@ -50,11 +49,6 @@
 		</div>
 	</li><!--close "section-collage"-->
 </ol>
-
-<!--<div class="smokeContainer">
-   <img class="smoke" src="img/smoke.png" alt="" /><br />
-<img class="smoke2" src="img/smoke2.png" alt="" />
-</div>-->
 
 <div id="footer">
 	<p style="text-align: center; color: #fff;"><a href="http://wsu.edu" target="blank" title="Washington State University"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/wsu-signature.png' ); ?>" style="padding: 5px;"></a></p>
