@@ -25,7 +25,6 @@ class WSU_Home_Theme {
 		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_source_element' ), 10 );
 		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10, 4 );
-		add_action( 'wp_footer', array( $this, 'footer_pixels' ) );
 		add_filter( 'wsu_analytics_events_override', '__return_true' );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'add_settings_fields' ) );
@@ -325,75 +324,6 @@ class WSU_Home_Theme {
 		}
 
 		return $view_title . ' Washington State University';
-	}
-
-	public function footer_pixels() {
-		if ( $this->is_wsu_site( 'wsu-home' ) ) {
-			?>
-			<!--
-			Start of DoubleClick Floodlight Tag: Please do not remove
-			Activity name of this tag: IP157494 WSU Homepage~IP157494
-			URL of the webpage where the tag is expected to be placed: https://wsu.edu/
-			This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
-			Creation Date: 03/17/2015
-			-->
-			<script type="text/javascript">
-				var axel = Math.random() + "";
-				var a = axel * 10000000000000;
-				document.write('<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip1570;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
-			</script>
-			<noscript>
-				<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip1570;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
-			</noscript>
-			<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
-
-			<!-- Start of Seattle Times tag -->
-			<script type="text/javascript">
-				(function () {
-					var tagjs = document.createElement("script");
-					var s = document.getElementsByTagName("script")[0];
-					tagjs.async = true;
-					tagjs.src = "https://s.btstatic.com/tag.js#site=dcKDAzq";
-					s.parentNode.insertBefore(tagjs, s);
-				}());
-			</script>
-			<noscript>
-				<iframe src="https://s.thebrighttag.com/iframe?c=dcKDAzq" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-			</noscript>
-			<!-- End of Seattle Times tag -->
-			<?php
-		}
-
-		if ( $this->is_wsu_site( 'wsu-internal' ) && is_page( 'admission' ) ) {
-			?>
-			<!-- View Thru Conversion from Seattle Times added 20160114-->
-			<img height="1" width="1" style="border-style:none;" alt="" src="https://insight.adsrvr.org/track/conv/?adv=u69oksi&ct=0:22ph6er&fmt=3"/>
-
-			<!-- WSU Retargeting from Seattle Times added 20160114 -->
-			<img height="1" width="1" style="border-style:none;" alt="" src="https://insight.adsrvr.org/track/evnt/?adv=u69oksi&ct=0:p7y61lb&fmt=3"/>
-			<?php
-		}
-
-		if ( $this->is_wsu_site( 'wsu-features' ) && is_front_page() ) {
-			?>
-			<!--
-			Start of DoubleClick Floodlight Tag: Please do not remove
-			Activity name of this tag: IP157494 WSU 125~IP157494
-			URL of the webpage where the tag is expected to be placed: https://wsu.edu/125
-			This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
-			Creation Date: 03/17/2015
-			-->
-			<script type="text/javascript">
-				var axel = Math.random() + "";
-				var a = axel * 10000000000000;
-				document.write('<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip15700;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
-			</script>
-			<noscript>
-				<iframe src="https://4487100.fls.doubleclick.net/activityi;src=4487100;type=ip157494;cat=ip15700;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
-			</noscript>
-			<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
-			<?php
-		}
 	}
 
 	/**
