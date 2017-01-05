@@ -6,7 +6,7 @@
 get_header();
 ?>
 	<main id="wsuwp-main" class="spine-blank-template wsu-error-content">
-		<section class="row side-right gutter">
+		<section class="row side-right gutter pad-ends">
 
 			<div class="column one">
 
