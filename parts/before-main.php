@@ -6,7 +6,7 @@ echo wsu_home_get_alert();
 /*
  * On the home page, we display a series of navigation menus at the top.
  */
-if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) ) :
+if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) ) :
 
 	$wsu_home_is_features = ( wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) );
 

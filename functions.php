@@ -95,6 +95,10 @@ class WSU_Home_Theme {
 			return true;
 		}
 
+		if ( 'wsu-home' === $name && $home_path === $site->path && is_404() ) {
+		    return true;
+        }
+
 		if ( 'wsu-internal' === $name && $home_path === $site->path && ! is_front_page() ) {
 			return true;
 		}
@@ -131,7 +135,7 @@ class WSU_Home_Theme {
 			wp_enqueue_script( 'wsu-features', get_stylesheet_directory_uri() . '/js/wsu-feature.min.js', array( 'backbone' ), $this->script_version(), true );
 		}
 
-		if ( $this->is_wsu_site( 'wsu-internal' ) ) {
+		if ( $this->is_wsu_site( 'wsu-internal' ) && ! is_404() ) {
 			wp_enqueue_script( 'wsu-home-internal', get_stylesheet_directory_uri() . '/js/wsu-home-internal.js', array( 'wsu-home-typekit' ), $this->script_version(), true );
 		}
 	}
@@ -140,7 +144,8 @@ class WSU_Home_Theme {
 		if ( $this->is_wsu_site( 'wsu-home' ) ) {
 			wp_enqueue_style( 'wsu-home-style', get_stylesheet_directory_uri() . '/css/home-style.css', array(), $this->script_version() );
 		}
-		if ( $this->is_wsu_site( 'wsu-internal' ) ) {
+
+		if ( $this->is_wsu_site( 'wsu-internal' ) && ! is_404() ) {
 			wp_enqueue_style( 'wsu-home-style', get_stylesheet_directory_uri() . '/css/home-style.css', array(), $this->script_version() );
 			wp_enqueue_style( 'wsu-internal-style', get_stylesheet_directory_uri() . '/css/internal-style.css', array(), $this->script_version() );
 		}

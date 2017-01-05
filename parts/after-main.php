@@ -3,7 +3,7 @@
 /*
  * On the home page, we display fat footer navigation area on the bottom.
  */
-if ( is_front_page() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) ) :
+if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_home_is_site( 'wsu-impact' ) ) :
 
 	$wsu_fat_footer_args = array(
 		'theme_location'  => 'fat-footer',

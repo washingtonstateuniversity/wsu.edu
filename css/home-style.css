@@ -29,7 +29,13 @@ body {
 .home h3,
 .home h4,
 .home h5,
-.home p {
+.home p,
+.error404 h1,
+.error404 h2,
+.error404 h3,
+.error404 h4,
+.error404 h5,
+.error404 p {
 	font-family: "proxima-nova", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
@@ -134,10 +140,12 @@ main a:hover {
 	border-top: 5px solid #981e32;
 }
 
+.error404 #binder,
 .home #binder {
 	max-width: 100% !important;
 }
 
+.error404 section
 .home section {
 	margin: 0 auto;
 }
@@ -153,6 +161,7 @@ main a:hover {
 }
 
 /*---------------------------- feature ----------------------------*/
+.error404 .main-header,
 .home .main-header {
 	background: #fff;
 	height: auto;
@@ -160,6 +169,7 @@ main a:hover {
 
 /* ----- header-shelf -----*/
 /* column one */
+.error404 .fluid .header-shelf.row.triptych .column.one,
 .home .fluid .header-shelf.row.triptych .column.one {
 	border: 1px solid #dbdbdb;
 	border-top: none;
@@ -182,10 +192,12 @@ main a:hover {
 	height: 1px;
 }
 
+.error404 .fluid .row.triptych .column.two,
 .home .fluid .row.triptych .column.two {
 	width: 62.5%;
 }
 
+.error404 .fluid .main-header .row.triptych.header-shelf .column.two,
 .home .fluid .main-header .row.triptych.header-shelf .column.two {
 	padding: 1.5rem;
 	position: absolute;
@@ -203,6 +215,7 @@ main a:hover {
 }
 
 /* column three */
+.error404 .fluid .main-header .row.triptych .column.three,
 .home .fluid .main-header .row.triptych .column.three {
 	border: 1px solid #dbdbdb;
 	border-top: none;
@@ -1448,6 +1461,7 @@ main .campaign-mark a:hover {
 	margin-top: 3rem;
 }
 
+.error404 .fat-footer-menu,
 .home .fat-footer-menu {
 	margin-top: 0;
 }
@@ -1544,6 +1558,7 @@ main,
 	border-right: 1px solid #efefef;
 }
 
+.error404 main,
 .home main {
 	border: none;
 }
@@ -1610,6 +1625,7 @@ figure {
 
 /*---------------- Responsive ----------------------*/
 @media screen and (max-width: 1200px) {
+	.error404 .header-shelf .column.three,
 	.home .header-shelf .column.three {
 		bottom: inherit;
 	}
@@ -1619,6 +1635,7 @@ figure {
 		border: 1px solid #dbdbdb;
 	}
 
+	.error404 .fluid .main-header .row.triptych .column.three,
 	.home .fluid .main-header .row.triptych .column.three {
 		width: 50%;
 		border: none;
@@ -1648,10 +1665,13 @@ figure {
 		right: 0;
 	}
 
+	.error404 .fluid .main-header .row.triptych.header-shelf .column.two,
 	.home .fluid .main-header .row.triptych.header-shelf .column.two {
 		bottom: 10px;
 	}
 
+	.error404 .fluid .main-header .row.triptych.header-shelf .column.two,
+	.error404 .fluid .row.triptych .column.two,
 	.home .fluid .main-header .row.triptych.header-shelf .column.two,
 	.home .fluid .row.triptych .column.two {
 		width: 75%;
@@ -1659,6 +1679,7 @@ figure {
 }
 
 @media screen and (max-width: 989px) {
+	.error404 #binder.fluid main,
 	.home #binder.fluid main {
 		width: 100% !important;
 		margin-left: 0;
@@ -1740,10 +1761,12 @@ figure {
 }
 
 @media screen and (max-width: 700px) {
+	.error404 .main-header,
 	.home .main-header {
 		display: none;
 	}
 
+	.error404 #spine,
 	.home #spine {
 		display: block;
 	}
