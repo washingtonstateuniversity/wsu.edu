@@ -85,7 +85,7 @@ class WSU_Home_Theme {
 	 * @return bool
 	 */
 	public function is_wsu_site( $name ) {
-		$site = get_blog_details();
+		$site = get_site();
 
 		$home_path = apply_filters( 'wsu_home_path', '/' );
 		$features_path = apply_filters( 'wsu_home_feature_path', '/125/' );
