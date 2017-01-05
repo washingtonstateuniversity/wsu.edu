@@ -231,8 +231,17 @@ section.single.triptych.row.header-drawer:before {
 	height: 224px;
 }
 
+.error404 .header-search-wrapper {
+	position: static;
+}
+
+.error404 .header-search-wrapper,
 .header-search-wrapper-open {
 	display: block;
+}
+
+.error404 .close-header-search {
+	display: none;
 }
 
 /*--search bar--*/
