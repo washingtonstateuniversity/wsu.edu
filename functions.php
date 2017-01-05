@@ -16,7 +16,7 @@ class WSU_Home_Theme {
 	 * Configure our default hooks.
 	 */
 	public function __construct() {
-		add_action( 'wp_head', array( $this, 'prefetch_dns' ), 5 );
+		add_action( 'wp_resource_hints', array( $this, 'prefetch_dns' ), 10, 2 );
 		add_action( 'wp_head', array( $this, 'og_image_url' ), 99 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 30 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
@@ -38,22 +38,26 @@ class WSU_Home_Theme {
 	}
 
 	/**
-	 * Add a list of domains to prefetch DNS in the document head.
+	 * Adds a list of domains to the existing DNS prefetch list in the document head.
+	 *
+	 * @since 0.4.0
+	 * @since 0.11.0 Converted to use the `wp_resource_hints` filter in WordPress.
 	 */
-	public function prefetch_dns() {
+	public function prefetch_dns( $urls, $relation_type ) {
+		if ( 'dns-prefetch' !== $relation_type ) {
+			return $urls;
+		}
+
 		$domains = array(
-			'repo.wsu.edu',
-			'use.typekit.net',
-			'ajax.googleapis.com',
 			'beta.maps.wsu.edu',
 			'news.wsu.edu',
 			'maps.googleapis.com',
 			'maps.gstatic.com',
 		);
 
-		foreach ( $domains as $domain ) {
-			echo '<link rel="dns-prefetch" href="//' . esc_attr( $domain ) . '">' . "\n";
-		}
+		$urls = array_merge_recursive( $urls, $domains );
+
+		return $urls;
 	}
 
 	/**
