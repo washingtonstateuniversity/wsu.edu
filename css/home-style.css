@@ -910,64 +910,6 @@ main .recruitment li.fos-item a:hover {
 	margin-bottom: 2rem;
 }
 
-/*--------- Social area ----------*/
-.home section.photowall {
-	margin-top: 5rem;
-	background: -webkit-linear-gradient(top,white,white 45%,#e4e4e4 45%,#e4e4e4);
-}
-
-.spacing-loose .halves.gutter.photowall .column.one,
-.spacing-loose .halves.gutter.photowall .column.two {
-	padding: 0;
-}
-
-/* Photo wall */
-.fluid .row.halves.photowall .column.one {
-	width: 100%;
-}
-
-.media-wall-column {
-	float: left;
-	width: 20%;
-}
-
-main .media-wall-column a {
-	float: left;
-	border-bottom: none;
-	box-shadow: none;
-	padding: 0;
-	line-height: 0;
-}
-
-.photowall img {
-	float: left;
-	width: 100%;
-}
-
-.media-wall-column-0 a:first-child,
-.media-wall-column-2 a:first-child {
-	margin-top: 50%;
-}
-
-.media-wall-column-3 a:first-child {
-	margin-top: 100%;
-}
-
-.media-wall-column-4 a:first-child {
-	margin-top: 150%;
-}
-
-/* social posting */
-.spacing-loose .halves.gutter.photowall .column.two {
-	padding-left: 2rem;
-}
-
-.fluid .row.halves.photowall .column.two {
-	margin-top: -19%;
-	width: 40%;
-	float: right;
-}
-
 /* icons */
 main .spine-social-channels ul {
 	text-align: left;
@@ -1019,11 +961,6 @@ main .spine-social-channels ul .youtube-channel a {
 
 main .spine-social-channels ul .tumblr-channel a {
 	color: #32506d !important;
-}
-
-.photowall .spine-social-channels a:hover {
-	background: none;
-	text-shadow: 1px 1px rgba(0,0,0,.2);
 }
 
 /*---------- News and Calendar ----------*/
@@ -1734,30 +1671,6 @@ figure {
 		margin-left: calc(4vw + 1rem);
 		padding-left: 0;
 	}
-
-	.media-wall-column-0,
-	.media-wall-column-3,
-	.media-wall-column-4 {
-		display: none;
-	}
-
-	.media-wall-column-1 a:first-child,
-	.media-wall-column-2 a:first-child {
-		margin-top: 0;
-		display: none;
-	}
-
-	.media-wall-column-1,
-	.media-wall-column-2 {
-		width: 50%;
-	}
-
-	.fluid .row.halves.photowall .column.two {
-		margin-top: 2rem;
-		width: 100%;
-		float: left;
-		padding: 0 4rem;
-	}
 }
 
 @media screen and (max-width: 700px) {
@@ -1845,8 +1758,7 @@ figure {
 	.spacing-loose .thirds.gutter .column:nth-of-type(3n+6),
 	.spacing-loose .triptych.gutter .column.one,
 	.spacing-loose .triptych.gutter .column.three,
-	.spacing-loose .triptych.gutter .column.two,
-	.fluid .row.halves.photowall .column.two {
+	.spacing-loose .triptych.gutter .column.two {
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
