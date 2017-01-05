@@ -408,3 +408,31 @@ section#search-modal {
 	background-size: cover;
 	min-height: 500px;
 }
+
+.error404 .wsu-error-content p {
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.error404 .wsu-error-content ul {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.error404 .wsu-error-content li {
+	list-style-type: none;
+	font-size: 1.1em;
+	padding: 0;
+	margin-left: 0;
+	margin-bottom: .7em;
+}
+
+.error404 .wsu-error-content a {
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+.error-404-text {
+	color: #bbb;
+	padding-left: .3em;
+}
