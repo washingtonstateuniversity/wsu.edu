@@ -18,6 +18,7 @@ class WSU_Home_Theme {
 	public function __construct() {
 		add_action( 'wp_resource_hints', array( $this, 'prefetch_dns' ), 10, 2 );
 		add_action( 'wp_head', array( $this, 'og_image_url' ), 99 );
+		add_filter( 'spine_child_theme_version', array( $this, 'script_version' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 30 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
