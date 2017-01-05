@@ -96,8 +96,8 @@ class WSU_Home_Theme {
 		}
 
 		if ( 'wsu-home' === $name && $home_path === $site->path && is_404() ) {
-		    return true;
-        }
+			return true;
+		}
 
 		if ( 'wsu-internal' === $name && $home_path === $site->path && ! is_front_page() ) {
 			return true;
