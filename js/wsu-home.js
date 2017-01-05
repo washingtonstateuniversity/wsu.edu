@@ -146,10 +146,6 @@ var wsuFOS = wsuFOS || {};
 
 	};
 
-	var populate_media_wall = function() {
-		$( ".media-wall-image" ).each( function() { $( this ).attr( "src", $( this ).data( "src" ) ); } );
-	};
-
 	var process_section_backgrounds = function() {
 		var $bg_sections = $( ".section-wrapper-has-background" );
 
@@ -171,7 +167,6 @@ var wsuFOS = wsuFOS || {};
 
 	$( document ).ready( function() {
 		populate_headline_meta();
-		populate_media_wall();
 		process_section_backgrounds();
 		fix_no_svg_support();
 	} );
