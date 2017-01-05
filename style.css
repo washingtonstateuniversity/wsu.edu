@@ -20,6 +20,7 @@ body {
 	border-top: 5px solid #981e32;
 }
 
+.error404 section,
 .home section {
 	margin: 0 auto;
 }
@@ -59,11 +60,13 @@ body {
 }
 
 /*---------------------------- header ----------------------------*/
+.error404 .main-header,
 .home .main-header {
 	background: #fff;
 	height: auto;
 }
 
+.error404 #spine,
 .path-impact #spine,
 .path-125 #spine,
 .home #spine {
@@ -79,6 +82,7 @@ body {
 
 /* ----- header-shelf -----*/
 /* column one */
+.error404 .fluid .header-shelf.row.triptych .column.one,
 .home .fluid .header-shelf.row.triptych .column.one {
 	border: 1px solid #dbdbdb;
 	border-top: none;
@@ -101,10 +105,12 @@ body {
 	height: 1px;
 }
 
+.error404 .fluid .row.triptych .column.two,
 .home .fluid .row.triptych .column.two {
 	width: 62.5%;
 }
 
+.error404 .fluid .main-header .row.triptych.header-shelf .column.two,
 .home .fluid .main-header .row.triptych.header-shelf .column.two {
 	padding: 1.5rem;
 	position: absolute;
@@ -122,6 +128,7 @@ body {
 }
 
 /* column three */
+.error404 .home .fluid .main-header .row.triptych .column.three,
 .home .fluid .main-header .row.triptych .column.three {
 	border: 1px solid #dbdbdb;
 	border-top: none;
@@ -224,8 +231,17 @@ section.single.triptych.row.header-drawer:before {
 	height: 224px;
 }
 
+.error404 .header-search-wrapper {
+	position: static;
+}
+
+.error404 .header-search-wrapper,
 .header-search-wrapper-open {
 	display: block;
+}
+
+.error404 .close-header-search {
+	display: none;
 }
 
 /*--search bar--*/
@@ -391,4 +407,32 @@ section#search-modal {
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 500px;
+}
+
+.error404 .wsu-error-content p {
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.error404 .wsu-error-content ul {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.error404 .wsu-error-content li {
+	list-style-type: none;
+	font-size: 1.1em;
+	padding: 0;
+	margin-left: 0;
+	margin-bottom: .7em;
+}
+
+.error404 .wsu-error-content a {
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+.error-404-text {
+	color: #bbb;
+	padding-left: .3em;
 }

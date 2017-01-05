@@ -2,8 +2,8 @@
 	<?php
 
 	if ( false === wsu_home_is_site( 'wsu-home' ) && false === wsu_home_is_site( 'wsu-internal' ) ) {
-		$switch_site = get_blog_details( array( 'domain' => get_site()->domain, 'path' => '/' ) );
-		switch_to_blog( $switch_site->blog_id );
+		$switch_site = get_sites( array( 'domain' => get_site()->domain, 'path' => '/' ) );
+		switch_to_blog( $switch_site[0]->blog_id );
 	}
 
 	if ( function_exists( 'bu_navigation_display_primary' ) ) {
