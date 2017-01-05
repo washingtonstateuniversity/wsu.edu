@@ -5,10 +5,18 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "css/*.css" ]
+			src: [ "src/css/*/*.css" ]
 		},
 
 		concat: {
+			general_styles: {
+				src: "src/css/general/*.css",
+				dest: "tmp-style.css"
+			},
+			home_styles: {
+				src: "src/css/wsu.edu-home/*.css",
+				dest: "css/tmp-home-style.css"
+			},
 			home_scripts: {
 				src: [
 					"src/js/wsu-home-fos-view.js",
@@ -37,15 +45,19 @@ module.exports = function( grunt ) {
 					} )
 				]
 			},
-			dist: {
+			general_styles: {
 				src: "tmp-style.css",
 				dest: "style.css"
+			},
+			home_styles: {
+				src: "css/tmp-home-style.css",
+				dest: "css/home-style.css"
 			}
 		},
 
 		csslint: {
 			main: {
-				src: [ "style.css" ],
+				src: [ "style.css", "css/home-style.css" ],
 				options: {
 					"fallback-colors": false,              // Unless we want to support IE8
 					"box-sizing": false,                   // Unless we want to support IE7
@@ -83,7 +95,7 @@ module.exports = function( grunt ) {
 			options: {
 				force: true
 			},
-			temp: [ "tmp-style.css", "tmp-style.css.map" ]
+			temp: [ "tmp-style.css", "tmp-style.css.map", "css/tmp-*.*" ]
 		},
 
 		jscs: {
@@ -185,6 +197,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jscs", "jshint", "concat", "uglify", "clean" ] );
+	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "postcss", "csslint", "uglify", "clean" ] );
 	grunt.registerTask( "serve", [ "connect", "watch" ] );
 };
