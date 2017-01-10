@@ -18,9 +18,10 @@ class WSU_Home_Overlay {
 	 * @param WP_Post $post      The post object of the post being edited.
 	 */
 	public function add_meta_boxes( $post_type, $post ) {
-		if ( 'page' !== $post_type && absint( get_option( 'page_on_front', false ) ) !== $post->ID ) {
+		if ( 'page' !== $post_type || absint( get_option( 'page_on_front', false ) ) !== absint( $post->ID ) ) {
 			return;
 		}
+
 		add_meta_box( 'wsu_overlay_toggle', 'Enable Overlay', array( $this, 'display_overlay_toggle' ), 'page', 'side' );
 	}
 
