@@ -29,6 +29,7 @@ class WSU_Home_Theme {
 		add_filter( 'wsu_analytics_events_override', '__return_true' );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'add_settings_fields' ) );
+		add_filter( 'wsu_spine_navigation_id', array( $this, 'filter_navigation_id' ) );
 	}
 
 	/*
@@ -377,6 +378,23 @@ class WSU_Home_Theme {
 	 */
 	public function sanitize_wsu_home_alert( $option ) {
 		return wp_kses_post( $option );
+	}
+
+	/**
+	 * Modifies the ID used for the skip to nav link.
+	 *
+	 * @since 0.12.0
+	 *
+	 * @param string $id ID used by primary navigation.
+	 *
+	 * @return string
+	 */
+	public function filter_navigation_id( $id ) {
+		if ( $this->is_wsu_site( 'wsu-home' ) ) {
+			return 'wsu-home-primary-nav';
+		}
+
+		return $id;
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
