@@ -86,7 +86,7 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 		}
 	}
 ?>
-<header class="main-header wsu-home-navigation">
+<header class="main-header wsu-home-navigation" id="wsu-home-primary-nav">
 	<div class="header-shelf-wrapper">
 		<section class="single triptych row header-shelf">
 			<div class="column one">
