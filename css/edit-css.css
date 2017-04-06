@@ -1,0 +1,1210 @@
+/* .features-container .home-headline-nav {
+	display: none !important;
+} */
+/* display none until a11y is adjusted */
+.home .features-container .home-headline-nav,
+.find-fos-wrapper,
+.find-fos-alpha h3 {
+	display: none;
+}
+
+.home .find-fos-alpha-wrapper,
+.recruitment .two h4 {
+	margin-top: 0;
+}
+
+/* big news story */
+.wsuwp-content-syndicate-wrapper.top-news-story a {
+	color: inherit;
+	box-shadow: none;
+	border: none;
+}
+
+.wsuwp-content-syndicate-wrapper.top-news-story a:hover,
+.wsuwp-content-syndicate-wrapper.top-news-story a:focus {
+	color: #981e32;
+	background: none;
+	box-shadow: none;
+	border: none;
+}
+
+.top-news-head {
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+/* news.wsu.edu link */
+main .hp-news-link-wrap {
+	flex: 1 100%;
+	order: 4;
+	margin: .5rem 1.5rem 0;
+	padding: 0;
+	text-align: right;
+}
+
+main .hp-news-link {
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+main .hp-news-link:hover {
+	padding: 0;
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+/* --- */
+.home .graybg {
+	background: rgba(0,0,0,.025);
+}
+
+main .recruitment .button-row a {
+	background: rgba(0,0,0,.65);
+}
+
+.financialhead .recruit-bottom {
+	color: rgba(0,0,0,.6);
+}
+
+/*feature section cta dark*/
+.features-container .dark .home-cta a,
+.features-container .dark .home-cta a:hover,
+.features-container .dark .home-cta a:focus {
+	border: 1px solid #981e32;
+	background-color: #981e32;
+}
+
+.features-container .dark .home-cta a:hover,
+.features-container .dark .home-cta a:focus {
+	color: #981e32;
+	border: 1px solid #981e32;
+	background-color: #fff;
+}
+
+/* calendar styling */
+span.content-item-event-city {
+	font-size: .9rem;
+	color: #5e6a71;
+}
+
+.locations {
+	display: inline-block;
+	list-style: none;
+	padding-left: 0;
+}
+
+.locations h2 {
+	margin: 0;
+}
+
+/* --- Homepage news bar --- */
+.hp-news-block > .column {
+	display: flex;
+	padding: 3rem 0 1.5rem;
+	flex-flow: wrap;
+}
+
+.hp-news-block > .column * {
+	box-sizing: border-box;
+}
+
+.news-block-column {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	border-left: 1px solid rgba(0,0,0,.1);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	order: 1;
+}
+
+.news-block-column:first-child {
+	width: 50%;
+	display: block;
+	order: 2;
+	border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.news-block-column .item {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	box-sizing: border-box;
+	display: flex;
+	flex: 1;
+	position: relative;
+	transition: background .3s ease;
+	padding: 0;
+}
+
+.news-block-column .item:last-child {
+	border: none;
+}
+
+.news-block-column a {
+	display: block;
+	border: none;
+	box-shadow: none;
+	padding: 1rem 1.5rem;
+	height: 100%;
+	width: 100%;
+}
+
+.news-block-column a:hover,
+.news-block-column a:focus {
+	background: rgba(0,0,0,.05);
+	border: none;
+	padding: 1rem 1.5rem;
+	box-shadow: none;
+}
+
+.news-block-cat,
+.news-block-head,
+.news-block-sub {
+	display: block;
+}
+
+.news-block-cat {
+	color: #272727;
+	font-size: .6rem;
+	text-transform: uppercase;
+	line-height: 1;
+	font-weight: 700;
+}
+
+.news-block-head {
+	font-weight: 700;
+	font-size: 1rem;
+	margin-top: .65rem;
+	line-height: 1.1;
+}
+
+.news-block-sub {
+	color: #5e6a71;
+	font-size: .9rem;
+	margin-top: .25rem;
+	line-height: 1.2;
+}
+
+.news-block-column:first-child img {
+	width: 60%;
+	float: right;
+	margin: 0 0 0 1rem;
+	line-height: 0;
+}
+
+.news-block-column:first-child .news-block-head {
+	font-size: 1.75rem;
+	line-height: 1;
+	margin-bottom: .75rem;
+}
+
+.news-block-column:first-child .news-block-sub {
+	font-size: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+	.hp-news-block {
+		padding: 1rem 0;
+	}
+
+	.news-block-column,
+	.news-block-column:first-child {
+		width: 100%;
+		flex-direction: row;
+		border: none;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+		padding: 1rem 0;
+	}
+
+	.news-block-column:last-child {
+		border-bottom: none;
+	}
+
+	.news-block-column:first-child {
+		width: 100%;
+		order: 0;
+	}
+
+	.news-block-column:first-child img {
+		margin-bottom: 0;
+		width: 50%;
+	}
+
+	.news-block-column .item {
+		padding: 1rem;
+		border: none;
+	}
+
+	.news-block-column .item:last-child {
+		border-left: 1px solid rgba(0,0,0,.1);
+	}
+
+	.news-block-column:first-child .item:last-child {
+		border: none;
+	}
+
+	.news-block-column:first-child .news-block-head {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 790px) {
+	.news-block-column {
+		flex-wrap: wrap;
+	}
+
+	.news-block-column .item {
+		flex: 1 100%;
+		border: none;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+	}
+
+	.news-block-column .item:last-child {
+		border: none;
+	}
+
+	.news-block-column:first-child img {
+		display: none;
+	}
+
+	.news-block-column,
+	.news-block-column:first-child,
+	.news-block-column a,
+	.news-block-column a:hover {
+		padding: 0;
+	}
+}
+
+/* --- Scorecard page --- */
+.page-scorecard .main-header {
+	display: none;
+}
+
+/* ---------- Special HP Overlay styling ---------- */
+div.overlay-text {
+	position: absolute;
+	bottom: 1rem;
+	width: 100%;
+}
+
+.overlay-wrapper .aligncenter {
+	margin: 0 auto;
+}
+
+.overlay-image {
+	margin: 0 auto;
+}
+
+.overlay-wrapper p {
+	width: 100%;
+	text-align: center;
+}
+
+.overlay-top-text,
+.overlay-date,
+.overlay-button {
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: .8rem;
+	font-weight: 300;
+	letter-spacing: 8px;
+}
+
+.overlay-text h1 {
+	font-size: 3rem;
+	background-color: transparent;
+	padding: 0 1rem;
+	width: 100%;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.overlay-date {
+	letter-spacing: 2px;
+}
+
+.overlay-button,
+.overlay-button:hover {
+	border: 1px solid #fff;
+	box-shadow: none;
+	display: block;
+	max-width: 260px;
+	margin: 3rem auto 0;
+	padding: .3rem;
+	letter-spacing: 0;
+}
+
+.noscroll .overlay-dismiss {
+	position: absolute;
+	top: 1rem;
+	right: 2rem;
+	padding: .7rem .5rem .5rem;
+	border: 1px solid transparent;
+	text-transform: uppercase;
+	font-size: 2rem;
+	transition: border-color .3s ease;
+}
+
+.noscroll .overlay-dismiss:hover {
+	border: 1px solid #fff;
+}
+
+/* link styles for admission page dropdown */
+.pullman-header span {
+	color: #981e32;
+	border-bottom: 3px solid #ddd;
+	box-shadow: inset 0 -5px 0 #ddd;
+	transition: background .5s cubic-bezier(.33,.66,.66,1);
+	transition: border 1s ease (.33,.66,.66,1);
+}
+
+.pullman-header span:hover {
+	color: #981e32;
+	background-color: #f2f2f2;
+	border-bottom: 3px solid #f2f2f2;
+	box-shadow: inset 0 -5px 0 #f2f2f2;
+	padding: 2px 0 0;
+}
+
+@media screen and (max-width: 550px) {
+	.overlay-image {
+		width: 85%;
+	}
+
+	div.overlay-text {
+		position: relative;
+		margin-top: -5rem;
+	}
+
+	.overlay-text h1 {
+		font-size: 1.9rem;
+	}
+
+	.overlay-top-text {
+		letter-spacing: 2px;
+	}
+}
+
+/* ---------- Active state for Feature section ---------- */
+.features-container .home-headline-nav li.active-feature {
+	background: #929292;
+	background: rgba(100,100,100,1);
+}
+
+/* ---------- Fat Footer Fix for Secondary Pages ---------- */
+main #fat-footer a,
+main #fat-footer a:hover,
+main #fat-footer a:focus {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	background: none;
+}
+
+/* ----- Font fix for Home page ----- */
+.opensansy main {
+	font-family: proxima-nova, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+
+/* ------ Impact Features ----- */
+.features-container .impact-head .home-headline.headline-has-background > div {
+	position: absolute;
+	top: inherit;
+	bottom: 5%;
+	width: 450px;
+	margin: 0 0 0 3rem;
+}
+
+.features-container .impact-head h2 {
+	border-left: none;
+	color: #fff;
+	font-size: 2.5rem;
+	line-height: .9;
+	text-transform: initial;
+	font-family: proxima-nova;
+	font-weight: 300;
+	padding: 0 0 0 1rem;
+	top: inherit;
+	bottom: inherit;
+}
+
+.features-container .impact-head h2,
+.features-container .impact-head .home-subtitle {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	padding: 0 2rem;
+	margin: 0;
+	background: #981e32;
+}
+
+.features-container .impact-head h2 {
+	padding-top: 1rem;
+}
+
+.features-container .impact-head .home-subtitle {
+	padding-bottom: 1rem;
+	font-weight: 300;
+}
+
+.features-container .impact-head .home-cta {
+	padding: 0;
+}
+
+p.recruit-middle.graduate {
+	margin-top: 8rem;
+	padding-bottom: 1rem;
+	color: #5e6a71;
+	line-height: 1.2;
+	font-size: 1.7rem;
+}
+
+p.button-row.graduate-apply {
+	margin-top: 3rem;
+}
+
+.recruitment {
+	padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 791px) {
+	.features-container .impact-head .home-headline.headline-has-background > div {
+		width: 80%;
+	}
+
+	.features-container .impact-head .home-cta {
+		padding: 0 0 0 2rem;
+		margin-left: 0;
+	}
+
+	.features-container .wsu-home-headline-wrapper.impact-head .headline-has-background {
+		background-position: center center;
+	}
+
+	.features-container .impact-head h2 {
+		font-size: 2rem;
+	}
+}
+
+/* ------ bug ------ */
+.bug {
+	border-top: solid 1px #7c1929;
+	border-bottom: solid 1px #7c1929;
+	background-color: #981e32;
+	height: auto;
+	padding: 1em;
+	text-align: center;
+}
+
+.bug p {
+	color: #fff;
+	font-size: 1.5rem;
+	font-size: 1em;
+	padding: .75em;
+}
+
+.bug .home-cta {
+	margin-top: 0 auto;
+	max-width: 100%;
+	color: #fff;
+}
+
+.bug .home-cta a,
+.bug .home-cta a:hover,
+.bug .home-cta a:focus {
+	color: #fff;
+	box-shadow: none;
+	padding: .5rem 2rem;
+	border: 1px solid #fff;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.bug .home-cta a:hover,
+.bug .home-cta a:focus {
+	color: #981e32;
+}
+
+/* ------ Cougs Give subfeature ------ */
+.leapyear {
+	border: 0;
+	background-color: #1e1e1e;
+	height: auto;
+	padding: 0;
+	text-align: center;
+}
+
+.leapyear.full a.leaping,
+.leapyear.full a.leaping:hover,
+.leapyear.full a.leaping:focus {
+	box-shadow: none;
+	padding: 0;
+	border: 0;
+	display: inline-block;
+	opacity: 1;
+	background: none;
+}
+
+.leapyear.full a.leaping:hover {
+	opacity: .85;
+}
+
+.leapyear.full .column img {
+	width: 100%;
+	max-width: 1000px;
+}
+
+/* ------ subfeature ------ */
+.subfeature {
+	background-color: #981e32;
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/07/PresFloyd-memorial.png);
+	background-position: center right;
+	background-repeat: no-repeat;
+	height: 305px;
+}
+
+.subfeature p {
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+.subfeature h2 {
+	color: #fff;
+	margin: 0;
+}
+
+.subfeature .column.one {
+	padding: 2rem 4rem 2rem 2rem !important;
+	background-size: contain;
+}
+
+.subfeatures .home-cta {
+	margin-top: 2rem;
+	width: 37.5%;
+	color: #fff;
+}
+
+.subfeature .home-cta a,
+.subfeature .home-cta a:hover,
+.subfeature .home-cta a:focus {
+	color: #fff;
+	box-shadow: none;
+	padding: .5rem 1rem;
+	border: 1px solid #fff;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.subfeature .home-cta a:hover {
+	color: #000;
+	border: 1px solid #d7dadb;
+}
+
+/* ----- subfeature mobile fix ----- */
+@media screen and (max-width: 700px) {
+	.subfeature .home-cta {
+		width: 65%;
+	}
+
+	.subfeature .column.one {
+		padding: 2rem 4rem !important;
+		background-size: contain;
+	}
+
+	.subfeature {
+		background-position: center left;
+	}
+}
+
+/* ------ Lowercase FOS dropdown ------ */
+.recruitment li.fos-label {
+	text-transform: lowercase;
+}
+
+/* ----- Manual News add ----- */
+.news .one .wsuwp-content-syndicate-wrapper.manual-csw {
+	font-size: 1rem;
+}
+
+.wsuwp-content-syndicate-list li a {
+	font-size: 16px;
+}
+
+/* ----- Calendar Item Adjustments ----- */
+.content-item-event-date {
+	padding: .5rem !important;
+	box-sizing: border-box;
+	width: 5rem !important;
+}
+
+/* ----- Athletics mobile fix ----- */
+@media screen and (max-width: 700px) {
+	.athletics {
+		background: #f2f2f2;
+	}
+}
+
+/* ------ Fixed Background fix ------ */
+@media screen and (max-width: 900px) {
+	.fixedbg {
+		background-size: cover !important;
+	}
+}
+
+/* ------ Border on mobile menu header ------ */
+#binder.fluid #spine header {
+	border-bottom: 1px solid #dbdbdb;
+}
+
+/* ----- FOS dropdown covered by lower div fix ----- */
+.find-fos {
+	z-index: 3;
+}
+
+/* ---- Fix IE8 image height for campaign ---- */
+.lt-ie9  main .row.campaign-mark .column img {
+	height: 150px;
+}
+
+/**** INTERNAL STYLES ***/
+/*------------subsection featured images------------*/
+.visit-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Screen-Shot-2015-03-18-at-11.05.46-AM.png);
+	height: 260px;
+	background-position: center;
+	text-align: center;
+}
+
+.community-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Community-SectionHeader1.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+}
+
+.activelife-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Recreation-Active.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+}
+
+.grandchallenge-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/research4.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+}
+
+.careersprof-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Careers-Professionals.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.careersstud-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Careers-StudentJobs1.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}
+
+.showscampus-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/05/Shows-OnCampus2.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.showsoffcampus-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Shows-OffCampus.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.buytix-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Tickets-BuyTickets3.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+}
+
+.shoponline-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Shopping-Online.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}
+
+.difference-statewide-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/WSUDifference-GiveBack.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+
+.excellence-statewide-ft-image {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/AcademicExcellence-Nursing.jpg);
+	height: 260px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}
+
+.landscape-1 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/DSC_8171.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 250px;
+	width: 100%;
+	bottom: 0;
+}
+
+.landscape-2 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Kayak-Sunset-Paddle_GOPR5673.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 250px;
+	width: 100%;
+	bottom: 0;
+}
+
+.landscape-3 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/MoscowMountsin.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 250px;
+	width: 100%;
+	bottom: 0;
+}
+
+.seasons-1 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Sights-Springl.jpg);
+}
+
+.seasons-2 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Aerial_Bryan_2-SM.jpg);
+}
+
+.seasons-3 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/12/VanderMeulenFallColor_7117.jpg);
+}
+
+.seasons-4 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/12/DSC_6565.jpg);
+}
+
+.seasons-1,
+.seasons-2,
+.seasons-3,
+.seasons-4 {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 250px;
+	width: 100%;
+	bottom: 0;
+}
+
+.small-town-1 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/12/D32_6828.jpg);
+}
+
+.small-town-2 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/12/Lentil-Fest-Bike-Race_5807.jpg);
+}
+
+.small-town-3 {
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Shopping-Pullman.jpg);
+}
+
+.small-town-1,
+.small-town-2,
+.small-town-3 {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 250px;
+	width: 100%;
+	bottom: 0;
+}
+
+.leachman-ft-image {
+	background-image: url(/wp-content/uploads/sites/625/2015/03/Housing-Leachman.jpg);
+	height: 350px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+}
+
+#binder.fluid .row.thirds.gutterless {
+	padding: 0;
+}
+
+#binder.fluid .row.quarters.gutterless {
+	padding: 0;
+}
+
+#power {
+	box-sizing: border-box;
+	background: #f6861f;
+	padding: .5rem 1rem;
+	width: calc(100% - 198px);
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	margin-left: 198px;
+	display: none;
+}
+
+.home #power {
+	width: 100%;
+	margin-left: 0;
+}
+
+p.numbers {
+	font-size: 3.5em !important;
+}
+
+@media screen and (max-width: 791px) {
+	#power {
+		width: 100%;
+		margin-left: 0;
+		margin-top: 49px;
+	}
+}
+
+@media only screen and (max-width: 762px) {
+	.landscape-1,
+	.landscape-2,
+	.landscape-3,
+	.landscape-4 {
+		height: 300px;
+	}
+
+	.landscape-2 {
+		background-position: bottom;
+	}
+
+	.small-town-1,
+	.small-town-2,
+	.small-town-3 {
+		height: 300px;
+	}
+
+	.small-town-2 {
+		background-position: top;
+	}
+}
+
+/* Faculty/Staff Quotes - Community life section */
+blockquote p {
+	font-weight: 300;
+	font-size: 2rem;
+	line-height: 1.5;
+	text-align: center;
+	padding: 4rem 0;
+	margin: 0 auto;
+	width: 90%;
+}
+
+/* Special homepage item list */
+.feature-bar-news {
+	background: rgba(0,0,0,.025);
+	padding: 0 1rem;
+}
+
+.hp-special {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	max-width: 1400px;
+	margin: 2rem auto 4rem;
+	list-style: none;
+	padding: 0;
+}
+
+.hp-special li {
+	width: 20%;
+	box-sizing: border-box;
+	border-right: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	padding-right: 2%;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	padding-left: 2%;
+	position: relative;
+	display: flex;
+	transition: background .3s ease;
+}
+
+.hp-special li:hover {
+	background: rgba(0,0,0,.02);
+}
+
+.hp-special a {
+	display: block;
+	border: none;
+	box-shadow: none;
+}
+
+.hp-special a:hover {
+	background: none;
+	border: none;
+	padding: 0;
+	box-shadow: none;
+}
+
+.hp-special li:nth-child(n+5) {
+	padding-bottom: none;
+	border-bottom: none;
+}
+
+.hp-special li:nth-child(3n+4) {
+	border-right: none;
+}
+
+.hp-special li.hp-two-slot {
+	width: 40%;
+}
+
+.hp-special li.hp-two-slot img {
+	width: 50%;
+	margin-right: 6%;
+	float: left;
+}
+
+.hp-special-cat,
+.hp-special-head,
+.hp-special-sub {
+	display: block;
+}
+
+.hp-special-cat {
+	color: #272727;
+	font-size: .6rem;
+	text-transform: uppercase;
+	margin-top: .25rem;
+	line-height: .5;
+	font-weight: 700;
+}
+
+.hp-special-head {
+	font-weight: 700;
+	font-size: 1rem;
+	margin-top: .65rem;
+}
+
+.hp-special-sub {
+	color: #5e6a71;
+	font-size: .9rem;
+	margin-top: .25rem;
+	line-height: 1.2;
+}
+
+@media only screen and (max-width: 1100px) {
+	.hp-special-head {
+		font-size: .9rem;
+		line-height: 1.2;
+	}
+
+	.hp-special-sub {
+		font-size: .8rem;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.hp-special li {
+		width: calc(100% / 3);
+	}
+
+	.hp-special li.hp-two-slot {
+		width: calc(100% / 3);
+	}
+
+	.hp-special li.hp-two-slot img {
+		display: none;
+	}
+
+	.hp-special li:last-child {
+		display: none;
+	}
+
+	.hp-special li:nth-child(3n+4) {
+		border-right: 1px solid #efefef;
+	}
+
+	.hp-special li:nth-child(n+4) {
+		padding-bottom: none;
+		border-bottom: none;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.hp-special li {
+		width: calc(100% / 2);
+	}
+
+	.hp-special li.hp-two-slot {
+		width: calc(100% / 2);
+	}
+
+	.hp-special li.hp-two-slot img {
+		display: none;
+	}
+
+	.hp-special li:nth-child(2n+2) {
+		border-right: none;
+	}
+
+	.hp-special li:nth-child(3n+4) {
+		border-bottom: 1px solid #efefef;
+	}
+}
+
+/* video wrapper allows you to easily position the video within the content and set the width and max-width of the video */
+.video-home .video-wrap-control {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	background: #717171;
+}
+
+/* The inner uses padding bottom (a percentage of it's own width) to allow the video player have a height that is responsive to the width */
+.video-home .video-wrap-inner {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+/* the iFrame fills the container it is in using absolute positioning */
+.video-home .video-wrap-inner iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*.features-container .home-headline-nav {
+	display: none !important;
+}
+
+.features-container .impact-head .home-headline.headline-has-background > div {
+	bottom: 15%;
+}*/
+@media screen and (max-width: 600px) {
+	.features-container .impact-head .home-headline.headline-has-background > div {
+		bottom: 1rem;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.features-container .impact-head h2 {
+		font-size: 1.5rem;
+	}
+
+	.features-container .home-cta,
+	.features-container .impact-head .home-cta {
+		display: block;
+		margin: 0;
+	}
+
+	.features-container .home-cta a,
+	.features-container .impact-head .home-cta a {
+		background: none;
+		border: none;
+		box-sizing: border-box;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		text-indent: -100%;
+		top: 0;
+		width: 100%;
+	}
+
+	.features-container .home-cta a:hover,
+	.features-container .impact-head .home-cta a:hover,
+	.features-container .impact-head .home-cta a:focus {
+		background: transparent;
+		border: none;
+	}
+
+	.bug {
+		background: #5e6a71;
+	}
+}
+
+@media only screen and (max-width: 693px) {
+	.spacing-loose .single.gutter .column:not(.gutterless) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.spacing-loose .halves.gutter .column.two:not(.gutterless),
+	.spacing-loose .halves.gutter .column:nth-of-type(2n+4):not(.gutterless),
+	.spacing-loose .margin-left.gutter .column.two:not(.gutterless),
+	.spacing-loose .margin-right.gutter .column.two:not(.gutterless),
+	.spacing-loose .side-left.gutter .column.two:not(.gutterless),
+	.spacing-loose .side-right.gutter .column.two:not(.gutterless) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.spacing-loose .single.gutter.map .column:not(.gutterless) {
+		padding: 0;
+	}
+
+	.spacing-loose .single.gutter.full .column:not(.gutterless) {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.features-container .home-headline.headline-has-background > div {
+		bottom: 15%;
+		top: inherit;
+		width: 100%;
+	}
+}
+
+#power {
+	display: block;
+}
+
+#power a {
+	color: #fff;
+	text-decoration: underline;
+}

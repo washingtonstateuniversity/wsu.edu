@@ -100,8 +100,8 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 				<?php echo wsu_home_get_menu( $header_mega_menu_args ); ?>
 			</div>
 			<div class="column three wsu-other-nav-placeholder">
-				<div class="top-level-links-label">WSU Locations</div>
-				<div class="search-label">Search</div>
+				<div class="top-level-links-label"><a href="">WSU Locations</a></div>
+				<div class="search-label"><a href="">Search</a></div>
 			</div>
 		</section>
 	</div>
@@ -117,7 +117,7 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 				<!-- Empty with purpose. -->
 			</div>
 		</section>
-		<div class="close-header-drawer">x</div>
+		<div class="close-header-drawer"><a href="">x</a></div>
 	</div>
 	<!-- Search interface, hidden by default until interaction in header -->
 	<div class="header-search-wrapper header-search-wrapper-hide">
@@ -141,12 +141,12 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 				<?php echo wsu_home_get_menu( $wsu_search_args ); ?>
 			</div>
 		</section>
-		<div class="close-header-search">x</div>
+		<div class="close-header-search"><a href="">x</a></div>
 	</div>
 
 	<!-- Campus links, hidden by default until interaction in header -->
 	<div class="campus-links-full-page-wrapper campus-links-hide">
-		<div class="campus-links-close">x</div>
+		<div class="campus-links-close"><a href="">x</a></div>
 		<div class="campus-links-internal-wrapper">
 			<section class="single full row" id="campus-modal">
 				<div class="column one">
