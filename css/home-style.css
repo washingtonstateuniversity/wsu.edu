@@ -127,7 +127,8 @@ main a {
 	transition: border 1s ease (.33,.66,.66,1);
 }
 
-main a:hover {
+main a:hover,
+main a:focus {
 	color: #981e32;
 	background-color: #f2f2f2;
 	border-bottom: 3px solid #f2f2f2;
@@ -145,7 +146,7 @@ main a:hover {
 	max-width: 100% !important;
 }
 
-.error404 section
+.error404 section,
 .home section {
 	margin: 0 auto;
 }
@@ -273,6 +274,7 @@ main a:hover {
 
 .search-label:hover a,
 .search-label a:hover,
+.search-label a:focus,
 .search-label:hover {
 	color: #5e6a71;
 }
@@ -353,7 +355,8 @@ main a:hover {
 	padding: 1rem 0;
 }
 
-.campus-links-internal-wrapper li a:hover {
+.campus-links-internal-wrapper li a:hover,
+.campus-links-internal-wrapper li a:focus {
 	background: rgba(0,0,0,.05);
 }
 
@@ -430,7 +433,8 @@ section.single.triptych.row.header-drawer:before {
 	display: block;
 }
 
-.mega-menu-labels-wrapper > ul > li > a:hover {
+.mega-menu-labels-wrapper > ul > li > a:hover,
+.mega-menu-labels-wrapper > ul > li > a:focus {
 	color: #981e32;
 }
 
@@ -621,7 +625,8 @@ section#search-modal {
 }
 
 .features-container .home-cta a,
-.features-container .home-cta a:hover {
+.features-container .home-cta a:hover,
+.features-container .home-cta a:focus {
 	color: #fff;
 	border: none;
 	box-shadow: none;
@@ -631,7 +636,8 @@ section#search-modal {
 	display: inline-block;
 }
 
-.features-container .home-cta a:hover {
+.features-container .home-cta a:hover,
+.features-container .home-cta a:focus {
 	color: #981e32;
 }
 
@@ -722,7 +728,8 @@ span.home-headline-nav-date {
 	display: block;
 }
 
-.home-headline-nav li:last-child a:hover {
+.home-headline-nav li:last-child a:hover,
+.home-headline-nav li:last-child a:focus {
 	padding: 0;
 	background: none;
 	border-bottom: none;
@@ -789,7 +796,8 @@ main .button-row a:hover {
 	background: #5e6a71;
 }
 
-main .button-row a.button-apply:hover {
+main .button-row a.button-apply:hover,
+main .button-row a.button-apply:focus {
 	background: #c60c30;
 }
 
@@ -896,12 +904,14 @@ main .recruitment .az li a {
 	min-width: 30px;
 }
 
-main .recruitment .az li a:hover {
+main .recruitment .az li a:hover,
+main .recruitment .az li a:focus {
 	background: #981e32;
 	color: #fff;
 }
 
-main .recruitment li.fos-item a:hover {
+main .recruitment li.fos-item a:hover,
+main .recruitment li.fos-item a:focus {
 	background-color: #981e32;
 	color: #fff;
 	border-bottom: none;
@@ -939,7 +949,8 @@ main .spine-social-channels ul li a {
 	font-size: 2rem;
 }
 
-main .spine-social-channels ul li a:hover {
+main .spine-social-channels ul li a:hover,
+main .spine-social-channels ul li a:focus {
 	background-color: #fff;
 }
 
@@ -1062,7 +1073,8 @@ main .news ul a {
 	display: block;
 }
 
-.wsuwp-content-syndicate-item a:hover {
+.wsuwp-content-syndicate-item a:hover,
+.wsuwp-content-syndicate-item a:focus {
 	color: #981e32;
 	padding: 0;
 	background: none;
@@ -1151,7 +1163,8 @@ span.wsu-ac-day {
 }
 
 main .athletics li a,
-main .athletics li a:hover {
+main .athletics li a:hover,
+main .athletics li a:focus {
 	color: #981e32;
 	border: none;
 	box-shadow: none;
@@ -1159,7 +1172,8 @@ main .athletics li a:hover {
 	font-weight: 300;
 }
 
-main .athletics li a:hover {
+main .athletics li a:hover,
+main .athletics li a:focus {
 	text-decoration: underline;
 }
 
@@ -1229,7 +1243,8 @@ main .athletics li a:hover {
 }
 
 main .facts a,
-main .facts a:hover {
+main .facts a:hover,
+main .facts a:focus {
 	border: none;
 	box-shadow: none;
 	padding: 0;
@@ -1392,7 +1407,8 @@ main .campaign-mark a {
 	box-shadow: none;
 }
 
-main .campaign-mark a:hover {
+main .campaign-mark a:hover,
+main .campaign-mark a:focus {
 	background: none;
 }
 
@@ -1461,7 +1477,8 @@ main .campaign-mark a:hover {
 }
 
 #fat-footer,
-#fat-footer .sub-menu a:hover {
+#fat-footer .sub-menu a:hover,
+#fat-footer .sub-menu a:focus {
 	color: #981e32;
 }
 
