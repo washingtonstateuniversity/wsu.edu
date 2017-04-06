@@ -201,7 +201,8 @@ section.single.triptych.row.header-drawer:before {
 	display: block;
 }
 
-.mega-menu-labels-wrapper > ul > li > a:hover {
+.mega-menu-labels-wrapper > ul > li > a:hover,
+.mega-menu-labels-wrapper > ul > li > a:focus {
 	color: #981e32;
 }
 
