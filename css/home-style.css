@@ -252,6 +252,12 @@ main a:hover {
 	background: #dbdbdb;
 }
 
+.top-level-links-label a,
+.top-level-links-label a:hover,
+.top-level-links-label a:focus {
+	color: #2a3033;
+}
+
 .search-label {
 	position: absolute;
 	bottom: 20px;
@@ -261,6 +267,12 @@ main a:hover {
 	transition: color .3s ease;
 }
 
+.search-label a {
+	color: #981e32;
+}
+
+.search-label:hover a,
+.search-label a:hover,
 .search-label:hover {
 	color: #5e6a71;
 }
