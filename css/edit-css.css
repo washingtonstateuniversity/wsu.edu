@@ -20,7 +20,8 @@
 	border: none;
 }
 
-.wsuwp-content-syndicate-wrapper.top-news-story a:hover {
+.wsuwp-content-syndicate-wrapper.top-news-story a:hover,
+.wsuwp-content-syndicate-wrapper.top-news-story a:focus {
 	color: #981e32;
 	background: none;
 	box-shadow: none;
@@ -69,12 +70,14 @@ main .recruitment .button-row a {
 
 /*feature section cta dark*/
 .features-container .dark .home-cta a,
-.features-container .dark .home-cta a:hover {
+.features-container .dark .home-cta a:hover,
+.features-container .dark .home-cta a:focus {
 	border: 1px solid #981e32;
 	background-color: #981e32;
 }
 
-.features-container .dark .home-cta a:hover {
+.features-container .dark .home-cta a:hover,
+.features-container .dark .home-cta a:focus {
 	color: #981e32;
 	border: 1px solid #981e32;
 	background-color: #fff;
@@ -148,7 +151,8 @@ span.content-item-event-city {
 	width: 100%;
 }
 
-.news-block-column a:hover {
+.news-block-column a:hover,
+.news-block-column a:focus {
 	background: rgba(0,0,0,.05);
 	border: none;
 	padding: 1rem 1.5rem;
@@ -393,7 +397,8 @@ div.overlay-text {
 
 /* ---------- Fat Footer Fix for Secondary Pages ---------- */
 main #fat-footer a,
-main #fat-footer a:hover {
+main #fat-footer a:hover,
+main #fat-footer a:focus {
 	border: none;
 	box-shadow: none;
 	padding: 0;
@@ -509,7 +514,8 @@ p.button-row.graduate-apply {
 }
 
 .bug .home-cta a,
-.bug .home-cta a:hover {
+.bug .home-cta a:hover,
+.bug .home-cta a:focus {
 	color: #fff;
 	box-shadow: none;
 	padding: .5rem 2rem;
@@ -518,7 +524,8 @@ p.button-row.graduate-apply {
 	display: inline-block;
 }
 
-.bug .home-cta a:hover {
+.bug .home-cta a:hover,
+.bug .home-cta a:focus {
 	color: #981e32;
 }
 
@@ -532,7 +539,8 @@ p.button-row.graduate-apply {
 }
 
 .leapyear.full a.leaping,
-.leapyear.full a.leaping:hover {
+.leapyear.full a.leaping:hover,
+.leapyear.full a.leaping:focus {
 	box-shadow: none;
 	padding: 0;
 	border: 0;
@@ -581,7 +589,8 @@ p.button-row.graduate-apply {
 }
 
 .subfeature .home-cta a,
-.subfeature .home-cta a:hover {
+.subfeature .home-cta a:hover,
+.subfeature .home-cta a:focus {
 	color: #fff;
 	box-shadow: none;
 	padding: .5rem 1rem;
@@ -1147,7 +1156,8 @@ blockquote p {
 	}
 
 	.features-container .home-cta a:hover,
-	.features-container .impact-head .home-cta a:hover {
+	.features-container .impact-head .home-cta a:hover,
+	.features-container .impact-head .home-cta a:focus {
 		background: transparent;
 		border: none;
 	}
