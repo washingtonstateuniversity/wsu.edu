@@ -132,7 +132,6 @@ span.content-item-event-city {
 	border-bottom: 1px solid rgba(0,0,0,.1);
 	box-sizing: border-box;
 	display: flex;
-	flex: 1;
 	position: relative;
 	transition: background .3s ease;
 	padding: 0;
