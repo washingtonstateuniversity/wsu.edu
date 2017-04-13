@@ -1,7 +1,6 @@
 <?php
 
 // @codingStandardsIgnoreStart
-echo wsu_home_get_alert();
 
 /*
  * On the home page, we display a series of navigation menus at the top.
