@@ -483,3 +483,7 @@ blockquote p + p {
 		width: 100%;
 	}
 }
+
+.spine-full .wsu-home-alert {
+	padding-left: 198px;
+}

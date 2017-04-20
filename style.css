@@ -36,9 +36,8 @@ body {
 }
 
 .wsu-home-alert {
-	height: 100px;
 	margin: 0;
-	padding: 0;
+	padding: 1em 0 2em 0;
 	text-align: center;
 	background: #f15d22;
 	font-size: 1rem;
@@ -56,6 +55,27 @@ body {
 .wsu-home-alert a {
 	font-size: 1.5em;
 	line-height: 1.6em;
+	color: #efefef;
+	text-decoration: underline;
+}
+
+.wsu-home-alert a:after {
+	font-size: .75em;
+	font-family: Spine-Icons;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: absolute;
+	margin-left: 6px;
+	content: "\21AA";
+}
+
+.spine-mobile .wsu-home-alert {
+	margin-top: 45px;
+}
+
+.spine-mobile .wsu-home-alert a {
+	font-size: 1.2em;
+	line-height: 1.4em;
 	color: #efefef;
 }
 
