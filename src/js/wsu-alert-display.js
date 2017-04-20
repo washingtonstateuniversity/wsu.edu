@@ -1,5 +1,3 @@
-try{Typekit.load();}catch(e){}
-
 ( function( $ ) {
 	var has_alert = function() {
 		return 0 !== $( ".wsu-home-alert" ).length;
