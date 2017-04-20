@@ -13,7 +13,8 @@ module.exports = function( grunt ) {
 				src: [
 					"src/js/wsu-home-fos-view.js",
 					"src/js/wsu-home-navigation-view.js",
-					"src/js/wsu-home-primary.js"
+					"src/js/wsu-home-primary.js",
+					"src/js/wsu-alert-display.js"
 				],
 				dest: "js/wsu-home.js"
 			},
