@@ -1,7 +1,7 @@
 /* .features-container .home-headline-nav {
 	display: none !important;
 } */
-/* display none until a11y is adjusted */
+/* display none until a11y is adjusted
 .home .features-container .home-headline-nav,
 .find-fos-wrapper,
 .find-fos-alpha h3 {
@@ -12,6 +12,8 @@
 .recruitment .two h4 {
 	margin-top: 0;
 }
+
+*/
 
 /* big news story */
 .wsuwp-content-syndicate-wrapper.top-news-story a {
