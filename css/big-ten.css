@@ -116,11 +116,6 @@ ul li {
 	position: absolute;
 }
 
-blockquote {
-	font-size: 1.2em;
-	padding: 0;
-}
-
 @media screen and ( max-width: 989px ) {
 	.card {
 		display: block;
