@@ -1,6 +1,32 @@
 html,
-main {
+main,
+.header-shelf-wrapper {
 	background: #18191A;
+}
+
+/* move search text slightly higher */
+.home .fluid .main-header .row.triptych.header-shelf .column.three {
+    padding-top: 1rem;
+}
+
+.mega-menu-labels-wrapper > ul > li > a,
+.search-label {
+	color: #fff;
+	font-weight: 400;
+	letter-spacing: 1px;
+	transition: color .3s ease;
+}
+
+.search-label:after {
+	color: rgba(255, 255, 255, .25);
+	font-weight: 400;
+}
+
+.mega-menu-labels-wrapper > ul > li > a:hover,
+.mega-menu-labels-wrapper > ul > li > a:focus,
+.search-label:hover,
+.search-label:focus {
+	color: #ff002a;
 }
 
 .main-feature-top {
@@ -9,7 +35,7 @@ main {
 
 .card-deck {
 	margin: 0 auto;
-	max-width: 1600px;
+	max-width: 1400px;
 }
 
 .card {
