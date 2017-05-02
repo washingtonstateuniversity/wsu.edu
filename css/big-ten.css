@@ -14,15 +14,22 @@ main {
 
 .card {
 	background: #111112;
-}
-
-.card .one,
-.card.reverse .two {
-	padding: 12em 8em;
+	display: flex;
 }
 
 .card.reverse .one {
-	padding: 0;
+	order: 1;
+}
+
+.card .two {
+	padding: 12em 8em;
+}
+
+.card-image {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
 }
 
 blockquote {
