@@ -1,0 +1,31 @@
+html,
+main {
+	background: #18191A;
+}
+
+.main-feature-top {
+	height: calc(100vh - 61.59px);
+}
+
+.card-deck {
+	margin: 0 auto;
+	max-width: 1600px;
+}
+
+.card {
+	background: #111112;
+}
+
+.card .one,
+.card.reverse .two {
+	padding: 12em 8em;
+}
+
+.card.reverse .one {
+	padding: 0;
+}
+
+blockquote {
+	font-size: 1.2em;
+	padding: 0;
+}
