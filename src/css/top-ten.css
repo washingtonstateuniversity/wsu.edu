@@ -125,7 +125,8 @@ h3 {
 
 @media screen and ( max-width: 989px ) {
 
-	.row .column.impact-deck .content-card--feature-image {
+	.row .column.impact-deck .content-card--feature-image img {
 		height: 40vh;
+		width: 100%;
 	}
 }

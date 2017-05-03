@@ -14,9 +14,16 @@
 			$image.removeAttr( "src" );
 
 			if ( 989 < $( window ).width() && desktop_image ) {
-				$image.css( "background-image", "url(" + desktop_image + ")" ).width( $card.width() / 2 );
+				$image.css( {
+					"background-image": "url(" + desktop_image + ")",
+					"width": $card.width() / 2
+				} );
 			} else if ( mobile_image ) {
-				$image.css( "background-image", "url(" + mobile_image + ")" ).removeClass( "fixed absolute" );
+				$figure.removeClass( "fixed absolute" );
+				$image.css( {
+					"background-image": "url(" + mobile_image + ")",
+					"width": "100%"
+				} );
 			}
 		} );
 	}
