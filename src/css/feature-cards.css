@@ -1,0 +1,48 @@
+.card-deck {
+	margin: 0 auto;
+	max-width: 1400px;
+}
+
+.card {
+	background: #111112;
+	display: flex;
+}
+
+.card.reverse .one {
+	order: 1;
+}
+
+.card .two {
+	padding: 12em 8em;
+}
+
+.card-image {
+	background-position: center no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+
+.card-image.fixed {
+	position: fixed;
+	top: 0;
+}
+
+.card-image.absolute {
+	bottom: 0;
+	position: absolute;
+}
+
+@media screen and ( max-width: 989px ) {
+	.card {
+		display: block;
+	}
+
+	.fluid .row.card .column {
+		float: none;
+		width: 100%;
+	}
+
+	.card-image {
+		height: 40vh;
+	}
+}

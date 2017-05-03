@@ -1,0 +1,9 @@
+.card-image.fixed {
+	position: fixed;
+	top: 0;
+}
+
+.card-image.absolute {
+	bottom: 0;
+	position: absolute;
+}
