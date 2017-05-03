@@ -61,7 +61,7 @@ h3 {
 	margin-top: 0;
 }
 
-.card ul {
+.content-card ul {
 	border-bottom: solid 1px #333333;
 	color: #d5d5d5;
 	font-size: .9em;
@@ -70,13 +70,58 @@ h3 {
 	padding-bottom: 3em;
 }
 
-.card ul li {
+.content-card ul li {
 	line-height: 1.5em;
 	padding: 0 0 .5em;
 }
 
 /* Card adjustments */
-.card {
+.row .impact-deck {
+	float: none;
 	margin: 0 auto;
 	max-width: 1400px;
+}
+
+.content-card {
+	background: #111112;
+}
+
+.content-card--feature-image,
+.content-card--text {
+	width: 50%;
+}
+
+.impact-deck article:nth-of-type(odd) .content-card--feature-image {
+	order: 1;
+}
+
+.content-card--feature-image {
+	background-position: center no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+
+.content-card--feature-image img {
+	display: none;
+}
+
+.content-card--text {
+	padding: 12em 8em;
+}
+
+.content-card--feature-image.fixed {
+	position: fixed;
+	top: 0;
+}
+
+.content-card--feature-image.absolute {
+	bottom: 0;
+	position: absolute;
+}
+
+@media screen and ( max-width: 989px ) {
+
+	.content-card--feature-image {
+		height: 40vh;
+	}
 }
