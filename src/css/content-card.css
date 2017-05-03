@@ -1,0 +1,14 @@
+.content-card {
+	display: flex;
+}
+
+@media screen and ( max-width: 989px ) {
+	.content-card {
+		display: block;
+	}
+
+	.content-card--feature-image,
+	.content-card--text {
+		width: 100%;
+	}
+}
