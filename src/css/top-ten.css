@@ -96,7 +96,7 @@ h3 {
 }
 
 .content-card--feature-image {
-	background-position: center no-repeat;
+	background: center no-repeat;
 	background-size: cover;
 	height: 100vh;
 }
@@ -121,7 +121,7 @@ h3 {
 
 @media screen and ( max-width: 989px ) {
 
-	.content-card--feature-image {
+	.row .column.impact-deck .content-card--feature-image {
 		height: 40vh;
 	}
 }
