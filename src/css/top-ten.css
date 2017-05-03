@@ -84,6 +84,7 @@ h3 {
 
 .content-card {
 	background: #111112;
+	min-height: 100vh;
 }
 
 .content-card--feature-image,
@@ -96,25 +97,28 @@ h3 {
 }
 
 .content-card--feature-image {
+	overflow: hidden;
+}
+
+.row .column.impact-deck .content-card--feature-image img {
 	background: center no-repeat;
 	background-size: cover;
 	height: 100vh;
-}
-
-.content-card--feature-image img {
-	display: none;
+	max-width: none;
+	text-indent: -100%;
+	width: auto;
 }
 
 .content-card--text {
 	padding: 12em 8em;
 }
 
-.content-card--feature-image.fixed {
+.content-card--feature-image.fixed img {
 	position: fixed;
 	top: 0;
 }
 
-.content-card--feature-image.absolute {
+.content-card--feature-image.absolute img {
 	bottom: 0;
 	position: absolute;
 }
