@@ -61,7 +61,7 @@ h3 {
 	margin-top: 0;
 }
 
-ul {
+.content-card ul {
 	border-bottom: solid 1px #333333;
 	color: #d5d5d5;
 	font-size: .9em;
@@ -70,63 +70,63 @@ ul {
 	padding-bottom: 3em;
 }
 
-ul li {
+.content-card ul li {
 	line-height: 1.5em;
 	padding: 0 0 .5em;
 }
 
-/* Main feature */
-.main-feature-top {
-	height: calc(100vh - 60px);
-}
-
-/* Cards */
-.card-deck {
+/* Card adjustments */
+.row .impact-deck {
+	float: none;
 	margin: 0 auto;
 	max-width: 1400px;
 }
 
-.card {
+.content-card {
 	background: #111112;
-	display: flex;
+	min-height: 100vh;
 }
 
-.card.reverse .one {
+.content-card--feature-image,
+.content-card--text {
+	width: 50%;
+}
+
+.impact-deck article:nth-of-type(odd) .content-card--feature-image {
 	order: 1;
 }
 
-.card .two {
+.content-card--feature-image {
+	overflow: hidden;
+}
+
+.row .column.impact-deck .content-card--feature-image img {
+	background: center no-repeat;
+	background-size: cover;
+	height: 100vh;
+	max-width: none;
+	text-indent: -100%;
+	width: auto;
+}
+
+.content-card--text {
 	padding: 12em 8em;
 }
 
-.card-image {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100vh;
-}
-
-.card-image.fixed {
+.content-card--feature-image.fixed img {
 	position: fixed;
 	top: 0;
 }
 
-.card-image.absolute {
+.content-card--feature-image.absolute img {
 	bottom: 0;
 	position: absolute;
 }
 
 @media screen and ( max-width: 989px ) {
-	.card {
-		display: block;
-	}
 
-	.fluid .row.halves.card .column {
-		float: none;
-		width: 100%;
-	}
-
-	.card-image {
+	.row .column.impact-deck .content-card--feature-image img {
 		height: 40vh;
+		width: 100%;
 	}
 }

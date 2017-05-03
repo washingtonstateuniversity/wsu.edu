@@ -1,0 +1,19 @@
+.content-card {
+	display: flex;
+}
+
+.content-card--feature-image,
+.content-card--text {
+	box-sizing: border-box;
+}
+
+@media screen and ( max-width: 989px ) {
+	.content-card {
+		display: block;
+	}
+
+	.content-card .content-card--feature-image,
+	.content-card .content-card--text {
+		width: 100%;
+	}
+}
