@@ -210,6 +210,14 @@ h3 {
 
 @media screen and ( max-width: 989px ) {
 
+	.impact-deck .content-card:before {
+		left: 4em;
+	}
+
+	.impact-deck .content-card:nth-of-type(even):before {
+		margin-left: 0;
+	}
+
 	.impact-deck .content-card--feature-image,
 	.impact-deck .content-card--text {
 		width: 100%;
@@ -218,5 +226,9 @@ h3 {
 	.impact-deck .content-card--feature-image-wrapper {
 		height: 40vh;
 		width: 100%;
+	}
+
+	.impact-deck .content-card--text {
+		padding: 6em 4em;
 	}
 }
