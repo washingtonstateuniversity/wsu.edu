@@ -30,6 +30,7 @@ class WSUWP_Top_Ten_Card_Shortcode {
 
 		$args = array(
 			'posts_per_page' => absint( $atts['count'] ),
+			'orderby' => 'rand',
 		);
 
 		if ( $atts['site_category_slug'] ) {
