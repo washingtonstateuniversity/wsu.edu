@@ -75,6 +75,21 @@ h3 {
 	padding: 0 0 .5em;
 }
 
+/* Spirit mark pillar */
+
+.content-card:before,
+.hero:before {
+	background: #981e32 url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat;
+	background-size: 48px 45.92px;
+	background-position: 0.5rem 2rem;
+	content: "";
+	height: 87px;
+	position: absolute;
+	top: 0;
+	width: 4rem;
+	z-index: 1;
+}
+
 /* Hero */
 .hero {
 	font-size: 1rem;
@@ -85,18 +100,9 @@ h3 {
 }
 
 .hero:before {
-	background: #981e32 url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat;
-	background-size: 48px 45.92px;
-	background-position: 0.5rem 2rem;
-	content: "";
-	height: 87px;
 	left: 0;
 	margin: 0 auto;
-	position: absolute;
 	right: 0;
-	top: 0;
-	width: 4rem;
-	z-index: 1;
 }
 
 .hero section {
@@ -119,11 +125,6 @@ h3 {
 	max-width: 1400px;
 	z-index: 1;
 
-}
-
-.wsu-p-replaced {
-	position: absolute;
-	top: 0;
 }
 
 .hero h1 {
@@ -156,6 +157,15 @@ h3 {
 .content-card {
 	background: #111112;
 	min-height: 100vh;
+	position: relative;
+}
+
+.content-card:before {
+	left: 8em;
+}
+
+.content-card:nth-of-type(even):before {
+	margin-left: 50%;
 }
 
 .content-card--feature-image,
