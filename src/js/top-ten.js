@@ -19,7 +19,6 @@
 					"width": $card.width() / 2
 				} );
 			} else if ( mobile_image ) {
-				$figure.removeClass( "fixed absolute" );
 				$image.css( {
 					"background-image": "url(" + mobile_image + ")",
 					"width": "100%"
