@@ -79,7 +79,7 @@ h3 {
 
 .content-card:before,
 .hero:before {
-	background: #981e32 url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat;
+	background: #981e32 url(../../assets/top-ten/spirit-mark.svg) no-repeat;
 	background-size: 48px 45.92px;
 	background-position: 0.5rem 2rem;
 	content: "";
