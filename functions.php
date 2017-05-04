@@ -32,6 +32,7 @@ class WSU_Home_Theme {
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'add_settings_fields' ) );
 		add_filter( 'wsu_spine_navigation_id', array( $this, 'filter_navigation_id' ) );
+		add_action( 'wsu_register_inline_svg', array( $this, 'top_ten_down_arrow' ) );
 	}
 
 	/*
@@ -380,6 +381,25 @@ class WSU_Home_Theme {
 		}
 
 		return $id;
+	}
+
+	/**
+	 * Register the Top Ten down arrow SVG.
+	 *
+	 * @since 0.14.2
+	 */
+	public function top_ten_down_arrow() {
+		ob_start();
+		?>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.1 93.5" class="top-ten-down-arrow">
+			<circle cx="46.4" cy="46.7" r="45.4" style="fill:none;stroke-width:2;stroke:#fff" />
+			<polyline points="67.7 47.5 46.4 68.7 25.2 47.5" style="fill:none;stroke-linejoin:round;stroke-width:2;stroke:#fff;" />
+			<line x1="46.4" y1="24.1" x2="46.4" y2="68.7" style="fill:none;stroke-linejoin:round;stroke-width:2;stroke:#fff;" />
+		</svg>
+		<?php
+		$down_arrow = ob_get_clean();
+
+		wsu_register_inline_svg( 'top-ten-down-arrow', $down_arrow );
 	}
 }
 $wsu_home_theme = new WSU_Home_Theme();
