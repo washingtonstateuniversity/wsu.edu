@@ -65,7 +65,11 @@ class WSUWP_Top_Ten_Card_Shortcode {
 						<h2><?php the_title(); ?></h2>
 					</header>
 
-					<?php the_content(); ?>
+					<?php
+						add_filter( 'the_content', 'wpautop' );
+						the_content();
+						remove_filter( 'the_content', 'wpautop' );
+					?>
 
 				</div>
 
