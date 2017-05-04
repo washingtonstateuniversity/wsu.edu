@@ -167,6 +167,13 @@ class WSU_Home_Theme {
 
 	public function top_ten_enqueue_style() {
 		if ( $this->is_wsu_site( 'wsu-impact' ) ) {
+
+			// Haha, just kidding. We don't have an impact front page.
+			if ( is_front_page() ) {
+				wp_safe_redirect( 'https://wsu.edu/', 302 );
+				exit;
+			}
+
 			$body_classes = get_post_meta( get_post()->ID, '_wsuwp_body_class', true );
 
 			if ( in_array( 'top-ten', explode( ' ', $body_classes ), true ) ) {
