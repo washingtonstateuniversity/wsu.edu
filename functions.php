@@ -5,6 +5,7 @@ include_once( __DIR__ . '/includes/fields-of-study.php' );
 include_once( __DIR__ . '/includes/academic-calendar.php' );
 include_once( __DIR__ . '/includes/wsuwp-map-embed.php' );
 include_once( __DIR__ . '/includes/feature-youtube-embed.php' );
+include_once( __DIR__ . '/includes/top-ten-card-shortcode.php' );
 
 class WSU_Home_Theme {
 	/**
@@ -21,6 +22,7 @@ class WSU_Home_Theme {
 		add_filter( 'spine_child_theme_version', array( $this, 'script_version' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 30 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'temp_enqueue_style' ), 99 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'top_ten_enqueue_style' ), 100 );
 		add_action( 'after_setup_theme', array( $this, 'register_menus' ), 10 );
 		add_action( 'wp_update_nav_menu', array( $this, 'update_nav_menu' ), 10, 1 );
 		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
@@ -160,6 +162,25 @@ class WSU_Home_Theme {
 
 		if ( $this->is_wsu_site( 'wsu-features' ) || $this->is_wsu_site( 'wsu-impact' ) ) {
 			wp_enqueue_style( 'wsu-features-style', get_stylesheet_directory_uri() . '/css/features-style.css', array(), $this->script_version() );
+		}
+	}
+
+	public function top_ten_enqueue_style() {
+		if ( $this->is_wsu_site( 'wsu-impact' ) ) {
+			$body_classes = get_post_meta( get_post()->ID, '_wsuwp_body_class', true );
+
+			if ( in_array( 'top-ten', explode( ' ', $body_classes ), true ) ) {
+				wp_dequeue_style( 'wsu-home-style' );
+				wp_dequeue_style( 'wsu-home-custom-style' );
+				wp_dequeue_style( 'wsu-internal-style' );
+				wp_enqueue_style( 'wsu-features-style', get_stylesheet_directory_uri() . '/css/features-style.css', array(), $this->script_version() );
+				wp_enqueue_style( 'wsu-top-ten', get_stylesheet_directory_uri() . '/src/css/combined-top-ten.css', array(), $this->script_version() );
+				wp_enqueue_script( 'wsu-stick-and-go', get_stylesheet_directory_uri() . '/src/js/stick-and-go.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-scroll-fade', get_stylesheet_directory_uri() . '/src/js/scroll-fade.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-parallax', get_stylesheet_directory_uri() . '/src/js/parallax.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-scroll-scale', get_stylesheet_directory_uri() . '/src/js/scroll-scale.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-top-ten', get_stylesheet_directory_uri() . '/src/js/top-ten.js', array( 'jquery' ), $this->script_version() );
+			}
 		}
 	}
 

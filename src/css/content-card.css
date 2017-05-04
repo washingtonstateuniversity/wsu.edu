@@ -8,6 +8,7 @@
 }
 
 @media screen and ( max-width: 989px ) {
+
 	.content-card {
 		display: block;
 	}
