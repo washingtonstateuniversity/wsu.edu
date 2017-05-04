@@ -196,7 +196,7 @@ h3 {
 }
 
 .impact-deck .content-card--feature-image-wrapper {
-	background: center no-repeat;
+	background: top center no-repeat;
 	background-size: cover;
 	height: 100vh;
 	max-width: none;
