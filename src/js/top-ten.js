@@ -6,7 +6,7 @@
 	function process_card_images() {
 		$( ".content-card--feature-image" ).each( function() {
 			var $figure = $( this ),
-				$image = $figure.find( "img" ),
+				$image = $figure.find( ".content-card--feature-image-wrapper" ),
 				$card = $figure.closest( ".content-card" ),
 				desktop_image = $figure.data( "desktop-image" ),
 				mobile_image = $figure.data( "mobile-image" );

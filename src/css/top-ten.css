@@ -75,6 +75,21 @@ h3 {
 	padding: 0 0 .5em;
 }
 
+/* Spirit mark pillar */
+
+.content-card:before,
+.hero:before {
+	background: #981e32 url(../../assets/top-ten/spirit-mark.svg) no-repeat;
+	background-size: 48px 45.92px;
+	background-position: 0.5rem 2rem;
+	content: "";
+	height: 87px;
+	position: absolute;
+	top: 0;
+	width: 4rem;
+	z-index: 1;
+}
+
 /* Hero */
 .hero {
 	font-size: 1rem;
@@ -85,18 +100,9 @@ h3 {
 }
 
 .hero:before {
-	background: #981e32 url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat;
-	background-size: 48px 45.92px;
-	background-position: 0.5rem 2rem;
-	content: "";
-	height: 87px;
 	left: 0;
 	margin: 0 auto;
-	position: absolute;
 	right: 0;
-	top: 0;
-	width: 4rem;
-	z-index: 1;
 }
 
 .hero section {
@@ -117,30 +123,40 @@ h3 {
 	justify-content: center;
 	margin: 0 auto;
 	max-width: 1400px;
+	text-align: center;
 	z-index: 1;
-
-}
-
-.wsu-p-replaced {
-	position: absolute;
-	top: 0;
 }
 
 .hero h1 {
 	color: #fff;
+	font-size: 5em;
 	font-weight: 800;
+	margin: 0;
+	padding: 0;
 }
 
-.tt-hero-sub {
-	border-bottom: solid 1px #ff002a;
-	margin-bottom: 4rem;
+.hero p {
+	color: #fff;
+	font-size: 1.2em;
+	text-transform: none;
+	max-width: 700px;
+}
+
+.hero .tt-hero-sub {
+	border-bottom: solid 3px #ff002a;
+	color: #d5d5d5;
+	font-size: .9em;
+	letter-spacing: 4px;
+	margin-bottom: 4.5em;
+	padding: .5em 0 1.5em;
 	text-transform: uppercase;
+	width: 50%;
 }
 
 .hero .hero--feature-image {
 	background: center no-repeat;
 	background-size: cover;
-	background-image: url(https://images.unsplash.com/photo-1481624362406-b7817fa45ecf?fit=crop&w=1500&h=1000&q=80);
+	background-image: url(https://wsu.edu/impact/wp-content/uploads/sites/878/2017/05/hero-young.jpg);
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -153,13 +169,22 @@ h3 {
 	max-width: 1400px;
 }
 
-.content-card {
+.impact-deck .content-card {
 	background: #111112;
 	min-height: 100vh;
+	position: relative;
 }
 
-.content-card--feature-image,
-.content-card--text {
+.impact-deck .content-card:before {
+	left: 8em;
+}
+
+.impact-deck .content-card:nth-of-type(even):before {
+	margin-left: 50%;
+}
+
+.impact-deck .content-card--feature-image,
+.impact-deck .content-card--text {
 	width: 50%;
 }
 
@@ -167,11 +192,11 @@ h3 {
 	order: 1;
 }
 
-.content-card--feature-image {
+.impact-deck .content-card--feature-image {
 	overflow: hidden;
 }
 
-.row .column.impact-deck .content-card--feature-image img {
+.impact-deck .content-card--feature-image-wrapper {
 	background: center no-repeat;
 	background-size: cover;
 	height: 100vh;
@@ -180,24 +205,96 @@ h3 {
 	width: auto;
 }
 
-.content-card--text {
-	padding: 12em 8em;
+.impact-deck .content-card--feature-image-wrapper img {
+	display: none;
 }
 
-.content-card--feature-image.fixed img {
+.impact-deck .fixed .content-card--feature-image-wrapper {
 	position: fixed;
 	top: 0;
 }
 
-.content-card--feature-image.absolute img {
+.impact-deck .absolute .content-card--feature-image-wrapper {
 	bottom: 0;
 	position: absolute;
 }
 
+.impact-deck .content-card--text {
+	padding: 12em 8em;
+}
+
+.tt-details li {
+	list-style: none;
+	position: relative;
+}
+
+.tt-details li:before {
+	background-repeat: no-repeat;
+	background-position: center top;
+	content: "";
+	height: 100%;
+	left: -2em;
+	position: absolute;
+	top: 0;
+	width: 1em;
+}
+
+.tt-details .ico-college:before {
+	background-image: url(../../assets/top-ten/li-icon-college.svg);
+	background-size: .7em;
+}
+
+.tt-details .ico-major:before {
+	background-image: url(../../assets/top-ten/li-icon-major.svg);
+	background-position-y: 2px;
+	background-size: 1em;
+}
+
+.tt-details .ico-home:before {
+	background-image: url(../../assets/top-ten/li-icon-hometown.svg);
+	background-size: .9em;
+}
+
 @media screen and ( max-width: 989px ) {
 
-	.row .column.impact-deck .content-card--feature-image img {
+	#jacket #binder main {
+		margin-top: 0;
+	}
+
+	.impact-deck .content-card:before {
+		left: 4em;
+	}
+
+	.impact-deck .content-card:nth-of-type(even):before {
+		margin-left: 0;
+	}
+
+	.impact-deck .content-card--feature-image,
+	.impact-deck .content-card--text {
+		width: 100%;
+	}
+
+	.impact-deck .content-card--feature-image-wrapper {
 		height: 40vh;
 		width: 100%;
+	}
+
+	.impact-deck .content-card--text {
+		padding: 4em 4em 6em;
+	}
+}
+
+@media screen and (max-width: 791px) {
+
+	.hero .hero--text {
+		padding-top: 87px;
+	}
+
+	.hero h1 {
+		font-size: 4em;
+	}
+
+	.hero .tt-hero-sub {
+		margin-bottom: 3em;
 	}
 }
