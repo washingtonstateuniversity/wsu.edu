@@ -145,6 +145,19 @@ class WSU_Home_Theme {
 		if ( $this->is_wsu_site( 'wsu-internal' ) && ! is_404() ) {
 			wp_enqueue_script( 'wsu-home-internal', get_stylesheet_directory_uri() . '/js/wsu-home-internal.js', array( 'wsu-home-typekit' ), $this->script_version(), true );
 		}
+
+		if ( $this->is_wsu_site( 'wsu-impact' ) ) {
+			$body_classes = get_post_meta( get_post()->ID, '_wsuwp_body_class', true );
+
+			if ( in_array( 'top-ten', explode( ' ', $body_classes ), true ) ) {
+				wp_enqueue_style( 'wsu-top-ten', get_stylesheet_directory_uri() . '/src/css/combined-top-ten.css', array(), $this->script_version() );
+				wp_enqueue_script( 'wsu-stick-and-go', get_stylesheet_directory_uri() . '/src/js/stick-and-go.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-scroll-fade', get_stylesheet_directory_uri() . '/src/js/scroll-fade.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-parallax', get_stylesheet_directory_uri() . '/src/js/parallax.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-scroll-scale', get_stylesheet_directory_uri() . '/src/js/scroll-scale.js', array( 'jquery' ), $this->script_version() );
+				wp_enqueue_script( 'wsu-top-ten', get_stylesheet_directory_uri() . '/src/js/top-ten.js', array( 'jquery' ), $this->script_version() );
+			}
+		}
 	}
 
 	public function temp_enqueue_style() {
