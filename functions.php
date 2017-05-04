@@ -5,6 +5,7 @@ include_once( __DIR__ . '/includes/fields-of-study.php' );
 include_once( __DIR__ . '/includes/academic-calendar.php' );
 include_once( __DIR__ . '/includes/wsuwp-map-embed.php' );
 include_once( __DIR__ . '/includes/feature-youtube-embed.php' );
+include_once( __DIR__ . '/includes/top-ten-card-shortcode.php' );
 
 class WSU_Home_Theme {
 	/**
