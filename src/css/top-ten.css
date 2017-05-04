@@ -75,6 +75,61 @@ h3 {
 	padding: 0 0 .5em;
 }
 
+/* Hero */
+.hero {
+	font-size: 1rem;
+	height: calc(100vh - 60px);
+	margin: 0;
+	overflow: hidden;
+}
+
+.hero section {
+    height: 100vh;
+    margin-top: -60px;
+}
+
+.fluid .hero .row .column {
+	float: none;
+	height: 100%;
+	width: 100%;
+}
+
+.hero .hero--text {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 1400px;
+	z-index: 1;
+
+}
+
+.wsu-p-replaced {
+	position: absolute;
+	top: 0;
+}
+
+.hero h1 {
+	color: #fff;
+	font-weight: 800;
+}
+
+.tt-hero-sub {
+	border-bottom: solid 1px #ff002a;
+	margin-bottom: 4rem;
+	text-transform: uppercase;
+}
+
+.hero .hero--feature-image {
+	background: center no-repeat;
+	background-size: cover;
+	background-image: url(https://images.unsplash.com/photo-1481624362406-b7817fa45ecf?fit=crop&w=1500&h=1000&q=80);
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
 /* Card adjustments */
 .row .impact-deck {
 	float: none;
