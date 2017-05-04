@@ -1,26 +1,37 @@
 ( function( $, window ) {
 
-	// Fix images in place when they reach the top of the viewport,
-	// scroll as normal when the bottom of the container is in the viewport.
+	// Fix elements in place when they reach the top of the viewport,
+	// scroll normally when the bottom of the element's container is in the viewport.
 	function stick_and_go() {
-		$( ".ui-stick-and-go > *" ).each( function() {
-			var element = this.getBoundingClientRect(),
-				window_height = $( window ).height(),
-				$image = $( this ).find( "figure" );
+		$( ".ui-stick-and-go" ).each( function() {
+			var $element = $( this ),
+				element = this.getBoundingClientRect(),
+				window_height = $( window ).height();
 
 			if ( 0 >= element.top && element.bottom >= window_height ) {
-				$image.addClass( "fixed" );
+				$element.addClass( "fixed" );
 			} else {
-				$image.removeClass( "fixed" );
+				$element.removeClass( "fixed" );
 			}
 
 			if ( element.bottom <= window_height ) {
-				$image.addClass( "absolute" );
+				$element.addClass( "absolute" );
 			} else {
-				$image.removeClass( "absolute" );
+				$element.removeClass( "absolute" );
 			}
 		} );
 	}
+
+	// Reset element positioning.
+	function reset_positioning() {
+		$( ".ui-stick-and-go" ).removeClass( "fixed absolute" );
+	}
+
+	$( window ).resize( function() {
+		if ( 989 > $( window ).width() ) {
+			reset_positioning();
+		}
+	} );
 
 	$( window ).scroll( function() {
 		if ( 989 < $( window ).width() ) {
