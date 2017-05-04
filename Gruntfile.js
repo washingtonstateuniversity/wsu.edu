@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "css/*.css" ]
+			src: [ "src/css/*.css" ]
 		},
 
 		concat: {
@@ -25,58 +25,30 @@ module.exports = function( grunt ) {
 					"src/js/wsu-feature-primary.js"
 				],
 				dest: "js/wsu-feature.js"
+			},
+			top_ten_styles: {
+				src: [
+					"src/css/hero-feature.css",
+					"src/css/content-card.css",
+					"src/css/top-ten.css"
+				],
+				dest: "src/css/temp-combined-top-ten.css"
 			}
 		},
 
 		postcss: {
-			options: {
-				map: true,
-				diff: false,
-				processors: [
-					require( "autoprefixer" )( {
-						browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
-					} )
-				]
-			},
-			dist: {
-				src: "tmp-style.css",
-				dest: "style.css"
-			}
-		},
-
-		csslint: {
-			main: {
-				src: [ "style.css" ],
+			top_ten_scripts: {
 				options: {
-					"fallback-colors": false,              // Unless we want to support IE8
-					"box-sizing": false,                   // Unless we want to support IE7
-					"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
-					"gradients": false,                    // This also applies ^
-					"overqualified-elements": false,       // We have weird uses that will always generate warnings.
-					"ids": false,
-					"regex-selectors": false,
-					"adjoining-classes": false,
-					"box-model": false,
-					"universal-selector": false,
-					"unique-headings": false,
-					"outline-none": false,
-					"floats": false,
-					"font-sizes": false,
-					"important": false,                    // This should be set to 2 one day.
-					"unqualified-attributes": false,       // Should probably be 2 one day.
-					"qualified-headings": false,
-					"known-properties": 1,                 // Okay to ignore in the case of known unknowns.
-					"duplicate-background-images": 2,
-					"duplicate-properties": 2,
-					"star-property-hack": 2,
-					"text-indent": 2,
-					"display-property-grouping": 2,
-					"shorthand": 2,
-					"empty-rules": false,
-					"vendor-prefix": 2,
-					"zero-units": 2,
-					"order-alphabetical": false
-				}
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
+						} )
+					]
+				},
+				src: "src/css/temp-combined-top-ten.css",
+				dest: "src/css/combined-top-ten.css"
 			}
 		},
 
@@ -84,7 +56,7 @@ module.exports = function( grunt ) {
 			options: {
 				force: true
 			},
-			temp: [ "tmp-style.css", "tmp-style.css.map" ]
+			temp: [ "src/css/temp*.*" ]
 		},
 
 		jscs: {
@@ -153,7 +125,7 @@ module.exports = function( grunt ) {
 
 		watch: {
 			styles: {
-				files: [ "css/*.css", "src/js/*.js" ],
+				files: [ "css/*.css", "src/css/*.css", "src/js/*.js" ],
 				tasks: [ "default" ],
 				option: {
 					livereload: 8000
@@ -175,7 +147,6 @@ module.exports = function( grunt ) {
 
 	grunt.loadNpmTasks( "grunt-postcss" );
 	grunt.loadNpmTasks( "grunt-contrib-concat" );
-	grunt.loadNpmTasks( "grunt-contrib-csslint" );
 	grunt.loadNpmTasks( "grunt-contrib-clean" );
 	grunt.loadNpmTasks( "grunt-phpcs" );
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
@@ -186,6 +157,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jscs", "jshint", "concat", "uglify", "clean" ] );
+	grunt.registerTask( "default", [ "jscs", "jshint", "concat", "postcss", "uglify", "clean" ] );
 	grunt.registerTask( "serve", [ "connect", "watch" ] );
 };
