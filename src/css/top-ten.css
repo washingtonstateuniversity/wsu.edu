@@ -254,6 +254,13 @@ h3 {
 	background-size: .9em;
 }
 
+.top-ten-down-arrow {
+	bottom: 5rem;
+	margin-left: -30px;
+	position: absolute;
+	width: 60px;
+}
+
 @media screen and ( max-width: 989px ) {
 
 	#jacket #binder main {
