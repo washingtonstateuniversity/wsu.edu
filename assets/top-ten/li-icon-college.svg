@@ -1,3 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20">
-	<path fill="#fff" d="M2 4L8 4 8 2 2 2 2 4ZM8 15.1C5.9 12.9 7.1 14.2 5 12 2.9 14.2 4.1 12.9 2 15.1L2 6 8 6 8 15.1ZM0 0L0 20 5 14.9 10 20 10 0 0 0Z"/>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-385, -340)" fill="#333">
+            <g transform="translate(20, 20)">
+                <path d="M367,324 L373,324 L373,322 L367,322 L367,324 Z M373,335 C371,333 372,334 370,332 C368,334 369,333 367,335 L367,326 L373,326 L373,335 Z M365,320 L365,340 L370,335 L375,340 L375,320 L365,320 Z"></path>
+            </g>
+        </g>
+    </g>
 </svg>
