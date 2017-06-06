@@ -343,10 +343,6 @@ div.pad-bottom {
 	padding: 0;
 }
 
-.section-life .main-header sup.sup-header, .section-about .main-header sup.sup-header, .section-admission .main-header sup.sup-header, .section-academics .main-header sup.sup-header, .section-research .main-header sup.sup-header, .section-services .main-header sup.sup-header {
-	display: none;
-}
-
 .section-life .main-header sub.sub-header, .section-about .main-header sub.sub-header, .section-admission .main-header sub.sub-header, .section-academics .main-header sub.sub-header, .section-research .main-header sub.sub-header, .section-services .main-header sub.sub-header {
 	text-align: center;
 	background-color: #981e32;
