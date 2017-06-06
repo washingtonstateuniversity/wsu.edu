@@ -11,7 +11,7 @@ class WSU_Home_Theme {
 	/**
 	 * @var string The version of the WSU Home theme for cache breaking.
 	 */
-	var $version = '0.14.4';
+	public $version = '0.14.4';
 
 	/**
 	 * Configure our default hooks.
@@ -241,13 +241,15 @@ class WSU_Home_Theme {
 	 */
 	public function get_menu( $menu_args ) {
 		$cache_incr_key = md5( $menu_args['theme_location'] );
-		$cache_key = md5( serialize( $menu_args ) );
+		$cache_key = md5( serialize( $menu_args ) ); // @codingStandardsIgnoreLine
 
-		if ( ! $cache_incr = wp_cache_get( $cache_incr_key, 'wsu-home-nav' ) ) {
+		$cache_incr = wp_cache_get( $cache_incr_key, 'wsu-home-nav' );
+		if ( ! $cache_incr ) {
 			$cache_incr = '';
 		}
 
-		if ( $nav_menu = wp_cache_get( $cache_key . $cache_incr, 'wsu-home-nav' ) ) {
+		$nav_menu = wp_cache_get( $cache_key . $cache_incr, 'wsu-home-nav' );
+		if ( $nav_menu ) {
 			return $nav_menu;
 		}
 
@@ -338,7 +340,11 @@ class WSU_Home_Theme {
 	 * @since 0.10.3
 	 */
 	public function add_settings_fields() {
-		add_settings_field( 'wsu-home-message', 'WSU Home Alert Message', array( $this, 'display_wsu_home_alert_message' ), 'general', 'default', array( 'label_for' => 'wsu_home_alert' ) );
+		add_settings_field( 'wsu-home-message', 'WSU Home Alert Message', array( $this, 'display_wsu_home_alert_message' ), 'general', 'default',
+			array(
+				'label_for' => 'wsu_home_alert',
+			)
+		);
 	}
 
 	/**

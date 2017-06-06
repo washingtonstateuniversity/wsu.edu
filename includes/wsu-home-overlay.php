@@ -74,8 +74,6 @@ class WSU_Home_Overlay {
 			update_post_meta( $post_id, '_wsu_display_home_overlay', 'none' );
 		}
 		// @codingStandardsIgnoreEnd
-
-		return;
 	}
 
 	/**
