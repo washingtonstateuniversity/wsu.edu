@@ -1,19 +1,5 @@
-/*--------- EDIT CSS - PRIMARY SITE ---------------------*/
-
-/*
-Welcome to custom CSS for the WSU Spine Theme!
-
-You may delete these comments and get started with your custom stylesheet.
-Before doing so, please review the WSU web standards:
-
-http://brand.wsu.edu/media/web/web-standards/
-
-As a general rule of thumb, if your styles target aspects of the spine
-(#spine), that's against standard, whereas if you're styling elsewhere on
-the page, it's all good.
-*/
 body {
-	font-family: "proxima-nova", "Lucida Sans", sans-serif;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-weight: 400;
 	background-color: #fff;
 	color: #2a3033;
@@ -36,11 +22,11 @@ body {
 .error404 h4,
 .error404 h5,
 .error404 p {
-	font-family: "proxima-nova", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 h1 {
-	color: white;
+	color: #fff;
 	font-size: 4em;
 	background-color: #981e32;
 	font-weight: 700;
@@ -169,6 +155,7 @@ main a:focus {
 }
 
 /* ----- header-shelf -----*/
+
 /* column one */
 .error404 .fluid .header-shelf.row.triptych .column.one,
 .home .fluid .header-shelf.row.triptych .column.one {
@@ -382,14 +369,11 @@ section.single.triptych.row.header-drawer:before {
 	display: none;
 }
 
-.header-search-input-wrapper input[type=text] {
+.header-search-input-wrapper input[type="text"] {
 	font-size: 1.5rem;
 	font-weight: 300;
-	font-family: Proxima-Nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	width: 100%;
-}
-
-section#search-modal {
 }
 
 .header-search-wrapper {
@@ -446,7 +430,6 @@ section#search-modal {
 }
 
 /*--------- Features Area ------------*/
-/*--- See also style.css -----------*/
 .features-container {
 	background: #2a3033;
 }
@@ -1106,10 +1089,6 @@ main .athletics li a:focus {
 }
 
 /*---------- Map ----------*/
-.map {
-	/*height: 400px;*/
-}
-
 .map iframe {
 	width: 100%;
 }
@@ -1185,7 +1164,7 @@ main .life.thirds.gutter .column.three {
 .life h2 {
 	width: 90%;
 	text-align: center;
-	color: white;
+	color: #fff;
 	font-weight: 700;
 	text-transform: uppercase;
 	position: absolute;
@@ -1275,6 +1254,7 @@ main .life.thirds.gutter .column.three {
 }
 
 /*---------- Photo II ----------*/
+
 /*---------- Bottom section ----------*/
 .campaign-mark {
 	text-align: center;
@@ -1425,9 +1405,6 @@ figure {
 	width: 100% !important;
 }
 
-/*figure img {
-	width: 100%;
-}*/
 /* -- position life grid boxes to top of page -- */
 .section-life.page-overview .main-header {
 	display: none;
@@ -1442,6 +1419,7 @@ figure {
 }
 
 @media screen and (min-width: 693px) {
+
 	#binder.fluid .row.thirds {
 		padding: 0 .5rem;
 	}
@@ -1449,16 +1427,10 @@ figure {
 	.fluid .row.thirds .column,
 	.fluid .row.thirds .column.two {
 		width: 33.33%;
-		/*padding: 0 .5rem !important;*/
-	}
-
-	#binder.fluid .row.quarters {
-		/*padding: 0 .5rem;*/
 	}
 
 	.fluid .row.quarters .column {
 		width: 25%;
-		/*	padding: 0 .5rem !important;*/
 	}
 
 	.fluid .row.quarters.bottom-figures {
@@ -1483,6 +1455,7 @@ figure {
 
 /*---------------- Responsive ----------------------*/
 @media screen and (max-width: 1200px) {
+
 	.error404 .header-shelf .column.three,
 	.home .header-shelf .column.three {
 		bottom: inherit;
@@ -1537,6 +1510,7 @@ figure {
 }
 
 @media screen and (max-width: 989px) {
+
 	.error404 #binder.fluid main,
 	.home #binder.fluid main {
 		width: 100% !important;
@@ -1562,6 +1536,7 @@ figure {
 }
 
 @media screen and (max-width: 791px) {
+
 	.wsu-logo {
 		padding: 2rem 1rem 1.3rem;
 	}
@@ -1595,6 +1570,7 @@ figure {
 }
 
 @media screen and (max-width: 700px) {
+
 	.error404 .main-header,
 	.home .main-header .column {
 		display: none;
@@ -1644,6 +1620,7 @@ figure {
 }
 
 @media screen and (max-width: 693px) {
+
 	.az li {
 		width: 40px;
 	}
@@ -1686,6 +1663,7 @@ figure {
 }
 
 @media screen and (max-width: 550px) {
+
 	.athletics ul {
 		display: none;
 	}
@@ -1732,6 +1710,7 @@ figure {
 }
 
 @media screen and (max-width: 900px) {
+
 	.fixedbg {
 		background-attachment: scroll;
 		background-position: center center;

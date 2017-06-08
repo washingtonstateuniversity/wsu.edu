@@ -2,7 +2,7 @@
 
 /*---------------------------- type ----------------------------*/
 html body.page main {
-	font-family: "proxima-nova", "Lucida Sans", sans-serif;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-weight: 400;
 	background-color: #fff;
 	color: #2a3033;
@@ -66,7 +66,7 @@ html body.page main {
 }
 
 .subsection_white {
-	background-color: white;
+	background-color: #fff;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	padding-left: 20px;
@@ -92,7 +92,7 @@ p.numbers {
 }
 
 h1.numbers {
-	color: white;
+	color: #fff;
 	font-size: 4em;
 	background-color: #981e32;
 	font-weight: 700;
@@ -134,7 +134,7 @@ h2.image_section_header {
 	letter-spacing: 0;
 	font-size: 2.5em;
 	line-height: 5.5em;
-	background-color: white;
+	background-color: #fff;
 	padding: .2em;
 	display: inline;
 }
@@ -437,7 +437,7 @@ div.pad-bottom {
 .section-life main .bottom-figures a div div h2 {
 	width: 90%;
 	text-align: center;
-	color: white;
+	color: #fff;
 	font-weight: 700;
 	text-transform: uppercase;
 	position: absolute;
@@ -502,7 +502,7 @@ div.pad-bottom {
 }
 
 blockquote {
-	font-family: "proxima-nova", "Lucida Sans", sans-serif;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	padding-top: 3em;
 	padding-bottom: 3em;
 	border: 1px solid #5e6a71;
@@ -526,6 +526,7 @@ blockquote p + p {
 }
 
 @media (max-width: 791px) {
+
 	.bottom-figures.pad-top .column {
 		padding-top: 0;
 	}

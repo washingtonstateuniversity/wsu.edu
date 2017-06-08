@@ -1,6 +1,5 @@
 .incident {
 	position: absolute;
-	right: 0;
 	top: 20px;
 	right: 1rem;
 	z-index: 3;
@@ -28,6 +27,7 @@ a.incident-button:hover {
 }
 
 @media screen and (max-width: 700px) {
+
 	.incident {
 		position: relative;
 		margin-top: 50px;
@@ -239,6 +239,7 @@ span.content-item-event-city {
 }
 
 @media screen and (max-width: 1000px) {
+
 	.hp-news-block {
 		padding: 1rem 0;
 	}
@@ -285,6 +286,7 @@ span.content-item-event-city {
 }
 
 @media screen and (max-width: 790px) {
+
 	.news-block-column {
 		flex-wrap: wrap;
 	}
@@ -405,6 +407,7 @@ div.overlay-text {
 }
 
 @media screen and (max-width: 550px) {
+
 	.overlay-image {
 		width: 85%;
 	}
@@ -506,6 +509,7 @@ p.button-row.graduate-apply {
 }
 
 @media screen and (max-width: 791px) {
+
 	.features-container .impact-head .home-headline.headline-has-background > div {
 		width: 80%;
 	}
@@ -640,6 +644,7 @@ p.button-row.graduate-apply {
 
 /* ----- subfeature mobile fix ----- */
 @media screen and (max-width: 700px) {
+
 	.subfeature .home-cta {
 		width: 65%;
 	}
@@ -677,6 +682,7 @@ p.button-row.graduate-apply {
 
 /* ----- Athletics mobile fix ----- */
 @media screen and (max-width: 700px) {
+
 	.athletics {
 		background: #f2f2f2;
 	}
@@ -684,6 +690,7 @@ p.button-row.graduate-apply {
 
 /* ------ Fixed Background fix ------ */
 @media screen and (max-width: 900px) {
+
 	.fixedbg {
 		background-size: cover !important;
 	}
@@ -705,6 +712,7 @@ p.button-row.graduate-apply {
 }
 
 /**** INTERNAL STYLES ***/
+
 /*------------subsection featured images------------*/
 .visit-ft-image {
 	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Screen-Shot-2015-03-18-at-11.05.46-AM.png);
@@ -932,6 +940,7 @@ p.numbers {
 }
 
 @media screen and (max-width: 791px) {
+
 	#power {
 		width: 100%;
 		margin-left: 0;
@@ -940,6 +949,7 @@ p.numbers {
 }
 
 @media only screen and (max-width: 762px) {
+
 	.landscape-1,
 	.landscape-2,
 	.landscape-3,
@@ -1065,6 +1075,7 @@ blockquote p {
 }
 
 @media only screen and (max-width: 1100px) {
+
 	.hp-special-head {
 		font-size: .9rem;
 		line-height: 1.2;
@@ -1076,6 +1087,7 @@ blockquote p {
 }
 
 @media only screen and (max-width: 900px) {
+
 	.hp-special li {
 		width: calc(100% / 3);
 	}
@@ -1103,6 +1115,7 @@ blockquote p {
 }
 
 @media only screen and (max-width: 600px) {
+
 	.hp-special li {
 		width: calc(100% / 2);
 	}
@@ -1124,7 +1137,8 @@ blockquote p {
 	}
 }
 
-/* video wrapper allows you to easily position the video within the content and set the width and max-width of the video */
+/* video wrapper allows you to easily position the video within the content and
+   set the width and max-width of the video */
 .video-home .video-wrap-control {
 	width: 100%;
 	max-width: 1200px;
@@ -1132,7 +1146,8 @@ blockquote p {
 	background: #717171;
 }
 
-/* The inner uses padding bottom (a percentage of it's own width) to allow the video player have a height that is responsive to the width */
+/* The inner uses padding bottom (a percentage of it's own width) to allow the
+   video player have a height that is responsive to the width */
 .video-home .video-wrap-inner {
 	position: relative;
 	padding-bottom: 56.25%;
@@ -1149,14 +1164,8 @@ blockquote p {
 	height: 100%;
 }
 
-/*.features-container .home-headline-nav {
-	display: none !important;
-}
-
-.features-container .impact-head .home-headline.headline-has-background > div {
-	bottom: 15%;
-}*/
 @media screen and (max-width: 600px) {
+
 	.features-container .impact-head .home-headline.headline-has-background > div {
 		bottom: 1rem;
 		margin: 0 auto;
@@ -1199,6 +1208,7 @@ blockquote p {
 }
 
 @media only screen and (max-width: 693px) {
+
 	.spacing-loose .single.gutter .column:not(.gutterless) {
 		padding-left: 2rem;
 		padding-right: 2rem;
@@ -1224,6 +1234,7 @@ blockquote p {
 }
 
 @media screen and (max-width: 550px) {
+
 	.features-container .home-headline.headline-has-background > div {
 		bottom: 15%;
 		top: inherit;
