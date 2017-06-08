@@ -38,9 +38,7 @@ var wsuNavigation = wsuNavigation || {};
 			"click #mega-menu-labels  ul li a": "toggleNav",
 			"click .close-header-drawer": "toggleNav",
 			"click .search-label": "toggleSearch",
-			"click .close-header-search": "toggleSearch",
-			"click .top-level-links-label": "toggleCampuses",
-			"click .campus-links-close": "toggleCampuses"
+			"click .close-header-search": "toggleSearch"
 		},
 
 		toggleNav: function( evt ) {
@@ -66,18 +64,6 @@ var wsuNavigation = wsuNavigation || {};
 			} else {
 				$search_wrapper.addClass( "header-search-wrapper-open" );
 				$( ".header-search-input" ).focus();
-			}
-		},
-
-		toggleCampuses: function( evt ) {
-			evt.preventDefault();
-
-			var $campus_wrapper = $( ".campus-links-full-page-wrapper" );
-
-			if ( $campus_wrapper.hasClass( "campus-links-hide" ) ) {
-				$campus_wrapper.removeClass( "campus-links-hide" );
-			} else {
-				$campus_wrapper.addClass( "campus-links-hide" );
 			}
 		}
 	} );

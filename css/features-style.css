@@ -47,10 +47,6 @@ section.row.full {
 }
 
 /* Home overrides */
-.campus-links-hide {
-	display: none;
-}
-
 .depth-1 .header-search-wrapper section.row {
 	max-width: 1386px !important;
 }
@@ -808,8 +804,7 @@ main .campaign-mark a:hover {
 
 /* - closing Xs - */
 .close-header-drawer,
-.close-header-search,
-.campus-links-close {
+.close-header-search {
 	position: absolute;
 	bottom: 1rem;
 	right: 1rem;
@@ -818,13 +813,6 @@ main .campaign-mark a:hover {
 	font-weight: 300;
 	cursor: pointer;
 	transition: color .3s ease;
-}
-
-.campus-links-close {
-	top: 2rem;
-	bottom: inherit;
-	right: 2rem;
-	font-size: 4rem;
 }
 
 @media screen and (min-width: 1188px) {

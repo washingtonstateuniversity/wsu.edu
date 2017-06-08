@@ -150,9 +150,6 @@ body {
 /* column three */
 .error404 .home .fluid .main-header .row.triptych .column.three,
 .home .fluid .main-header .row.triptych .column.three {
-	border: 1px solid #dbdbdb;
-	border-top: none;
-	border-bottom: none;
 	width: 12.5%;
 }
 
