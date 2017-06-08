@@ -1495,7 +1495,7 @@ figure {
 
 	.error404 .fluid .main-header .row.triptych .column.three,
 	.home .fluid .main-header .row.triptych .column.three {
-		width: 50%;
+		width: 75%;
 		border: none;
 	}
 
@@ -1504,7 +1504,7 @@ figure {
 		width: auto;
 		bottom: inherit;
 		top: 0;
-		padding: .5rem 1rem;
+		padding: 1.5rem;
 		position: relative;
 		line-height: 1;
 		font-size: .8rem;
@@ -1520,7 +1520,7 @@ figure {
 	}
 
 	.search-label {
-		right: 0;
+		float: left;
 	}
 
 	.error404 .fluid .main-header .row.triptych.header-shelf .column.two,
@@ -1596,7 +1596,7 @@ figure {
 
 @media screen and (max-width: 700px) {
 	.error404 .main-header,
-	.home .main-header {
+	.home .main-header .column {
 		display: none;
 	}
 
