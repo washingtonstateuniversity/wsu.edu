@@ -395,7 +395,6 @@ div.overlay-text {
 	border-bottom: 3px solid #ddd;
 	box-shadow: inset 0 -5px 0 #ddd;
 	transition: background .5s cubic-bezier(.33, .66, .66, 1);
-	transition: border 1s ease (.33, .66, .66, 1);
 }
 
 .pullman-header span:hover {
@@ -540,13 +539,12 @@ p.button-row.graduate-apply {
 
 .bug p {
 	color: #fff;
-	font-size: 1.5rem;
 	font-size: 1em;
 	padding: .75em;
 }
 
 .bug .home-cta {
-	margin-top: 0 auto;
+	margin-top: 0;
 	max-width: 100%;
 	color: #fff;
 }
@@ -902,7 +900,7 @@ p.button-row.graduate-apply {
 }
 
 .leachman-ft-image {
-	background-image: url(/wp-content/uploads/sites/625/2015/03/Housing-Leachman.jpg);
+	background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Housing-Leachman.jpg);
 	height: 350px;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1028,7 +1026,6 @@ blockquote p {
 }
 
 .hp-special li:nth-child(n+5) {
-	padding-bottom: none;
 	border-bottom: none;
 }
 
@@ -1109,7 +1106,6 @@ blockquote p {
 	}
 
 	.hp-special li:nth-child(n+4) {
-		padding-bottom: none;
 		border-bottom: none;
 	}
 }

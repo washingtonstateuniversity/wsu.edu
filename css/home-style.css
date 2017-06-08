@@ -110,7 +110,6 @@ main a {
 	border-bottom: 3px solid #ddd;
 	box-shadow: inset 0 -5px 0 #ddd;
 	transition: background .5s cubic-bezier(.33, .66, .66, 1);
-	transition: border 1s ease (.33, .66, .66, 1);
 }
 
 main a:hover,
