@@ -503,7 +503,6 @@ section.single.triptych.row.header-drawer:before {
 .features-container .home-cta a:hover,
 .features-container .home-cta a:focus {
 	color: #fff;
-	border: none;
 	box-shadow: none;
 	padding: .5rem 1rem;
 	border: 1px solid #fff;
@@ -647,7 +646,6 @@ main .button-row a {
 	text-transform: uppercase;
 	background: #c8c8c8;
 	color: #fff;
-	margin-right: 2rem;
 	font-weight: 700;
 	border: none;
 	box-shadow: none;
@@ -1086,24 +1084,6 @@ main .athletics li a:focus {
 	float: left;
 	top: -2.5rem;
 	margin-right: .5rem;
-}
-
-/*---------- Map ----------*/
-.map iframe {
-	width: 100%;
-}
-
-.map p {
-	padding: 0;
-	line-height: 0;
-}
-
-.WSU_MAPS_NS .iw_id {
-	display: none !important;
-}
-
-.WSU_MAPS_NS .ui-tabs .ui-widget-header {
-	display: none !important;
 }
 
 /*---------- Quick Facts ---------*/
@@ -1593,7 +1573,6 @@ figure {
 	.athletics ul {
 		box-sizing: border-box;
 		margin: 0;
-		padding: 0;
 		float: left;
 		padding: 1.25rem;
 	}
