@@ -218,9 +218,6 @@ main a:focus {
 /* column three */
 .error404 .fluid .main-header .row.triptych .column.three,
 .home .fluid .main-header .row.triptych .column.three {
-	border: 1px solid #dbdbdb;
-	border-top: none;
-	border-bottom: none;
 	width: 12.5%;
 }
 
@@ -261,7 +258,7 @@ main a:focus {
 
 .search-label {
 	position: absolute;
-	bottom: 20px;
+	bottom: 23px;
 	font-size: .9rem;
 	font-weight: 700;
 	color: #981e32;
@@ -287,98 +284,6 @@ main a:focus {
 	top: .125rem;
 }
 
-/* Campus overlay */
-/*---------- CAMPUS LINKS ------------------*/
-.campus-links-full-page-wrapper {
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: rgba(42,48,51,.9);
-	overflow: scroll;
-}
-
-.campus-links-internal-wrapper {
-	position: static;
-	top: 50%;
-	left: 0;
-	width: 50px;
-	background: #fff;
-}
-
-.campus-links-internal-wrapper {
-	position: absolute;
-	top: 25%;
-	left: 0;
-	width: 100%;
-}
-
-.campus-links-internal-wrapper li {
-	height: 50px;
-	width: 100%;
-	color: #000;
-	background: #ececec;
-}
-
-.campus-links-full-page-wrapper {
-	background: #981e32;
-}
-
-.campus-links-internal-wrapper {
-	background: none;
-	top: 15%;
-}
-
-.campus-links-internal-wrapper ul {
-	list-style: none;
-	padding: 0;
-}
-
-.campus-links-internal-wrapper li {
-	font-size: 4rem;
-	float: left;
-	background: none;
-	text-align: center;
-	padding: 0;
-	height: auto;
-}
-
-.campus-links-internal-wrapper li a {
-	font-weight: 300;
-	display: block;
-	text-align: center;
-	width: 100%;
-	border-top: 1px solid rgba(0,0,0,.1);
-	line-height: 1;
-	padding: 1rem 0;
-}
-
-.campus-links-internal-wrapper li a:hover,
-.campus-links-internal-wrapper li a:focus {
-	background: rgba(0,0,0,.05);
-}
-
-/*.menu-wsu-campuses-container li:nth-child(4) {
-	border-bottom: 1px solid rgba(0,0,0,.1);
-	margin-bottom: 3rem;
-}
-
-.menu-wsu-campuses-container li:nth-child(n+5) a {
-	border: none;
-	font-size: 2.5rem;
-	margin-top: 0;
-}
-
-.menu-wsu-campuses-container li:last-child a {
-}
-
-.menu-wsu-campuses-container li:nth-child(n+5) {
-	width: 100%;
-	padding: 0 3rem;
-	box-sizing: border-box;
-}*/
 /*----- header-drawer -----*/
 .header-drawer-wrapper {
 	background: #363636;
@@ -515,8 +420,7 @@ section#search-modal {
 
 /* - closing Xs - */
 .close-header-drawer,
-.close-header-search,
-.campus-links-close {
+.close-header-search {
 	position: absolute;
 	bottom: 1rem;
 	right: 1rem;
@@ -527,20 +431,8 @@ section#search-modal {
 	transition: color .3s ease;
 }
 
-.campus-links-close {
-	top: 2rem;
-	bottom: inherit;
-	right: 2rem;
-	font-size: 4rem;
-}
-
-.campus-links-hide {
-	display: none;
-}
-
 .close-header-drawer:hover,
-.close-header-search:hover,
-.campus-links-hide:hover {
+.close-header-search:hover {
 	color: #c60c30;
 }
 

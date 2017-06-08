@@ -57,18 +57,6 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 		'depth'           => 2,
 	);
 
-	$wsu_campus_args = array(
-		'theme_location'  => 'top-level-links',
-		'menu'            => 'top-level-links',
-		'container'       => 'div',
-		'container_class' => false,
-		'container_id'    => 'top-level-links',
-		'menu_class'      => null,
-		'menu_id'         => null,
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 1,
-	);
-
 	/**
 	 * If this is the features site, we'd like to use the entire menu area from the
 	 * home site.
@@ -99,7 +87,6 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 				<?php echo wsu_home_get_menu( $header_mega_menu_args ); ?>
 			</div>
 			<div class="column three wsu-other-nav-placeholder">
-				<div class="top-level-links-label"><a href="">WSU Locations</a></div>
 				<div class="search-label"><a href="">Search</a></div>
 			</div>
 		</section>
@@ -141,18 +128,6 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 			</div>
 		</section>
 		<div class="close-header-search"><a href="">x</a></div>
-	</div>
-
-	<!-- Campus links, hidden by default until interaction in header -->
-	<div class="campus-links-full-page-wrapper campus-links-hide">
-		<div class="campus-links-close"><a href="">x</a></div>
-		<div class="campus-links-internal-wrapper">
-			<section class="single full row" id="campus-modal">
-				<div class="column one">
-					<?php echo wsu_home_get_menu( $wsu_campus_args ); ?>
-				</div>
-			</section>
-		</div>
 	</div>
 </header>
 <?php

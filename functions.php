@@ -201,7 +201,6 @@ class WSU_Home_Theme {
 		register_nav_menu( 'signature-menu', 'Signature Menu' );
 		register_nav_menu( 'fat-footer', 'Fat Footer' );
 		register_nav_menu( 'quick-links', 'Quick Links' );
-		register_nav_menu( 'top-level-links', 'Top Level Links' );
 	}
 
 	/**
