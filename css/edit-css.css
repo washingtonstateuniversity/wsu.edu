@@ -1139,6 +1139,7 @@ blockquote p {
 
 /* video wrapper allows you to easily position the video within the content and
    set the width and max-width of the video */
+
 .video-home .video-wrap-control {
 	width: 100%;
 	max-width: 1200px;
@@ -1148,6 +1149,7 @@ blockquote p {
 
 /* The inner uses padding bottom (a percentage of it's own width) to allow the
    video player have a height that is responsive to the width */
+
 .video-home .video-wrap-inner {
 	position: relative;
 	padding-bottom: 56.25%;
