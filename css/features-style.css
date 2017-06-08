@@ -405,7 +405,6 @@ main a {
 	border-bottom: 3px solid #ddd;
 	box-shadow: inset 0 -5px 0 #ddd;
 	transition: background .5s cubic-bezier(.33, .66, .66, 1);
-	transition: border 1s ease (.33, .66, .66, 1);
 }
 
 main a:hover {
@@ -511,43 +510,43 @@ section.row.bodycopy .column img {
 }
 
 .fg-opportunity {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Floricel-grandfather.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/Floricel-grandfather.jpg);
 }
 
 .fg-transition {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Floricel-grandfather.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/Floricel-grandfather.jpg);
 }
 
 .fg-family {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Terrell-Dome.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/Terrell-Dome.jpg);
 }
 
 .fg-discovery {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/gonzalez-gray1.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/gonzalez-gray1.jpg);
 }
 
 .fg-next {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/Floricel-atrium.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/Floricel-atrium.jpg);
 }
 
 .hv-curiosity {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-Sleep-lab.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/VanDongen-Sleep-lab.jpg);
 }
 
 .hv-foundational {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-clip2.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/VanDongen-clip2.jpg);
 }
 
 .hv-impact {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-lab2.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/VanDongen-lab2.jpg);
 }
 
 .hv-cost {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-withAssistant.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/VanDongen-withAssistant.jpg);
 }
 
 .hv-rewards {
-	background-image: url(/features/wp-content/uploads/sites/672/2015/03/VanDongen-lab1.jpg);
+	background-image: url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/VanDongen-lab1.jpg);
 }
 
 /*----------image----------*/
@@ -606,7 +605,6 @@ main .mejs-container a {
 	border-bottom: none;
 	box-shadow: none;
 	transition: none;
-	transition: none;
 }
 
 main .mejs-container a:hover {
@@ -626,33 +624,33 @@ video#bigend {
 }
 
 .photocall {
-	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/photo.png) no-repeat center left;
+	background: #f2f2f2 url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/photo.png) no-repeat center left;
 	transition: background .5s cubic-bezier(.33, .66, .66, 1);
 	padding: 2px 2px 2px 25px;
 }
 
 .photocall:hover {
-	background: #ebebeb url(/features/wp-content/uploads/sites/672/2015/03/photo.png) no-repeat center lef;
+	background: #ebebeb url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/photo.png) no-repeat center left;
 }
 
 .videocall {
-	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/video.png) no-repeat center left;
-	transition: background .5s linear(.33, .66, .66, 1);
+	background: #f2f2f2 url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/video.png) no-repeat center left;
+	transition: background .5s linear;
 	padding: 2px 2px 2px 25px;
 }
 
 .videocall:hover {
-	background: #ebebeb url(/features/wp-content/uploads/sites/672/2015/03/video.png) no-repeat center left;
+	background: #ebebeb url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/video.png) no-repeat center left;
 }
 
 .audiocall {
-	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
+	background: #f2f2f2 url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
 	transition: background .5s cubic-bezier(.33, .66, .66, 1);
 	padding: 2px 2px 2px 25px;
 }
 
 .audioocall:hover {
-	background: #ebebeb url(/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
+	background: #ebebeb url(https://wsu.edu/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
 }
 
 .audiocall:hover,
