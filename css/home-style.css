@@ -13,7 +13,7 @@ As a general rule of thumb, if your styles target aspects of the spine
 the page, it's all good.
 */
 body {
-	font-family: 'proxima-nova', "Lucida Sans", sans-serif;
+	font-family: "proxima-nova", "Lucida Sans", sans-serif;
 	font-weight: 400;
 	background-color: #fff;
 	color: #2a3033;
@@ -121,10 +121,10 @@ strong {
 /*---------------------------- links ----------------------------*/
 main a {
 	color: #981e32;
-	border-bottom: 3px solid #dddddd;
-	box-shadow: inset 0 -5px 0 #dddddd;
-	transition: background .5s cubic-bezier(.33,.66,.66,1);
-	transition: border 1s ease (.33,.66,.66,1);
+	border-bottom: 3px solid #ddd;
+	box-shadow: inset 0 -5px 0 #ddd;
+	transition: background .5s cubic-bezier(.33, .66, .66, 1);
+	transition: border 1s ease (.33, .66, .66, 1);
 }
 
 main a:hover,
@@ -309,7 +309,7 @@ section.single.triptych.row.header-drawer:before {
 	position: absolute;
 	content: "";
 	visibility: visible;
-	background: rgba(0,0,0,.1);
+	background: rgba(0, 0, 0, .1);
 	height: 100%;
 	width: 25%;
 	left: 0;
@@ -551,7 +551,7 @@ section#search-modal {
 }
 
 .features-container .home-headline-nav li {
-	background: rgba(0,0,0,.75);
+	background: rgba(0, 0, 0, .75);
 	display: block;
 	clear: both;
 	color: #fff;
@@ -565,7 +565,7 @@ section#search-modal {
 }
 
 .home-headline-nav li:hover {
-	background: rgba(152,30,50,1);
+	background: rgba(152, 30, 50, 1);
 	padding-left: 1rem;
 }
 
@@ -867,7 +867,7 @@ main .spine-social-channels ul .twitter-channel a {
 }
 
 main .spine-social-channels ul .facebook-channel a {
-	color: #3B5998 !important;
+	color: #3b5998 !important;
 }
 
 main .spine-social-channels ul .youtube-channel a {
@@ -901,7 +901,7 @@ section.news {
 }
 
 .news .one li {
-	border-bottom: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	padding: .4rem 0;
 }
 
@@ -930,7 +930,7 @@ section.news {
 }
 
 .content-item-byline {
-	color: rgba(0,0,0,.5);
+	color: rgba(0, 0, 0, .5);
 	margin-bottom: .4rem;
 }
 
@@ -1003,7 +1003,7 @@ a.content-item-read-story {
 }
 
 .content-item-event-meta {
-	color: rgba(0,0,0,.5);
+	color: rgba(0, 0, 0, .5);
 	font-size: .9rem;
 }
 
@@ -1196,13 +1196,13 @@ main .life.thirds.gutter .column.three {
 	margin-top: 0;
 	margin-bottom: 0;
 	font-size: 1.5rem;
-	background: rgba(0,0,0,.2);
+	background: rgba(0, 0, 0, .2);
 	transition: background .3s ease;
 }
 
 .life a div div:hover {
 	transition: background-color ease .5s;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0, 0, 0, .5);
 }
 
 .life a div div:hover h2 {
@@ -1731,7 +1731,7 @@ figure {
 	}
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
 	.fixedbg {
 		background-attachment: scroll;
 		background-position: center center;
