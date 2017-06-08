@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "*.css", "src/css-legacy/*.css", "src/css/*.css", "!src/css/combined-top-ten.css" ]
+			src: [ "*.css", "src/css-legacy/*.css", "src/css-top-ten/*.css", "!src/css-top-ten/combined-top-ten.css" ]
 		},
 
 		concat: {
@@ -28,11 +28,11 @@ module.exports = function( grunt ) {
 			},
 			top_ten_styles: {
 				src: [
-					"src/css/hero-feature.css",
-					"src/css/content-card.css",
-					"src/css/top-ten.css"
+					"src/css-top-ten/hero-feature.css",
+					"src/css-top-ten/content-card.css",
+					"src/css-top-ten/top-ten.css"
 				],
-				dest: "src/css/temp-combined-top-ten.css"
+				dest: "src/css-top-ten/temp-combined-top-ten.css"
 			}
 		},
 
@@ -47,8 +47,8 @@ module.exports = function( grunt ) {
 						} )
 					]
 				},
-				src: "src/css/temp-combined-top-ten.css",
-				dest: "src/css/combined-top-ten.css"
+				src: "src/css-top-ten/temp-combined-top-ten.css",
+				dest: "src/css-top-ten/combined-top-ten.css"
 			},
 			legacy_edit_css: {
 				options: {
@@ -108,7 +108,7 @@ module.exports = function( grunt ) {
 			options: {
 				force: true
 			},
-			temp: [ "src/css/temp*.*" ]
+			temp: [ "src/css-top-ten/temp*.*" ]
 		},
 
 		jscs: {
