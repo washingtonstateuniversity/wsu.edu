@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "*.css", "src/css-legacy/*.css", "src/css-top-ten/*.css", "!src/css-top-ten/combined-top-ten.css" ]
+			src: [ "*.css", "src/css-legacy/*.css", "src/css-top-ten/*.css" ]
 		},
 
 		concat: {
@@ -48,7 +48,7 @@ module.exports = function( grunt ) {
 					]
 				},
 				src: "src/css-top-ten/temp-combined-top-ten.css",
-				dest: "src/css-top-ten/combined-top-ten.css"
+				dest: "css/combined-top-ten.css"
 			},
 			legacy_edit_css: {
 				options: {
