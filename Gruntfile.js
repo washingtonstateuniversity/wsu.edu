@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "*.css", "src/css-legacy/*.css", "src/css-top-ten/*.css" ]
+			src: [ "src/css/*.css", "src/css-legacy/*.css", "src/css-top-ten/*.css" ]
 		},
 
 		concat: {
@@ -25,6 +25,12 @@ module.exports = function( grunt ) {
 					"src/js/wsu-feature-primary.js"
 				],
 				dest: "js/wsu-feature.js"
+			},
+			main_styles: {
+				src: [
+					"src/css/*.css"
+				],
+				dest: "temp-style.css"
 			},
 			top_ten_styles: {
 				src: [
@@ -101,6 +107,19 @@ module.exports = function( grunt ) {
 				},
 				src: "src/css-legacy/internal-style.css",
 				dest: "css/internal-style.css"
+			},
+			main_style_css: {
+				options: {
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
+						} )
+					]
+				},
+				src: "temp-style.css",
+				dest: "style.css"
 			}
 		},
 
@@ -108,7 +127,7 @@ module.exports = function( grunt ) {
 			options: {
 				force: true
 			},
-			temp: [ "src/css-top-ten/temp*.*" ]
+			temp: [ "src/css-top-ten/temp*.*", "temp-style.css" ]
 		},
 
 		jscs: {
