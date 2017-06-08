@@ -1,15 +1,3 @@
-/*
-Welcome to custom CSS for the WSU Spine Theme!
-
-You may delete these comments and get started with your custom stylesheet.
-Before doing so, please review the WSU web standards:
-
-http://brand.wsu.edu/media/web/web-standards/
-
-As a general rule of thumb, if your styles target aspects of the spine
-(#spine), that's against standard, whereas if you're styling elsewhere on
-the page, it's all good.
-*/
 /*----------spine overrides for spineless----------*/
 body {
 	color: #464e54;
@@ -38,9 +26,6 @@ section.row.full {
 	max-width: 100% !important;
 }
 
-/*section.row.full .column {
-	padding: 0 !important;
-}*/
 .pad-top .column,
 .padded-top {
 	padding-top: 0;
@@ -126,7 +111,6 @@ section.home-text .column {
 .features-container .home-cta a,
 .features-container .home-cta a:hover {
 	color: #981e32;
-	border: none;
 	box-shadow: none;
 	padding: .5rem 1rem;
 	border: 1px solid #981e32;
@@ -144,8 +128,8 @@ section.home-text .column {
 }
 
 /*--------- main header ---------*/
+
 /*---------- top header ----------*/
-/*///////*/
 .categorized-feature-impact .main-header.wsu-home-navigation {
 	background-image: none;
 	height: auto;
@@ -253,7 +237,6 @@ section.home-text .column {
 
 /*----------header section----------*/
 .categorized-feature-impact header.main-header {
-	/*background: url(/wp-content/uploads/sites/672/2015/03/floricel-main.jpg) no-repeat;*/
 	background-size: cover;
 	background-position: right center;
 	background-repeat: no-repeat;
@@ -419,10 +402,10 @@ blockquote {
 /*---------------------------- links ----------------------------*/
 main a {
 	color: #981e32;
-	border-bottom: 3px solid #dddddd;
-	box-shadow: inset 0 -5px 0 #dddddd;
-	transition: background .5s cubic-bezier(.33,.66,.66,1);
-	transition: border 1s ease (.33,.66,.66,1);
+	border-bottom: 3px solid #ddd;
+	box-shadow: inset 0 -5px 0 #ddd;
+	transition: background .5s cubic-bezier(.33, .66, .66, 1);
+	transition: border 1s ease (.33, .66, .66, 1);
 }
 
 main a:hover {
@@ -437,8 +420,8 @@ main a:hover {
 .main-header strong {
 	font-weight: 300;
 	background: #981e32;
-	background: rgba(152,30,50,0.9);
-	box-shadow: 5px 0 0 rgba(152,30,50,0.9), -5px 0 0 rgba(152,30,50,0.9);
+	background: rgba(152, 30, 50, .9);
+	box-shadow: 5px 0 0 rgba(152, 30, 50, .9), -5px 0 0 rgba(152, 30, 50, .9);
 	padding: 2px 1px;
 }
 
@@ -475,10 +458,6 @@ section.full .column {
 	margin: 3rem auto;
 }
 
-div.staticbg + .wider blockquote p:before {
-	/*display: none;*/
-}
-
 section.bodycopy {
 	margin: 0 30% 0 20%;
 	width: 50% !important;
@@ -489,10 +468,6 @@ section.bodycopy {
 	display: none;
 }
 
-/*.biglove.family {
-	background: url("https://www.apple.com/v/your-verse/organizing-a-movement/a/images/movement_bg_bottom_foreground.png") center bottom no-repeat;
-	padding-bottom: 900px;
-}*/
 blockquote.pullquote {
 	border-left: 1px solid #ddd;
 	padding: 0 0 0 1rem;
@@ -592,6 +567,7 @@ section.row.bodycopy .column .imgoutright {
 .videowrapside {
 	position: relative;
 	padding-bottom: 56.25%;
+
 	/* 16:9 */
 	padding-top: 25px;
 	height: 0;
@@ -651,7 +627,7 @@ video#bigend {
 
 .photocall {
 	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/photo.png) no-repeat center left;
-	transition: background .5s cubic-bezier(.33,.66,.66,1);
+	transition: background .5s cubic-bezier(.33, .66, .66, 1);
 	padding: 2px 2px 2px 25px;
 }
 
@@ -661,7 +637,7 @@ video#bigend {
 
 .videocall {
 	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/video.png) no-repeat center left;
-	transition: background .5s linear(.33,.66,.66,1);
+	transition: background .5s linear(.33, .66, .66, 1);
 	padding: 2px 2px 2px 25px;
 }
 
@@ -671,7 +647,7 @@ video#bigend {
 
 .audiocall {
 	background: #f2f2f2 url(/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
-	transition: background .5s cubic-bezier(.33,.66,.66,1);
+	transition: background .5s cubic-bezier(.33, .66, .66, 1);
 	padding: 2px 2px 2px 25px;
 }
 
@@ -679,7 +655,9 @@ video#bigend {
 	background: #ebebeb url(/features/wp-content/uploads/sites/672/2015/03/audio.png) no-repeat center left;
 }
 
-.audiocall:hover, .photocall:hover, .videocall:hover {
+.audiocall:hover,
+.photocall:hover,
+.videocall:hover {
 	cursor: pointer;
 }
 
@@ -709,9 +687,6 @@ main .campaign-mark a:hover {
 	max-width: 100% !important;
 }
 
-/*.fat-footer-menu {
-	margin-top: 3rem;
-}*/
 .home .fat-footer-menu {
 	margin-top: 0;
 }
@@ -816,6 +791,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (min-width: 1188px) {
+
 	.features-container h2 {
 		font-size: 48px;
 		border-left: 23px solid #981e32;
@@ -823,6 +799,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 1000px) {
+
 	.main-header .header-group:not(.unset) h1 {
 		font-size: 8vw;
 		border-left: 6vw solid #981e32;
@@ -830,6 +807,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 989px) {
+
 	#binder.fluid main {
 		margin-left: 0;
 	}
@@ -854,6 +832,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 900px) {
+
 	.staticbg {
 		background-attachment: scroll;
 		background-position: center center;
@@ -914,6 +893,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 791px) {
+
 	#binder.fluid main,
 	#binder.hybrid main {
 		margin-top: 0;
@@ -941,6 +921,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 700px) {
+
 	#binder.fluid main,
 	#binder.hybrid main {
 		margin-top: 45px;
@@ -960,6 +941,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 693px) {
+
 	.fluid .row.side-right.feature-photo-left .column.one,
 	.fluid .row.side-left.feature-photo-right .column.two,
 	.fluid .row.side-left.feature-photo-right .column.one,
@@ -993,6 +975,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 600px) {
+
 	h2 {
 		font-size: 2em;
 	}
@@ -1031,6 +1014,7 @@ main .campaign-mark a:hover {
 }
 
 @media screen and (max-width: 550px) {
+
 	.categorized-feature-impact header.main-header {
 		min-height: 400px;
 	}

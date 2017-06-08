@@ -2,25 +2,48 @@
 
 /*---------------------------- type ----------------------------*/
 html body.page main {
-	font-family: 'proxima-nova', "Lucida Sans", sans-serif;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-weight: 400;
 	background-color: #fff;
 	color: #2a3033;
 }
 
-.section-life main ul, .section-life main ol, .section-about main ul, .section-about main ol, .section-admission main ul, .section-admission main ol, .section-academics main ul, .section-academics main ol, .section-research main ul, .section-research main ol, .section-services main ol, .section-services main ul {
+.section-life main ul,
+.section-life main ol,
+.section-about main ul,
+.section-about main ol,
+.section-admission main ul,
+.section-admission main ol,
+.section-academics main ul,
+.section-academics main ol,
+.section-research main ul,
+.section-research main ol,
+.section-services main ol,
+.section-services main ul {
 	font-size: 1.2em;
 }
 
-.section-life h3 a, .section-about h3 a, .section-admission h3 a, .section-academics h3 a, .section-research h3 a {
+.section-life h3 a,
+.section-about h3 a,
+.section-admission h3 a,
+.section-academics h3 a,
+.section-research h3 a {
 	color: #2a3033;
 }
 
-.section-life h4, .section-about h4, .section-admission h4, .section-academics h4, .section-research h4 {
+.section-life h4,
+.section-about h4,
+.section-admission h4,
+.section-academics h4,
+.section-research h4 {
 	text-transform: none;
 }
 
-.section-life h5, .section-about h5, .section-admission h5, .section-academics h5, .section-research h5 {
+.section-life h5,
+.section-about h5,
+.section-admission h5,
+.section-academics h5,
+.section-research h5 {
 	color: #2a3033;
 	font-weight: 500;
 	font-size: 1.25em;
@@ -30,7 +53,11 @@ html body.page main {
 	margin: 1em 0 .25em;
 }
 
-.section-life main .textcenter, .section-about main .textcenter, .section-admission main .textcenter, .section-academics main h1, .section-research main .textcenter {
+.section-life main .textcenter,
+.section-about main .textcenter,
+.section-admission main .textcenter,
+.section-academics main h1,
+.section-research main .textcenter {
 	text-align: center;
 }
 
@@ -39,7 +66,7 @@ html body.page main {
 }
 
 .subsection_white {
-	background-color: white;
+	background-color: #fff;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	padding-left: 20px;
@@ -65,7 +92,7 @@ p.numbers {
 }
 
 h1.numbers {
-	color: white;
+	color: #fff;
 	font-size: 4em;
 	background-color: #981e32;
 	font-weight: 700;
@@ -107,7 +134,7 @@ h2.image_section_header {
 	letter-spacing: 0;
 	font-size: 2.5em;
 	line-height: 5.5em;
-	background-color: white;
+	background-color: #fff;
 	padding: .2em;
 	display: inline;
 }
@@ -171,7 +198,6 @@ h2.image_section_header {
 .careersprof-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/03/Careers-Professionals.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
@@ -181,7 +207,6 @@ h2.image_section_header {
 .careersstud-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/03/Careers-StudentJobs1.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
@@ -191,7 +216,6 @@ h2.image_section_header {
 .showscampus-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/05/Shows-OnCampus2.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
@@ -201,7 +225,6 @@ h2.image_section_header {
 .showsoffcampus-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/03/Shows-OffCampus.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
@@ -211,7 +234,6 @@ h2.image_section_header {
 .buytix-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/03/Tickets-BuyTickets3.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center middle;
@@ -221,7 +243,6 @@ h2.image_section_header {
 .shoponline-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/03/Shopping-Online.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
@@ -231,7 +252,6 @@ h2.image_section_header {
 .difference-statewide-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/03/WSUDifference-GiveBack.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
@@ -241,7 +261,6 @@ h2.image_section_header {
 .excellence-statewide-ft-image {
 	background-image: url(/wp-content/uploads/sites/625/2015/03/AcademicExcellence-Nursing.jpg);
 	height: 260px;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
@@ -257,11 +276,21 @@ div.pad-bottom {
 }
 
 /*---- CHARLES CSS ---- */
-.section-life main figure, .section-about main figure, .section-admission main figure, .section-academics main figure, .section-research main figure, .section-services main figure {
+.section-life main figure,
+.section-about main figure,
+.section-admission main figure,
+.section-academics main figure,
+.section-research main figure,
+.section-services main figure {
 	box-sizing: inherit;
 }
 
-.section-life main figure figcaption, .section-about main figure figcaption, .section-admission main figure figcaption, .section-academics main figure figcaption, .section-research main figure figcaption, .section-services main figure figcaption {
+.section-life main figure figcaption,
+.section-about main figure figcaption,
+.section-admission main figure figcaption,
+.section-academics main figure figcaption,
+.section-research main figure figcaption,
+.section-services main figure figcaption {
 	border: 0;
 	font-style: italic;
 	color: #464e54;
@@ -269,7 +298,7 @@ div.pad-bottom {
 	box-sizing: inherit;
 	padding: 12px;
 	line-height: 1.2em;
-	border-left: 2px solid #EFF0F1;
+	border-left: 2px solid #eff0f1;
 }
 
 .crimson-bordered {
@@ -297,7 +326,8 @@ div.pad-bottom {
 	margin-bottom: 2em;
 }
 
-.qlinks h3, .qlinks h5 {
+.qlinks h3,
+.qlinks h5 {
 	text-align: center;
 	padding-bottom: 15px;
 }
@@ -318,7 +348,7 @@ div.pad-bottom {
 }
 
 .qlinks ul li a:hover {
-	background-color: #E4E4E4;
+	background-color: #e4e4e4;
 	color: #981e32;
 }
 
@@ -328,14 +358,24 @@ div.pad-bottom {
 	line-height: 1.6em;
 }
 
-.section-life header.main-header, .section-about header.main-header, .section-admission header.main-header, .section-academics header.main-header, .section-research header.main-header, .section-services header.main-header {
+.section-life header.main-header,
+.section-about header.main-header,
+.section-admission header.main-header,
+.section-academics header.main-header,
+.section-research header.main-header,
+.section-services header.main-header {
 	background-size: cover;
 	background-position: bottom center;
 	background-repeat: none;
 	height: 387px;
 }
 
-.section-life header.main-header .header-group:not(.unset), .section-about header.main-header .header-group:not(.unset), .section-admission header.main-header .header-group:not(.unset), .section-academics header.main-header .header-group:not(.unset), .section-research header.main-header .header-group:not(.unset), .section-services header.main-header .header-group:not(.unset) {
+.section-life header.main-header .header-group:not(.unset),
+.section-about header.main-header .header-group:not(.unset),
+.section-admission header.main-header .header-group:not(.unset),
+.section-academics header.main-header .header-group:not(.unset),
+.section-research header.main-header .header-group:not(.unset),
+.section-services header.main-header .header-group:not(.unset) {
 	margin-left: auto;
 	margin-right: auto;
 	width: 1474px;
@@ -343,7 +383,12 @@ div.pad-bottom {
 	padding: 0;
 }
 
-.section-life .main-header sub.sub-header, .section-about .main-header sub.sub-header, .section-admission .main-header sub.sub-header, .section-academics .main-header sub.sub-header, .section-research .main-header sub.sub-header, .section-services .main-header sub.sub-header {
+.section-life .main-header sub.sub-header,
+.section-about .main-header sub.sub-header,
+.section-admission .main-header sub.sub-header,
+.section-academics .main-header sub.sub-header,
+.section-research .main-header sub.sub-header,
+.section-services .main-header sub.sub-header {
 	text-align: center;
 	background-color: #981e32;
 	font-size: 4em;
@@ -369,7 +414,7 @@ div.pad-bottom {
 
 .section-life main .bottom-figures a div div:hover {
 	transition: background-color ease .5s;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0, 0, 0, .5);
 }
 
 .section-life main .bottom-figures a.home-link-wrap div div .home-subtitle {
@@ -384,7 +429,7 @@ div.pad-bottom {
 .section-life main .bottom-figures a div div h2 {
 	width: 90%;
 	text-align: center;
-	color: white;
+	color: #fff;
 	font-weight: 700;
 	text-transform: uppercase;
 	position: absolute;
@@ -395,19 +440,22 @@ div.pad-bottom {
 	margin-top: 0;
 	margin-bottom: 0;
 	font-size: 1.5rem;
-	background: rgba(0,0,0,.2);
+	background: rgba(0, 0, 0, .2);
 	transition: background .3s ease;
 }
 
 .section-life main .bottom-figures a div div:hover h2 {
-	background: rgba(0,0,0,0);
+	background: rgba(0, 0, 0, 0);
 }
 
 .section-life.page-history main section {
 	border-bottom: 1px solid #eff0f1;
 }
 
-.section-life.page-history main section .column figure img, .section-life.page-sightseeing main section figure img, .section-life.page-sports main section figure img, .section-life.page-restaurants-shopping main section figure img {
+.section-life.page-history main section .column figure img,
+.section-life.page-sightseeing main section figure img,
+.section-life.page-sports main section figure img,
+.section-life.page-restaurants-shopping main section figure img {
 	display: block;
 }
 
@@ -427,23 +475,26 @@ div.pad-bottom {
 	padding: 0 .5rem 0 0;
 }
 
-.section-life.page-sightseeing main section.row.halves .split-figure figure, .section-life.page-restaurants-shopping main section.row.halves .split-figure figure {
+.section-life.page-sightseeing main section.row.halves .split-figure figure,
+.section-life.page-restaurants-shopping main section.row.halves .split-figure figure {
 	width: 50% !important;
 	float: left;
 	box-sizing: inherit;
 	padding: 0 .5rem;
 }
 
-.section-life.page-sightseeing main section.row.halves .split-figure figure:last-of-type, .section-life.page-restaurants-shopping main section.row.halves .split-figure figure:last-of-type {
+.section-life.page-sightseeing main section.row.halves .split-figure figure:last-of-type,
+.section-life.page-restaurants-shopping main section.row.halves .split-figure figure:last-of-type {
 	margin-right: 0;
 }
 
-.section-life.page-sightseeing main section.row.halves .split-figure figure img,.section-life.page-restaurants-shopping main section.row.halves .split-figure figure img {
+.section-life.page-sightseeing main section.row.halves .split-figure figure img,
+.section-life.page-restaurants-shopping main section.row.halves .split-figure figure img {
 	width: 100%;
 }
 
 blockquote {
-	font-family: 'proxima-nova', "Lucida Sans", sans-serif;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	padding-top: 3em;
 	padding-bottom: 3em;
 	border: 1px solid #5e6a71;
@@ -467,15 +518,26 @@ blockquote p + p {
 }
 
 @media (max-width: 791px) {
+
 	.bottom-figures.pad-top .column {
 		padding-top: 0;
 	}
 
-	.section-life .main-header sub.sub-header, .section-about .main-header sub.sub-header, .section-admission .main-header sub.sub-header, .section-academics .main-header sub.sub-header, .section-research .main-header sub.sub-header, .section-services .main-header sub.sub-header {
+	.section-life .main-header sub.sub-header,
+	.section-about .main-header sub.sub-header,
+	.section-admission .main-header sub.sub-header,
+	.section-academics .main-header sub.sub-header,
+	.section-research .main-header sub.sub-header,
+	.section-services .main-header sub.sub-header {
 		font-size: 6vmin;
 	}
 
-	.section-life .main-header sub.sub-header, .section-about .main-header sub.sub-header, .section-admission .main-header sub.sub-header, .section-academics .main-header sub.sub-header, .section-research .main-header sub.sub-header, .section-services .main-header sub.sub-header {
+	.section-life .main-header sub.sub-header,
+	.section-about .main-header sub.sub-header,
+	.section-admission .main-header sub.sub-header,
+	.section-academics .main-header sub.sub-header,
+	.section-research .main-header sub.sub-header,
+	.section-services .main-header sub.sub-header {
 		width: 100%;
 	}
 }
