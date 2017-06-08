@@ -18,10 +18,11 @@
     <link type="text/plain" rel="author" href="https://repo.wsu.edu/spine/1/authors.txt" />
     <link type="text/html" rel="help" href="https://brand.wsu.edu/media/web" />
 
+
     <!-- SCRIPTS and STYLES -->
-    <link rel='stylesheet' id='tablepress-default-css'  href='https://wp.wsu.edu/wp-content/plugins/tablepress/css/default.min.css?ver=1.7' type='text/css' media='all' />
-    <link rel='stylesheet' id='wsu-spine-css'  href='https://repo.wsu.edu/spine/1/spine.min.css?ver=0.27.3-1.5.3-38560' type='text/css' media='all' />
-    <link rel='stylesheet' id='spine-theme-css'  href='https://wp.wsu.edu/wp-content/themes/spine/style.css?ver=0.27.3-1.5.3-38560' type='text/css' media='all' />
+    <link rel='stylesheet' id='tablepress-default-css'  href='https://wp.wsu.edu/wp-content/plugins/tablepress/css/default.min.css?ver=1.8' type='text/css' media='all' />
+    <link rel='stylesheet' id='wsu-spine-css'  href='https://repo.wsu.edu/spine/1/spine.min.css?ver=0.27.11-1.6.3-40759' type='text/css' media='all' />
+    <link rel='stylesheet' id='spine-theme-css'  href='https://wp.wsu.edu/wp-content/themes/spine/style.css?ver=0.27.11-1.6.3-40759' type='text/css' media='all' />
 
     <!-- The root stylesheet of the wsu.edu child theme -->
     <link rel='stylesheet' id='spine-theme-child-css'  href='../style.css' type='text/css' media='all' />
@@ -29,8 +30,10 @@
     <link rel='stylesheet' id='spine-theme-print-css'  href='https://wp.wsu.edu/wp-content/themes/spine/css/print.css?ver=0.27.3-1.5.3-38560' type='text/css' media='print' />
 
 
-    <link rel='stylesheet' id='spine-custom-css-css'  href='https://wsu.edu/?custom-css=1&#038;csblog=625&#038;cscache=6&#038;csrev=886&#038;ver=0.27.3-1.5.3-38560' type='text/css' media='all' />
+    <link rel='stylesheet' id='spine-custom-css-css'  href='https://wsu.edu/?custom-css' type='text/css' media='all' />
     <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Clatin-ext&#038;ver=4.6.1' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='wsu-home-custom-style-css'  href='../css/edit-css.css' type='text/css' media='all' />
 
     <!-- The home page specific stylesheet from the wsu.edu child theme -->
     <link rel='stylesheet' id='wsu-home-style-css'  href='../css/home-style.css' type='text/css' media='all' />
@@ -55,14 +58,15 @@
     <noscript><style>#spine #spine-sitenav ul ul li { display: block !important; }</style></noscript>
 </head>
 
-<body class="home page page-id-2 page-template page-template-template-builder page-template-template-builder-php domain-wsu-edu path-none opensansy single five4 ten4 twenty14 depth-0 section- page-">
+<body class="home page-template page-template-template-builder page-template-template-builder-php page page-id-2 domain-wsu-edu path-none opensansy single five4 ten7 twenty7 depth-0 section- page-">
+
 
 <a href="#wsuwp-main" class="screen-reader-shortcut">Skip to main content</a>
-<a href="#spine-sitenav" class="screen-reader-shortcut">Skip to navigation</a>
+<a href="#wsu-home-primary-nav" class="screen-reader-shortcut">Skip to navigation</a>
 
 <div id="jacket" class="style-skeletal colors-default spacing-loose">
     <div id="binder" class="fluid spineless folio max-1386">
-        <header class="main-header wsu-home-navigation">
+        <header class="main-header wsu-home-navigation" id="wsu-home-primary-nav">
             <div class="header-shelf-wrapper">
                 <section class="single triptych row header-shelf">
                     <div class="column one">
@@ -78,8 +82,8 @@
                             <li id="menu-item-412" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-412"><a href="https://wsu.edu/life/">Community Life</a></li>
                         </ul></div>			</div>
                     <div class="column three wsu-other-nav-placeholder">
-                        <div class="top-level-links-label">WSU Locations</div>
-                        <div class="search-label">Search</div>
+                        <div class="top-level-links-label"><a href="">WSU Locations</a></div>
+                        <div class="search-label"><a href="">Search</a></div>
                     </div>
                 </section>
             </div>
@@ -111,7 +115,7 @@
                                 <ul class="sub-menu">
                                     <li id="menu-item-1029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1029"><a href="https://wsu.edu/admission/">Applying to WSU</a></li>
                                     <li id="menu-item-418" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-418"><a href="http://admission.wsu.edu/">Undergraduate</a></li>
-                                    <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="http://www.gradsch.wsu.edu/">Graduate</a></li>
+                                    <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="http://www.gradschool.wsu.edu/">Graduate</a></li>
                                     <li id="menu-item-421" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-421"><a href="http://ip.wsu.edu/apply/">International</a></li>
                                     <li id="menu-item-422" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-422"><a href="http://online.wsu.edu/admissions.aspx">Online Courses</a></li>
                                     <li id="menu-item-2979" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2979"><a href="http://finaid.wsu.edu/">Financial Aid &#038; Scholarships</a></li>
@@ -153,7 +157,7 @@
                         <!-- Empty with purpose. -->
                     </div>
                 </section>
-                <div class="close-header-drawer">x</div>
+                <div class="close-header-drawer"><a href="">x</a></div>
             </div>
             <!-- Search interface, hidden by default until interaction in header -->
             <div class="header-search-wrapper header-search-wrapper-hide">
@@ -176,7 +180,7 @@
                         <div class="quick-links-label">Common Searches</div>
                         <div id="quick-links" class="menu-quick-links-search-container"><ul><li id="menu-item-449" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-449"><a href="http://wsulibs.wsu.edu/">Library</a></li>
                             <li id="menu-item-2891" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2891"><a href="https://my.wsu.edu">myWSU</a></li>
-                            <li id="menu-item-1476" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1476"><a href="http://schedules.wsu.edu/">Class schedules</a></li>
+                            <li id="menu-item-1476" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1476"><a href="https://zzusis-utilities.wsu.edu/psportal/pages/classsearch.html">Class schedules</a></li>
                             <li id="menu-item-448" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-448"><a href="http://www.wsujobs.com">Jobs</a></li>
                             <li id="menu-item-451" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-451"><a href="http://finaid.wsu.edu/cost-of-attendance/">Tuition</a></li>
                             <li id="menu-item-450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-450"><a href="http://learn.wsu.edu/">Blackboard</a></li>
@@ -186,16 +190,16 @@
                             <li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455"><a href="http://wsucougars.com/">Varsity sports</a></li>
                         </ul></div>			</div>
                 </section>
-                <div class="close-header-search">x</div>
+                <div class="close-header-search"><a href="">x</a></div>
             </div>
 
             <!-- Campus links, hidden by default until interaction in header -->
             <div class="campus-links-full-page-wrapper campus-links-hide">
-                <div class="campus-links-close">x</div>
+                <div class="campus-links-close"><a href="">x</a></div>
                 <div class="campus-links-internal-wrapper">
                     <section class="single full row" id="campus-modal">
                         <div class="column one">
-                            <div id="top-level-links" class="menu-wsu-campuses-container"><ul><li id="menu-item-1342" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-1342 active"><a href="/">Pullman</a></li>
+                            <div id="top-level-links" class="menu-wsu-campuses-container"><ul><li id="menu-item-1342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1342"><a href="/">Pullman</a></li>
                                 <li id="menu-item-337" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-337"><a href="http://spokane.wsu.edu">Spokane</a></li>
                                 <li id="menu-item-456" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-456"><a href="http://tricities.wsu.edu/">Tri-Cities</a></li>
                                 <li id="menu-item-457" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-457"><a href="http://vancouver.wsu.edu">Vancouver</a></li>
@@ -217,26 +221,26 @@
                     <div style="" class="column one ">
 
 
-                        <div id="5835f417168e6" class="wsu-home-headline-wrapper impact-head dark">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2016/11/nara-flight.jpg);" class="home-headline headline-has-background " data-id="5835f417168e6" data-headline="Biofuel powers cross‑country flight" data-anchor="https://nararenewables.org/" data-date="Nov. 14">
+                        <div id="59398c3aba307" class="wsu-home-headline-wrapper impact-head dark">
+                            <div style="background-image: url(https://wsu.edu/125/wp-content/uploads/sites/672/2017/04/bose-hero.jpg);" class="home-headline headline-has-background " data-id="59398c3aba307" data-headline="Still abuzz about the power grid" data-anchor="https://wsu.edu/125/bose-power-grid/" data-date="May 17">
                                 <div>
-                                    <div class="home-headline-head-wrapper"><h2>Biofuel powers cross‑country flight</h2><div class="home-subtitle">WSU-led NARA produces renewable biofuel for the first commercial flight using forest leftovers.</div></div><div class="home-cta"><a href="https://nararenewables.org/">Learn More</a></div></div></div></div>
-                        <div id="5835f41716a01" class="wsu-home-headline-wrapper impact-head dark">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2016/11/esfcom-application.jpg);" class="home-headline headline-has-background " data-id="5835f41716a01" data-headline="Medical school accepting applications" data-anchor="https://medicine.wsu.edu/" data-date="Nov. 2">
+                                    <div class="home-headline-head-wrapper"><h2>Still abuzz about the power grid</h2><div class="home-subtitle">Anjan Bose’s expertise is in high demand. Now he’s helping to chart the future of the Washington State Academy of Sciences.</div></div><div class="home-cta"><a href="https://wsu.edu/125/bose-power-grid/">Learn More</a></div></div></div></div>
+                        <div id="59398c3aba3bb" class="wsu-home-headline-wrapper impact-head dark">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2017/05/TopTen2017-hero.jpg);" class="home-headline headline-has-background " data-id="59398c3aba3bb" data-headline="Ready to change the world" data-anchor="https://wsu.edu/impact/2017-top-ten/" data-date="May 1">
                                 <div>
-                                    <div class="home-headline-head-wrapper"><h2>Medical school accepting applications</h2><div class="home-subtitle">The newly accredited Floyd College of Medicine plans to enroll 60 students in the inaugural class.</div></div><div class="home-cta"><a href="https://medicine.wsu.edu/">Learn More</a></div></div></div></div>
-                        <div id="5835f41716b1c" class="wsu-home-headline-wrapper impact-head dark">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2016/10/nasa-launch.jpg);" class="home-headline headline-has-background " data-id="5835f41716b1c" data-headline="Rocketing to career success" data-anchor="https://everett.wsu.edu/mechanical-engineering-at-wsu-everett/" data-date="Oct. 24">
+                                    <div class="home-headline-head-wrapper"><h2>Ready to change the world</h2><div class="home-subtitle">Meet the top 10 seniors from the Pullman campus.</div></div><div class="home-cta"><a href="https://wsu.edu/impact/2017-top-ten/">Learn More</a></div></div></div></div>
+                        <div id="59398c3aba455" class="wsu-home-headline-wrapper impact-head dark">
+                            <div style="background-image: url(https://wsu.edu/125/wp-content/uploads/sites/672/2017/04/safeshot-hero2.jpg);" class="home-headline headline-has-background " data-id="59398c3aba455" data-headline="Taking a shot at preventable deaths" data-anchor="https://wsu.edu/125/safeshot/" data-date="Apr. 13">
                                 <div>
-                                    <div class="home-headline-head-wrapper"><h2>Rocketing to career success</h2><div class="home-subtitle">2016 graduate Amy Felt applies her hands-on learning experience as a NASA engineer.</div></div><div class="home-cta"><a href="https://everett.wsu.edu/mechanical-engineering-at-wsu-everett/">Learn More</a></div></div></div></div>
-                        <div id="5835f41716c48" class="wsu-home-headline-wrapper impact-head dark">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2016/10/med-announcement3.jpg);" class="home-headline headline-has-background " data-id="5835f41716c48" data-headline="Floyd College of Medicine receives preliminary accreditation" data-anchor="https://news.wsu.edu/2016/10/19/floyd-college-medicine-receives-preliminary-accreditation/" data-date="Oct. 19">
+                                    <div class="home-headline-head-wrapper"><h2>Taking a shot at preventable deaths</h2><div class="home-subtitle">Two 2016 bioengineering graduates are using their senior capstone course project to improve world health.</div></div><div class="home-cta"><a href="https://wsu.edu/125/safeshot/">Learn More</a></div></div></div></div>
+                        <div id="59398c3aba4e3" class="wsu-home-headline-wrapper impact-head dark">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2017/03/virtual-learn.jpg);" class="home-headline headline-has-background " data-id="59398c3aba4e3" data-headline="Learning that’s virtually fun" data-anchor="https://magazine.wsu.edu/2017/01/27/learning-thats-virtually-fun/" data-date="Mar. 22">
                                 <div>
-                                    <div class="home-headline-head-wrapper"><h2>Floyd College of Medicine receives preliminary accreditation</h2><div class="home-subtitle">Achievement keeps medical school on track to admit inaugural class in August</div></div><div class="home-cta"><a href="https://news.wsu.edu/2016/10/19/floyd-college-medicine-receives-preliminary-accreditation/">Learn More</a></div></div></div></div>
-                        <div id="5835f41716d50" class="wsu-home-headline-wrapper impact-head dark">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2016/09/schulz-portrait3.jpg);" class="home-headline headline-has-background " data-id="5835f41716d50" data-headline="The 11th President" data-anchor="https://magazine.wsu.edu/2016/08/04/the-11th-president/" data-date="Sept. 28">
+                                    <div class="home-headline-head-wrapper"><h2>Learning that’s virtually fun</h2><div class="home-subtitle">Neurodiversity lab confronts disabilities with engaging new technologies</div></div><div class="home-cta"><a href="https://magazine.wsu.edu/2017/01/27/learning-thats-virtually-fun/">Learn More</a></div></div></div></div>
+                        <div id="59398c3aba56c" class="wsu-home-headline-wrapper impact-head dark">
+                            <div style="background-image: url(https://wsu.edu/125/wp-content/uploads/sites/672/2017/03/hero-cougarpride.jpg);" class="home-headline headline-has-background " data-id="59398c3aba56c" data-headline="Discipline, drive, and awe" data-anchor="https://wsu.edu/125/year-in-photos-2016/" data-date="Feb. 28">
                                 <div>
-                                    <div class="home-headline-head-wrapper"><h2>The 11th President</h2><div class="home-subtitle">Kirk Schulz comes to WSU with a commitment to the land-grant mission.</div></div><div class="home-cta"><a href="https://magazine.wsu.edu/2016/08/04/the-11th-president/">Learn More</a></div></div></div></div>
+                                    <div class="home-headline-head-wrapper"><h2>Discipline, drive, and awe</h2><div class="home-subtitle">Photos capture the spectacle of life on campus.</div></div><div class="home-cta"><a href="https://wsu.edu/125/year-in-photos-2016/">Learn More</a></div></div></div></div>
 
                     </div>
                 </section>
@@ -245,16 +249,17 @@
 
 
                         <ul class="news-block-column">
-                            <li class="item"><a href="https://news.wsu.edu/2016/11/04/gene-therapy-reduces-cancer-risk/"><img src="https://wsu.edu/wp-content/uploads/sites/625/2016/11/Grant-Trobridge.jpg" alt="Grant Trobridge" /><span class="hp-special-cat">ADDRESSING DISEASE</span><span class="news-block-head">Safer gene therapy delivery reduces cancer risk</span><span class="news-block-sub">Therapy could be ready for clinical trials within five years. </span></a></li>
+                            <li class="item"><a href="https://news.wsu.edu/2017/02/28/thwart-antimicrobial-resistance/"><img src="https://wsu.edu/wp-content/uploads/sites/625/2017/02/thwart-amr.jpg" alt="WSU researcher in Africa" /><span class="hp-special-cat">SUSTAINING HEALTH</span><span class="news-block-head">Scientists look for practices to thwart antimicrobial resistance</span><span class="news-block-sub">Efforts focused on Africa, drug resistant tuberculosis and other bacteria.</span></a></li>
                         </ul>
                         <ul class="news-block-column">
-                            <li class="item"><a href="https://news.wsu.edu/2016/11/02/gene-resists-toxic-wheat-scab/"><span class="news-block-cat">FOOD PRODUCTION</span><span class="news-block-head">Novel gene resists toxic wheat disease that costs billions</span><span class="news-block-sub">WSU-KSU research addresses wheat scab.</span></a></li>
-                            <li class="item"><a href="http://www.pnnl.gov/news/release.aspx?id=4316"><span class="news-block-cat">MORE COLLABORATION</span><span class="news-block-head">State&#8217;s 3 largest public research institutions to increase partnerships</span><span class="news-block-sub">WSU, UW, and PNNL sign Memorandum of Understanding</span></a></li>
+                            <li class="item"><a href="https://news.wsu.edu/2017/06/01/wsu-announces-new-initiative-improve-campus-culture-climate/#more-157726"><span class="news-block-cat">BUILDING COMMUNITY</span><span class="news-block-head">University launches new initiative to create a more welcoming campus culture and climate</span><span class="news-block-sub">An external review of diversity efforts and creation of system-wide committees are among the actions planned.</span></a></li>
+                            <li class="item"><a href="https://news.wsu.edu/2017/05/18/wsu-molecular-heart-study/"><span class="news-block-cat">SUSTAINING HEALTH</span><span class="news-block-head">Voiland researchers receive $1.57M grant to study heart problems at molecular level</span><span class="news-block-sub">The 4-year project could lead to improved diagnostics and new treatments for hereditary heart conditions.</span></a></li>
                         </ul>
                         <ul class="news-block-column">
-                            <li class="item"><a href="http://www.spokesman.com/stories/2015/jan/20/waiting-to-inhale/"><span class="news-block-cat">IMMUNE SYSTEM HEALTH</span><span class="news-block-head">Researchers discover brain-specific protein that could help fight flu</span><span class="news-block-sub">The secret lies in helping to regulate sleep.</span></a></li>
-                            <li class="item"><a href="https://news.wsu.edu/2016/11/09/students-make-reel-difference-for-vets/"><span class="news-block-cat">MAKING A DIFFERENCE</span><span class="news-block-head">Coug students make a &#8216;reel&#8217; difference for veterans</span><span class="news-block-sub">Engineering students demonstrate reel projects for area veterans.</span></a></li>
+                            <li class="item"><a href="https://news.wsu.edu/2017/06/06/9-million-to-wsu-upward-bound/#more-157847"><span class="news-block-cat">BOOSTING COLLEGE ACCESS</span><span class="news-block-head">Federal grant allows WSU to expand Upward Bound programs to western Washington</span><span class="news-block-sub">Program that helps low income and first generation college students will expand to Vancouver and Bremerton. </span></a></li>
+                            <li class="item"><a href="https://news.wsu.edu/2017/06/06/wsu-grad-students-2016-election-map-zeroes-neighborhoods/#more-157824"><span class="news-block-cat">RESEARCH MATTERS</span><span class="news-block-head">Grad student&#8217;s 2016 election map burrows into neighborhood results</span><span class="news-block-sub">The meticulous effort is believed to be the first map of its type to examine the 2016 presidential election results.</span></a></li>
                         </ul>
+                        <p class="hp-news-link-wrap"><a class="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
 
                     </div>
                 </section>
@@ -361,64 +366,6 @@
 
                     </div>
                 </section>
-                <section id="builder-section-1426365980388" class="row halves gutter pad-top photowall full display-none">
-                    <div style="" class="column one ">
-
-
-                        <div class="media-wall-column media-wall-column-0">
-                            <a href="https://www.instagram.com/p/BEh23laRp2E/">
-                                <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/12917837_1063125820410915_1065325235_n.jpg" class="media-wall-image">
-                            </a>
-                            <a href="https://www.instagram.com/p/BEEnf6FguSH/">
-                                <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/12930760_1044668212273479_970839376_n.jpg" class="media-wall-image">
-                            </a></div><div class="media-wall-column media-wall-column-1">
-                        <a href="https://www.instagram.com/p/BD1NQcZTHUz/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/12930870_1762669807295719_2126487514_n.jpg" class="media-wall-image">
-                        </a>
-                        <a href="https://www.instagram.com/p/BB_fBkRxebz/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/12750176_1707140879531437_1953028930_n.jpg" class="media-wall-image">
-                        </a>
-                        <a href="https://www.instagram.com/p/BEzPRHBNzdD/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/13109090_1267805029900709_33377814_n.jpg" class="media-wall-image">
-                        </a></div><div class="media-wall-column media-wall-column-2">
-                        <a href="https://www.instagram.com/p/BE1R_Nkrg0P/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/13129798_210656272650795_1794408348_n.jpg" class="media-wall-image">
-                        </a>
-                        <a href="https://www.instagram.com/p/BE1k94aDWm8/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/13108786_274408839558598_330346672_n.jpg" class="media-wall-image">
-                        </a>
-                        <a href="https://www.instagram.com/p/BE85vGRR7Zw/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/13117957_220291921683346_28925474_n.jpg" class="media-wall-image">
-                        </a></div><div class="media-wall-column media-wall-column-3">
-                        <a href="https://www.instagram.com/p/BE9GmqYx2bP/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/13129667_940753092689160_1167379210_n.jpg" class="media-wall-image">
-                        </a></div><div class="media-wall-column media-wall-column-4">
-                        <a href="https://www.instagram.com/p/BE9ie9qkYi8/">
-                            <img src="https://wsu.edu/wp-content/themes/wsu-home/images/blank.gif" data-src="https://wsu.edu/wp-content/uploads/sites/625/2016/05/13129322_1322086887807097_1180163599_n.jpg" class="media-wall-image">
-                        </a></div>
-
-                    </div>
-                    <div style="" class="column two spine-social-channels">
-
-                        <header>
-                            <h2>Get connected</h2>
-                        </header>
-
-                        <ul>
-                            <li class="tumblr-channel"><a href="http://wsupullman.tumblr.com/">Tumblr</a></li>
-                            <li class="youtube-channel"><a href="https://www.youtube.com/user/washingtonstateuniv">YouTube</a></li>
-                            <li class="facebook-channel"><a href="https://www.facebook.com/WSUPullman">Facebook</a></li>
-                            <li class="twitter-channel"><a href="https://twitter.com/WSUPullman">Twitter</a></li>
-                            <li class="pinterest-channel"><a href="https://www.pinterest.com/wsupullman/">Pinterest</a></li>
-                            <li class="linkedin-channel"><a href="https://www.linkedin.com/company/washington-state-university">LinkedIn</a></li>
-                            <li class="instagram-channel"><a href="https://instagram.com/wsupullman/">Instagram</a></li>
-                            <li class="googleplus-channel"><a href="https://plus.google.com/103184134798160862810/posts">Google+</a></li>
-                        </ul>
-                        <p><a href="https://news.wsu.edu/social-media-directory/">More</a></p>
-                        <p>Remember to tag your posts with <strong>#GoCougs</strong> so we can find them.</p>
-
-                    </div>
-                </section>
                 <div class="section-wrapper fixedbg section-wrapper-has-background" data-background="https://wsu.edu/wp-content/uploads/sites/625/2016/10/spokane-campus3.jpg" data-background-mobile="https://wsu.edu/wp-content/uploads/sites/625/2016/10/spokane-campus3.jpg">	<section id="builder-section-1426473245035" class="row single gutter pad-top fixedbg campusphoto full">
                     <div style="" class="column one ">
 
@@ -427,7 +374,7 @@
 
                     </div>
                 </section>
-                </div><div class="section-wrapper graybg">	<section id="builder-section-1426011331022" class="row halves gutter pad-top news graybg">
+                </div><div class="section-wrapper graybg">	<section id="builder-section-1426011331022" class="row halves gutter pad-top news">
                 <div style="" class="column one ">
 
                     <header>
@@ -436,9 +383,10 @@
 
                     <div class="wsuwp-content-syndicate-wrapper">
                         <ul>
-                            <li class="wsuwp-content-syndicate-event"><span class="content-item-event-date">Now — Dec . 17 </span><span class="content-item-event-title"><a href="https://calendar.wsu.edu/event/2016-fall-nw-alternative-comics-exhibition/">Northwest Alternative Comics Exhibition </a></span><span class="content-item-event-city">Pullman</span></li>
-                            <li><span class="content-item-event-date">Nov. 28 </span><span class="content-item-event-title"><a href="https://calendar.wsu.edu/event/holiday-low-brass-concert/">Holiday Low Brass Concert </a><span class="content-item-event-city">Pullman</span></span></li>
-                            <li><span class="content-item-event-date">Dec. 1, 3, 8-10 </span><span class="content-item-event-title"><a href="https://calendar.wsu.edu/event/wsupa-black-box-classics-presents-eurydice-sarah-ruhl/2016-12-01/">WSUPA Black Box Classics: Eurydice, by Sarah Ruhl </a><span class="content-item-event-city">Pullman</span></span></li>
+                            <li><span class="content-item-event-date">Now to June 30 </span><span class="content-item-event-title"><a href="https://calendar.wsu.edu/event/2017-summer-points-interest-exhibition/">Museum of Art: Points of Interest exhibition</a></span><span class="content-item-event-city">Pullman</span></li>
+                            <li><span class="content-item-event-date">June 16-18 </span><span class="content-item-event-title"><a href="http://urec.wsu.edu/classes-trips/?">Trail of the Couer d&#8217;Alene Bike and Camp</a></span><span class="content-item-event-city">Pullman</span></li>
+                            <li><span class="content-item-event-date">June 25-30</span><span class="content-item-event-title"><a href="https://music.wsu.edu/area-information/music-education/summer-music-camps/">WSU Horn, Oboe, and Summer Keyboard Explorations Camps</a></span><span class="content-item-event-city">Pullman</span><span class="content-item-event-city"><br />
+</span></li>
                         </ul>
                         <p><a href="http://calendar.wsu.edu">More events</a></p>
                     </div>
@@ -450,7 +398,7 @@
                         <h2>Academic Calendar</h2>
                     </header>
 
-                    <ul class="wsu-academic-calendar"><li><span class="wsu-ac-month">November</span> <span class="wsu-ac-day">21</span> <span class="wsu-ac-text">Thanksgiving vacation begins</span></li><li><span class="wsu-ac-month">December</span> <span class="wsu-ac-day">2</span> <span class="wsu-ac-text">Theses due to Graduate School</span></li><li><span class="wsu-ac-month">December</span> <span class="wsu-ac-day">9</span> <span class="wsu-ac-text">Last day of instruction fall semester</span></li></ul><br />
+                    <ul class="wsu-academic-calendar"><li><span class="wsu-ac-month">June</span> <span class="wsu-ac-day">19</span> <span class="wsu-ac-text">Late 6-week Summer Session classes begin</span></li><li><span class="wsu-ac-month">June</span> <span class="wsu-ac-day">26</span> <span class="wsu-ac-text">Late 7-week Summer Session classes begin</span></li><li><span class="wsu-ac-month">July</span> <span class="wsu-ac-day">4</span> <span class="wsu-ac-text">Independence Day holiday</span></li></ul><br />
                     <a href="http://registrar.wsu.edu/academic-calendar/">Academic calendar</a></p>
 
                 </div>
@@ -459,7 +407,7 @@
                 <div style="" class="column one ">
 
 
-                    <figure class="wsu-p-replaced"><a href="http://wsucougars.com"><img class="alignnone athletics-logo size-full wp-image-1446" src="https://wsu.edu/wp-content/uploads/sites/625/2015/03/WState-Athletics-full.png" alt="WSU-Athletics" width="427" height="83" /></a><a href="http://wsucougars.com"><img class="alignnone size-large wp-image-1445 action-img" src="https://wsu.edu/wp-content/uploads/sites/625/2016/11/Ath-football-2016.jpg" alt="WSU football team celebrating homecoming victory" width="792" height="284" /></a></figure>
+                    <figure class="wsu-p-replaced"><a href="http://wsucougars.com"><img class="alignnone athletics-logo size-full wp-image-1446" src="https://wsu.edu/wp-content/uploads/sites/625/2015/03/WState-Athletics-full.png" alt="WSU-Athletics" width="427" height="83" /></a><a href="http://wsucougars.com"><img class="alignnone size-large wp-image-1445 action-img" src="https://wsu.edu/wp-content/uploads/sites/625/2017/05/Ath-brooks-johnson.jpg" alt="Alissa Brooks-Johnson competing in the heptathlon" width="792" height="284" /></a></figure>
                     <ul>
                         <li><a href="http://www.wsucougars.com/ViewArticle.dbml?&amp;ATCLID=208903163&amp;DB_OEM_ID=30400">Purchase tickets</a></li>
                         <li><a href="http://www.wsucougars.com/main/Schedule.dbml?DB_LANG=C&amp;&amp;DB_OEM_ID=30400">All sports schedule</a></li>
@@ -491,15 +439,13 @@
 
                         <h3>Scholarships and financial aid</h3>
                         <ul>
-                            <li><a href="http://admission.wsu.edu/scholarships/">General information</a></li>
-                            <li><a href="https://sfsapps.em.wsu.edu/compass/aidestimate/index">Financial Aid Estimator</a></li>
-                            <li><a href="http://admission.wsu.edu/scholarships/university-achievement.html">University Achievement Award calculator</a></li>
-                            <li><a href="http://admission.wsu.edu/scholarships/cougar-academic.html">Cougar Academic Award calculator</a></li>
+                            <li><a href="https://financialaid.wsu.edu/">General information</a></li>
+                            <li><a href="https://financialaid.wsu.edu/scholarships/">Scholarships</a></li>
                         </ul>
                         <h3>Tuition and fees</h3>
                         <ul>
-                            <li><a href="http://admission.wsu.edu/scholarships/cost.html">Estimated costs</a></li>
-                            <li><a href="https://finaid.wsu.edu/cost-of-attendanceaid-estimator/net-price-calculator/">Cost of attending calculator (Net Price)</a></li>
+                            <li><a href="https://admission.wsu.edu/tuition-costs/tuition-break-down/">Estimated costs</a></li>
+                            <li><a href="https://financialaid.wsu.edu/aid-estimator/">Financial Aid Estimator and Cost Calculator</a></li>
                         </ul>
 
                     </div>
@@ -518,8 +464,8 @@
                     <div style="" class="column one ">
 
 
-                        <a id="5835f41717362" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/sightseeing/">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Sights2Cropped-396x396.jpg);" class="home-headline headline-has-background " data-id="5835f41717362" data-headline="Breathtaking Sights" data-anchor="https://wsu.edu/life/things-to-do/sightseeing/" data-date="Mar 09">
+                        <a id="59398c3aba8ca" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/sightseeing/">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/Sights2Cropped-396x396.jpg);" class="home-headline headline-has-background " data-id="59398c3aba8ca" data-headline="Breathtaking Sights" data-anchor="https://wsu.edu/life/things-to-do/sightseeing/" data-date="Mar 09">
                                 <div>
                                     <div class="home-headline-head-wrapper"><h2>Breathtaking Sights</h2><div class="home-subtitle"></div></div></div></div></a>
 
@@ -527,8 +473,8 @@
                     <div style="" class="column two ">
 
 
-                        <a id="5835f41717807" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/sports/">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/RecreationCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="5835f41717807" data-headline="World-Class Recreation" data-anchor="https://wsu.edu/life/things-to-do/sports/" data-date="Mar 09">
+                        <a id="59398c3abab4c" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/sports/">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/RecreationCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="59398c3abab4c" data-headline="World-Class Recreation" data-anchor="https://wsu.edu/life/things-to-do/sports/" data-date="Mar 09">
                                 <div>
                                     <div class="home-headline-head-wrapper"><h2>World-Class Recreation</h2><div class="home-subtitle"></div></div></div></div></a>
 
@@ -536,8 +482,8 @@
                     <div style="" class="column three ">
 
 
-                        <a id="5835f41717d18" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/entertainment/">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/ShowsCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="5835f41717d18" data-headline="Spectacular Shows" data-anchor="https://wsu.edu/life/things-to-do/entertainment/" data-date="Mar 09">
+                        <a id="59398c3abaeca" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/entertainment/">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/ShowsCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="59398c3abaeca" data-headline="Spectacular Shows" data-anchor="https://wsu.edu/life/things-to-do/entertainment/" data-date="Mar 09">
                                 <div>
                                     <div class="home-headline-head-wrapper"><h2>Spectacular Shows</h2><div class="home-subtitle"></div></div></div></div></a>
 
@@ -552,8 +498,8 @@
                     <div style="" class="column one ">
 
 
-                        <a id="5835f417181c9" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/restaurants-shopping/">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/DiningCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="5835f417181c9" data-headline="Irresistible Eats" data-anchor="https://wsu.edu/life/things-to-do/restaurants-shopping/" data-date="Mar 09">
+                        <a id="59398c3abb1d4" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/things-to-do/restaurants-shopping/">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/DiningCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="59398c3abb1d4" data-headline="Irresistible Eats" data-anchor="https://wsu.edu/life/things-to-do/restaurants-shopping/" data-date="Mar 09">
                                 <div>
                                     <div class="home-headline-head-wrapper"><h2>Irresistible Eats</h2><div class="home-subtitle"></div></div></div></div></a>
 
@@ -561,8 +507,8 @@
                     <div style="" class="column two ">
 
 
-                        <a id="5835f41718635" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/pullman/healthy-living/">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/HealthyLivingCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="5835f41718635" data-headline="Healthy Living" data-anchor="https://wsu.edu/life/pullman/healthy-living/" data-date="Mar 09">
+                        <a id="59398c3abb56f" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/pullman/healthy-living/">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/HealthyLivingCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="59398c3abb56f" data-headline="Healthy Living" data-anchor="https://wsu.edu/life/pullman/healthy-living/" data-date="Mar 09">
                                 <div>
                                     <div class="home-headline-head-wrapper"><h2>Healthy Living</h2><div class="home-subtitle"></div></div></div></div></a>
 
@@ -570,18 +516,10 @@
                     <div style="" class="column three ">
 
 
-                        <a id="5835f41718b16" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/pullman/community-schools/">
-                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/HomeFamilyCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="5835f41718b16" data-headline="Home &amp; Family" data-anchor="https://wsu.edu/life/pullman/community-schools/" data-date="Mar 09">
+                        <a id="59398c3abb846" class="home-link-wrap wsu-home-palette-text-default home-life-single" href="https://wsu.edu/life/pullman/community-schools/">
+                            <div style="background-image: url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/HomeFamilyCropped-396x396.jpg);" class="home-headline headline-has-background " data-id="59398c3abb846" data-headline="Home &amp; Family" data-anchor="https://wsu.edu/life/pullman/community-schools/" data-date="Mar 09">
                                 <div>
                                     <div class="home-headline-head-wrapper"><h2>Home &amp; Family</h2><div class="home-subtitle"></div></div></div></div></a>
-
-                    </div>
-                </section>
-                <section id="builder-section-1426623093802" class="row single gutter pad-top campaign-mark full">
-                    <div style="" class="column one ">
-
-
-                        <figure class="wsu-p-replaced"><a href="http://wsu.edu/125/"><img class="aligncenter" src="https://wsu.edu/wp-content/themes/wsu-home/images/wsu-home-125-mark.svg" alt="WSU 125" width="300" height="150" /></a></figure>
 
                     </div>
                 </section>
@@ -761,7 +699,7 @@
                         <li id="menu-item-477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-477"><a href="http://www.wsujobs.com">Jobs</a></li>
                         <li id="menu-item-1527" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1527"><a href="https://transportation.wsu.edu/">Parking</a></li>
                         <li id="menu-item-1530" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1530"><a href="http://wsubookie.bncollege.com/">The Bookie</a></li>
-                        <li id="menu-item-478" class="ff-125 menu-item menu-item-type-custom menu-item-object-custom menu-item-478"><a href="http://wsu.edu/125/">125th Anniversary</a></li>
+                        <li id="menu-item-478" class="ff-125 menu-item menu-item-type-custom menu-item-object-custom menu-item-478"><a href="https://wsu.edu/drive-to-25/">Drive to 25</a></li>
                     </ul>
                 </li>
                     <li id="menu-item-1645" class="ff-index nav-section-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1645"><a>Reference</a>
@@ -789,7 +727,7 @@
                     </li>
                     <li id="menu-item-1650" class="ff-policies nav-section-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1650"><a>Policies &amp; Terms of Use</a>
                         <ul class="sub-menu">
-                            <li id="menu-item-482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-482"><a href="http://accesscenter.wsu.edu/">Accessibility</a></li>
+                            <li id="menu-item-482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-482"><a href="https://access.wsu.edu/">Accessibility</a></li>
                             <li id="menu-item-483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-483"><a href="http://policies.wsu.edu">Policies</a></li>
                             <li id="menu-item-2883" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2883"><a href="http://public.wsu.edu/~forms/ProposedWAC.html">Rule Making</a></li>
                             <li id="menu-item-484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-484"><a href="http://ucomm.wsu.edu/wsu-copyright-policy">Copyright</a></li>
@@ -818,130 +756,11 @@
     <meta itemprop="email" class="required" content="mc@wsu.edu">
 </div>
 
-<script type='text/javascript' src='https://wp.wsu.edu/wp-content/themes/spine/js/spine-theme.js?ver=0.27.3-1.5.3-38560'></script>
-<script type='text/javascript' src='https://wp.wsu.edu/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
-<script type='text/javascript' src='https://wp.wsu.edu/wp-includes/js/backbone.min.js?ver=1.2.3'></script>
-
-<!-- Homepage specific JavaScript from the wsu.edu child theme -->
-<script type='text/javascript' src='../js/wsu-home.min.js'></script>
-
-<script type='text/javascript' src='https://wp.wsu.edu/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
-
-<!-- Custom JavaScript Editor -->
-<script>/** Super Simple Slider by @intllgnt **/
-
-;(function($, window, document, undefined ) {
-
-    $.fn.sss = function(options) {
-
-// Options
-
-        var settings = $.extend({
-            slideShow : false,
-            startOn : 0,
-            speed : 3500,
-            transition : 400,
-            arrows : true
-        }, options);
-
-        return this.each(function() {
-
-// Variables
-
-            var
-                    wrapper = $(this),
-                    slides = wrapper.children().wrapAll('<div class="sss"/>').addClass('ssslide'),
-                    slider = wrapper.find('.sss'),
-                    slide_count = slides.length,
-                    transition = settings.transition,
-                    starting_slide = settings.startOn,
-                    target = starting_slide > slide_count - 1 ? 0 : starting_slide,
-                    animating = false,
-                    clicked,
-                    timer,
-                    key,
-                    prev,
-                    next,
-
-// Reset Slideshow
-
-                    reset_timer = settings.slideShow ? function() {
-                        clearTimeout(timer);
-                        timer = setTimeout(next_slide, settings.speed);
-                    } : $.noop;
-
-// Animate Slider
-
-            function get_height(target) {
-                return ((slides.eq(target).height() / slider.width()) * 100) + '%';
-            }
-
-            function animate_slide(target) {
-                if (!animating) {
-                    animating = true;
-                    var target_slide = slides.eq(target);
-
-                    target_slide.fadeIn(transition);
-                    slides.not(target_slide).fadeOut(transition);
-
-                    slider.animate({paddingBottom: get_height(target)}, transition,  function() {
-                        animating = false;
-                    });
-
-                    reset_timer();
-
-                }};
-
-// Next Slide
-
-            function next_slide() {
-                target = target === slide_count - 1 ? 0 : target + 1;
-                animate_slide(target);
-            }
-
-// Prev Slide
-
-            function prev_slide() {
-                target = target === 0 ? slide_count - 1 : target - 1;
-                animate_slide(target);
-            }
-
-            if (settings.arrows) {
-                slider.append('<div class="sssprev"/>', '<div class="sssnext"/>');
-            }
-
-            next = slider.find('.sssnext'),
-                    prev = slider.find('.sssprev');
-
-            $(window).load(function() {
-
-                slider.css({paddingBottom: get_height(target)}).click(function(e) {
-                    clicked = $(e.target);
-                    if (clicked.is(next)) { next_slide() }
-                    else if (clicked.is(prev)) { prev_slide() }
-                });
-
-                animate_slide(target);
-
-                $(document).keydown(function(e) {
-                    key = e.keyCode;
-                    if (key === 39) { next_slide() }
-                    else if (key === 37) { prev_slide() }
-                });
-
-            });
-// End
-
-        });
-
-    };
-})(jQuery, window, document);
-
-
-jQuery(function($) {
-    $('.125-slideshow').sss();
-});
-</script>
+<script type='text/javascript' src='https://wsu.edu/wp-content/themes/spine/js/spine-theme.js?ver=0.27.11-1.6.3-40759'></script>
+<script type='text/javascript' src='https://wsu.edu/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script type='text/javascript' src='https://wsu.edu/wp-includes/js/backbone.min.js?ver=1.2.3'></script>
+<script type='text/javascript' src='https://wsu.edu/wp-content/themes/wsu-home/js/wsu-home.min.js?ver=0.27.11-1.6.3-407590.14.4'></script>
+<script type='text/javascript' src='https://wsu.edu/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
 
 </body>
 </html>
