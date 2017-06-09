@@ -76,6 +76,9 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 <header class="main-header wsu-home-navigation" id="wsu-home-primary-nav">
 	<div class="header-shelf-wrapper">
 		<section class="single triptych row header-shelf">
+			<div class="incident">
+				<p>Possible exposure of personal information <a class="incident-button" href="https://wsu.edu/security-incident">incident details</a></p>
+			</div>
 			<div class="column one">
 				<div class="wsu-logo">
 					<?php if ( $wsu_home_is_features ) : ?><a href="https://wsu.edu/"><?php endif; ?>
