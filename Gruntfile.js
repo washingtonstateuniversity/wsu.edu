@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "*.css", "css/*.css", "src/css/*.css", "!src/css/combined-top-ten.css" ]
+			src: [ "src/css/*.css", "src/css-legacy/*.css", "src/css-top-ten/*.css" ]
 		},
 
 		concat: {
@@ -26,13 +26,19 @@ module.exports = function( grunt ) {
 				],
 				dest: "js/wsu-feature.js"
 			},
+			main_styles: {
+				src: [
+					"src/css/*.css"
+				],
+				dest: "temp-style.css"
+			},
 			top_ten_styles: {
 				src: [
-					"src/css/hero-feature.css",
-					"src/css/content-card.css",
-					"src/css/top-ten.css"
+					"src/css-top-ten/hero-feature.css",
+					"src/css-top-ten/content-card.css",
+					"src/css-top-ten/top-ten.css"
 				],
-				dest: "src/css/temp-combined-top-ten.css"
+				dest: "src/css-top-ten/temp-combined-top-ten.css"
 			}
 		},
 
@@ -47,8 +53,73 @@ module.exports = function( grunt ) {
 						} )
 					]
 				},
-				src: "src/css/temp-combined-top-ten.css",
-				dest: "src/css/combined-top-ten.css"
+				src: "src/css-top-ten/temp-combined-top-ten.css",
+				dest: "css/combined-top-ten.css"
+			},
+			legacy_edit_css: {
+				options: {
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
+						} )
+					]
+				},
+				src: "src/css-legacy/edit-css.css",
+				dest: "css/edit-css.css"
+			},
+			features_css: {
+				options: {
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
+						} )
+					]
+				},
+				src: "src/css-legacy/features-style.css",
+				dest: "css/features-style.css"
+			},
+			home_style_css: {
+				options: {
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
+						} )
+					]
+				},
+				src: "src/css-legacy/home-style.css",
+				dest: "css/home-style.css"
+			},
+			internal_style_css: {
+				options: {
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
+						} )
+					]
+				},
+				src: "src/css-legacy/internal-style.css",
+				dest: "css/internal-style.css"
+			},
+			main_style_css: {
+				options: {
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 8-11", "Firefox ESR" ]
+						} )
+					]
+				},
+				src: "temp-style.css",
+				dest: "style.css"
 			}
 		},
 
@@ -56,7 +127,7 @@ module.exports = function( grunt ) {
 			options: {
 				force: true
 			},
-			temp: [ "src/css/temp*.*" ]
+			temp: [ "src/css-top-ten/temp*.*", "temp-style.css" ]
 		},
 
 		jscs: {
