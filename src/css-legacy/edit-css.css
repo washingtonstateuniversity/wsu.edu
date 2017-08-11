@@ -14,7 +14,7 @@
 }
 
 a.incident-button {
-	background: #f17312;
+	background: #d51900;
 	border-radius: 4px;
 	padding: .75rem 1rem .6rem;
 	margin-left: 1rem;
@@ -23,7 +23,7 @@ a.incident-button {
 }
 
 a.incident-button:hover {
-	background: #d51900;
+	background: #981e32;
 }
 
 @media screen and (max-width: 700px) {
