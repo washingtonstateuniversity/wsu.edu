@@ -78,7 +78,7 @@ h3 {
 /* Spirit mark pillar */
 .content-card:before,
 .hero:before {
-	background: #981e32 url(../../assets/top-ten/spirit-mark.svg) no-repeat;
+	background: #981e32 url(../assets/top-ten/spirit-mark.svg) no-repeat;
 	background-size: 48px 45.92px;
 	background-position: .5rem 2rem;
 	content: "";
@@ -238,18 +238,18 @@ h3 {
 }
 
 .tt-details .ico-college:before {
-	background-image: url(../../assets/top-ten/li-icon-college.svg);
+	background-image: url(../assets/top-ten/li-icon-college.svg);
 	background-size: .7em;
 }
 
 .tt-details .ico-major:before {
-	background-image: url(../../assets/top-ten/li-icon-major.svg);
+	background-image: url(../assets/top-ten/li-icon-major.svg);
 	background-position-y: 2px;
 	background-size: 1em;
 }
 
 .tt-details .ico-home:before {
-	background-image: url(../../assets/top-ten/li-icon-hometown.svg);
+	background-image: url(../assets/top-ten/li-icon-hometown.svg);
 	background-size: .9em;
 }
 
