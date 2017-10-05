@@ -11,7 +11,7 @@ class WSU_Home_Theme {
 	/**
 	 * @var string The version of the WSU Home theme for cache breaking.
 	 */
-	public $version = '0.14.10';
+	public $version = '0.14.11';
 
 	/**
 	 * Configure our default hooks.
@@ -310,7 +310,7 @@ class WSU_Home_Theme {
 		}
 
 		if ( $this->is_wsu_site( 'wsu-features' ) && ! is_front_page() ) {
-			return $view_title . ' 125 | Washington State University';
+			return $view_title . ' Washington State University';
 		}
 
 		if ( $this->is_wsu_site( 'wsu-impact' ) && is_front_page() ) {
