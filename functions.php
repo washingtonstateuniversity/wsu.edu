@@ -310,7 +310,7 @@ class WSU_Home_Theme {
 		}
 
 		if ( $this->is_wsu_site( 'wsu-features' ) && ! is_front_page() ) {
-			return $view_title . ' 125 | Washington State University';
+			return $view_title . ' Washington State University';
 		}
 
 		if ( $this->is_wsu_site( 'wsu-impact' ) && is_front_page() ) {
