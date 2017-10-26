@@ -87,6 +87,7 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 				<?php echo wsu_home_get_menu( $header_mega_menu_args ); ?>
 			</div>
 			<div class="column three wsu-other-nav-placeholder">
+				<a href="https://foundation.wsu.edu/give/" class="header-give-link">Give to WSU</a>
 				<div class="search-label"><a href="">Search</a></div>
 			</div>
 		</section>
