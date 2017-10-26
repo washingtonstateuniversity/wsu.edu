@@ -242,6 +242,10 @@ main a:focus {
 	color: #2a3033;
 }
 
+.column.three.wsu-other-nav-placeholder {
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
 .search-label {
 	position: absolute;
 	bottom: 23px;
@@ -268,6 +272,21 @@ main a:focus {
 	margin: 0 -.25rem 0 .5rem;
 	position: relative;
 	top: .125rem;
+}
+
+/* - give link - */
+.main-header a.header-give-link {
+  color: #981e32;
+  padding: .25rem 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  background: #fff;
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.main-header a.header-give-link:hover {
+	color: #5e6a71;
 }
 
 /*----- header-drawer -----*/
