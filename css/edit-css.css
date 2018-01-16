@@ -20,30 +20,6 @@
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
-/* news.wsu.edu link */
-main .hp-news-link-wrap {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 100%;
-	        flex: 1 100%;
-	-webkit-box-ordinal-group: 5;
-	    -ms-flex-order: 4;
-	        order: 4;
-	margin: .5rem 1.5rem 0;
-	padding: 0;
-	text-align: right;
-}
-
-main .hp-news-link {
-	border-bottom: 0;
-	box-shadow: none;
-}
-
-main .hp-news-link:hover {
-	padding: 0;
-	border-bottom: 0;
-	box-shadow: none;
-}
-
 /* --- */
 .home .graybg {
 	background: rgba(0, 0, 0, .025);
@@ -89,204 +65,169 @@ span.content-item-event-city {
 }
 
 /* --- Homepage news bar --- */
-.hp-news-block > .column {
-	display: -webkit-box;
-	display: -ms-flexbox;
+.feature-bar-news {
+	background: rgba(0, 0, 0, .025);
+	padding: 3rem 1rem;
+}
+
+.hp-news-block,
+.hp-news-block * {
+  box-sizing: border-box;
+}
+
+.hp-news-block ul {
+  border-left: 1px solid rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+}
+
+.hp-news-block li {
+  height: 50%;
+  padding: 0;
+}
+
+.hp-news-block .item-has-image li {
+  height: 100%;
+}
+
+.hp-news-wrap a {
+  border: none;
+  box-shadow: none;
 	display: flex;
-	padding: 3rem 0 1.5rem;
-	-ms-flex-flow: wrap;
-	    flex-flow: wrap;
+	flex-direction: column;
+  height: 100%;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  transition: background .3s ease;
 }
 
-.hp-news-block > .column * {
-	box-sizing: border-box;
+.hp-news-wrap a:hover,
+.hp-news-wrap a:focus {
+  background: rgba(0, 0, 0, .1);
+  border: none;
+  box-shadow: none;
+  height: 100%;
+  padding: 1rem 1.5rem;
 }
 
-.news-block-column {
-	width: 25%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	border-left: 1px solid rgba(0, 0, 0, .1);
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	-webkit-box-ordinal-group: 2;
-	    -ms-flex-order: 1;
-	        order: 1;
+.hp-news-wrap {
+  display: flex;
+	flex-wrap: wrap;
 }
 
-.news-block-column:first-child {
-	width: 50%;
-	display: block;
-	-webkit-box-ordinal-group: 3;
-	    -ms-flex-order: 2;
-	        order: 2;
-	border-right: 1px solid rgba(0, 0, 0, .1);
+.position-1 {
+  order: 1;
 }
 
-.news-block-column .item {
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
-	box-sizing: border-box;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	position: relative;
-	transition: background .3s ease;
-	padding: 0;
+.position-2 {
+  order: 2;
 }
 
-.news-block-column .item:last-child {
-	border: none;
+.position-3 {
+  order: 3;
 }
 
-.news-block-column a {
-	display: block;
-	border: none;
-	box-shadow: none;
-	padding: 1rem 1.5rem;
-	height: 100%;
-	width: 100%;
-}
-
-.news-block-column a:focus,
-.news-block-column a:hover {
-	background: rgba(0, 0, 0, .05);
-	border: none;
-	padding: 1rem 1.5rem;
-	box-shadow: none;
-}
-
-.news-block-cat,
-.news-block-head,
-.news-block-sub {
-	display: block;
+.position-4 {
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  order: 4;
 }
 
 .news-block-cat {
-	color: #272727;
-	font-size: .6rem;
-	text-transform: uppercase;
-	line-height: 1;
-	font-weight: 700;
+  color: #272727;
+  font-size: 0.6rem;
+  margin-bottom: .65rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.item-has-image .news-block-cat {
+  order: -1;
 }
 
 .news-block-head {
-	font-weight: 700;
-	font-size: 1rem;
-	margin-top: .65rem;
-	line-height: 1.1;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
 }
 
 .news-block-sub {
-	color: #5e6a71;
-	font-size: .9rem;
-	margin-top: .25rem;
-	line-height: 1.2;
+  color: #5e6a71;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  line-height: 1.2;
 }
 
-.news-block-column:first-child img {
-	width: 60%;
-	float: right;
-	margin: 0 0 0 1rem;
-	line-height: 0;
+.hp-news-block .item {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
-.news-block-column:first-child .news-block-head {
-	font-size: 1.75rem;
-	line-height: 1;
+.news-block-column .item:last-child {
+  border: none;
+}
+
+.item-has-image .news-block-head {
+	font-size: 1.25rem;
 	margin-bottom: .75rem;
+	line-height: 1.35;
 }
 
-.news-block-column:first-child .news-block-sub {
-	font-size: 1rem;
+.item-has-image img {
+  margin-bottom: .65rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 800px) {
 
-	.hp-news-block {
-		padding: 1rem 0;
-	}
-
-	.news-block-column,
-	.news-block-column:first-child {
-		width: 100%;
-		-webkit-box-orient: horizontal;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: row;
-		        flex-direction: row;
-		border: none;
-		border-bottom: 1px solid rgba(0, 0, 0, .1);
-		padding: 1rem 0;
-	}
-
-	.news-block-column:last-child {
-		border-bottom: none;
-	}
-
-	.news-block-column:first-child {
-		width: 100%;
-		-webkit-box-ordinal-group: 1;
-		    -ms-flex-order: 0;
-		        order: 0;
-	}
-
-	.news-block-column:first-child img {
-		margin-bottom: 0;
+	.hp-news-block ul {
 		width: 50%;
 	}
 
-	.news-block-column .item {
-		padding: 1rem;
-		border: none;
+	.position-4,
+	.position-3 {
+		border-bottom: 1px solid rgba(0, 0, 0, .1);
+		order: 1;
 	}
 
-	.news-block-column .item:last-child {
-		border-left: 1px solid rgba(0, 0, 0, .1);
+	.position-2,
+	.position-3 {
+		border-right: 1px solid rgba(0, 0, 0, .1);
 	}
 
-	.news-block-column:first-child .item:last-child {
-		border: none;
-	}
-
-	.news-block-column:first-child .news-block-head {
-		font-size: 1.5rem;
+	.position-4 {
+		border-right: none;
 	}
 }
 
-@media screen and (max-width: 790px) {
+@media (max-width: 550px) {
 
-	.news-block-column {
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
+	.hp-news-block ul {
+		width: 100%;
 	}
 
-	.news-block-column .item {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 100%;
-		        flex: 1 100%;
-		border: none;
+	.hp-news-block .item,
+	.news-block-column .item:last-child {
 		border-bottom: 1px solid rgba(0, 0, 0, .1);
 	}
 
-	.news-block-column .item:last-child {
+	.hp-news-block ul {
 		border: none;
 	}
 
-	.news-block-column:first-child img {
-		display: none;
+	.position-2,
+	.position-3 {
+		border-right: none;
 	}
+}
 
-	.news-block-column,
-	.news-block-column a,
-	.news-block-column a:hover,
-	.news-block-column:first-child {
-		padding: 0;
-	}
+/* - link to WSU News - */
+.hp-news-link-wrap {
+	padding: 2rem 2rem 1rem;
+	text-align: right;
 }
 
 /* --- Scorecard page --- */
@@ -958,11 +899,6 @@ blockquote p {
 }
 
 /* Special homepage item list */
-.feature-bar-news {
-	background: rgba(0, 0, 0, .025);
-	padding: 0 1rem;
-}
-
 .hp-special {
 	display: -webkit-box;
 	display: -ms-flexbox;
