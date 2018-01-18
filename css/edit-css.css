@@ -87,7 +87,7 @@ span.content-item-event-city {
 	display: flex;
 	flex-direction: column;
 	flex: 1 calc(100% / 3);
-	padding: 1rem;
+	padding: 1rem 1.5rem .5rem;
 	transition: background-color .3s ease;
 }
 
