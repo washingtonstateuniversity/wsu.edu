@@ -97,7 +97,7 @@ span.content-item-event-city {
 .hp-news-wrap a {
   border: none;
   box-shadow: none;
-	display: flex;
+	display: block;
 	flex-direction: column;
   height: 100%;
   padding: 1rem 1.5rem;
@@ -138,6 +138,7 @@ span.content-item-event-city {
 
 .news-block-cat {
   color: #272727;
+	display: block;
   font-size: 0.6rem;
   margin-bottom: .65rem;
   text-transform: uppercase;
@@ -150,6 +151,7 @@ span.content-item-event-city {
 }
 
 .news-block-head {
+	display: block;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.1;
@@ -158,6 +160,7 @@ span.content-item-event-city {
 
 .news-block-sub {
   color: #5e6a71;
+	display: block;
   font-size: 0.9rem;
   margin-top: 0.25rem;
   line-height: 1.2;
