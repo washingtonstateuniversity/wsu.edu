@@ -70,173 +70,115 @@ span.content-item-event-city {
 	padding: 3rem 1rem;
 }
 
-.hp-news-block,
-.hp-news-block * {
+.deck--hp-news,
+.deck--hp-news * {
 	box-sizing: border-box;
 }
 
-.hp-news-block ul {
+.deck--hp-news {
 	border-left: 1px solid rgba(0, 0, 0, .1);
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
-	    flex-direction: column;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	width: 25%;
+	flex-wrap: wrap;
 }
 
-.hp-news-block li {
-	height: 50%;
-	padding: 0;
-}
-
-.hp-news-block .item-has-image li {
-	height: 100%;
-}
-
-.hp-news-wrap a {
-	border: none;
-	box-shadow: none;
-	display: block;
-	-ms-flex-direction: column;
-	    flex-direction: column;
-	height: 100%;
-	padding: 1rem 1.5rem;
-	text-decoration: none;
-	transition: background .3s ease;
-}
-
-.hp-news-wrap a:hover,
-.hp-news-wrap a:focus {
-	background: rgba(0, 0, 0, .1);
-	border: none;
-	box-shadow: none;
-	height: 100%;
-	padding: 1rem 1.5rem;
-}
-
-.hp-news-wrap {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-}
-
-.position-1 {
-	-ms-flex-order: 1;
-	    order: 1;
-}
-
-.position-2 {
-	-ms-flex-order: 2;
-	    order: 2;
-}
-
-.position-3 {
-	-ms-flex-order: 3;
-	    order: 3;
-}
-
-.position-4 {
+.card--news {
 	border-right: 1px solid rgba(0, 0, 0, .1);
-	-ms-flex-order: 4;
-	    order: 4;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	display: flex;
+	flex-direction: column;
+	flex: 1 calc(100% / 3);
+	padding: 1rem 1.5rem .5rem;
+	transition: background-color .3s ease;
 }
 
-.news-block-cat {
+.card--news:hover {
+	background-color: rgba(0, 0, 0, .025);
+}
+
+.card-category {
 	color: #272727;
-	display: block;
-	font-size: .6rem;
-	margin-bottom: .65rem;
-	text-transform: uppercase;
-	line-height: 1;
+	font-size: 0.6rem;
 	font-weight: 700;
+	line-height: 1;
+	margin-bottom: .65rem;
+	padding-bottom: 0;
+	text-transform: uppercase;
+	order: 1;
 }
 
-.item-has-image .news-block-cat {
-	-ms-flex-order: -1;
-	    order: -1;
+#binder .card-image {
+	display: none;
+	margin-bottom: .75rem;
+	width: 100%;
+	order: 2;
 }
 
-.news-block-head {
-	display: block;
+.card-title {
 	font-weight: 700;
 	font-size: 1rem;
-	line-height: 1.1;
-	margin-bottom: .75rem;
+	line-height: 1.25;
+	margin: 0 0 .75rem;
+	order: 3;
 }
 
-.news-block-sub {
-	color: #5e6a71;
-	display: block;
-	font-size: .9rem;
-	margin-top: .25rem;
-	line-height: 1.2;
-}
-
-.hp-news-block .item {
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
-}
-
-.news-block-column .item:last-child {
-	border: none;
-}
-
-.item-has-image .news-block-head {
+.card--has-image .card-title {
 	font-size: 1.25rem;
-	margin-bottom: .75rem;
 	line-height: 1.35;
+	margin-bottom: .75rem;
 }
 
-.item-has-image img {
-	margin-bottom: .65rem;
+.card-title a {
+	border: 0;
+	box-shadow: none;
+	padding: 0;
 }
 
-@media (max-width: 800px) {
+.card-title a:hover {
+	background: none;
+	border: 0;
+	border-bottom: 1px solid;
+	box-shadow: none;
+	padding: 0;
+}
 
-	.hp-news-block ul {
-		width: 50%;
+.card-excerpt {
+	color: #5e6a71;
+	font-size: 0.9rem;
+	line-height: 1.2;
+	margin-top: 0.25rem;
+	order: 4;
+}
+
+@supports (display: grid) {
+
+	.deck--hp-news {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-flow: dense;
 	}
 
-	.position-4,
-	.position-3 {
-		border-bottom: 1px solid rgba(0, 0, 0, .1);
-		-ms-flex-order: 1;
-		    order: 1;
+	.card--news:nth-child(-n+2),
+	.card--news:nth-child(n+5) {
+		border-bottom: none;
 	}
 
-	.position-2,
-	.position-3 {
-		border-right: 1px solid rgba(0, 0, 0, .1);
+	.card--has-image {
+		grid-row: span 2;
+		grid-column: 4;
 	}
 
-	.position-4 {
-		border-right: none;
+	#binder .card-image {
+		display: block;
+	}
+
+	.card--has-image:first-of-type{
+		grid-column: 3;
 	}
 }
 
-@media (max-width: 550px) {
+@media (max-width: 800px) {}
 
-	.hp-news-block ul {
-		width: 100%;
-	}
-
-	.hp-news-block .item,
-	.news-block-column .item:last-child {
-		border-bottom: 1px solid rgba(0, 0, 0, .1);
-	}
-
-	.hp-news-block ul {
-		border: none;
-	}
-
-	.position-2,
-	.position-3 {
-		border-right: none;
-	}
-}
+@media (max-width: 550px) {}
 
 /* - link to WSU News - */
 .hp-news-link-wrap {
