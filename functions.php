@@ -8,16 +8,6 @@ include_once( __DIR__ . '/includes/feature-youtube-embed.php' );
 include_once( __DIR__ . '/includes/top-ten-card-shortcode.php' );
 include_once __DIR__ . '/includes/block-news-card.php';
 
-// Load WSUWP's implementation of CMB2.
-if ( function_exists( 'WSUWP\CMB2\init' ) ) {
-	WSUWP\CMB2\init();
-}
-
-// Load functionality that requires CMB2 only if CMB2 is available.
-if ( class_exists( 'CMB2_Bootstrap_230', false ) ) {
-	include_once __DIR__ . '/includes/wsu-home-news-cards.php';
-}
-
 class WSU_Home_Theme {
 	/**
 	 * @var string The version of the WSU Home theme for cache breaking.
