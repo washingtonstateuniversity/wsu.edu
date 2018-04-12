@@ -5,12 +5,12 @@ const {
 const {
 	registerBlockType,
 	RichText,
-	UrlInput,
 } = wp.blocks;
 
 const {
 	TextControl,
 	TextareaControl,
+	withState,
 } = wp.components;
 
 registerBlockType( 'wsu/news-card', {
@@ -46,8 +46,14 @@ registerBlockType( 'wsu/news-card', {
 		},
 	},
 
-    edit( { attributes, isSelected, setAttributes } ) {
+    edit: withState( {
+		editable: 'content',
+	} )( ( { attributes, isSelected, setAttributes, editable, setState } ) => {
 		const { content, category, title, url } = attributes;
+
+		const onSetActiveEditable = ( newEditable ) => () => {
+			setState( { editable: newEditable } );
+		};
 
 		function onChangeContent( newContent ) {
 			setAttributes( { content: newContent } );
@@ -58,39 +64,37 @@ registerBlockType( 'wsu/news-card', {
 		}
 
 		return (
-			isSelected ? (
-				<Fragment>
-					<TextControl
-						label="Category"
-						value={ category }
-						onChange={ category => setAttributes( { category } ) }
-					/>
-					<TextControl
-						label="Title"
-						value={ title }
-						onChange={ title => setAttributes( { title } ) }
-					/>
-					<TextControl
-						label="URL"
-						value={ url }
-						onChange={ url => setAttributes( { url } ) }
-					/>
-					<TextareaControl
-						label="Description"
-						value={ content }
-						onChange={ content => setAttributes( { content } ) }
-					/>
-				</Fragment>
-			) : (
-				<article className="editor-card card--news card--has-image">
-					<header className="card-title"><a href={ url }>{ title }</a></header>
-					<p className="card-excerpt">{content }</p>
-					<p className="card-category">{ category }</p>
-					<img className="card-image" src="https://s3.wp.wsu.edu/uploads/sites/625/2018/01/Andre-Denis-Girard-Wright-wsu.jpg" alt="André-Denis Girard Wright" />
-				</article>
-			)
+			<article className="editor-card card--news card--has-image">
+				<RichText
+					tagname="header"
+					className="card-title"
+					placeholder="News article title"
+					formattingControls={ [ 'link' ] }
+					isSelected={ isSelected && editable === 'title' }
+					onFocus={ onSetActiveEditable( 'title' ) }
+					value={ title }
+					onChange={ ( content ) => setAttributes( { title } ) }
+				/>
+				<RichText
+					tagName="p"
+					className="card-excerpt"
+					placeholder="News article excerpt"
+					onFocus={ onSetActiveEditable( 'excerpt' ) }
+					value={ content }
+					onChange={ ( content ) => setAttributes( { content } ) }
+				/>
+				<RichText
+					tagname="p"
+					className="card-category"
+					placeholder="Article category descriptor"
+					onFocus={ onSetActiveEditable( 'category' ) }
+					value={ category }
+					onChange={ ( category ) => setAttributes( { category } ) }
+				/>
+				<img className="card-image" src="https://s3.wp.wsu.edu/uploads/sites/625/2018/01/Andre-Denis-Girard-Wright-wsu.jpg" alt="André-Denis Girard Wright" />
+			</article>
 		);
-    },
+    } ),
 
     save( { attributes } ) {
 		const { content, category, title, url } = attributes;
