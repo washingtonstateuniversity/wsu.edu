@@ -6,6 +6,7 @@ include_once( __DIR__ . '/includes/academic-calendar.php' );
 include_once( __DIR__ . '/includes/wsuwp-map-embed.php' );
 include_once( __DIR__ . '/includes/feature-youtube-embed.php' );
 include_once( __DIR__ . '/includes/top-ten-card-shortcode.php' );
+include_once __DIR__ . '/includes/block-news-card.php';
 
 // Load WSUWP's implementation of CMB2.
 if ( function_exists( 'WSUWP\CMB2\init' ) ) {
