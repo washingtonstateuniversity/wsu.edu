@@ -1,7 +1,16 @@
-const { Fragment } = wp.element;
-const { registerBlockType, RichText, UrlInput, source } = wp.blocks;
 const {
-    TextControl,
+	Fragment,
+} = wp.element;
+
+const {
+	registerBlockType,
+	RichText,
+	UrlInput,
+} = wp.blocks;
+
+const {
+	TextControl,
+	TextareaControl,
 } = wp.components;
 
 registerBlockType( 'wsu/news-card', {
@@ -66,7 +75,7 @@ registerBlockType( 'wsu/news-card', {
 						value={ url }
 						onChange={ url => setAttributes( { url } ) }
 					/>
-					<TextControl
+					<TextareaControl
 						label="Description"
 						value={ content }
 						onChange={ content => setAttributes( { content } ) }
