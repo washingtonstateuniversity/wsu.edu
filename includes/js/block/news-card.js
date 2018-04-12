@@ -4,8 +4,6 @@ const {
     TextControl,
 } = wp.components;
 
-const blockStyle = { backgroundColor: '#fff', color: '#333', padding: '20px' };
-
 registerBlockType( 'wsu/news-card', {
 	title: 'News Card',
 
@@ -39,7 +37,7 @@ registerBlockType( 'wsu/news-card', {
 		},
 	},
 
-    edit( { attributes, className, isSelected, setAttributes } ) {
+    edit( { attributes, isSelected, setAttributes } ) {
 		const { content, category, title, url } = attributes;
 
 		function onChangeContent( newContent ) {
@@ -75,7 +73,7 @@ registerBlockType( 'wsu/news-card', {
 					/>
 				</Fragment>
 			) : (
-				<article style={ blockStyle } className="editor-card card--news card--has-image">
+				<article className="editor-card card--news card--has-image">
 					<header className="card-title"><a href={ url }>{ title }</a></header>
 					<p className="card-excerpt">{content }</p>
 					<p className="card-category">{ category }</p>
@@ -85,11 +83,11 @@ registerBlockType( 'wsu/news-card', {
 		);
     },
 
-    save( { attributes, className } ) {
+    save( { attributes } ) {
 		const { content, category, title, url } = attributes;
 
 		return (
-			<article style={ blockStyle } className="card card--news card--has-image">
+			<article className="card card--news card--has-image">
 				<header className="card-title"><a href={ url }>{ title }</a></header>
 				<p className="card-excerpt">{content }</p>
 				<p className="card-category">{ category }</p>

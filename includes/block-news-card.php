@@ -26,7 +26,7 @@ function setup_block() {
 			'wp-edit-blocks',
 		)
 	);
-	
+
 	register_block_type( 'wsu/news-deck', array(
 		'editor_script' => 'wsu-block-news-card',
 	) );
