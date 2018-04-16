@@ -13,7 +13,6 @@ get_header();
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 		<?php get_template_part( 'parts/headers' ); ?>
-		<?php get_template_part( 'parts/featured-images' ); ?>
 
 		<div id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php the_content(); ?>
