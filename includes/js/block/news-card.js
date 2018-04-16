@@ -56,22 +56,26 @@ registerBlockType( 'wsu/news-card', {
 		},
 	},
 
+	/**
+	 * Append additional attributes to the wrapper component in the editor
+	 * when this block is used.
+	 *
+	 * @param {*} attributes 
+	 */
+	getEditWrapperProps( attributes ) {
+		const { image_url } = attributes;
+
+		if ( image_url ) {
+			return { 'data-imageurl': 'yes' };
+		}
+	},
+
     edit: withState( {
 		editable: 'content',
 	} )( ( { attributes, isSelected, setAttributes, editable, setState } ) => {
 		const { content, category, title, image_id, image_url, image_alt } = attributes;
 
-		const onSetActiveEditable = ( newEditable ) => () => {
-			setState( { editable: newEditable } );
-		};
-
-		function onChangeContent( newContent ) {
-			setAttributes( { content: newContent } );
-		}
-
-		function onChangeCategory( newCategory ) {
-			setAttributes( { category: newCategory } );
-		}
+		const onSetActiveEditable = ( newEditable ) => () => { setState( { editable: newEditable } ); };
 
 		const className = image_url ? "editor-card card--news card--has-image" : "editor-card card--news";
 
@@ -84,7 +88,7 @@ registerBlockType( 'wsu/news-card', {
 				<InspectorControls key="inspector">
 					<PanelBody title="News card image" className="blocks-font-size">
 						{ image_url ? (
-							<div>
+							<Fragment>
 								<Toolbar>
 									<MediaUpload
 										onSelect={ onSelectImage }
@@ -110,7 +114,7 @@ registerBlockType( 'wsu/news-card', {
 								</Toolbar>
 								<img src={ image_url } alt={ image_alt } />
 								<p><strong>Alt text:</strong> {image_alt }</p>
-							</div>
+							</Fragment>
 						) : (
 							""
 						) }
