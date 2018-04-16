@@ -7,6 +7,7 @@ const {
 	RichText,
 	ImagePlaceholder,
 	BlockControls,
+	InspectorControls,
 	MediaUpload,
 } = wp.blocks;
 
@@ -16,6 +17,7 @@ const {
 	withState,
 	Toolbar,
 	IconButton,
+	PanelBody,
 } = wp.components;
 
 registerBlockType( 'wsu/news-card', {
@@ -77,7 +79,51 @@ registerBlockType( 'wsu/news-card', {
 
 		const onRemoveImage = () => setAttributes( { image_id: null, image_url: '', image_alt: '' } );
 
-		return (
+		return [
+			isSelected && (
+				<InspectorControls key="inspector">
+					<PanelBody title="News card image" className="blocks-font-size">
+						{ image_url ? (
+							<div>
+								<Toolbar>
+									<MediaUpload
+										onSelect={ onSelectImage }
+										type="image"
+										value={ image_id }
+										render={ ( { open } ) => (
+											<div>
+												<IconButton
+													className="components-toolbar__control"
+													label="Edit image"
+													icon="edit"
+													onClick={ open }
+												/>
+												<IconButton
+													icon="no-alt"
+													onClick={ onRemoveImage }
+													className="blocks-gallery-image__remove"
+													label="Remove image"
+												/>
+											</div>
+										) }
+									/>
+								</Toolbar>
+								<img src={ image_url } alt={ image_alt } />
+								<p><strong>Alt text:</strong> {image_alt }</p>
+							</div>
+						) : (
+							""
+						) }
+						<ImagePlaceholder
+							key="card-image"
+							icon="format-image"
+							label="Image"
+							onFocus={ onSetActiveEditable( 'image' ) }
+							onSelectImage={ onSelectImage }
+						/>
+					</PanelBody>
+				</InspectorControls>
+			),
 			<article className={ className }>
 				<RichText
 					tagname="p"
@@ -87,6 +133,11 @@ registerBlockType( 'wsu/news-card', {
 					value={ category }
 					onChange={ ( category ) => setAttributes( { category } ) }
 				/>
+				{ image_url ? (
+					<img src={ image_url } alt={ image_alt } />
+				) : (
+					""
+				) }
 				<RichText
 					tagname="header"
 					className="card-title"
@@ -105,46 +156,8 @@ registerBlockType( 'wsu/news-card', {
 					value={ content }
 					onChange={ ( content ) => setAttributes( { content } ) }
 				/>
-				{ ! image_url ? (
-					<ImagePlaceholder
-						key="card-image"
-						icon="format-image"
-						label="Image"
-						onFocus={ onSetActiveEditable( 'image' ) }
-						onSelectImage={ onSelectImage }
-					/>
-				) : (
-					<div>
-						<BlockControls key="controls">
-							<Toolbar>
-								<MediaUpload
-									onSelect={ onSelectImage }
-									type="image"
-									value={ image_id }
-									render={ ( { open } ) => (
-										<div>
-											<IconButton
-												className="components-toolbar__control"
-												label="Edit image"
-												icon="edit"
-												onClick={ open }
-											/>
-											<IconButton
-												icon="no-alt"
-												onClick={ onRemoveImage }
-												className="blocks-gallery-image__remove"
-												label="Remove image"
-											/>
-										</div>
-									) }
-								/>
-							</Toolbar>
-						</BlockControls>
-						<img src={ image_url } alt={ image_alt } />
-					</div>
-				) }
 			</article>
-		);
+		];
     } ),
 
     save( { attributes } ) {
