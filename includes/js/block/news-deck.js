@@ -1,3 +1,7 @@
+const {
+	Fragment,
+} = wp.element;
+
 const { registerBlockType, InnerBlocks } = wp.blocks;
 const blockStyle = { backgroundColor: '#fff', color: '#333', padding: '20px' };
 
@@ -12,9 +16,12 @@ registerBlockType( 'wsu/news-deck', {
 	
     edit() {
 		return (
-			<div className="deck deck--hp-news">
-				<InnerBlocks />
-			</div>
+			<Fragment>
+				<div className="deck deck--hp-news">
+					<InnerBlocks />
+				</div>
+				<p class="hp-news-link-wrap"><a class="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
+			</Fragment>
 		);
     },
 
@@ -26,6 +33,7 @@ registerBlockType( 'wsu/news-deck', {
 						<div className="deck deck--hp-news">
 							<InnerBlocks.Content />
 						</div>
+						<p class="hp-news-link-wrap"><a class="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
 					</div>
 				</section>
 			</div>
