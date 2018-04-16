@@ -148,12 +148,16 @@ registerBlockType( 'wsu/news-card', {
     save( { attributes } ) {
 		const { content, category, title, image_url, image_alt } = attributes;
 
+		const className = image_url ? "card card--news card--has-image" : "card card--news";
+
+		const imageHTML = image_url ? <img className="card-image" src={ image_url } alt={ image_alt } /> : "";
+
 		return (
-			<article className="card card--news card--has-image">
+			<article className={ className }>
 				<header className="card-title">{ title }</header>
 				<p className="card-excerpt">{content }</p>
 				<p className="card-category">{ category }</p>
-				<img className="card-image" src={ image_url } alt={ image_alt } />
+				{ imageHTML }
 		  	</article>
 		);
     },
