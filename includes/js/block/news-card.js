@@ -71,12 +71,22 @@ registerBlockType( 'wsu/news-card', {
 			setAttributes( { category: newCategory } );
 		}
 
+		const className = image_url ? "editor-card card--news card--has-image" : "editor-card card--news";
+
 		const onSelectImage = ( media ) => setAttributes( { image_id: media.id, image_url: media.url, image_alt: media.alt } );
 
 		const onRemoveImage = () => setAttributes( { image_id: null, image_url: '', image_alt: '' } );
 
 		return (
-			<article className="editor-card card--news card--has-image">
+			<article className={ className }>
+				<RichText
+					tagname="p"
+					className="card-category"
+					placeholder="Article category descriptor"
+					onFocus={ onSetActiveEditable( 'category' ) }
+					value={ category }
+					onChange={ ( category ) => setAttributes( { category } ) }
+				/>
 				<RichText
 					tagname="header"
 					className="card-title"
@@ -94,14 +104,6 @@ registerBlockType( 'wsu/news-card', {
 					onFocus={ onSetActiveEditable( 'excerpt' ) }
 					value={ content }
 					onChange={ ( content ) => setAttributes( { content } ) }
-				/>
-				<RichText
-					tagname="p"
-					className="card-category"
-					placeholder="Article category descriptor"
-					onFocus={ onSetActiveEditable( 'category' ) }
-					value={ category }
-					onChange={ ( category ) => setAttributes( { category } ) }
 				/>
 				{ ! image_url ? (
 					<ImagePlaceholder

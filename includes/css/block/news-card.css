@@ -59,28 +59,37 @@
 	    order: 2;
 }
 
-.edit-post-visual-editor .card-title {
-	font-weight: 700;
+.editor-card,
+.editor-card p {
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+.editor-card .card-title {
 	font-size: 1rem;
-	line-height: 1.25;
+	line-height: 1;
+	font-weight: 700;
 	margin: 0 0 .75rem;
 	-ms-flex-order: 3;
 	    order: 3;
 }
 
-.card--has-image .card-title {
+.card--has-image .card-title,
+.editor-card .card--has-image .card-title {
 	font-size: 1.25rem;
 	line-height: 1.35;
-	margin-bottom: .75rem;
+	margin-bottom: .75rem;	
 }
 
-.edit-post-visual-editor .card-title a {
+.editor-card .card-title a {
+	color: #981e32;
 	border: 0;
-	box-shadow: none;
 	padding: 0;
+	box-shadow: none;
+	transition: background .5s cubic-bezier(.33, .66, .66, 1);
+	text-decoration: none;
 }
 
-.edit-post-visual-editor .card-title a:hover {
+.editor-card .card-title a:hover {
 	background: none;
 	border: 0;
 	border-bottom: 1px solid;
