@@ -34,10 +34,12 @@ module.exports = {
   entry: [
 	'./includes/js/block/news-deck.js',
 	'./includes/js/block/news-card.js',
+	'./includes/js/block/feature-deck.js',
+	'./includes/js/block/feature-card.js',
   ],
   output: {
     path: __dirname + '/includes/js/block',
-    filename: 'news-card.build.js'
+    filename: 'wsu-blocks.build.js'
   },
   module: {
 	rules: [
