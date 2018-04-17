@@ -5,6 +5,7 @@ const {
 const {
 	registerBlockType,
 	RichText,
+	PlainText,
 	ImagePlaceholder,
 	BlockControls,
 	InspectorControls,
@@ -38,9 +39,17 @@ registerBlockType( 'wsu/feature-card', {
 			source: 'text',
 			selector: '.home-subtitle',
 		},
-		cta: {
+		card_date: {
+			type: 'string',
+		},
+		card_action_text: {
 			source: 'text',
 			selector: '.home-cta a',
+		},
+		card_action_url: {
+			source: 'attribute',
+			selector: '.home-cta a',
+			attribute: 'href',
 		},
 		image_url: {
 			type: 'string',
@@ -70,7 +79,9 @@ registerBlockType( 'wsu/feature-card', {
 		const {
 			headline,
 			subtitle,
-			cta,
+			card_date,
+			card_action_text,
+			card_action_url,
 			image_url,
 			image_id,
 		} = attributes;
@@ -84,7 +95,7 @@ registerBlockType( 'wsu/feature-card', {
 		return [
 			isSelected && (
 				<InspectorControls key="inspector">
-					<PanelBody title="Featured story image">
+					<PanelBody title="Feature card data">
 						{ image_url ? (
 							<Fragment>
 								<Toolbar>
@@ -122,12 +133,22 @@ registerBlockType( 'wsu/feature-card', {
 							onFocus={ onSetActiveEditable( 'image' ) }
 							onSelectImage={ onSelectImage }
 						/>
+						<PlainText
+							placeholder="Enter URL"
+							value={ card_action_url }
+							onChange={ ( card_action_url ) => setAttributes( { card_action_url } ) }
+						/>
+						<PlainText
+							placeholder="Enter card date: Feb. 12"
+							value={ card_date }
+							onChange={ ( card_date ) => setAttributes( { card_date } ) }
+						/>
 					</PanelBody>
 				</InspectorControls>
 			),
 			<div className="card--feature home-headline headline-has-background impact-head dark position-right" style={ { backgroundImage: `url( ${ image_url } )` } } key="edit">
 				<div className="feature-content-wrapper">
-					<div className="home-headline-head-wrapper">
+					<div className="feature-title-wrapper">
 						<RichText
 							tagName="h2"
 							className="home-title"
@@ -143,13 +164,15 @@ registerBlockType( 'wsu/feature-card', {
 							onChange={ ( subtitle ) => setAttributes( { subtitle } ) }
 						/>
 					</div>
-					<RichText
-						tagName="div"
-						className="home-cta"
-						placeholder="Call to action"
-						value={ cta }
-						onChange={ ( cta ) => setAttributes( { cta } ) }
-					/>
+					<div className="home-cta">
+						<RichText
+							tagName="span"
+							className="editor-card-action-text"
+							placeholder="Call to action"
+							value={ card_action_text }
+							onChange={ ( card_action_text ) => setAttributes( { card_action_text } ) }
+						/>
+					</div>
 				</div>
 			</div>
 		];
@@ -159,20 +182,29 @@ registerBlockType( 'wsu/feature-card', {
 		const {
 			headline,
 			subtitle,
-			cta,
+			card_date,
+			card_action_text,
+			card_action_url,
 			image_url,
 		} = attributes;
 
 		return (
 			<div id="5ad511988632d" className="wsu-home-headline-wrapper impact-head dark position-right">
-				<div style={ { backgroundImage: `url( ${ image_url } )` } } className="home-headline headline-has-background " data-id="5ad511988632d" data-headline="Ancient glass, modern problem" data-anchor="https://magazine.wsu.edu/2018/02/02/fires-burned-cauldrons-bubble/" data-date="Feb. 27">
+				<div
+					style={ { backgroundImage: `url( ${ image_url } )` } }
+					className="home-headline headline-has-background "
+					data-id="5ad511988632d"
+					data-headline={ headline }
+					data-anchor={ card_action_url }
+					data-date={ card_date }
+					>
 					<div>
 						<div className="home-headline-head-wrapper">
 							<h2>{ headline }</h2>
 							<div className="home-subtitle">{ subtitle }</div>
 						</div>
 						<div className="home-cta">
-							<a href="https://magazine.wsu.edu/2018/02/02/fires-burned-cauldrons-bubble/">{ cta }</a>
+							<a href={ card_action_url }>{ card_action_text }</a>
 						</div>
 					</div>
 				</div>

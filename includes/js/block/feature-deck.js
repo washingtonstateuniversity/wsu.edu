@@ -19,7 +19,7 @@ registerBlockType( 'wsu/feature-deck', {
 	edit() {
 		return (
 			<Fragment key="edit">
-				<div className="deck deck--hp-features">
+				<div className="deck deck--feature">
 					<InnerBlocks />
 				</div>
 			</Fragment>
@@ -28,8 +28,8 @@ registerBlockType( 'wsu/feature-deck', {
 
 	save() {
 		return (
-			<section className="row single gutter pad-top full features-container features-start">
-				<div className="column one">
+			<section className="row single gutter pad-top full">
+				<div className="column one deck deck--feature">
 					<InnerBlocks.Content />
 				</div>
 			</section>
