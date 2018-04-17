@@ -28,7 +28,7 @@ registerBlockType( 'wsu/feature-deck', {
 
 	save() {
 		return (
-			<section className="row single gutter pad-top full">
+			<section className="row single gutter pad-top full features-container features-start">
 				<div className="column one deck deck--feature">
 					<InnerBlocks.Content />
 				</div>

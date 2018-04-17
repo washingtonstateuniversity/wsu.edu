@@ -33,7 +33,7 @@ registerBlockType( 'wsu/feature-card', {
 	attributes: {
 		headline: {
 			source: 'text',
-			selector: 'h2'
+			selector: '.home-headline-head-wrapper h2'
 		},
 		subtitle: {
 			source: 'text',
@@ -192,7 +192,7 @@ registerBlockType( 'wsu/feature-card', {
 			<div id="5ad511988632d" className="wsu-home-headline-wrapper impact-head dark position-right">
 				<div
 					style={ { backgroundImage: `url( ${ image_url } )` } }
-					className="home-headline headline-has-background "
+					className="home-headline headline-has-background"
 					data-id="5ad511988632d"
 					data-headline={ headline }
 					data-anchor={ card_action_url }
