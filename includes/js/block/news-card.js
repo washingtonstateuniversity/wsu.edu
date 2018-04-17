@@ -128,7 +128,7 @@ registerBlockType( 'wsu/news-card', {
 					</PanelBody>
 				</InspectorControls>
 			),
-			<article className={ className }>
+			<article className={ className } key="edit">
 				<RichText
 					tagname="p"
 					className="card-category"

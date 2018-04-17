@@ -18,11 +18,11 @@ registerBlockType( 'wsu/news-deck', {
 
 	edit() {
 		return (
-			<Fragment>
+			<Fragment key="edit">
 				<div className="deck deck--hp-news">
 					<InnerBlocks />
 				</div>
-				<p class="hp-news-link-wrap"><a class="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
+				<p className="hp-news-link-wrap"><a className="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
 			</Fragment>
 		);
 	},
@@ -35,7 +35,7 @@ registerBlockType( 'wsu/news-deck', {
 						<div className="deck deck--hp-news">
 							<InnerBlocks.Content />
 						</div>
-						<p class="hp-news-link-wrap"><a class="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
+						<p className="hp-news-link-wrap"><a className="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
 					</div>
 				</section>
 			</div>
