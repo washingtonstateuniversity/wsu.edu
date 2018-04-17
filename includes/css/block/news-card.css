@@ -16,21 +16,16 @@
 
 .deck--hp-news {
 	border-left: 1px solid rgba(0, 0, 0, .1);
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .card--news {
 	border-right: 1px solid rgba(0, 0, 0, .1);
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
-	    flex-direction: column;
-	-ms-flex: 1 calc(100% / 3);
-	    flex: 1 calc(100% / 3);
+	flex-direction: column;
+	flex: 1 calc(100% / 3);
 	padding: 1rem 1.5rem .5rem;
 	transition: background-color .3s ease;
 }
@@ -47,16 +42,14 @@
 	margin-bottom: .65rem;
 	padding-bottom: 0;
 	text-transform: uppercase;
-	-ms-flex-order: 1;
-	    order: 1;
+	order: 1;
 }
 
 .card-image {
 	display: none;
 	margin-bottom: .75rem;
 	width: 100%;
-	-ms-flex-order: 2;
-	    order: 2;
+	order: 2;
 }
 
 .editor-card,
@@ -69,21 +62,20 @@
 	line-height: 1;
 	font-weight: 700;
 	margin: 0 0 .75rem;
-	-ms-flex-order: 3;
-	    order: 3;
+	order: 3;
 }
 
 .card--has-image .card-title,
 .editor-card .card--has-image .card-title {
 	font-size: 1.25rem;
 	line-height: 1.35;
-	margin-bottom: .75rem;	
+	margin-bottom: .75rem;
 }
 
 .editor-block-list__block-edit .hp-news-link-wrap a {
 	color: #981e32;
-    border-bottom: 3px solid #ddd;
-    box-shadow: inset 0 -5px 0 #ddd;
+	border-bottom: 3px solid #ddd;
+	box-shadow: inset 0 -5px 0 #ddd;
 	transition: background .5s cubic-bezier(.33, .66, .66, 1);
 	text-decoration: none;
 }
@@ -118,8 +110,7 @@
 	font-size: .9rem;
 	line-height: 1.2;
 	margin-top: .25rem;
-	-ms-flex-order: 4;
-	    order: 4;
+	order: 4;
 }
 
 @supports (display: grid) {
