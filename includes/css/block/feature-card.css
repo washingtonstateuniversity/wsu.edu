@@ -1,0 +1,75 @@
+.deck--hp-features .card--feature {
+	min-height: 200px;
+}
+
+.deck--hp-features .feature-content-wrapper {
+	position: absolute;
+	top: inherit;
+	bottom: 5%;
+	width: 450px;
+	margin: 0 0 0 3rem;
+}
+
+.deck--hp-features .card--feature .home-subtitle,
+.deck--hp-features .card--feature .home-cta {
+	margin-top: 2rem;
+	padding-left: 3.7rem;
+	width: 37.5%;
+	color: #fff;
+}
+
+.deck--hp-features .card--feature h2 {
+	border-left: none;
+	color: #fff;
+	font-size: 2.5rem;
+	line-height: .9;
+	text-transform: initial;
+	font-family: proxima-nova;
+	font-weight: 300;
+	padding: 0 0 0 1rem;
+	top: inherit;
+	bottom: inherit;
+}
+
+.deck--hp-features .card--feature .home-subtitle,
+.deck--hp-features .card--feature h2 {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	padding: 0 2rem;
+	margin: 0;
+	background: #981e32;
+}
+
+.deck--hp-features .impact-head h2 {
+	padding-top: 1rem;
+}
+
+.deck--hp-features .impact-head .home-subtitle {
+	padding-bottom: 1rem;
+	font-weight: 300;
+}
+
+.deck--hp-features .impact-head .home-cta {
+	padding: 0;
+}
+
+@media screen and (max-width: 791px) {
+
+	.deck--hp-features .impact-head .home-headline.headline-has-background > div {
+		width: 80%;
+	}
+
+	.deck--hp-features .impact-head .home-cta {
+		padding: 0 0 0 2rem;
+		margin-left: 0;
+	}
+
+	.deck--hp-features .wsu-home-headline-wrapper.impact-head .headline-has-background {
+		background-position: center center;
+	}
+
+	.deck--hp-features .impact-head h2 {
+		font-size: 2rem;
+	}
+}

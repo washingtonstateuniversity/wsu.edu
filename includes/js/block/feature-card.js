@@ -125,30 +125,33 @@ registerBlockType( 'wsu/feature-card', {
 					</PanelBody>
 				</InspectorControls>
 			),
-			<Fragment key="edit">
-				<img src={ image_url } />
-				<RichText
-					tagName="h2"
-					className="home-title"
-					value={ headline }
-					placeholder="Headline"
-					onChange={ ( headline ) => setAttributes( { headline } ) }
-				/>
-				<RichText
-					tagName="div"
-					className="home-subtitle"
-					placeholder="Subtitle"
-					value={ subtitle }
-					onChange={ ( subtitle ) => setAttributes( { subtitle } ) }
-				/>
-				<RichText
-					tagName="div"
-					className="home-cta"
-					placeholder="Call to action"
-					value={ cta }
-					onChange={ ( cta ) => setAttributes( { cta } ) }
-				/>
-			</Fragment>
+			<div className="card--feature home-headline headline-has-background impact-head dark position-right" style={ { backgroundImage: `url( ${ image_url } )` } } key="edit">
+				<div className="feature-content-wrapper">
+					<div className="home-headline-head-wrapper">
+						<RichText
+							tagName="h2"
+							className="home-title"
+							value={ headline }
+							placeholder="Headline"
+							onChange={ ( headline ) => setAttributes( { headline } ) }
+						/>
+						<RichText
+							tagName="div"
+							className="home-subtitle"
+							placeholder="Subtitle"
+							value={ subtitle }
+							onChange={ ( subtitle ) => setAttributes( { subtitle } ) }
+						/>
+					</div>
+					<RichText
+						tagName="div"
+						className="home-cta"
+						placeholder="Call to action"
+						value={ cta }
+						onChange={ ( cta ) => setAttributes( { cta } ) }
+					/>
+				</div>
+			</div>
 		];
     } ),
 
