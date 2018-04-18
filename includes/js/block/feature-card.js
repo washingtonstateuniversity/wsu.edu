@@ -42,8 +42,8 @@ registerBlockType( 'wsu/feature-card', {
 			type: 'string',
 		},
 		card_action_text: {
-			source: 'text',
-			selector: '.home-cta a',
+			type: 'string',
+			default: 'Learn More',
 		},
 		card_action_url: {
 			source: 'attribute',
@@ -91,10 +91,6 @@ registerBlockType( 'wsu/feature-card', {
 
 		if ( ! block_id || 'no-block-id' === block_id ) {
 			setAttributes( { block_id: props.id } );
-		}
-
-		if ( ! card_action_text || '' === card_action_text ) {
-			setAttributes( { card_action_text: 'Learn More' } );
 		}
 
 		const onSetActiveEditable = ( newEditable ) => () => { setState( { editable: newEditable } ); };
@@ -175,10 +171,8 @@ registerBlockType( 'wsu/feature-card', {
 						/>
 					</div>
 					<div className="home-cta">
-						<RichText
-							tagName="span"
+						<PlainText
 							className="editor-card-action-text"
-							placeholder="Call to action"
 							value={ card_action_text }
 							onChange={ ( card_action_text ) => setAttributes( { card_action_text } ) }
 						/>
