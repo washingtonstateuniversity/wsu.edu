@@ -41,7 +41,7 @@ registerBlockType( 'wsu/accent-bar', {
 			<InspectorControls key="inspector">
 				<PanelBody title="Accent bar information">
 					<PlainText
-						placeholder=""
+						placeholder="Accent bar text"
 						value={ accent_bar_text }
 						onChange={ ( accent_bar_text ) => setAttributes( { accent_bar_text } ) }
 					/>
@@ -56,7 +56,7 @@ registerBlockType( 'wsu/accent-bar', {
 				<section className="row single gutter pad-top accent-bar">
 					<div className="column one">
 						<div>
-							<span>{ accent_bar_text }</span>
+							{ (accent_bar_text ) ? <span>{ accent_bar_text }</span> : "" }
 						</div>
 					</div>
 				</section>
