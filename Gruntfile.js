@@ -9,7 +9,8 @@ module.exports = function( grunt ) {
 				"src/css/*.css",
 				"src/css-legacy/*.css",
 				"src/css-top-ten/*.css",
-				"includes/css/block/*.css",
+				"src/css/components/*.css",
+				"src/css/editor-blocks/*.css",
 			],
 		},
 
@@ -47,9 +48,9 @@ module.exports = function( grunt ) {
 			},
 			block_editor_styles: {
 				src: [
-					"includes/css/block/*.css",
+					"src/css/editor-blocks/*.css",
 				],
-				dest: "includes/css/wsu-blocks.tmp.css",
+				dest: "src/css/editor-blocks.tmp.css",
 			},
 		},
 
@@ -142,8 +143,8 @@ module.exports = function( grunt ) {
 						} )
 					]
 				},
-				src: "includes/css/wsu-blocks.tmp.css",
-				dest: "includes/css/wsu-blocks.css",
+				src: "src/css/editor-blocks.tmp.css",
+				dest: "css/editor-blocks.css",
 			},
 		},
 
@@ -154,7 +155,7 @@ module.exports = function( grunt ) {
 			temp: [
 				"src/css-top-ten/temp*.*",
 				"temp-style.css",
-				"includes/css/*.tmp.css",
+				"src/css/*.tmp.css",
 			],
 		},
 
