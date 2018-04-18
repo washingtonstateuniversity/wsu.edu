@@ -4,7 +4,6 @@ const {
 
 const {
 	registerBlockType,
-	RichText,
 	PlainText,
 	ImagePlaceholder,
 	BlockControls,
@@ -32,7 +31,8 @@ registerBlockType( 'wsu/feature-card', {
 	
 	attributes: {
 		headline: {
-			type: 'string',
+			source: 'text',
+			selector: '.home-headline-head-wrapper h2',
 		},
 		subtitle: {
 			source: 'text',
@@ -162,8 +162,7 @@ registerBlockType( 'wsu/feature-card', {
 							placeholder="Headline"
 							onChange={ ( headline ) => setAttributes( { headline } ) }
 						/>
-						<RichText
-							tagName="div"
+						<PlainText
 							className="home-subtitle"
 							placeholder="Subtitle"
 							value={ subtitle }
