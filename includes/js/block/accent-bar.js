@@ -18,7 +18,7 @@ registerBlockType( 'wsu/accent-bar', {
 	edit() {
 		return (
 			<Fragment key="edit">
-				<section className="row single gutter pad-top bug full">
+				<section className="row single gutter pad-top accent-bar">
 					<div className="column one"></div>
 				</section>
 			</Fragment>
@@ -27,7 +27,7 @@ registerBlockType( 'wsu/accent-bar', {
 
 	save() {
 		return (
-			<section className="row single gutter pad-top bug full">
+			<section className="row single gutter pad-top accent-bar">
 				<div className="column one"></div>
 			</section>
 		);

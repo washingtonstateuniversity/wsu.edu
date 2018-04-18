@@ -1,4 +1,4 @@
-.bug {
+.accent-bar {
 	border-top: solid 1px #7c1929;
 	border-bottom: solid 1px #7c1929;
 	background-color: #981e32;
@@ -7,21 +7,21 @@
 	text-align: center;
 }
 
-.bug p {
+.accent-bar p {
 	color: #fff;
 	font-size: 1em;
 	padding: .75em;
 }
 
-.bug .home-cta {
+.accent-bar .home-cta {
 	margin-top: 0;
 	max-width: 100%;
 	color: #fff;
 }
 
-.bug .home-cta a,
-.bug .home-cta a:focus,
-.bug .home-cta a:hover {
+.accent-bar .home-cta a,
+.accent-bar .home-cta a:focus,
+.accent-bar .home-cta a:hover {
 	color: #fff;
 	box-shadow: none;
 	padding: .5rem 2rem;
@@ -30,7 +30,7 @@
 	display: inline-block;
 }
 
-.bug .home-cta a:focus,
-.bug .home-cta a:hover {
+.accent-bar .home-cta a:focus,
+.accent-bar .home-cta a:hover {
 	color: #981e32;
 }
