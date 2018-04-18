@@ -45,4 +45,9 @@ function setup_blocks() {
 		'editor_script' => 'wsu-blocks',
 		'editor_style' => 'wsu-blocks',
 	) );
+
+	register_block_type( 'wsu/accent-bar', array(
+		'editor_script' => 'wsu-blocks',
+		'editor_style' => 'wsu-blocks',
+	) );
 }

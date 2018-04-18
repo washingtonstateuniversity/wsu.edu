@@ -36,6 +36,7 @@ module.exports = {
 	'./includes/js/block/news-card.js',
 	'./includes/js/block/feature-deck.js',
 	'./includes/js/block/feature-card.js',
+	'./includes/js/block/accent-bar.js',
   ],
   output: {
     path: __dirname + '/includes/js/block',

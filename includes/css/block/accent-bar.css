@@ -1,0 +1,36 @@
+.bug {
+	border-top: solid 1px #7c1929;
+	border-bottom: solid 1px #7c1929;
+	background-color: #981e32;
+	height: auto;
+	padding: 1em;
+	text-align: center;
+}
+
+.bug p {
+	color: #fff;
+	font-size: 1em;
+	padding: .75em;
+}
+
+.bug .home-cta {
+	margin-top: 0;
+	max-width: 100%;
+	color: #fff;
+}
+
+.bug .home-cta a,
+.bug .home-cta a:focus,
+.bug .home-cta a:hover {
+	color: #fff;
+	box-shadow: none;
+	padding: .5rem 2rem;
+	border: 1px solid #fff;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.bug .home-cta a:focus,
+.bug .home-cta a:hover {
+	color: #981e32;
+}
