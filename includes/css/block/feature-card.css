@@ -1,25 +1,36 @@
 .card--feature {
-	min-height: 450px; /* 75% of 600px on home page */
+	min-height: 200px;
 	background-size: cover;
-	background-position: center right;
+	background-position: center top;
 	margin-left: -64px;
 	margin-right: -64px;
+}
+
+.is-selected .card--feature {
+	min-height: 450px; /* 75% of 600px on home page */
+	background-position: center right;
 }
 
 .card--feature .feature-content-wrapper {
 	position: absolute;
 	bottom: 5%;
-	zoom: 75%;
+	zoom: 50%;
 	width: 450px;
 	margin: 0 0 0 3em;
 	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
+.is-selected .card--feature .feature-content-wrapper {
+	zoom: 75%;
+}
+
+.card--feature textarea.home-title,
 .card--feature h2.blocks-rich-text__tinymce.mce-content-body {
 	line-height: .9;
 	padding-bottom: .75rem;
 }
 
+.card--feature textarea.home-title,
 .card--feature .home-subtitle,
 .card--feature h2 {
 	color: #fff;
@@ -31,6 +42,7 @@
 	background: #981e32;
 }
 
+.card--feature textarea.home-title,
 .card--feature h2 {
 	border-left: none;
 	color: #fff;
@@ -79,6 +91,7 @@
 		width: 80%;
 	}
 
+	.card--feature textarea.home-title,
 	.card--feature h2 {
 		font-size: 2rem;
 	}
