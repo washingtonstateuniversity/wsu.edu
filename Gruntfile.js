@@ -46,6 +46,12 @@ module.exports = function( grunt ) {
 				],
 				dest: "src/css-top-ten/temp-combined-top-ten.css"
 			},
+			component_display_styles: {
+				src: [
+					"src/css/components/*.home.css",
+				],
+				dest: "src/css/components.home.tmp.css",
+			},
 			block_editor_styles: {
 				src: [
 					"src/css/editor-blocks/*.css",
@@ -132,6 +138,17 @@ module.exports = function( grunt ) {
 				},
 				src: "temp-style.css",
 				dest: "style.css"
+			},
+			component_display_styles: {
+				options: {
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 10-11" ]
+						} )
+					]
+				},
+				src: "src/css/components.home.tmp.css",
+				dest: "css/components.home.css",
 			},
 			block_editor_styles: {
 				options: {

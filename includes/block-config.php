@@ -21,7 +21,7 @@ function setup_blocks() {
 
 	wp_register_style(
 		'wsu-blocks',
-		get_stylesheet_directory_uri() . '/includes/css/wsu-blocks.css',
+		get_stylesheet_directory_uri() . '/css/editor-blocks.css',
 		array(
 			'wp-edit-blocks',
 		)
