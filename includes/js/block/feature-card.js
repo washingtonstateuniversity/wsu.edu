@@ -32,8 +32,7 @@ registerBlockType( 'wsu/feature-card', {
 	
 	attributes: {
 		headline: {
-			source: 'text',
-			selector: '.home-headline-head-wrapper h2'
+			type: 'string',
 		},
 		subtitle: {
 			source: 'text',
@@ -92,6 +91,10 @@ registerBlockType( 'wsu/feature-card', {
 
 		if ( ! block_id || 'no-block-id' === block_id ) {
 			setAttributes( { block_id: props.id } );
+		}
+
+		if ( ! card_action_text || '' === card_action_text ) {
+			setAttributes( { card_action_text: 'Learn More' } );
 		}
 
 		const onSetActiveEditable = ( newEditable ) => () => { setState( { editable: newEditable } ); };
@@ -157,8 +160,7 @@ registerBlockType( 'wsu/feature-card', {
 			<div className="card--feature home-headline headline-has-background impact-head dark position-right" style={ { backgroundImage: `url( ${ image_url } )` } } key="edit">
 				<div className="feature-content-wrapper">
 					<div className="feature-title-wrapper">
-						<RichText
-							tagName="h2"
+						<PlainText
 							className="home-title"
 							value={ headline }
 							placeholder="Headline"
