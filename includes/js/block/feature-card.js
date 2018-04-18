@@ -57,6 +57,9 @@ registerBlockType( 'wsu/feature-card', {
 		image_id: {
 			type: 'number',
 		},
+		block_id: {
+			type: 'string',
+		},
 	},
 
 	/**
@@ -75,7 +78,7 @@ registerBlockType( 'wsu/feature-card', {
 
     edit: withState( {
 		editable: 'content',
-	} )( ( { attributes, isSelected, setAttributes, editable, setState } ) => {
+	} )( ( { attributes, isSelected, setAttributes, editable, setState, ...props } ) => {
 		const {
 			headline,
 			subtitle,
@@ -84,7 +87,12 @@ registerBlockType( 'wsu/feature-card', {
 			card_action_url,
 			image_url,
 			image_id,
+			block_id,
 		} = attributes;
+
+		if ( ! block_id || 'no-block-id' === block_id ) {
+			setAttributes( { block_id: props.id } );
+		}
 
 		const onSetActiveEditable = ( newEditable ) => () => { setState( { editable: newEditable } ); };
 
@@ -186,14 +194,20 @@ registerBlockType( 'wsu/feature-card', {
 			card_action_text,
 			card_action_url,
 			image_url,
+			block_id,
 		} = attributes;
 
+		let display_block_id = 'no-block-id';
+		if ( block_id ) {
+			display_block_id = block_id;
+		}
+
 		return (
-			<div id="5ad511988632d" className="wsu-home-headline-wrapper impact-head dark position-right">
+			<div id={ display_block_id } className="wsu-home-headline-wrapper impact-head dark position-right">
 				<div
 					style={ { backgroundImage: `url( ${ image_url } )` } }
 					className="home-headline headline-has-background"
-					data-id="5ad511988632d"
+					data-id={ display_block_id }
 					data-headline={ headline }
 					data-anchor={ card_action_url }
 					data-date={ card_date }
