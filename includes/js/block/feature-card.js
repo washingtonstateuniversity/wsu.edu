@@ -12,8 +12,6 @@ const {
 } = wp.blocks;
 
 const {
-	TextControl,
-	TextareaControl,
 	withState,
 	Toolbar,
 	IconButton,
