@@ -1,70 +1,70 @@
 .site-header-mega *,
 .site-header-mega *:before,
 .site-header-mega *:after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .site-header-mega {
 	display: flex;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 /* --- WSU logo/signature --- */
 .site-header-mega .wsu-signature {
-    border: 1px solid #dbdbdb;
-    border-top: none;
-    border-bottom: none;
-    padding: 2rem 2rem 1.3rem;
-    flex: 0 25%;
+	border: 1px solid #dbdbdb;
+	border-top: none;
+	border-bottom: none;
+	padding: 2rem 2rem 1.3rem;
+	flex: 0 25%;
 }
 
 .site-header-mega .wsu-signature img {
-    width: 100%;
+	width: 100%;
 }
 
 /* --- Navigation --- */
 .site-header-mega .main-navigation {
-    display: flex;
-    flex: 1;
-    padding: 0 .75rem;
+	display: flex;
+	flex: 1;
+	padding: 0 .75rem;
 }
 
 .site-header-mega ul {
-    padding: 0;
+	padding: 0;
 }
 
 .site-header-mega .main-navigation > ul > li {
-    padding: .75rem;
-    z-index: 1;
+	padding: .75rem;
+	z-index: 1;
 }
 
 .site-header-mega button {
-    background: none;
-    border: none;
-    margin: 0;
-    padding: .5rem 0;
-    font-family: 'Montserrat';
-    font-size: .85rem;
-    font-weight: 700;
-    text-transform: uppercase;
+	background: none;
+	border: none;
+	margin: 0;
+	padding: .5rem 0;
+	font-family: 'Montserrat';
+	font-size: .85rem;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 /* - dropdown nav - */
 .site-header-mega .nav-dropdown {
-    display: flex;
+	display: flex;
 	flex: 0 calc(100% / (6 / 5));
-    margin-top: 4.5rem;
-    position: relative;
+	margin-top: 4.5rem;
+	position: relative;
 }
 
 .site-header-mega .nav-dropdown:before {
-    content: "";
-    background: #363636;
-    position: absolute;
-    top: 3.75rem;
-    bottom: 0;
-    left: -45000px;
-    width: 90000px;
+	content: "";
+	background: #363636;
+	position: absolute;
+	top: 3.75rem;
+	bottom: 0;
+	left: -45000px;
+	width: 90000px;
 }
 
 .site-header-mega .nav-dropdown li {
@@ -72,8 +72,8 @@
 }
 
 .site-header-mega .nav-dropdown .sub-navigation {
-    xdisplay: none;
-    margin-top: 2.5rem;
+	xdisplay: none;
+	margin-top: 2.5rem;
 }
 
 .site-header-mega .nav-dropdown .sub-navigation a {
@@ -88,8 +88,8 @@
 	background-color: rgba(0, 0, 0, .25);
 	color: #fff;
 	margin-left: -.25rem;
-    padding-left: .25rem;
-    width: calc(100% + .25rem);
+	padding-left: .25rem;
+	width: calc(100% + .25rem);
 }
 
 .site-header-mega .nav-dropdown > li:hover {
@@ -105,15 +105,15 @@
 
 /* - search give nav - */
 .site-header-mega .nav-search-give {
-    flex: 0 calc(100% / 6);
+	flex: 0 calc(100% / 6);
 }
 
 .site-header-mega .nav-search-give li {
 	border: 1px solid #dbdbdb;
 	border-top: none;
 	border-bottom: none;
-    height: 4.15rem;
-    display: flex;
-    align-items: center;
+	height: 4.15rem;
+	display: flex;
+	align-items: center;
 	justify-content: center;
 }
