@@ -17,7 +17,9 @@ module.exports = function( grunt ) {
 			home_scripts: {
 				src: [
 					"src/js/wsu-home-fos-view.js",
+					"src/block/site-header-mega/index.js",
 					"src/block/navigation/index.js",
+					"src/block/search/index.js",
 					"src/js/wsu-home-primary.js",
 					"src/js/wsu-alert-display.js"
 				],
@@ -25,7 +27,9 @@ module.exports = function( grunt ) {
 			},
 			feature_scripts: {
 				src: [
+					"src/block/site-header-mega/index.js",
 					"src/block/navigation/index.js",
+					"src/block/search/index.js",
 					"src/js/wsu-home-primary.js",
 					"src/js/wsu-feature-primary.js"
 				],
