@@ -5,14 +5,21 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		stylelint: {
-			src: [ "src/css/*.css", "src/css-legacy/*.css", "src/css-top-ten/*.css" ]
+			src: [
+				"src/block/**/*.css",
+				"src/css/*.css",
+				"src/css-legacy/*.css",
+				"src/css-top-ten/*.css",
+			],
 		},
 
 		concat: {
 			home_scripts: {
 				src: [
 					"src/js/wsu-home-fos-view.js",
-					"src/js/wsu-home-navigation-view.js",
+					"src/block/site-header-mega/index.js",
+					"src/block/navigation/index.js",
+					"src/block/search/index.js",
 					"src/js/wsu-home-primary.js",
 					"src/js/wsu-alert-display.js"
 				],
@@ -20,7 +27,9 @@ module.exports = function( grunt ) {
 			},
 			feature_scripts: {
 				src: [
-					"src/js/wsu-home-navigation-view.js",
+					"src/block/site-header-mega/index.js",
+					"src/block/navigation/index.js",
+					"src/block/search/index.js",
 					"src/js/wsu-home-primary.js",
 					"src/js/wsu-feature-primary.js"
 				],
@@ -136,7 +145,8 @@ module.exports = function( grunt ) {
 				options: {
 					preset: "jquery",
 					requireCamelCaseOrUpperCaseIdentifiers: false, // We rely on name_name too much to change them all.
-					maximumLineLength: 250
+					maximumLineLength: 250,
+					disallowTrailingComma: false,
 				}
 			}
 		},
