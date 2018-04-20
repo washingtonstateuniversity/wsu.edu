@@ -24,6 +24,7 @@ var wsuFOS = wsuFOS || {};
 	} );
 } )( window, Backbone, jQuery, _, wsuFOS );
 
+
 /* global Backbone, jQuery, _ */
 var wsuNavigation = wsuNavigation || {};
 
@@ -68,6 +69,7 @@ var wsuNavigation = wsuNavigation || {};
 		}
 	} );
 } )( window, Backbone, jQuery, _, wsuNavigation );
+
 
 /* global Typekit */
 try {Typekit.load();}catch ( e ) {}
