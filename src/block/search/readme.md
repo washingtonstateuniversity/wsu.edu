@@ -2,7 +2,7 @@
 
 This search block is used inside the site header mega block.
 
-{{{
+```
 <!-- Search interface, hidden by default until interaction in header -->
 <div class="header-search-wrapper header-search-wrapper-hide">
 	<section class="side-right row" id="search-modal">
@@ -36,4 +36,4 @@ This search block is used inside the site header mega block.
 	</section>
 	<div class="close-header-search"><a href="">x</a></div>
 </div>
-}}}
+```

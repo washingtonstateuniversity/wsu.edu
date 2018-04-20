@@ -2,7 +2,7 @@
 
 This is the main site header. The header "drawer" contains a `triptych` section which contains our navigation block in its second column as well as a search block.
 
-{{{
+```
 <header class="main-header wsu-home-navigation" id="wsu-home-primary-nav">
 	<div class="header-shelf-wrapper">
 		<section class="single triptych row header-shelf">
@@ -40,4 +40,4 @@ This is the main site header. The header "drawer" contains a `triptych` section 
 	</div>
 	<!-- Search block goes here -->
 </header>
-}}}
+```

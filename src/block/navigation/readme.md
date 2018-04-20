@@ -2,7 +2,7 @@
 
 This navigation block is used in the site header as column two of a `.triptych` `section` row of the Spine framework.
 
-{{{
+```
 <div class="column two wsu-mega-nav-container">
 	<div id="mega-menu" class="mega-menu-wrapper">
 		<ul>
@@ -62,4 +62,4 @@ This navigation block is used in the site header as column two of a `.triptych` 
 		</ul>
 	</div>
 </div>
-}}}
+```
