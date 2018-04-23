@@ -85,12 +85,11 @@
 	font-size: .9em;
 	line-height: 1.2;
 	padding: .2rem 0;
+	transition: padding .3s ease;
 }
 
 .site-header-mega .nav-dropdown .sub-navigation a:hover {
-	background-color: rgba(0, 0, 0, .25);
 	color: #fff;
-	margin-left: -.5rem;
 	padding-left: .5rem;
 	width: calc(100% + .5rem);
 }
