@@ -99,7 +99,7 @@
 }
 
 .site-header-mega .nav-dropdown > li:hover button:after {
-	content: ' \25B8';
+	content: " \25B8";
 }
 
 .site-header-mega .nav-dropdown > li:hover a {
