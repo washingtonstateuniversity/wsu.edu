@@ -34,7 +34,7 @@
 }
 
 .site-header-mega .main-navigation > ul > li {
-	padding: .75rem .75rem 1rem;
+	padding: .75rem;
 	z-index: 1;
 }
 
@@ -54,6 +54,7 @@
 	display: flex;
 	flex: 0 calc(100% / (6 / 5));
 	margin-top: 4.5rem;
+	padding-bottom: .5rem;
 	position: relative;
 }
 
