@@ -98,6 +98,10 @@
 	font-weight: 700;
 }
 
+.site-header-mega .nav-dropdown > li:hover button:after {
+	content: ' \25B8';
+}
+
 .site-header-mega .nav-dropdown > li:hover a {
 	color: #fff;
 }
