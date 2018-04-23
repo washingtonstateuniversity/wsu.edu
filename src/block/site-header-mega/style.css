@@ -61,6 +61,7 @@
 .site-header-mega .nav-dropdown:before {
 	content: "";
 	background: #363636;
+	
 	/* border-bottom should be tied to a class once the dropdown opens */
 	border-bottom: 5px solid #981e32;
 	position: absolute;
