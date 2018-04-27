@@ -16,6 +16,7 @@
 	border-bottom: none;
 	padding: 2rem 2rem 1.3rem;
 	flex: 0 25%;
+	min-width: 270px;
 }
 
 .site-header-mega .wsu-signature img {
@@ -34,7 +35,7 @@
 }
 
 .site-header-mega .main-navigation > ul > li {
-	padding: .75rem;
+	padding: .5rem;
 	z-index: 1;
 }
 
@@ -42,10 +43,11 @@
 	background: none;
 	border: none;
 	margin: 0;
-	padding: .5rem 0;
+	padding: .75rem 0;
 	font-family: Montserrat;
-	font-size: .85rem;
+	font-size: .8rem;
 	font-weight: 700;
+	text-align: left;
 	text-transform: uppercase;
 }
 
@@ -88,7 +90,8 @@
 	transition: padding .3s ease;
 }
 
-.site-header-mega .nav-dropdown .sub-navigation a:hover {
+.site-header-mega .nav-dropdown .sub-navigation a:hover,
+.site-header-mega .nav-dropdown .sub-navigation a:focus {
 	color: #fff;
 	padding-left: .5rem;
 	width: calc(100% + .5rem);
@@ -98,7 +101,8 @@
 	font-weight: 700;
 }
 
-.site-header-mega .nav-dropdown > li:hover button:after {
+.site-header-mega .nav-dropdown > li:hover button:after,
+.site-header-mega .nav-dropdown > li button:focus:after {
 	content: " \25B8";
 }
 
@@ -106,7 +110,8 @@
 	color: #fff;
 }
 
-.site-header-mega .nav-dropdown > li:hover button {
+.site-header-mega .nav-dropdown > li:hover button,
+.site-header-mega .nav-dropdown > li button:focus {
 	color: #981e32;
 }
 
@@ -136,4 +141,39 @@
 .nav-search button,
 .nav-search:after {
 	color: #981e32;
+}
+
+@media screen and (max-width: 1240px) {
+
+	/* move give and search above dropdown navigation */
+	.site-header-mega .main-navigation {
+		flex-direction: column;
+		padding: 0 .75rem;
+	}
+
+	.site-header-mega .nav-search-give {
+		padding-top: 1rem;
+		position: absolute;
+		right: 1.5rem;
+	}
+
+	.site-header-mega .nav-search-give li {
+		border: none;
+		display: inline;
+		margin-left: 1rem;;
+		padding-left: 1rem;
+	}
+
+	/* slightly reduce size of nav buttons */
+	.site-header-mega button {
+		font-size: .75em;
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	/* reduce size of nav text */
+	.site-header-mega {
+		display: none;
+	}
 }
