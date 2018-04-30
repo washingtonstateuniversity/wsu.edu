@@ -234,7 +234,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
 	grunt.loadNpmTasks( "grunt-jscs" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
-	grunt.loadNpmTasks( "grunt-contrib-uglify" );
+	grunt.loadNpmTasks( "grunt-contrib-uglify-es" );
 	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).
