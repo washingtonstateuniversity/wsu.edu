@@ -21,6 +21,23 @@ navigation.addEventListener( "keydown", function ( event ) {
 		} );
 	}
 
+	if ( event.keyCode === 40 && event.srcElement.localName === "a" ) {
+		if ( event.srcElement.parentElement.nextElementSibling !== null ) {
+			event.srcElement.parentElement.nextElementSibling.querySelector( "a" ).focus();
+		} else {
+			event.srcElement.parentElement.parentElement.querySelector( "a" ).focus();
+		}
+	}
+
+	if ( event.keyCode === 38 && event.srcElement.localName === "a" ) {
+		if ( event.srcElement.parentElement.previousElementSibling !== null ) {
+			event.srcElement.parentElement.previousElementSibling.querySelector( "a" ).focus();
+		} else {
+			let items = event.srcElement.parentElement.parentElement.querySelectorAll( "a" );
+			items[ items.length -1 ].focus();
+		}
+	}
+
 	// The right arrow navigates from a sub-navigation menu item to the
 	// next nav-section button. No action is taken if the arrow is used
 	// on the last nav-section.
