@@ -1,44 +1,16 @@
-/* global Backbone, jQuery, _ */
-var wsuNavigation = wsuNavigation || {};
+const navigation_buttons = document.querySelectorAll(".main-navigation .nav-dropdown button");
 
-( function( window, Backbone, $, _, wsuNavigation ) {
-	"use strict";
+navigation_buttons.forEach(function (el) {
+	el.addEventListener("click", function () {
+		let is_aria_expanded = this.getAttribute("aria-expanded") === 'true' || false;
 
-	wsuNavigation.appView = Backbone.View.extend( {
-		el: ".wsu-home-navigation",
+		// Each button in the main navigation has a mirrored state, so we adjust
+		// aria-expanded and hidden on all sub-navigation on every button interaction.
+		navigation_buttons.forEach(function (el) {
+			el.setAttribute("aria-expanded", !is_aria_expanded);
 
-		// Setup the events used in the overall application view.
-		events: {
-			"click #mega-menu-labels  ul li a": "toggleNav",
-			"click .close-header-drawer": "toggleNav",
-			"click .search-label": "toggleSearch",
-			"click .close-header-search": "toggleSearch"
-		},
-
-		toggleNav: function( evt ) {
-			evt.preventDefault();
-			var $nav_wrapper = $( ".header-drawer-wrapper" );
-
-			if ( $nav_wrapper.hasClass( "header-drawer-wrapper-open" ) ) {
-				$nav_wrapper.slideUp( 400 );
-				$nav_wrapper.removeClass( "header-drawer-wrapper-open" );
-			} else {
-				$nav_wrapper.slideDown( 400 );
-				$nav_wrapper.addClass( "header-drawer-wrapper-open" );
-			}
-		},
-
-		toggleSearch: function( evt ) {
-			evt.preventDefault();
-
-			var $search_wrapper = $( ".header-search-wrapper" );
-
-			if ( $search_wrapper.hasClass( "header-search-wrapper-open" ) ) {
-				$search_wrapper.removeClass( "header-search-wrapper-open" );
-			} else {
-				$search_wrapper.addClass( "header-search-wrapper-open" );
-				$( ".header-search-input" ).focus();
-			}
-		}
-	} );
-} )( window, Backbone, jQuery, _, wsuNavigation );
+			let el_menu = el.nextElementSibling;
+			el_menu.hidden = !el_menu.hidden;
+		});
+	});
+});
