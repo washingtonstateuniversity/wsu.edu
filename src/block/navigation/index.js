@@ -5,7 +5,7 @@ const escape_key = 27;
 
 navigation.addEventListener( "keydown", function ( event ) {
 
-	// When Escape is used in the navigation, close the menu.
+	// The escape key closes the menu when used anywhere in the navigation.
 	if ( event.keyCode === 27 ) {
 		navigation_buttons.forEach( function ( el ) {
 			el.setAttribute( "aria-expanded", false );
@@ -21,6 +21,9 @@ navigation.addEventListener( "keydown", function ( event ) {
 		} );
 	}
 
+	// The right arrow navigates from a sub-navigation menu item to the
+	// next nav-section button. No action is taken if the arrow is used
+	// on the last nav-section.
 	if ( event.keyCode === 39 && event.srcElement.localName === "a" ) {
 		event.path.forEach( function( el ) {
 			if ( el.localName === "li" && el.classList.contains( "nav-section" ) && el.nextElementSibling !== null ) {
@@ -29,6 +32,9 @@ navigation.addEventListener( "keydown", function ( event ) {
 		} );
 	}
 
+	// The left arrow navigates from a sub-navigation menu item to the
+	// previous nav-section button. No action is taken if the arrow is
+	// used on the first nav-section.
 	if ( event.keyCode === 37 && event.srcElement.localName === "a" ) {
 		event.path.forEach( function( el ) {
 			if ( el.localName === "li" && el.classList.contains( "nav-section" ) && el.previousElementSibling !== null ) {
