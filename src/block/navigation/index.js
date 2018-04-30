@@ -20,6 +20,22 @@ navigation.addEventListener( "keydown", function ( event ) {
 			}
 		} );
 	}
+
+	if ( event.keyCode === 39 && event.srcElement.localName === "a" ) {
+		event.path.forEach( function( el ) {
+			if ( el.localName === "li" && el.classList.contains( "nav-section" ) && el.nextElementSibling !== null ) {
+				el.nextElementSibling.querySelector( "button" ).focus();
+			}
+		} );
+	}
+
+	if ( event.keyCode === 37 && event.srcElement.localName === "a" ) {
+		event.path.forEach( function( el ) {
+			if ( el.localName === "li" && el.classList.contains( "nav-section" ) && el.previousElementSibling !== null ) {
+				el.previousElementSibling.querySelector( "button" ).focus();
+			}
+		} );
+	}
 } );
 
 navigation_buttons.forEach( function ( el ) {
