@@ -106,7 +106,8 @@ navigation_buttons.forEach( function ( el ) {
 				el.nextElementSibling.hidden = false;
 			} );
 
-			// Focus the first menu item if the keyboard was used to open the menu.
+			this.nextElementSibling.querySelector( "a" ).focus();
+		} else if ( event.keyCode === 40 && this.getAttribute( "aria-expanded" ) === "true" ) {
 			this.nextElementSibling.querySelector( "a" ).focus();
 		}
 
