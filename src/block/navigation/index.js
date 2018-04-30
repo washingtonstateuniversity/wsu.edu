@@ -49,6 +49,14 @@ navigation.addEventListener( "keydown", function ( event ) {
 		} );
 	}
 
+	if ( event.keyCode === 39 && event.srcElement.localName === "button" ) {
+		if ( event.srcElement.parentElement.nextElementSibling === null ) {
+			event.srcElement.parentElement.parentElement.querySelector( "button" ).focus();
+		} else {
+			event.srcElement.parentElement.nextElementSibling.querySelector( "button" ).focus();
+		}
+	}
+
 	// The left arrow navigates from a sub-navigation menu item to the
 	// previous nav-section button. No action is taken if the arrow is
 	// used on the first nav-section.
@@ -58,6 +66,15 @@ navigation.addEventListener( "keydown", function ( event ) {
 				el.previousElementSibling.querySelector( "button" ).focus();
 			}
 		} );
+	}
+
+	if ( event.keyCode === 37 && event.srcElement.localName === "button" ) {
+		if ( event.srcElement.parentElement.previousElementSibling === null ) {
+			let items = event.srcElement.parentElement.parentElement.querySelectorAll( "button" );
+			items[ items.length - 1 ].focus();
+		} else {
+			event.srcElement.parentElement.previousElementSibling.querySelector( "button" ).focus();
+		}
 	}
 } );
 
