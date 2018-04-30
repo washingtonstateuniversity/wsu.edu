@@ -35,4 +35,24 @@ navigation_buttons.forEach( function ( el ) {
 			el_menu.hidden = !el_menu.hidden;
 		} );
 	} );
+
+	el.addEventListener( "keydown", function( event ) {
+		if ( event.keyCode === 40 && this.getAttribute( "aria-expanded" ) === "false" ) {
+			// Each button in the main navigation has a mirrored state, so we adjust
+			// aria-expanded and hidden on all sub-navigation on every button interaction.
+			navigation_buttons.forEach( function ( el ) {
+				el.setAttribute( "aria-expanded", true );
+				el.nextElementSibling.hidden = false;
+			} );
+		}
+
+		if ( event.keyCode === 38 && this.getAttribute( "aria-expanded" ) === "true" ) {
+			// Each button in the main navigation has a mirrored state, so we adjust
+			// aria-expanded and hidden on all sub-navigation on every button interaction.
+			navigation_buttons.forEach( function ( el ) {
+				el.setAttribute( "aria-expanded", false );
+				el.nextElementSibling.hidden = true;
+			} );
+		}
+	} );
 } );
