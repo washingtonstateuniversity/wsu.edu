@@ -23,7 +23,7 @@ navigation.addEventListener( "keydown", function ( event ) {
 } );
 
 navigation_buttons.forEach( function ( el ) {
-	el.addEventListener( "click", function () {
+	el.addEventListener( "click", function ( event ) {
 		let is_aria_expanded = this.getAttribute( "aria-expanded" ) === 'true' || false;
 
 		// Each button in the main navigation has a mirrored state, so we adjust
@@ -34,6 +34,11 @@ navigation_buttons.forEach( function ( el ) {
 			let el_menu = el.nextElementSibling;
 			el_menu.hidden = !el_menu.hidden;
 		} );
+
+		// Focus the first menu item if the keyboard was used to open the menu.
+		if ( event.screenX === 0 && event.screenY === 0 ) {
+			this.nextElementSibling.querySelector( "a" ).focus();
+		}
 	} );
 
 	el.addEventListener( "keydown", function( event ) {
@@ -44,6 +49,9 @@ navigation_buttons.forEach( function ( el ) {
 				el.setAttribute( "aria-expanded", true );
 				el.nextElementSibling.hidden = false;
 			} );
+
+			// Focus the first menu item if the keyboard was used to open the menu.
+			this.nextElementSibling.querySelector( "a" ).focus();
 		}
 
 		if ( event.keyCode === 38 && this.getAttribute( "aria-expanded" ) === "true" ) {
