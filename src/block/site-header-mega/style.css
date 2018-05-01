@@ -143,6 +143,14 @@
 	color: #981e32;
 }
 
+.site-header-mega .header-search-wrapper {
+	display: none;
+}
+
+.site-header-mega .header-search-wrapper-open {
+	display: block;
+}
+
 @media screen and (max-width: 1240px) {
 
 	/* move give and search above dropdown navigation */
