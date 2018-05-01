@@ -59,7 +59,8 @@
         /* ]]> */
     </script>
 
-    <script type='text/javascript' src='https://repo.wsu.edu/spine/1/spine.min.js?ver=0.27.3-1.5.3-38560'></script>
+	<!-- The Spine HTML is not available -->
+    <!---<script type='text/javascript' src='https://repo.wsu.edu/spine/2/spine.js'></script>-->
     <script type='text/javascript' src='https://use.typekit.net/roi0hte.js?ver=4.6.1'></script>
 
     <style type="text/css">
@@ -95,9 +96,9 @@
                 </div>
                 <nav class="main-navigation">
                     <ul class="nav-dropdown">
-                        <li>
-                            <button>About</button>
-                            <ul class="sub-navigation">
+                        <li class="nav-section">
+                            <button aria-expanded="false">About</button>
+                            <ul class="sub-navigation" hidden>
                                 <li class="menu-item">
                                     <a href="https://wsu.edu/about/wsu-difference/">The WSU Difference</a>
                                 </li>
@@ -121,9 +122,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <button>Admission</button>
-                            <ul class="sub-navigation">
+                        <li class="nav-section">
+                            <button aria-expanded="false">Admission</button>
+                            <ul class="sub-navigation" hidden>
                                 <li class="menu-item">
                                     <a href="https://wsu.edu/admission/">Applying to WSU</a>
                                 </li>
@@ -144,9 +145,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <button>Academics</button>
-                            <ul class="sub-navigation">
+                        <li class="nav-section">
+                            <button aria-expanded="false">Academics</button>
+                            <ul class="sub-navigation" hidden>
                                 <li class="menu-item">
                                     <a href="https://wsu.edu/academics/">At a Glance</a>
                                 </li>
@@ -167,9 +168,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <button>Research</button>
-                            <ul class="sub-navigation">
+                        <li class="nav-section">
+                            <button aria-expanded="false">Research</button>
+                            <ul class="sub-navigation" hidden>
                                 <li class="menu-item">
                                     <a href="http://research.wsu.edu">Overview</a>
                                 </li>
@@ -187,9 +188,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <button>Community Life</button>
-                            <ul class="sub-navigation">
+                        <li class="nav-section">
+                            <button aria-expanded="false">Community Life</button>
+                            <ul class="sub-navigation" hidden>
                                 <li class="menu-item">
                                     <a href="https://wsu.edu/life/overview/">Overview</a>
                                 </li>
@@ -306,12 +307,9 @@
         <meta itemprop="email" class="required" content="mc@wsu.edu">
     </div>
 
-    <script type='text/javascript' src='https://wsu.edu/wp-content/themes/spine/js/spine-theme.js?ver=0.27.11-1.6.3-40759'></script>
-    <script type='text/javascript' src='https://wsu.edu/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
-    <script type='text/javascript' src='https://wsu.edu/wp-includes/js/backbone.min.js?ver=1.2.3'></script>
-    <script type='text/javascript' src='https://wsu.edu/wp-content/themes/wsu-home/js/wsu-home.min.js?ver=0.27.11-1.6.3-407590.14.4'></script>
-    <script type='text/javascript' src='https://wsu.edu/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
-
+	<!-- site-header-mega JavaScript -->
+	<script type='text/javascript' src='../src/block/navigation/index.js'></script>
+	<script type='text/javascript' src='../src/block/site-header-mega/index.js'></script>
 </body>
 
 </html>
