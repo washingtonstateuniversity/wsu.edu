@@ -37,7 +37,8 @@ module.exports = function( grunt ) {
 			},
 			main_styles: {
 				src: [
-					"src/css/*.css"
+					"src/css/*.css",
+					"src/block/**/style.css"
 				],
 				dest: "temp-style.css"
 			},
