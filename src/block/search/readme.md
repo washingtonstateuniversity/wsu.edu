@@ -8,7 +8,7 @@ This search block is used inside the site header mega block.
 	<section class="side-right row" id="search-modal">
 		<div class="column one">
 			<div class="header-search-input-wrapper">
-				<form method="get" action="https://search.wsu.edu/Default.aspx" _lpchecked="1">
+				<form method="get" action="https://search.wsu.edu/Default.aspx">
 					<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
 					<input name="cof" value="FORID:11" type="hidden">
 					<input name="sa" value="Search" type="hidden">
