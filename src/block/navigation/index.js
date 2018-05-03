@@ -1,6 +1,9 @@
 {
 const navigation = document.querySelector( ".main-navigation .nav-dropdown" );
 const navigation_buttons = navigation.querySelectorAll( "button" );
+const search_wrapper = document.querySelector( ".header-search-wrapper" );
+const search_button = document.querySelector( ".nav-search button" );
+const close_search_button = search_wrapper.querySelector( ".close-header-search button" );
 
 // Keys used for navigation.
 const escape_key = 27
@@ -135,4 +138,22 @@ navigation_buttons.forEach( function ( el ) {
 		}
 	} );
 } );
+
+search_button.addEventListener( "click", function() {
+	if ( search_wrapper.classList.contains( "header-search-wrapper-open" ) ) {
+		search_wrapper.classList.remove( "header-search-wrapper-open" );
+	} else {
+		search_wrapper.classList.add( "header-search-wrapper-open" );
+	}
+} );
+
+close_search_button.addEventListener( "click", function() {
+	search_wrapper.classList.remove( "header-search-wrapper-open" );
+
+	// Place focus back on search button if this action was fired with the keyboard.
+	if ( event.screenX === 0 && event.screenY === 0 ) {
+		search_button.focus();
+	}
+} );
+
 }
