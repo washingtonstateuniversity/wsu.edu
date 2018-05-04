@@ -123,29 +123,6 @@ section.home-text .column {
 }
 
 /*--------- main header ---------*/
-
-/*---------- top header ----------*/
-.path-125 .wsu-logo {
-	background: #981e32 url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat center center;
-	background-size: 35px;
-	width: 40px;
-	padding: 1.75rem 0;
-	transition: background .3s ease;
-}
-
-.path-125 .wsu-logo:hover {
-	background-color: #ab0d24;
-}
-
-.wsu-logo a {
-	display: block;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	width: 40px;
-}
-
 .home .fluid .main-header .row.triptych .column.three {
 	border: none;
 }
@@ -164,10 +141,6 @@ section.home-text .column {
 .path-125 .fluid .row.triptych .column.three,
 .home .fluid .main-header .row.triptych .column.three {
 	width: 10%;
-}
-
-.wsu-logo img {
-	display: none;
 }
 
 /*----------header section----------*/

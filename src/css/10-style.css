@@ -83,16 +83,6 @@ body {
 	display: none;
 }
 
-.wsu-logo {
-	padding: 2rem 2rem 1.3rem;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-.wsu-logo img {
-	width: 100%;
-}
-
 .error404 .fluid .row.triptych .column.two,
 .home .fluid .row.triptych .column.two {
 	width: 62.5%;

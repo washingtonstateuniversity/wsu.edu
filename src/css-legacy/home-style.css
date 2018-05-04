@@ -153,16 +153,6 @@ main a:focus {
 	height: auto;
 }
 
-.wsu-logo {
-	padding: 2rem 2rem 1.3rem;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-.wsu-logo img {
-	width: 100%;
-}
-
 .error404 .fluid .row.triptych .column.two,
 .home .fluid .row.triptych .column.two {
 	width: 62.5%;
@@ -1241,11 +1231,8 @@ figure {
 	}
 }
 
-@media screen and (max-width: 791px) {
 
-	.wsu-logo {
-		padding: 2rem 1rem 1.3rem;
-	}
+@media screen and (max-width: 791px) {
 
 	#binder.fluid main {
 		margin-top: 0;
