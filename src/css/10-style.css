@@ -83,24 +83,6 @@ body {
 	display: none;
 }
 
-/*-------------- HEADER SHELF ----------------------*/
-.header-shelf-wrapper {
-	position: relative;
-	background: #fff;
-	z-index: 125;
-}
-
-/* ----- header-shelf -----*/
-
-/* column one */
-.error404 .fluid .header-shelf.row.triptych .column.one,
-.home .fluid .header-shelf.row.triptych .column.one {
-	border: 1px solid #dbdbdb;
-	border-top: none;
-	border-bottom: none;
-	width: 25%;
-}
-
 .wsu-logo {
 	padding: 2rem 2rem 1.3rem;
 	width: 100%;
@@ -111,124 +93,15 @@ body {
 	width: 100%;
 }
 
-/* column two (empty) */
-.header-shelf .column.two {
-	height: 1px;
-}
-
 .error404 .fluid .row.triptych .column.two,
 .home .fluid .row.triptych .column.two {
 	width: 62.5%;
-}
-
-.error404 .fluid .main-header .row.triptych.header-shelf .column.two,
-.home .fluid .main-header .row.triptych.header-shelf .column.two {
-	padding: 1.5rem;
-	position: absolute;
-	left: 25%;
-	bottom: 20px;
-}
-
-.header-shelf .column.two li:after,
-.header-shelf .column.two ul:after {
-	content: "";
-	visibility: hidden;
-	display: block;
-	height: 0;
-	clear: both;
 }
 
 /* column three */
 .error404 .home .fluid .main-header .row.triptych .column.three,
 .home .fluid .main-header .row.triptych .column.three {
 	width: 12.5%;
-}
-
-.header-shelf .column.three {
-	position: absolute;
-	right: 0;
-	top: 0;
-	bottom: 0;
-}
-
-/*-------------- HEADER DRAWER --------------------*/
-.header-drawer-wrapper {
-	display: none;
-}
-
-/*----- header-drawer -----*/
-.header-drawer-wrapper {
-	background: #363636;
-	border-bottom: 5px solid #981e32;
-	font-size: .8rem;
-}
-
-.header-drawer .column > div {
-	padding: 1.5rem;
-}
-
-.header-drawer ul,
-.header-drawer li,
-.mega-menu-labels-wrapper ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-/* column one */
-section.single.triptych.row.header-drawer:before {
-	position: absolute;
-	content: "";
-	visibility: visible;
-	background: rgba(0, 0, 0, .1);
-	height: 100%;
-	width: 25%;
-	left: 0;
-}
-
-/* mega-menu */
-.wsu-mega-nav-container {
-	padding-bottom: 1rem;
-}
-
-.header-drawer .two .mega-menu-wrapper > ul > li,
-.mega-menu-labels-wrapper li {
-	float: left;
-	width: 20%;
-}
-
-#mega-menu .sub-menu {
-	padding: 0 .2rem 0 0;
-}
-
-.mega-menu-labels-wrapper > ul > li > a {
-	color: #404040;
-	font-size: .9rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	display: block;
-}
-
-.mega-menu-labels-wrapper > ul > li > a:hover,
-.mega-menu-labels-wrapper > ul > li > a:focus {
-	color: #981e32;
-}
-
-.mega-menu-wrapper > ul > li > a {
-	display: none;
-}
-
-#mega-menu .sub-menu li,
-#signature-menu li {
-	padding-bottom: .7rem;
-}
-
-#mega-menu .sub-menu a,
-.signature-menu-wrapper a {
-	color: #c8c8c8;
-	display: block;
-	line-height: 1.2;
-	padding-right: .5rem;
 }
 
 /*-------- WSU HOME FEATURE PIECES ------ */
