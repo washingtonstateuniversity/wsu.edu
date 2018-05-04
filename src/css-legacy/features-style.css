@@ -31,11 +31,6 @@ section.row.full {
 	padding-top: 0;
 }
 
-/* Home overrides */
-.depth-1 .header-search-wrapper section.row {
-	max-width: 1386px !important;
-}
-
 /*---------- Features home ---------*/
 .main-feature-top {
 	text-align: center;
@@ -128,66 +123,6 @@ section.home-text .column {
 }
 
 /*--------- main header ---------*/
-
-/*---------- top header ----------*/
-.categorized-feature-impact .main-header.wsu-home-navigation {
-	background-image: none;
-	height: auto;
-	min-height: 0;
-}
-
-.path-125 .header-shelf-wrapper {
-	border-bottom: 1px solid #e4e4e4;
-}
-
-.path-125 .header-shelf {
-	padding: 0 1rem;
-}
-
-.home .fluid .header-shelf.row.triptych .column.one {
-	border: none;
-}
-
-.home .fluid .main-header .row.triptych.header-shelf .column.two,
-.home .fluid .main-header .row.triptych.header-shelf .column.three,
-.path-125 .fluid .main-header .row.triptych.header-shelf .column.three {
-	padding: 1.1rem 1.5rem 1rem;
-	position: relative;
-	left: inherit;
-	bottom: 0;
-}
-
-.path-125 .fluid .main-header .row.triptych.header-shelf .column.three {
-	padding: 1rem 1.5rem;
-}
-
-.path-125 .wsu-logo {
-	background: #981e32 url(https://wsu.edu/wp-content/uploads/sites/625/2015/03/cougar-head-white.svg) no-repeat center center;
-	background-size: 35px;
-	width: 40px;
-	padding: 1.75rem 0;
-	transition: background .3s ease;
-}
-
-.path-125 .wsu-logo:hover {
-	background-color: #ab0d24;
-}
-
-.wsu-logo a {
-	display: block;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	width: 40px;
-}
-
-.wsu-home-navigation section.row.header-shelf,
-.wsu-home-navigation section.row.header-drawer {
-	max-width: 1188px !important;
-	width: 100% !important;
-}
-
 .home .fluid .main-header .row.triptych .column.three {
 	border: none;
 }
@@ -198,8 +133,6 @@ section.home-text .column {
 	padding: 0;
 }
 
-.path-125 .fluid .row.triptych .column.two.wsu-mega-nav-labels,
-.home .path-125 .fluid .row.triptych .column.two.wsu-mega-nav-labels,
 .home .fluid .row.triptych .column.two,
 .path-125 .fluid .row.triptych .column.two {
 	width: 65%;
@@ -208,31 +141,6 @@ section.home-text .column {
 .path-125 .fluid .row.triptych .column.three,
 .home .fluid .main-header .row.triptych .column.three {
 	width: 10%;
-}
-
-.path-125 header.main-header.wsu-home-navigation {
-	margin-top: 0;
-}
-
-.wsu-logo img {
-	display: none;
-}
-
-.top-level-links-label {
-	display: none;
-}
-
-.header-shelf .column.three {
-	position: relative;
-}
-
-.column.two.wsu-mega-nav-labels,
-.header-drawer .column > div {
-	padding: 1.1rem 1.5rem 1rem;
-}
-
-.header-drawer .column > div {
-	padding-top: 1.5rem;
 }
 
 /*----------header section----------*/
@@ -810,23 +718,15 @@ main .campaign-mark a:hover {
 		margin-left: 0;
 	}
 
-	.home .fluid .header-shelf.row.triptych .column.one,
-	.home .fluid .header-shelf.row.triptych .column.three,
-	.fluid .row.triptych .column,
-	section.single.triptych.row.header-drawer:before {
+	.fluid .row.triptych .column {
 		width: 15%;
 	}
 
-	.path-125 .fluid .row.triptych .column.two.wsu-mega-nav-labels,
-	.home .path-125 .fluid .row.triptych .column.two.wsu-mega-nav-labels,
 	.home .fluid .row.triptych .column.two,
 	.path-125 .fluid .row.triptych .column.two {
 		width: 70%;
 	}
 
-	.mega-menu-labels-wrapper > ul > li > a {
-		font-size: .8rem;
-	}
 }
 
 @media screen and (max-width: 900px) {
@@ -901,20 +801,9 @@ main .campaign-mark a:hover {
 		font-size: 12vw;
 	}
 
-	.mega-menu-labels-wrapper > ul > li > a {
-		font-size: .7rem;
-	}
-
-	.path-125 .fluid .row.triptych .column.two.wsu-mega-nav-labels,
-	.home .path-125 .fluid .row.triptych .column.two.wsu-mega-nav-labels,
 	.home .fluid .row.triptych .column.two,
 	.path-125 .fluid .row.triptych .column.two {
 		width: 85%;
-	}
-
-	.path-125 .fluid .main-header .row.triptych.header-shelf .column.three,
-	.signature-menu-wrapper ul {
-		display: none;
 	}
 }
 
@@ -923,10 +812,6 @@ main .campaign-mark a:hover {
 	#binder.fluid main,
 	#binder.hybrid main {
 		margin-top: 45px;
-	}
-
-	.path-125 .wsu-home-navigation {
-		display: none;
 	}
 
 	.path-125 #spine {

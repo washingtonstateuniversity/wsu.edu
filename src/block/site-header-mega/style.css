@@ -179,3 +179,29 @@
 		display: none;
 	}
 }
+
+.wsu-logo {
+	padding: 2rem 2rem 1.3rem;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.wsu-logo img {
+	width: 100%;
+}
+
+.wsu-logo a {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+}
+
+@media screen and (max-width: 791px) {
+
+	.wsu-logo {
+		padding: 2rem 1rem 1.3rem;
+	}
+}
