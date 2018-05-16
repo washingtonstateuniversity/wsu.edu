@@ -7,15 +7,23 @@ const search_button = document.querySelector( ".nav-search button" );
 const close_search_button = search_wrapper.querySelector( ".close-header-search button" );
 
 // Keys used for navigation.
-const escape_key = 27
-const down_arrow = 40;
-const up_arrow = 38;
+const watch_keys  = [ 27, 37, 38, 39, 40 ];
+const escape_key  = 27;
+const left_arrow  = 37;
+const up_arrow    = 38;
 const right_arrow = 39;
-const left_arrow = 37;
+const down_arrow  = 40;
 
 navigation.addEventListener( "keydown", function ( event ) {
 
-	// The escape key closes the menu when used anywhere in the navigation.
+	if ( -1 === watch_keys.indexOf( event.keyCode ) ) {
+		return;
+	}
+
+	// Stop default browser behavior for these specific keys (e.g. scrolling up/down)
+	event.preventDefault();
+
+	// The escape key close	s the menu when used anywhere in the navigation.
 	if ( event.keyCode === escape_key ) {
 		navigation_buttons.forEach( function ( el ) {
 			el.setAttribute( "aria-expanded", false );
