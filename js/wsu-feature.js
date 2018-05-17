@@ -2,6 +2,7 @@
 {
 const navigation = document.querySelector( ".main-navigation .nav-dropdown" );
 const navigation_buttons = navigation.querySelectorAll( "button" );
+const navigation_sections = navigation.querySelectorAll( ".main-navigation .nav-dropdown .nav-section" );
 const search_wrapper = document.querySelector( ".header-search-wrapper" );
 const search_button = document.querySelector( ".nav-search button" );
 const close_search_button = search_wrapper.querySelector( ".close-header-search button" );
@@ -13,6 +14,15 @@ const left_arrow  = 37;
 const up_arrow    = 38;
 const right_arrow = 39;
 const down_arrow  = 40;
+
+navigation_buttons.forEach( function( button ) {
+	button.addEventListener( "focus", function( event ) {
+		navigation_sections.forEach( function( section ) {
+			section.classList.remove( "nav-section--has-focus" );
+		} );
+		event.srcElement.parentElement.classList.add( "nav-section--has-focus" );
+	} );
+} );
 
 navigation.addEventListener( "keydown", function ( event ) {
 

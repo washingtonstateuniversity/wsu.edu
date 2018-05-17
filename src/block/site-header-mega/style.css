@@ -97,7 +97,8 @@
 	width: calc(100% + .5rem);
 }
 
-.site-header-mega .nav-dropdown > li:hover {
+.site-header-mega .nav-dropdown > li:hover,
+.site-header-mega .nav-dropdown > .nav-section--has-focus {
 	font-weight: 700;
 }
 
@@ -106,7 +107,8 @@
 	content: " \25B8";
 }
 
-.site-header-mega .nav-dropdown > li:hover a {
+.site-header-mega .nav-dropdown > li:hover a,
+.site-header-mega .nav-dropdown .nav-section--has-focus a {
 	color: #fff;
 }
 
