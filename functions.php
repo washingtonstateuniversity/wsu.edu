@@ -54,10 +54,7 @@ class WSU_Home_Theme {
 		}
 
 		$domains = array(
-			'beta.maps.wsu.edu',
-			'news.wsu.edu',
-			'maps.googleapis.com',
-			'maps.gstatic.com',
+			's3.wp.wsu.edu',
 		);
 
 		$urls = array_merge_recursive( $urls, $domains );
