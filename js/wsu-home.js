@@ -26,27 +26,49 @@ var wsuFOS = wsuFOS || {};
 
 
 {
-const navigation = document.querySelector( ".main-navigation .nav-dropdown" );
+const main_navigation = document.querySelector( ".main-navigation" );
+const navigation = main_navigation.querySelector( ".nav-dropdown" );
 const navigation_buttons = navigation.querySelectorAll( "button" );
+const navigation_sections = navigation.querySelectorAll( ".main-navigation .nav-dropdown .nav-section" );
+const search_button = main_navigation.querySelector( ".nav-search button" );
 const search_wrapper = document.querySelector( ".header-search-wrapper" );
-const search_button = document.querySelector( ".nav-search button" );
 const close_search_button = search_wrapper.querySelector( ".close-header-search button" );
+const close_nav_button = main_navigation.querySelector( ".nav-close" );
 
 // Keys used for navigation.
-const escape_key = 27
-const down_arrow = 40;
-const up_arrow = 38;
+const watch_keys  = [ 27, 37, 38, 39, 40 ];
+const escape_key  = 27;
+const left_arrow  = 37;
+const up_arrow    = 38;
 const right_arrow = 39;
-const left_arrow = 37;
+const down_arrow  = 40;
+
+navigation_buttons.forEach( function( button ) {
+	button.addEventListener( "focus", function( event ) {
+		navigation_sections.forEach( function( section ) {
+			section.classList.remove( "nav-section--has-focus" );
+		} );
+		event.srcElement.parentElement.classList.add( "nav-section--has-focus" );
+	} );
+} );
 
 navigation.addEventListener( "keydown", function ( event ) {
 
-	// The escape key closes the menu when used anywhere in the navigation.
+	if ( -1 === watch_keys.indexOf( event.keyCode ) ) {
+		return;
+	}
+
+	// Stop default browser behavior for these specific keys (e.g. scrolling up/down)
+	event.preventDefault();
+
+	// The escape key close	s the menu when used anywhere in the navigation.
 	if ( event.keyCode === escape_key ) {
 		navigation_buttons.forEach( function ( el ) {
 			el.setAttribute( "aria-expanded", false );
 			el.nextElementSibling.hidden = true;
 		} );
+
+		main_navigation.classList.remove( "nav--expanded" );
 
 		// If the focus was on a child element of the nav section, reapply
 		// focus to the parent section's button.
@@ -135,6 +157,12 @@ navigation_buttons.forEach( function ( el ) {
 			el_menu.hidden = !el_menu.hidden;
 		} );
 
+		if ( is_aria_expanded ) {
+			main_navigation.classList.remove( "nav--expanded" );
+		} else {
+			main_navigation.classList.add( "nav--expanded" );
+		}
+
 		// Focus the first menu item if the keyboard was used to open the menu.
 		if ( event.screenX === 0 && event.screenY === 0 ) {
 			this.nextElementSibling.querySelector( "a" ).focus();
@@ -150,6 +178,8 @@ navigation_buttons.forEach( function ( el ) {
 				el.nextElementSibling.hidden = false;
 			} );
 
+			main_navigation.classList.add( "nav--expanded" );
+
 			this.nextElementSibling.querySelector( "a" ).focus();
 		} else if ( event.keyCode === down_arrow && this.getAttribute( "aria-expanded" ) === "true" ) {
 			this.nextElementSibling.querySelector( "a" ).focus();
@@ -162,8 +192,18 @@ navigation_buttons.forEach( function ( el ) {
 				el.setAttribute( "aria-expanded", false );
 				el.nextElementSibling.hidden = true;
 			} );
+
+			main_navigation.classList.remove( "nav--expanded" );
 		}
 	} );
+} );
+
+close_nav_button.addEventListener( "click", function() {
+	navigation_buttons.forEach( function ( el ) {
+		el.setAttribute( "aria-expanded", false );
+		el.nextElementSibling.hidden = true;
+	} );
+	main_navigation.classList.remove( "nav--expanded" );
 } );
 
 search_button.addEventListener( "click", function() {
@@ -171,6 +211,7 @@ search_button.addEventListener( "click", function() {
 		search_wrapper.classList.remove( "header-search-wrapper-open" );
 	} else {
 		search_wrapper.classList.add( "header-search-wrapper-open" );
+		document.querySelector( ".header-search-input" ).focus();
 	}
 } );
 
