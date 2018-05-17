@@ -1,5 +1,6 @@
 <?php
 
+include_once( __DIR__ . '/includes/mega-menu.php' );
 include_once( __DIR__ . '/includes/wsu-home-overlay.php' );
 include_once( __DIR__ . '/includes/fields-of-study.php' );
 include_once( __DIR__ . '/includes/academic-calendar.php' );
@@ -198,7 +199,6 @@ class WSU_Home_Theme {
 	 */
 	public function register_menus() {
 		register_nav_menu( 'mega-menu', 'Mega Menu' );
-		register_nav_menu( 'signature-menu', 'Signature Menu' );
 		register_nav_menu( 'fat-footer', 'Fat Footer' );
 		register_nav_menu( 'quick-links', 'Quick Links' );
 	}
