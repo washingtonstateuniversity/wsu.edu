@@ -33,18 +33,6 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 		'depth'           => 1,
 	);
 
-	$signature_menu_args = array(
-		'theme_location'  => 'signature-menu',
-		'menu'            => 'signature-menu',
-		'container'       => 'div',
-		'container_class' => 'signature-menu-wrapper',
-		'container_id'    => 'signature-menu',
-		'menu_class'      => null,
-		'menu_id'         => null,
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 1,
-	);
-
 	$wsu_search_args = array(
 		'theme_location'  => 'quick-links',
 		'menu'            => 'quick-links',
@@ -95,7 +83,6 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 	<div class="header-drawer-wrapper">
 		<section class="single triptych row header-drawer">
 			<div class="column one wsu-signature-nav-container">
-				<?php echo wsu_home_get_menu( $signature_menu_args ); ?>
 			</div>
 			<div class="column two wsu-mega-nav-container">
 				<?php echo wsu_home_get_menu( $mega_menu_args ); ?>

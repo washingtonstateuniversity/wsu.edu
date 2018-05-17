@@ -198,7 +198,6 @@ class WSU_Home_Theme {
 	 */
 	public function register_menus() {
 		register_nav_menu( 'mega-menu', 'Mega Menu' );
-		register_nav_menu( 'signature-menu', 'Signature Menu' );
 		register_nav_menu( 'fat-footer', 'Fat Footer' );
 		register_nav_menu( 'quick-links', 'Quick Links' );
 	}
