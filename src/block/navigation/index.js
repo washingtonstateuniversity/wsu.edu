@@ -1,10 +1,12 @@
 {
-const navigation = document.querySelector( ".main-navigation .nav-dropdown" );
+const main_navigation = document.querySelector( ".main-navigation" );
+const navigation = main_navigation.querySelector( ".nav-dropdown" );
 const navigation_buttons = navigation.querySelectorAll( "button" );
 const navigation_sections = navigation.querySelectorAll( ".main-navigation .nav-dropdown .nav-section" );
+const search_button = main_navigation.querySelector( ".nav-search button" );
 const search_wrapper = document.querySelector( ".header-search-wrapper" );
-const search_button = document.querySelector( ".nav-search button" );
 const close_search_button = search_wrapper.querySelector( ".close-header-search button" );
+const close_nav_button = main_navigation.querySelector( ".nav-close" );
 
 // Keys used for navigation.
 const watch_keys  = [ 27, 37, 38, 39, 40 ];
@@ -38,6 +40,8 @@ navigation.addEventListener( "keydown", function ( event ) {
 			el.setAttribute( "aria-expanded", false );
 			el.nextElementSibling.hidden = true;
 		} );
+
+		main_navigation.classList.remove( "nav--expanded" );
 
 		// If the focus was on a child element of the nav section, reapply
 		// focus to the parent section's button.
@@ -126,6 +130,12 @@ navigation_buttons.forEach( function ( el ) {
 			el_menu.hidden = !el_menu.hidden;
 		} );
 
+		if ( is_aria_expanded ) {
+			main_navigation.classList.remove( "nav--expanded" );
+		} else {
+			main_navigation.classList.add( "nav--expanded" );
+		}
+
 		// Focus the first menu item if the keyboard was used to open the menu.
 		if ( event.screenX === 0 && event.screenY === 0 ) {
 			this.nextElementSibling.querySelector( "a" ).focus();
@@ -141,6 +151,8 @@ navigation_buttons.forEach( function ( el ) {
 				el.nextElementSibling.hidden = false;
 			} );
 
+			main_navigation.classList.add( "nav--expanded" );
+
 			this.nextElementSibling.querySelector( "a" ).focus();
 		} else if ( event.keyCode === down_arrow && this.getAttribute( "aria-expanded" ) === "true" ) {
 			this.nextElementSibling.querySelector( "a" ).focus();
@@ -153,8 +165,18 @@ navigation_buttons.forEach( function ( el ) {
 				el.setAttribute( "aria-expanded", false );
 				el.nextElementSibling.hidden = true;
 			} );
+
+			main_navigation.classList.remove( "nav--expanded" );
 		}
 	} );
+} );
+
+close_nav_button.addEventListener( "click", function() {
+	navigation_buttons.forEach( function ( el ) {
+		el.setAttribute( "aria-expanded", false );
+		el.nextElementSibling.hidden = true;
+	} );
+	main_navigation.classList.remove( "nav--expanded" );
 } );
 
 search_button.addEventListener( "click", function() {
