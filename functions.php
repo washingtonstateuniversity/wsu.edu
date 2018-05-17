@@ -128,13 +128,6 @@ class WSU_Home_Theme {
 
 		if ( $this->is_wsu_site( 'wsu-home' ) ) {
 			wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/wsu-home.min.js', array( 'backbone', 'wsu-home-typekit' ), $this->script_version(), true );
-
-			$post = get_post();
-			if ( isset( $post->post_content ) && has_shortcode( $post->post_content, 'wsu_home_map' ) ) {
-				wp_enqueue_style( 'jquery-ui-smoothness', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.min.css', array(), false );
-				wp_enqueue_style( 'wsu-home-map-style', 'https://beta.maps.wsu.edu/content/dis/css/map.view.styles.css', array(), false );
-				wp_enqueue_script( 'wsu-home-map', 'https://beta.maps.wsu.edu/embed/wsu-home', array( 'jquery' ), false, true );
-			}
 		}
 
 		if ( $this->is_wsu_site( 'wsu-features' ) || $this->is_wsu_site( 'wsu-impact' ) ) {
