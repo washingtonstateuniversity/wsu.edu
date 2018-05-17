@@ -12,25 +12,13 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 	$mega_menu_args = array(
 		'theme_location'  => 'mega-menu',
 		'menu'            => 'mega-menu',
-		'container'       => 'div',
-		'container_class' => 'mega-menu-wrapper',
-		'container_id'    => 'mega-menu',
+		'container'       => '',
+		'container_class' => '',
+		'container_id'    => '',
 		'menu_class'      => null,
 		'menu_id'         => null,
-		'items_wrap'      => '<ul>%3$s</ul>',
+		'items_wrap'      => '<ul class="nav-dropdown">%3$s</ul>',
 		'depth'           => 5,
-	);
-
-	$header_mega_menu_args = array(
-		'theme_location'  => 'mega-menu',
-		'menu'            => 'mega-menu',
-		'container'       => 'div',
-		'container_class' => 'mega-menu-labels-wrapper',
-		'container_id'    => 'mega-menu-labels',
-		'menu_class'      => null,
-		'menu_id'         => null,
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 1,
 	);
 
 	$wsu_search_args = array(
@@ -61,63 +49,57 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 		}
 	}
 ?>
-<header class="main-header wsu-home-navigation" id="wsu-home-primary-nav">
-	<div class="header-shelf-wrapper">
-		<section class="single triptych row header-shelf">
-			<div class="column one">
-				<div class="wsu-logo">
-					<?php if ( $wsu_home_is_features ) : ?><a href="https://wsu.edu/"><?php endif; ?>
-					<img src="<?php echo get_stylesheet_directory_uri() . '/images/wsu-home-logo.svg'; ?>" alt="Washington State University">
-					<?php if ( $wsu_home_is_features ) : ?></a><?php endif; ?>
-				</div>
-			</div>
-			<div class="column two wsu-mega-nav-labels">
-				<?php echo wsu_home_get_menu( $header_mega_menu_args ); ?>
-			</div>
-			<div class="column three wsu-other-nav-placeholder">
-				<a href="https://foundation.wsu.edu/give/" class="header-give-link">Give to WSU</a>
-				<div class="search-label"><a href="">Search</a></div>
-			</div>
-		</section>
+<header class="site-header-mega row">
+	<div class="wsu-signature">
+		<img src="https://wsu.edu/wp-content/themes/wsu-home/images/wsu-home-logo.svg" alt="Washington State University">
 	</div>
-	<div class="header-drawer-wrapper">
-		<section class="single triptych row header-drawer">
-			<div class="column one wsu-signature-nav-container">
-			</div>
-			<div class="column two wsu-mega-nav-container">
-				<?php echo wsu_home_get_menu( $mega_menu_args ); ?>
-			</div>
-			<div class="column three">
-				<!-- Empty with purpose. -->
-			</div>
-		</section>
-		<div class="close-header-drawer"><a href="">x</a></div>
-	</div>
-	<!-- Search interface, hidden by default until interaction in header -->
-	<div class="header-search-wrapper header-search-wrapper-hide">
-		<section class="side-right row" id="search-modal">
-			<div class="column one">
-				<div class="header-search-input-wrapper">
-					<form method="get" action="https://search.wsu.edu/Default.aspx">
-						<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
-						<input name="cof" value="FORID:11" type="hidden">
-						<input name="sa" value="Search" type="hidden">
-						<label for="header-search">Search</label>
-						<input type="text" value="" name="q" placeholder="Search" class="header-search-input" />
-					</form>
-				</div>
-				<div class="header-search-a-z-wrapper">
-					<span class="search-a-z"><a href="http://index.wsu.edu/">A-Z Index</a></span>
-				</div>
-			</div>
-			<div class="column two">
-				<div class="quick-links-label">Common Searches</div>
-				<?php echo wsu_home_get_menu( $wsu_search_args ); ?>
-			</div>
-		</section>
-		<div class="close-header-search"><a href="">x</a></div>
-	</div>
+	<nav class="main-navigation" id="wsu-home-primary-nav">
+		<?php echo wsu_home_get_menu( $mega_menu_args ); ?>
+
+		<div class="nav-close">
+			<button>Close navigation</button>
+		</div>
+
+		<ul class="nav-search-give">
+			<li class="nav-give">
+				<a href="https://foundation.wsu">Give to WSU</a>
+			</li>
+			<li class="nav-search">
+				<button>Search</button>
+			</li>
+		</ul>
+	</nav>
 </header>
+
+<!-- Search interface, hidden by default until interaction in header -->
+<div class="header-search-wrapper">
+	<section class="side-right row" id="search-modal">
+		<div class="column one">
+			<div class="header-search-input-wrapper">
+				<form method="get" action="https://search.wsu.edu/Default.aspx">
+					<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
+					<input name="cof" value="FORID:11" type="hidden">
+					<input name="sa" value="Search" type="hidden">
+					<label for="header-search">Search</label>
+					<input type="text" value="" name="q" placeholder="Search" class="header-search-input">
+				</form>
+			</div>
+			<div class="header-search-a-z-wrapper">
+				<span class="search-a-z">
+					<a href="http://index.wsu.edu/">A-Z Index</a>
+				</span>
+			</div>
+		</div>
+		<div class="column two">
+			<div class="quick-links-label">Common Searches</div>
+			<?php echo wsu_home_get_menu( $wsu_search_args ); ?>
+		</div>
+	</section>
+	<div class="close-header-search">
+		<button>Close search</button>
+	</div>
+</div>
+<!-- End search drawer block -->
 <?php
 
 if ( ms_is_switched() ) {
