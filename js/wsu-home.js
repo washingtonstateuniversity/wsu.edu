@@ -189,6 +189,7 @@ search_button.addEventListener( "click", function() {
 		search_wrapper.classList.remove( "header-search-wrapper-open" );
 	} else {
 		search_wrapper.classList.add( "header-search-wrapper-open" );
+		document.querySelector( ".header-search-input" ).focus();
 	}
 } );
 
