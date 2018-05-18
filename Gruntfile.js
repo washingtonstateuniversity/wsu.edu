@@ -220,7 +220,7 @@ module.exports = function( grunt ) {
 				options: {
 					open: true,
 					port: 8000,
-					hostname: "localhost"
+					hostname: "*"
 				}
 			}
 		}
