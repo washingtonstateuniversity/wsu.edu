@@ -16,6 +16,7 @@ module.exports = function( grunt ) {
 		concat: {
 			home_scripts: {
 				src: [
+					"src/polyfill/es5.js",
 					"src/js/wsu-home-fos-view.js",
 					"src/block/site-header-mega/index.js",
 					"src/block/navigation/index.js",
@@ -27,6 +28,7 @@ module.exports = function( grunt ) {
 			},
 			feature_scripts: {
 				src: [
+					"src/polyfill/es5.js",
 					"src/block/site-header-mega/index.js",
 					"src/block/navigation/index.js",
 					"src/block/search/index.js",
