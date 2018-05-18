@@ -1,0 +1,62 @@
+.find-fos-wrapper {
+	position: relative;
+	height: 50px;
+}
+
+.find-fos-alpha-wrapper {
+	margin-top: 4rem;
+}
+
+.find-fos {
+	position: absolute;
+	background: #dbdbdb;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+}
+
+.find-fos h4,
+.find-fos-alpha h3 {
+	text-transform: none;
+	margin: .2rem 2.5%;
+	letter-spacing: 0;
+	font-size: 1.1rem;
+	font-weight: 400;
+	color: #2a3033;
+}
+
+.find-fos-alpha-wrapper .az:after {
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+	margin-bottom: 2rem;
+}
+
+.az li {
+	margin: 0 2px 2px 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-align: center;
+	border: 1px solid #bdbdbd;
+	float: left;
+}
+
+main .find-fos-alpha-wrapper .az li a {
+	color: #981e32;
+	display: block;
+	transition: all .5s ease;
+	border-bottom: none;
+	box-shadow: none;
+	font-size: .8rem;
+	padding: 8px;
+	min-width: 30px;
+}
+
+main .find-fos-alpha-wrapper .az li a:hover,
+main .find-fos-alpha-wrapper .az li a:focus {
+	background: #981e32;
+	color: #fff;
+}
