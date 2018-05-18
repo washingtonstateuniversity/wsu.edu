@@ -4,9 +4,10 @@
 	box-sizing: border-box;
 }
 
-.site-header-mega {
+#jacket #binder header.site-header-mega {
 	display: flex;
 	margin: 0 auto;
+	max-width: 1386px;
 }
 
 /* --- WSU logo/signature --- */
