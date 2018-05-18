@@ -15,7 +15,8 @@
 	border: 1px solid #dbdbdb;
 	border-top: none;
 	border-bottom: none;
-	padding: 2rem 2rem 1.3rem;
+	display: flex;
+	padding: 0 2rem;
 	flex: 0 25%;
 	min-width: 270px;
 }
@@ -61,13 +62,14 @@
 	margin-top: 4.75rem;
 	padding-bottom: .5rem;
 	position: relative;
+	width: 100%;
 }
 
 .site-header-mega .nav-dropdown:before {
 	content: "";
 	background: #363636;
 	position: absolute;
-	top: 4.1rem;
+	top: 3.95rem;
 	bottom: 0;
 	left: -45000px;
 	width: 90000px;
@@ -225,8 +227,8 @@
 
 @media screen and (max-width: 989px) {
 
-	/* reduce size of nav text */
-	.site-header-mega {
+	/* mobile nav displays */
+	#jacket #binder header.site-header-mega {
 		display: none;
 	}
 }
