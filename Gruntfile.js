@@ -25,6 +25,12 @@ module.exports = function( grunt ) {
 				],
 				dest: "js/wsu-home.js"
 			},
+			polyfill_scripts: {
+				src: [
+					"src/polyfill/es5.js"
+				],
+				dest: "js/polyfill.js"
+			},
 			feature_scripts: {
 				src: [
 					"src/block/site-header-mega/index.js",
