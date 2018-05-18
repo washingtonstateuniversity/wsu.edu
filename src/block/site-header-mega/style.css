@@ -57,7 +57,7 @@
 .site-header-mega .nav-dropdown {
 	display: flex;
 	flex: 0 calc(100% / (6 / 5));
-	margin-top: 4.5rem;
+	margin-top: 4.75rem;
 	padding-bottom: .5rem;
 	position: relative;
 }
@@ -65,14 +65,15 @@
 .site-header-mega .nav-dropdown:before {
 	content: "";
 	background: #363636;
-
-	/* border-bottom should be tied to a class once the dropdown opens */
-	border-bottom: 5px solid #981e32;
 	position: absolute;
-	top: 3.75rem;
+	top: 4.1rem;
 	bottom: 0;
 	left: -45000px;
 	width: 90000px;
+}
+
+.site-header-mega .nav--expanded .nav-dropdown:before {
+	border-bottom: 5px solid #981e32;
 }
 
 .site-header-mega .nav-dropdown li {
@@ -173,7 +174,7 @@
 .site-header-mega .nav-search-give li {
 	border: 1px solid #dbdbdb;
 	border-bottom: none;
-	height: 4.15rem;
+	height: 4.35rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
