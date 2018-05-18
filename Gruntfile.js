@@ -21,6 +21,7 @@ module.exports = function( grunt ) {
 					"src/block/site-header-mega/index.js",
 					"src/block/navigation/index.js",
 					"src/block/search/index.js",
+					"src/block/fields-of-study/index.js",
 					"src/js/wsu-home-primary.js",
 					"src/js/wsu-alert-display.js"
 				],
