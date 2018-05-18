@@ -126,8 +126,43 @@
 .site-header-mega .nav--expanded .nav-close {
 	display: block;
 	position: absolute;
-	bottom: 0;
+	bottom: 1rem;
 	right: 0;
+}
+
+/* close button */
+.nav-close button,
+.close-header-search button {
+	text-indent: -99999px;
+	position: relative;
+	height: 2rem;
+	width: 2rem;
+	background: none;
+	border: none;
+	color: #fff;
+	border-radius: 0;
+}
+
+.close-header-search button {
+	color: #363636;
+}
+
+.nav-close button:after,
+.close-header-search button:after {
+	content: "X";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	font-size: 1.5rem;
+	text-align: center;
+	text-indent: 0;
+}
+
+.nav-close button:hover,
+.close-header-search button:hover {
+	border: 1px solid;
 }
 
 /* - search give nav - */
