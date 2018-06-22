@@ -12,7 +12,7 @@ class WSU_Home_Fields_Of_Study {
 			<div class="find-fos">
 				<h3>Find my field of study</h3>
 				<form title="Select a field of study by academic area">
-					<label>Select an Academic Area
+					<label><span class="screen-reader-shortcut">Select an Academic Area</span>
 					<select>
 						<option value="7762">Agricultural Sciences</option>>
 						<option value="7774">Art, Architecture, and Design</option>>
