@@ -10,7 +10,7 @@ class WSU_Home_Fields_Of_Study {
 		?>
 		<div class="find-fos-wrapper">
 			<div class="find-fos">
-				<h4>Find my field of study</h4>
+				<h3>Find my field of study</h3>
 				<form title="Select a field of study by academic area">
 					<label>Select an Academic Area
 					<select>
@@ -40,7 +40,7 @@ class WSU_Home_Fields_Of_Study {
 
 		<div class="find-fos-alpha-wrapper">
 			<div class="find-fos-alpha">
-				<h3>Browse Alphabetically</h3>
+				<h4>Browse Alphabetically</h4>
 				<ul class="az">
 					<li><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7509">A</a></li>
 					<li><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7510">B</a></li>
