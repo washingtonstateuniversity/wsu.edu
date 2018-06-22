@@ -95,37 +95,6 @@ body {
 }
 
 /*-------- WSU HOME FEATURE PIECES ------ */
-.find-fos-wrapper {
-	position: relative;
-	height: 50px;
-}
-
-.find-fos {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
-.find-fos-alpha-wrapper {
-	margin-top: 25px;
-}
-
-.fos {
-	float: left;
-}
-
-.fos .fos-label {
-	cursor: pointer;
-}
-
-.fos .fos-item {
-	display: none;
-}
-
-.fos-open .fos-item {
-	display: block;
-}
 
 @keyframes fadeIn {
 
@@ -193,3 +162,41 @@ body {
 	color: #bbb;
 	padding-left: .3em;
 }
+
+/* FOS / Recruitment section of home page */
+.recruitment {
+	padding-bottom: 4rem;
+}
+
+.recruitment h3 {
+	margin-top: 4rem;
+	color: #981e32;
+	font-weight: 300;
+}
+
+.recruitment ul {
+	margin-top: .5rem;
+	padding: 0;
+	font-size: 1rem;
+}
+
+.recruitment .column.one p {
+	max-width: 550px;
+}
+
+.recruitment li {
+	display: inline-block;
+	margin-right: 1.5rem;
+	padding: 0 0 .6rem;
+	line-height: 1.4;
+}
+
+main .recruitment li a {
+	color: inherit;
+}
+
+main .recruitment .button-row a {
+	background: rgba(0, 0, 0, .65);
+}
+
+/* END FOS / Recruitment section of home page */

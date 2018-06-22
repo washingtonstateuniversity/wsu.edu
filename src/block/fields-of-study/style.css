@@ -1,0 +1,101 @@
+.find-fos-alpha-wrapper {
+	margin-top: 2rem;
+}
+
+.find-fos {
+	background: #dbdbdb;
+}
+
+.find-fos h4,
+.find-fos-alpha h4 {
+	text-transform: none;
+	margin: .2rem 2.5%;
+	letter-spacing: 0;
+	font-size: 1.1rem;
+	font-weight: 400;
+	color: #2a3033;
+}
+
+.recruitment .find-fos h3 {
+	font-size: 1.1rem;
+	margin: 0 2.5% .2rem;
+	font-weight: 400;
+	color: #2a3033;
+	text-transform: none;
+	letter-spacing: 0;
+	line-height: 1em;
+	padding-top: 1rem;
+}
+
+.find-fos form {
+	margin: .5rem 2.5% 1rem;
+}
+
+.find-fos select {
+	width: 70%;
+	font-size: .8rem;
+	height: 2rem;
+}
+
+.find-fos input {
+	text-transform: uppercase;
+	background: rgba(0, 0, 0, .65);
+	color: #fff;
+	font-weight: 700;
+	border: none;
+	box-shadow: none;
+	width: 28%;
+	box-sizing: border-box;
+	margin: 0;
+	text-align: center;
+	padding: .5rem 0;
+	border-radius: 0;
+	transition: background .3s ease;
+}
+
+.find-fos-alpha-wrapper .az:after {
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+	margin-bottom: 2rem;
+}
+
+.az li {
+	margin: 0 2px 2px 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-align: center;
+	border: 1px solid #bdbdbd;
+	float: left;
+}
+
+main .find-fos-alpha-wrapper .az li a {
+	color: #981e32;
+	display: block;
+	transition: all .5s ease;
+	border-bottom: none;
+	box-shadow: none;
+	font-size: .8rem;
+	padding: 8px;
+	min-width: 30px;
+}
+
+main .find-fos-alpha-wrapper .az li a:hover,
+main .find-fos-alpha-wrapper .az li a:focus {
+	background: #981e32;
+	color: #fff;
+}
+
+@media screen and (max-width: 791px) {
+
+	.find-fos select {
+		width: 100%;
+	}
+
+	.find-fos input {
+		width: 100%;
+		margin: .5rem 0 0;
+	}
+}

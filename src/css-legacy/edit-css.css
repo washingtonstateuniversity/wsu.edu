@@ -25,10 +25,6 @@
 	background: rgba(0, 0, 0, .025);
 }
 
-main .recruitment .button-row a {
-	background: rgba(0, 0, 0, .65);
-}
-
 .financialhead .recruit-bottom {
 	color: rgba(0, 0, 0, .6);
 }
@@ -423,10 +419,6 @@ p.button-row.graduate-apply {
 	margin-top: 3rem;
 }
 
-.recruitment {
-	padding-bottom: 4rem;
-}
-
 @media screen and (max-width: 791px) {
 
 	.features-container .impact-head .home-headline.headline-has-background > div {
@@ -577,11 +569,6 @@ p.button-row.graduate-apply {
 	}
 }
 
-/* ------ Lowercase FOS dropdown ------ */
-.recruitment li.fos-label {
-	text-transform: lowercase;
-}
-
 /* ----- Manual News add ----- */
 .news .one .wsuwp-content-syndicate-wrapper.manual-csw {
 	font-size: 1rem;
@@ -617,11 +604,6 @@ p.button-row.graduate-apply {
 /* ------ Border on mobile menu header ------ */
 #binder.fluid #spine header {
 	border-bottom: 1px solid #dbdbdb;
-}
-
-/* ----- FOS dropdown covered by lower div fix ----- */
-.find-fos {
-	z-index: 3;
 }
 
 /* ---- Fix IE8 image height for campaign ---- */
