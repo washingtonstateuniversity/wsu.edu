@@ -32,9 +32,25 @@
 }
 
 .find-fos select {
-	width: 100%;
+	width: 70%;
 	font-size: .8rem;
 	height: 2rem;
+}
+
+.find-fos input {
+	text-transform: uppercase;
+	background: rgba(0, 0, 0, .65);
+	color: #fff;
+	font-weight: 700;
+	border: none;
+	box-shadow: none;
+	width: 28%;
+	box-sizing: border-box;
+	margin: 0;
+	text-align: center;
+	padding: .5rem 0;
+	border-radius: 0;
+	transition: background .3s ease;
 }
 
 .find-fos-alpha-wrapper .az:after {
@@ -70,4 +86,16 @@ main .find-fos-alpha-wrapper .az li a:hover,
 main .find-fos-alpha-wrapper .az li a:focus {
 	background: #981e32;
 	color: #fff;
+}
+
+@media screen and (max-width: 791px) {
+
+	.find-fos select {
+		width: 100%;
+	}
+
+	.find-fos input {
+		width: 100%;
+		margin: .5rem 0 0;
+	}
 }
