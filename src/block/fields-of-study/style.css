@@ -1,19 +1,9 @@
-.find-fos-wrapper {
-	position: relative;
-	height: 50px;
-}
-
 .find-fos-alpha-wrapper {
-	margin-top: 4rem;
+	margin-top: 2rem;
 }
 
 .find-fos {
-	position: absolute;
 	background: #dbdbdb;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 3;
 }
 
 .find-fos h4,
@@ -28,12 +18,23 @@
 
 .recruitment .find-fos h3 {
 	font-size: 1.1rem;
-	margin: .2rem 2.5%;
+	margin: 0 2.5% .2rem;
 	font-weight: 400;
 	color: #2a3033;
 	text-transform: none;
 	letter-spacing: 0;
 	line-height: 1em;
+	padding-top: 1rem;
+}
+
+.find-fos form {
+	margin: .5rem 2.5% 1rem;
+}
+
+.find-fos select {
+	width: 100%;
+	font-size: .8rem;
+	height: 2rem;
 }
 
 .find-fos-alpha-wrapper .az:after {
