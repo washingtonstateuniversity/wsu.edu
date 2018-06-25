@@ -32,7 +32,7 @@ main,
 /* Typography */
 p {
 	color: #d5d5d5;
-	font-family: proxima-nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-size: 1.1em;
 	font-weight: 300;
 	line-height: 1.65em;

@@ -63,7 +63,7 @@
 .header-search-input-wrapper input[type="text"] {
 	font-size: 1.5rem;
 	font-weight: 300;
-	font-family: Proxima-Nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	width: 100%;
 }
 

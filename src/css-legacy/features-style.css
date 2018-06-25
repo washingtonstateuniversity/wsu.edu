@@ -162,7 +162,7 @@ section.home-text .column {
 	border-left: 2.5rem solid #981e32;
 	font-size: 5rem;
 	text-transform: uppercase;
-	font-family: proxima-nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-weight: 800;
 	padding: 0 0 0 1rem;
 	top: 25%;
@@ -173,7 +173,7 @@ section.home-text .column {
 }
 
 .categorized-feature-impact .page-subtitle {
-	font-family: proxima-nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	margin-top: 2rem;
 	padding-left: 3.7rem;
 	width: 40%;
@@ -216,7 +216,7 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: proxima-nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -281,7 +281,7 @@ h6 {
 }
 
 p {
-	font-family: proxima-nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-weight: 400;
 	font-size: 1.2em;
 	line-height: 1.5em;
@@ -304,7 +304,7 @@ strong {
 }
 
 blockquote {
-	font-family: proxima-nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 /*---------------------------- links ----------------------------*/
