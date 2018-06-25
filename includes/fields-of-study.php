@@ -14,23 +14,23 @@ class WSU_Home_Fields_Of_Study {
 				<form title="Select a field of study by academic area">
 					<label><span class="screen-reader-shortcut">Select an Academic Area</span>
 					<select>
-						<option value="7762">Agricultural Sciences</option>>
-						<option value="7774">Art, Architecture, and Design</option>>
-						<option value="7763">Biological and Environmental Sciences</option>>
-						<option value="41745">Business</option>>
-						<option value="41685">Business Programs Accredited by AACSB</option>>
-						<option value="1854">Communication</option>>
-						<option value="41746">Economics</option>>
-						<option value="32421">Education</option>>
-						<option value="7786">Engineering and Computer Science</option>>
-						<option value="7807">Foreign Languages and Cultures</option>>
-						<option value="7775">Health Sciences</option>>
-						<option value="1862">History, Literature, and Philosophy</option>>
-						<option value="1861">Music</option>>
-						<option value="7802">Physical and Mathematical Sciences</option>>
-						<option value="7839">Pre-Professional Studies</option>>
-						<option value="1876">Social Sciences</option>>
-						<option value="32423">Sport and Fitness</option>>
+						<option value="7762">Agricultural Sciences</option>
+						<option value="7774">Art, Architecture, and Design</option>
+						<option value="7763">Biological and Environmental Sciences</option>
+						<option value="41745">Business</option>
+						<option value="41685">Business Programs Accredited by AACSB</option>
+						<option value="1854">Communication</option>
+						<option value="41746">Economics</option>
+						<option value="32421">Education</option>
+						<option value="7786">Engineering and Computer Science</option>
+						<option value="7807">Foreign Languages and Cultures</option>
+						<option value="7775">Health Sciences</option>
+						<option value="1862">History, Literature, and Philosophy</option>
+						<option value="1861">Music</option>
+						<option value="7802">Physical and Mathematical Sciences</option>
+						<option value="7839">Pre-Professional Studies</option>
+						<option value="1876">Social Sciences</option>
+						<option value="32423">Sport and Fitness</option>
 					</select>
 					</label>
 					<input id="fos--select" value="View field of study" type="button" />
