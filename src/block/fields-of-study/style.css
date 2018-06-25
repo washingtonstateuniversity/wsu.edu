@@ -53,6 +53,11 @@
 	transition: background .3s ease;
 }
 
+.find-fos input:focus,
+.find-fos select:focus {
+	outline: auto 5px -webkit-focus-ring-color;
+}
+
 .find-fos-alpha-wrapper .az:after {
 	content: ".";
 	visibility: hidden;
