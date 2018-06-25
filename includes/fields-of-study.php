@@ -10,32 +10,37 @@ class WSU_Home_Fields_Of_Study {
 		?>
 		<div class="find-fos-wrapper">
 			<div class="find-fos">
-					<h4>Find my field of study</h4>
-					<ul class="fos">
-						<li class="fos-label">by Academic Area</li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7762">Agricultural Sciences</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7774">Art, Architecture, and Design</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7763">Biological and Environmental Sciences</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=41745">Business</a></li>
-						<li class="fos-item fos-item-child"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=41685">Business Programs Accredited by AACSB</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=1854">Communication</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=41746">Economics</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=32421">Education</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7786">Engineering and Computer Science</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7807">Foreign Languages and Cultures</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7775">Health Sciences</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=1862">History, Literature, and Philosophy</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=1861">Music</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7802">Physical and Mathematical Sciences</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7839">Pre-Professional Studies</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=1876">Social Sciences</a></li>
-						<li class="fos-item"><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=32423">Sport and Fitness</a></li>
-					</ul>
+				<h3>Find my field of study</h3>
+				<form title="Select a field of study by academic area">
+					<label><span class="screen-reader-shortcut">Select an Academic Area</span>
+					<select>
+						<option value="7762">Agricultural Sciences</option>
+						<option value="7774">Art, Architecture, and Design</option>
+						<option value="7763">Biological and Environmental Sciences</option>
+						<option value="41745">Business</option>
+						<option value="41685">Business Programs Accredited by AACSB</option>
+						<option value="1854">Communication</option>
+						<option value="41746">Economics</option>
+						<option value="32421">Education</option>
+						<option value="7786">Engineering and Computer Science</option>
+						<option value="7807">Foreign Languages and Cultures</option>
+						<option value="7775">Health Sciences</option>
+						<option value="1862">History, Literature, and Philosophy</option>
+						<option value="1861">Music</option>
+						<option value="7802">Physical and Mathematical Sciences</option>
+						<option value="7839">Pre-Professional Studies</option>
+						<option value="1876">Social Sciences</option>
+						<option value="32423">Sport and Fitness</option>
+					</select>
+					</label>
+					<input id="fos--select" value="View field of study" type="button" />
+				</form>
 			</div>
 		</div>
+
 		<div class="find-fos-alpha-wrapper">
 			<div class="find-fos-alpha">
-				<h3>Browse Alphabetically</h3>
+				<h4>Browse Alphabetically</h4>
 				<ul class="az">
 					<li><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7509">A</a></li>
 					<li><a href="http://admission.wsu.edu/academics/fos/Public/area.castle?id=7510">B</a></li>

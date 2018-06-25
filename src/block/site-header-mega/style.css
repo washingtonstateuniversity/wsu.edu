@@ -1,0 +1,265 @@
+.site-header-mega *,
+.site-header-mega *:before,
+.site-header-mega *:after {
+	box-sizing: border-box;
+}
+
+#jacket #binder header.site-header-mega {
+	display: flex;
+	margin: 0 auto;
+	max-width: 1386px;
+}
+
+/* --- WSU logo/signature --- */
+.site-header-mega .wsu-signature {
+	border: 1px solid #dbdbdb;
+	border-top: none;
+	border-bottom: none;
+	display: flex;
+	padding: 0 2rem;
+	flex: 0 25%;
+	min-width: 270px;
+}
+
+.site-header-mega .wsu-signature img {
+	align-self: flex-start;
+	padding-top: 2rem;
+	width: 100%;
+}
+
+/* --- Navigation --- */
+.site-header-mega .main-navigation {
+	position: relative;
+	display: flex;
+	flex: 1;
+	padding-left: .75rem;
+}
+
+.site-header-mega ul {
+	padding: 0;
+}
+
+.site-header-mega .main-navigation > ul > li {
+	padding: .5rem;
+	z-index: 1;
+}
+
+.site-header-mega .nav-section button,
+.site-header-mega .nav-search button {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: .75rem 0;
+	font-family: Montserrat;
+	font-size: .8rem;
+	font-weight: 700;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+/* - dropdown nav - */
+.site-header-mega .nav-dropdown {
+	display: flex;
+	flex: 0 calc(100% / (6 / 5));
+	margin-top: 4.75rem;
+	padding-bottom: .5rem;
+	position: relative;
+	width: 100%;
+}
+
+.site-header-mega .nav-dropdown:before {
+	content: "";
+	background: #363636;
+	position: absolute;
+	top: 3.95rem;
+	bottom: 0;
+	left: -45000px;
+	width: 90000px;
+}
+
+.site-header-mega .nav--expanded .nav-dropdown:before {
+	border-bottom: 5px solid #981e32;
+}
+
+.site-header-mega .nav-dropdown li {
+	flex: 1 0;
+}
+
+.site-header-mega .nav-dropdown .sub-navigation {
+	margin-top: 2.5rem;
+}
+
+.site-header-mega .nav-dropdown .sub-navigation a {
+	color: rgba(255, 255, 255, .85);
+	display: block;
+	font-size: .9em;
+	line-height: 1.2;
+	padding: .2rem 0;
+	transition: padding .3s ease;
+}
+
+.site-header-mega .nav-dropdown .sub-navigation a:hover,
+.site-header-mega .nav-dropdown .sub-navigation a:focus {
+	color: #fff;
+	padding-left: .5rem;
+	width: calc(100% + .5rem);
+}
+
+.site-header-mega .nav-dropdown > li:hover,
+.site-header-mega .nav-dropdown > .nav-section--has-focus {
+	font-weight: 700;
+}
+
+.site-header-mega .nav-dropdown > li:hover button:after,
+.site-header-mega .nav-dropdown > li button:focus:after {
+	content: " \25B8";
+}
+
+.site-header-mega .nav-dropdown > li:hover a,
+.site-header-mega .nav-dropdown .nav-section--has-focus a {
+	color: #fff;
+}
+
+.site-header-mega .nav-dropdown > li:hover button,
+.site-header-mega .nav-dropdown > li button:focus {
+	color: #981e32;
+}
+
+.site-header-mega .nav-close {
+	display: none;
+}
+
+.site-header-mega .nav--expanded .nav-close {
+	display: block;
+	position: absolute;
+	bottom: 1rem;
+	right: 0;
+}
+
+/* close button */
+.nav-close button,
+.close-header-search button {
+	text-indent: -99999px;
+	position: relative;
+	height: 2rem;
+	width: 2rem;
+	background: none;
+	border: none;
+	color: #fff;
+	border-radius: 0;
+}
+
+.close-header-search button {
+	color: #363636;
+}
+
+.nav-close button:after,
+.close-header-search button:after {
+	content: "X";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	font-size: 1.5rem;
+	text-align: center;
+	text-indent: 0;
+}
+
+.nav-close button:hover,
+.close-header-search button:hover {
+	border: 1px solid;
+}
+
+/* - search give nav - */
+.site-header-mega .nav-search-give {
+	flex: 0 calc(100% / 6);
+}
+
+.site-header-mega .nav-search-give li {
+	border: 1px solid #dbdbdb;
+	border-bottom: none;
+	height: 4.35rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-search button:after {
+	content: "$";
+	font-family: Spine-Icons;
+	margin: 0 -.25rem 0 .5rem;
+	position: relative;
+	top: .125rem;
+}
+
+.nav-search button {
+	color: #981e32;
+}
+
+.nav-search button:hover {
+	color: #ca1237;
+}
+
+/*---- END HEADER SEARCH --*/
+
+@media screen and (max-width: 1240px) {
+
+	/* move give and search above dropdown navigation */
+	.site-header-mega .main-navigation {
+		flex-direction: column;
+		padding: 0 .75rem;
+	}
+
+	.site-header-mega .nav-search-give {
+		padding-top: 1rem;
+		position: absolute;
+		right: 1.5rem;
+	}
+
+	.site-header-mega .nav-search-give li {
+		border: none;
+		display: inline;
+		margin-left: 1rem;
+		padding-left: 1rem;
+	}
+
+	/* slightly reduce size of nav buttons */
+	.site-header-mega button {
+		font-size: .75em;
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	/* mobile nav displays */
+	#jacket #binder header.site-header-mega {
+		display: none;
+	}
+}
+
+.wsu-logo {
+	padding: 2rem 2rem 1.3rem;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.wsu-logo img {
+	width: 100%;
+}
+
+.wsu-logo a {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+}
+
+@media screen and (max-width: 791px) {
+
+	.wsu-logo {
+		padding: 2rem 1rem 1.3rem;
+	}
+}

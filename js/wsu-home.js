@@ -1,73 +1,224 @@
-/* global Backbone, jQuery, _ */
-var wsuFOS = wsuFOS || {};
+if ( window.NodeList && ! NodeList.prototype.forEach ) {
+    NodeList.prototype.forEach = function ( callback, thisArg ) {
+        thisArg = thisArg || window;
+        for ( var i = 0; i < this.length; i++ ) {
+            callback.call( thisArg, this[ i ], i, this );
+        }
+    };
+}
 
-( function( window, Backbone, $, _, wsuFOS ) {
-	"use strict";
 
-	wsuFOS.appView = Backbone.View.extend( {
-		el: ".find-fos-wrapper",
+{
+const main_navigation = document.querySelector( ".main-navigation" );
+const navigation = main_navigation.querySelector( ".nav-dropdown" );
+const navigation_buttons = navigation.querySelectorAll( "button" );
+const navigation_sections = navigation.querySelectorAll( ".main-navigation .nav-dropdown .nav-section" );
+const search_button = main_navigation.querySelector( ".nav-search button" );
+const search_wrapper = document.querySelector( ".header-search-wrapper" );
+const close_search_button = search_wrapper.querySelector( ".close-header-search button" );
+const close_nav_button = main_navigation.querySelector( ".nav-close" );
 
-		// Setup the events used in the overall application view.
-		events: {
-			"click .fos-label": "toggleAcademic"
-		},
+// Keys used for navigation.
+const watch_keys  = [ 27, 37, 38, 39, 40 ];
+const escape_key  = 27;
+const left_arrow  = 37;
+const up_arrow    = 38;
+const right_arrow = 39;
+const down_arrow  = 40;
 
-		toggleAcademic: function( evt ) {
-			var $container = $( evt.target ).parent();
+navigation_buttons.forEach( function( button ) {
+	button.addEventListener( "focus", function( event ) {
+		navigation_sections.forEach( function( section ) {
+			section.classList.remove( "nav-section--has-focus" );
+		} );
+		event.srcElement.parentElement.classList.add( "nav-section--has-focus" );
+	} );
+} );
 
-			if ( $( $container ).hasClass( "fos-open" ) ) {
-				$( $container ).removeClass( "fos-open" );
-			} else {
-				$( $container ).addClass( "fos-open" );
+navigation.addEventListener( "keydown", function ( event ) {
+
+	if ( -1 === watch_keys.indexOf( event.keyCode ) ) {
+		return;
+	}
+
+	// Stop default browser behavior for these specific keys (e.g. scrolling up/down)
+	event.preventDefault();
+
+	// The escape key close	s the menu when used anywhere in the navigation.
+	if ( event.keyCode === escape_key ) {
+		navigation_buttons.forEach( function ( el ) {
+			el.setAttribute( "aria-expanded", false );
+			el.nextElementSibling.hidden = true;
+		} );
+
+		main_navigation.classList.remove( "nav--expanded" );
+
+		// If the focus was on a child element of the nav section, reapply
+		// focus to the parent section's button.
+		event.path.forEach( function( el ) {
+			if ( el.localName === "li" && el.classList.contains( "nav-section" ) ) {
+				el.querySelector( "button" ).focus();
 			}
+		} );
+	}
+
+	// The down arrow navigates within a sub-navigation list and wraps to
+	// the first item when pressed on the last item.
+	if ( event.keyCode === down_arrow && event.srcElement.localName === "a" ) {
+		if ( event.srcElement.parentElement.nextElementSibling !== null ) {
+			event.srcElement.parentElement.nextElementSibling.querySelector( "a" ).focus();
+		} else {
+			event.srcElement.parentElement.parentElement.querySelector( "a" ).focus();
+		}
+	}
+
+	// The up arrow navigates within a sub-navigation list and wraps to
+	// the last item when pressed on the first item.
+	if ( event.keyCode === up_arrow && event.srcElement.localName === "a" ) {
+		if ( event.srcElement.parentElement.previousElementSibling !== null ) {
+			event.srcElement.parentElement.previousElementSibling.querySelector( "a" ).focus();
+		} else {
+			let items = event.srcElement.parentElement.parentElement.querySelectorAll( "a" );
+			items[ items.length -1 ].focus();
+		}
+	}
+
+	// The right arrow navigates from a sub-navigation menu item to the
+	// next nav-section button. No action is taken if the arrow is used
+	// on the last nav-section.
+	if ( event.keyCode === right_arrow && event.srcElement.localName === "a" ) {
+		event.path.forEach( function( el ) {
+			if ( el.localName === "li" && el.classList.contains( "nav-section" ) && el.nextElementSibling !== null ) {
+				el.nextElementSibling.querySelector( "button" ).focus();
+			}
+		} );
+	}
+
+	// The right arrow navigates between menu buttons at the top level of the
+	// navigation. Wraps back to the first button when pressed on the last button.
+	if ( event.keyCode === right_arrow && event.srcElement.localName === "button" ) {
+		if ( event.srcElement.parentElement.nextElementSibling === null ) {
+			event.srcElement.parentElement.parentElement.querySelector( "button" ).focus();
+		} else {
+			event.srcElement.parentElement.nextElementSibling.querySelector( "button" ).focus();
+		}
+	}
+
+	// The left arrow navigates from a sub-navigation menu item to the
+	// previous nav-section button. No action is taken if the arrow is
+	// used on the first nav-section.
+	if ( event.keyCode === left_arrow && event.srcElement.localName === "a" ) {
+		event.path.forEach( function( el ) {
+			if ( el.localName === "li" && el.classList.contains( "nav-section" ) && el.previousElementSibling !== null ) {
+				el.previousElementSibling.querySelector( "button" ).focus();
+			}
+		} );
+	}
+
+	// The left arrow navigates between menu buttons at the top level of the
+	// navigation. Wraps to the last button when pressed on the first button.
+	if ( event.keyCode === left_arrow && event.srcElement.localName === "button" ) {
+		if ( event.srcElement.parentElement.previousElementSibling === null ) {
+			let items = event.srcElement.parentElement.parentElement.querySelectorAll( "button" );
+			items[ items.length - 1 ].focus();
+		} else {
+			event.srcElement.parentElement.previousElementSibling.querySelector( "button" ).focus();
+		}
+	}
+} );
+
+navigation_buttons.forEach( function ( el ) {
+	el.addEventListener( "click", function ( event ) {
+		let is_aria_expanded = this.getAttribute( "aria-expanded" ) === 'true' || false;
+
+		// Each button in the main navigation has a mirrored state, so we adjust
+		// aria-expanded and hidden on all sub-navigation on every button interaction.
+		navigation_buttons.forEach( function ( el ) {
+			el.setAttribute( "aria-expanded", ! is_aria_expanded );
+
+			let el_menu = el.nextElementSibling;
+			el_menu.hidden = !el_menu.hidden;
+		} );
+
+		if ( is_aria_expanded ) {
+			main_navigation.classList.remove( "nav--expanded" );
+		} else {
+			main_navigation.classList.add( "nav--expanded" );
+		}
+
+		// Focus the first menu item if the keyboard was used to open the menu.
+		if ( event.screenX === 0 && event.screenY === 0 ) {
+			this.nextElementSibling.querySelector( "a" ).focus();
 		}
 	} );
-} )( window, Backbone, jQuery, _, wsuFOS );
 
-/* global Backbone, jQuery, _ */
-var wsuNavigation = wsuNavigation || {};
+	el.addEventListener( "keydown", function( event ) {
+		if ( event.keyCode === down_arrow && this.getAttribute( "aria-expanded" ) === "false" ) {
+			// Each button in the main navigation has a mirrored state, so we adjust
+			// aria-expanded and hidden on all sub-navigation on every button interaction.
+			navigation_buttons.forEach( function ( el ) {
+				el.setAttribute( "aria-expanded", true );
+				el.nextElementSibling.hidden = false;
+			} );
 
-( function( window, Backbone, $, _, wsuNavigation ) {
-	"use strict";
+			main_navigation.classList.add( "nav--expanded" );
 
-	wsuNavigation.appView = Backbone.View.extend( {
-		el: ".wsu-home-navigation",
+			this.nextElementSibling.querySelector( "a" ).focus();
+		} else if ( event.keyCode === down_arrow && this.getAttribute( "aria-expanded" ) === "true" ) {
+			this.nextElementSibling.querySelector( "a" ).focus();
+		}
 
-		// Setup the events used in the overall application view.
-		events: {
-			"click #mega-menu-labels  ul li a": "toggleNav",
-			"click .close-header-drawer": "toggleNav",
-			"click .search-label": "toggleSearch",
-			"click .close-header-search": "toggleSearch"
-		},
+		if ( event.keyCode === up_arrow && this.getAttribute( "aria-expanded" ) === "true" ) {
+			// Each button in the main navigation has a mirrored state, so we adjust
+			// aria-expanded and hidden on all sub-navigation on every button interaction.
+			navigation_buttons.forEach( function ( el ) {
+				el.setAttribute( "aria-expanded", false );
+				el.nextElementSibling.hidden = true;
+			} );
 
-		toggleNav: function( evt ) {
-			evt.preventDefault();
-			var $nav_wrapper = $( ".header-drawer-wrapper" );
-
-			if ( $nav_wrapper.hasClass( "header-drawer-wrapper-open" ) ) {
-				$nav_wrapper.slideUp( 400 );
-				$nav_wrapper.removeClass( "header-drawer-wrapper-open" );
-			} else {
-				$nav_wrapper.slideDown( 400 );
-				$nav_wrapper.addClass( "header-drawer-wrapper-open" );
-			}
-		},
-
-		toggleSearch: function( evt ) {
-			evt.preventDefault();
-
-			var $search_wrapper = $( ".header-search-wrapper" );
-
-			if ( $search_wrapper.hasClass( "header-search-wrapper-open" ) ) {
-				$search_wrapper.removeClass( "header-search-wrapper-open" );
-			} else {
-				$search_wrapper.addClass( "header-search-wrapper-open" );
-				$( ".header-search-input" ).focus();
-			}
+			main_navigation.classList.remove( "nav--expanded" );
 		}
 	} );
-} )( window, Backbone, jQuery, _, wsuNavigation );
+} );
+
+close_nav_button.addEventListener( "click", function() {
+	navigation_buttons.forEach( function ( el ) {
+		el.setAttribute( "aria-expanded", false );
+		el.nextElementSibling.hidden = true;
+	} );
+	main_navigation.classList.remove( "nav--expanded" );
+} );
+
+search_button.addEventListener( "click", function() {
+	if ( search_wrapper.classList.contains( "header-search-wrapper-open" ) ) {
+		search_wrapper.classList.remove( "header-search-wrapper-open" );
+	} else {
+		search_wrapper.classList.add( "header-search-wrapper-open" );
+		document.querySelector( ".header-search-input" ).focus();
+	}
+} );
+
+close_search_button.addEventListener( "click", function() {
+	search_wrapper.classList.remove( "header-search-wrapper-open" );
+
+	// Place focus back on search button if this action was fired with the keyboard.
+	if ( event.screenX === 0 && event.screenY === 0 ) {
+		search_button.focus();
+	}
+} );
+
+}
+
+
+{
+const find_fos = document.querySelector( ".find-fos" );
+const fos_select = find_fos.querySelector( "#fos--select" );
+
+fos_select.addEventListener( "click", function( event ) {
+	let value = parseInt( find_fos.querySelector( "select" ).value, 10 );
+	window.location.href = "https://admission.wsu.edu/academics/fos/Public/area.castle?id=" + value;
+} );
+}
 
 /* global Typekit */
 try {Typekit.load();}catch ( e ) {}
@@ -100,7 +251,7 @@ var wsuFOS = wsuFOS || {};
 					"<span class='home-headline-nav-date'>" + date + "</span></li>";
 		} );
 
-		html += "<li><span class='home-headline-nav-date home-headline-nav-more'><a href='/125/'>...</a></span></li></ul>";
+		html += "</ul>";
 		$features_container.append( html );
 
 		$( ".home-headline-nav" ).on( "click", function( evt ) {
