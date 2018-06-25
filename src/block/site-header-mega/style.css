@@ -22,6 +22,8 @@
 }
 
 .site-header-mega .wsu-signature img {
+	align-self: flex-start;
+	padding-top: 2rem;
 	width: 100%;
 }
 
@@ -183,7 +185,7 @@
 	justify-content: center;
 }
 
-.nav-search:after {
+.nav-search button:after {
 	content: "$";
 	font-family: Spine-Icons;
 	margin: 0 -.25rem 0 .5rem;
@@ -191,9 +193,12 @@
 	top: .125rem;
 }
 
-.nav-search button,
-.nav-search:after {
+.nav-search button {
 	color: #981e32;
+}
+
+.nav-search button:hover {
+	color: #ca1237;
 }
 
 /*---- END HEADER SEARCH --*/

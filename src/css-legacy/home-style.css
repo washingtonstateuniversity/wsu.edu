@@ -331,39 +331,12 @@ span.home-headline-nav-date {
 	text-align: center;
 }
 
-.home-headline-nav li:last-child {
-	background: #981e32;
-	position: relative;
-}
-
-.home-headline-nav li:last-child:hover {
-	padding-left: .5rem;
-}
-
 .features-container .home-headline-nav li:hover {
 	transition: background .3s ease;
 }
 
 .home-headline-nav li:last-child:hover {
 	background: #c60c30;
-}
-
-.home-headline-nav li:last-child a {
-	font-size: 2rem;
-	transform: translateY(-10px);
-	float: left;
-	line-height: 0;
-	width: 100%;
-	display: block;
-}
-
-.home-headline-nav li:last-child a:hover,
-.home-headline-nav li:last-child a:focus {
-	padding: 0;
-	background: none;
-	border-bottom: none;
-	box-shadow: none;
-	color: #fff;
 }
 
 /*---------- Recruitment section ---------*/
