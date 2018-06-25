@@ -113,6 +113,7 @@ span.content-item-event-city {
 .hp-news-wrap {
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 2rem;
 }
 
 .position-1 {
