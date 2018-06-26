@@ -1063,6 +1063,15 @@ figure {
 		margin-left: 0;
 	}
 
+	.error404 #spine,
+	.home #spine {
+		display: block;
+	}
+
+	#jacket {
+		border: none;
+	}
+
 	.features-container h2 {
 		font-size: 7vw;
 	}
@@ -1113,11 +1122,6 @@ figure {
 	.error404 .main-header,
 	.home .main-header .column {
 		display: none;
-	}
-
-	.error404 #spine,
-	.home #spine {
-		display: block;
 	}
 
 	.athletics {
