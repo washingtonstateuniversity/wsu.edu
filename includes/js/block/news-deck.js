@@ -38,7 +38,7 @@ registerBlockType( 'wsu/news-deck', {
 						<div className="deck deck--hp-news">
 							<InnerBlocks.Content />
 						</div>
-						<p className="hp-news-link-wrap"><a className="hp-news-link" href="https://news.wsu.edu">news.wsu.edu</a></p>
+						<p className="hp-news-link-wrap"><a className="hp-news-link" href="https://news.wsu.edu">More news</a></p>
 					</div>
 				</section>
 			</div>

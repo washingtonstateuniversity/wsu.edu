@@ -138,6 +138,10 @@ registerBlockType( 'wsu/feature-card', {
 							key="card-image"
 							icon="format-image"
 							label="Image"
+							labels={ {
+								title: 'Gallery',
+								name: 'images',
+							} }
 							onFocus={ onSetActiveEditable( 'image' ) }
 							onSelectImage={ onSelectImage }
 						/>
