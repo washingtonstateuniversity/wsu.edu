@@ -10,6 +10,10 @@ add_action( 'init', 'WSU\Home\Block\Config\setup_blocks', 10 );
  * @since 0.15.0
  */
 function setup_blocks() {
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
 	wp_register_script(
 		'wsu-blocks',
 		get_stylesheet_directory_uri() . '/includes/js/block/wsu-blocks.build.js',
