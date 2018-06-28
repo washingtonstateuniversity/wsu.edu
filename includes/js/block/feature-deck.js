@@ -4,8 +4,11 @@ const {
 
 const {
 	registerBlockType,
-	InnerBlocks,
 } = wp.blocks;
+
+const {
+	InnerBlocks,
+} = wp.editor;
 
 registerBlockType( 'wsu/feature-deck', {
 	title: 'Feature Deck',

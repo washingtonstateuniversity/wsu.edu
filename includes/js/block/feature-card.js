@@ -4,11 +4,6 @@ const {
 
 const {
 	registerBlockType,
-	PlainText,
-	ImagePlaceholder,
-	BlockControls,
-	InspectorControls,
-	MediaUpload,
 } = wp.blocks;
 
 const {
@@ -17,7 +12,15 @@ const {
 	IconButton,
 	PanelBody,
 } = wp.components;
-				
+
+const {
+	BlockControls,
+	InspectorControls,
+	MediaUpload,
+	MediaPlaceholder,
+	PlainText,
+} = wp.editor;
+
 registerBlockType( 'wsu/feature-card', {
 	title: 'Home page feature card',
 
@@ -26,7 +29,7 @@ registerBlockType( 'wsu/feature-card', {
 	category: 'layout',
 
 	icon: 'list-view',
-	
+
 	attributes: {
 		headline: {
 			source: 'text',
@@ -63,7 +66,7 @@ registerBlockType( 'wsu/feature-card', {
 	 * Append additional attributes to the wrapper component in the editor
 	 * when this block is used.
 	 *
-	 * @param {*} attributes 
+	 * @param {*} attributes
 	 */
 	getEditWrapperProps( attributes ) {
 		const { image_url } = attributes;
@@ -131,7 +134,7 @@ registerBlockType( 'wsu/feature-card', {
 						) : (
 							""
 						) }
-						<ImagePlaceholder
+						<MediaPlaceholder
 							key="card-image"
 							icon="format-image"
 							label="Image"

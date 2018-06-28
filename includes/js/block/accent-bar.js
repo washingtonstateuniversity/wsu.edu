@@ -5,13 +5,16 @@ const {
 
 const {
 	registerBlockType,
-	PlainText,
-	InspectorControls,
 } = wp.blocks;
 
 const {
 	PanelBody,
 } = wp.components;
+
+const {
+	InspectorControls,
+	PlainText,
+} = wp.editor;
 
 registerBlockType( 'wsu/accent-bar', {
 	title: 'Accent bar',

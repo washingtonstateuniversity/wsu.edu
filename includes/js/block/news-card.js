@@ -4,12 +4,15 @@ const {
 
 const {
 	registerBlockType,
+} = wp.blocks;
+
+const {
 	RichText,
 	ImagePlaceholder,
 	BlockControls,
 	InspectorControls,
 	MediaUpload,
-} = wp.blocks;
+} = wp.editor;
 
 const {
 	TextControl,
@@ -28,7 +31,7 @@ registerBlockType( 'wsu/news-card', {
 	category: 'layout',
 
 	icon: 'list-view',
-	
+
 	attributes: {
 		content: {
 			type: 'array',
@@ -60,7 +63,7 @@ registerBlockType( 'wsu/news-card', {
 	 * Append additional attributes to the wrapper component in the editor
 	 * when this block is used.
 	 *
-	 * @param {*} attributes 
+	 * @param {*} attributes
 	 */
 	getEditWrapperProps( attributes ) {
 		const { image_url } = attributes;
