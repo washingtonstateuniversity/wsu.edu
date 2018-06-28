@@ -25,10 +25,6 @@
 	background: rgba(0, 0, 0, .025);
 }
 
-main .recruitment .button-row a {
-	background: rgba(0, 0, 0, .65);
-}
-
 .financialhead .recruit-bottom {
 	color: rgba(0, 0, 0, .6);
 }
@@ -79,6 +75,7 @@ span.content-item-event-city {
 	border-left: 1px solid rgba(0, 0, 0, .1);
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 2rem;
 }
 
 .card--news {
@@ -312,7 +309,7 @@ main #fat-footer a:hover {
 
 /* ----- Font fix for Home page ----- */
 .opensansy main {
-	font-family: proxima-nova, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 /* ------ Impact Features ----- */
@@ -330,7 +327,7 @@ main #fat-footer a:hover {
 	font-size: 2.5rem;
 	line-height: .9;
 	text-transform: initial;
-	font-family: proxima-nova;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-weight: 300;
 	padding: 0 0 0 1rem;
 	top: inherit;
@@ -370,10 +367,6 @@ p.recruit-middle.graduate {
 
 p.button-row.graduate-apply {
 	margin-top: 3rem;
-}
-
-.recruitment {
-	padding-bottom: 4rem;
 }
 
 @media screen and (max-width: 791px) {
@@ -526,11 +519,6 @@ p.button-row.graduate-apply {
 	}
 }
 
-/* ------ Lowercase FOS dropdown ------ */
-.recruitment li.fos-label {
-	text-transform: lowercase;
-}
-
 /* ----- Manual News add ----- */
 .news .one .wsuwp-content-syndicate-wrapper.manual-csw {
 	font-size: 1rem;
@@ -566,11 +554,6 @@ p.button-row.graduate-apply {
 /* ------ Border on mobile menu header ------ */
 #binder.fluid #spine header {
 	border-bottom: 1px solid #dbdbdb;
-}
-
-/* ----- FOS dropdown covered by lower div fix ----- */
-.find-fos {
-	z-index: 3;
 }
 
 /* ---- Fix IE8 image height for campaign ---- */

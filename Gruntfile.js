@@ -6,6 +6,7 @@ module.exports = function( grunt ) {
 
 		stylelint: {
 			src: [
+				"src/block/**/*.css",
 				"src/css/*.css",
 				"src/css-legacy/*.css",
 				"src/css-top-ten/*.css",
@@ -17,8 +18,12 @@ module.exports = function( grunt ) {
 		concat: {
 			home_scripts: {
 				src: [
+					"src/polyfill/es5.js",
 					"src/js/wsu-home-fos-view.js",
-					"src/js/wsu-home-navigation-view.js",
+					"src/block/site-header-mega/index.js",
+					"src/block/navigation/index.js",
+					"src/block/search/index.js",
+					"src/block/fields-of-study/index.js",
 					"src/js/wsu-home-primary.js",
 					"src/js/wsu-alert-display.js"
 				],
@@ -26,7 +31,10 @@ module.exports = function( grunt ) {
 			},
 			feature_scripts: {
 				src: [
-					"src/js/wsu-home-navigation-view.js",
+					"src/polyfill/es5.js",
+					"src/block/site-header-mega/index.js",
+					"src/block/navigation/index.js",
+					"src/block/search/index.js",
 					"src/js/wsu-home-primary.js",
 					"src/js/wsu-feature-primary.js"
 				],
@@ -34,7 +42,8 @@ module.exports = function( grunt ) {
 			},
 			main_styles: {
 				src: [
-					"src/css/*.css"
+					"src/css/*.css",
+					"src/block/**/style.css"
 				],
 				dest: "temp-style.css"
 			},
@@ -256,7 +265,7 @@ module.exports = function( grunt ) {
 				options: {
 					open: true,
 					port: 8000,
-					hostname: "localhost"
+					hostname: "*"
 				}
 			}
 		}
@@ -271,7 +280,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
 	grunt.loadNpmTasks( "grunt-jscs" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
-	grunt.loadNpmTasks( "grunt-contrib-uglify" );
+	grunt.loadNpmTasks( "grunt-contrib-uglify-es" );
 	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).

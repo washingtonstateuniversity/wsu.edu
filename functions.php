@@ -1,9 +1,9 @@
 <?php
 
+include_once( __DIR__ . '/includes/mega-menu.php' );
 include_once( __DIR__ . '/includes/wsu-home-overlay.php' );
 include_once( __DIR__ . '/includes/fields-of-study.php' );
 include_once( __DIR__ . '/includes/academic-calendar.php' );
-include_once( __DIR__ . '/includes/wsuwp-map-embed.php' );
 include_once( __DIR__ . '/includes/feature-youtube-embed.php' );
 include_once( __DIR__ . '/includes/top-ten-card-shortcode.php' );
 include_once __DIR__ . '/includes/block-editor.php';
@@ -13,7 +13,7 @@ class WSU_Home_Theme {
 	/**
 	 * @var string The version of the WSU Home theme for cache breaking.
 	 */
-	public $version = '0.14.16';
+	public $version = '0.15.2';
 
 	/**
 	 * Configure our default hooks.
@@ -30,7 +30,6 @@ class WSU_Home_Theme {
 		add_filter( 'make_the_builder_content', array( $this, 'replace_p_with_figure' ), 99 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_source_element' ), 10 );
 		add_filter( 'spine_get_title', array( $this, 'set_home_title' ), 10, 4 );
-		add_filter( 'wsu_analytics_events_override', '__return_true' );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'add_settings_fields' ) );
 		add_filter( 'wsu_spine_navigation_id', array( $this, 'filter_navigation_id' ) );
@@ -56,10 +55,7 @@ class WSU_Home_Theme {
 		}
 
 		$domains = array(
-			'beta.maps.wsu.edu',
-			'news.wsu.edu',
-			'maps.googleapis.com',
-			'maps.gstatic.com',
+			's3.wp.wsu.edu',
 		);
 
 		$urls = array_merge_recursive( $urls, $domains );
@@ -133,13 +129,6 @@ class WSU_Home_Theme {
 
 		if ( $this->is_wsu_site( 'wsu-home' ) ) {
 			wp_enqueue_script( 'wsu-home', get_stylesheet_directory_uri() . '/js/wsu-home.min.js', array( 'backbone', 'wsu-home-typekit' ), $this->script_version(), true );
-
-			$post = get_post();
-			if ( isset( $post->post_content ) && has_shortcode( $post->post_content, 'wsu_home_map' ) ) {
-				wp_enqueue_style( 'jquery-ui-smoothness', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.min.css', array(), false );
-				wp_enqueue_style( 'wsu-home-map-style', 'https://beta.maps.wsu.edu/content/dis/css/map.view.styles.css', array(), false );
-				wp_enqueue_script( 'wsu-home-map', 'https://beta.maps.wsu.edu/embed/wsu-home', array( 'jquery' ), false, true );
-			}
 		}
 
 		if ( $this->is_wsu_site( 'wsu-features' ) || $this->is_wsu_site( 'wsu-impact' ) ) {
@@ -201,7 +190,6 @@ class WSU_Home_Theme {
 	 */
 	public function register_menus() {
 		register_nav_menu( 'mega-menu', 'Mega Menu' );
-		register_nav_menu( 'signature-menu', 'Signature Menu' );
 		register_nav_menu( 'fat-footer', 'Fat Footer' );
 		register_nav_menu( 'quick-links', 'Quick Links' );
 	}
