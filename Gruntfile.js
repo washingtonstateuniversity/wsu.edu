@@ -10,8 +10,6 @@ module.exports = function( grunt ) {
 				"src/css/*.css",
 				"src/css-legacy/*.css",
 				"src/css-top-ten/*.css",
-				"src/css/components/*.css",
-				"src/css/editor-blocks/*.css",
 			],
 		},
 
@@ -57,12 +55,13 @@ module.exports = function( grunt ) {
 			},
 			component_display_styles: {
 				src: [
-					"src/css/components/*.home.css",
+					"src/block/**/style.home.css",
 				],
 				dest: "src/css/components.home.tmp.css",
 			},
 			block_editor_styles: {
 				src: [
+					"src/block/**/editor.css",
 					"src/css/editor-blocks/*.css",
 				],
 				dest: "src/css/editor-blocks.tmp.css",
