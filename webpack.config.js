@@ -28,16 +28,11 @@
  */
 
 var path = require('path');
+var glob = require('glob');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: [
-	'./includes/js/block/news-deck.js',
-	'./includes/js/block/news-card.js',
-	'./includes/js/block/feature-deck.js',
-	'./includes/js/block/feature-card.js',
-	'./includes/js/block/accent-bar.js',
-  ],
+  entry: glob.sync( './src/block/**/editor.js' ),
   output: {
     path: __dirname + '/includes/js/block',
     filename: 'wsu-blocks.build.js'
