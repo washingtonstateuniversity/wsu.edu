@@ -34,8 +34,8 @@ var webpack = require('webpack');
 module.exports = {
   entry: glob.sync( './src/block/**/editor.js' ),
   output: {
-    path: __dirname + '/includes/js/block',
-    filename: 'wsu-blocks.build.js'
+    path: __dirname + '/includes/js',
+    filename: 'wsu-blocks.min.js'
   },
   module: {
 	rules: [
