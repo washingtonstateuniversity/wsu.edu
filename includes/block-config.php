@@ -16,7 +16,7 @@ function setup_blocks() {
 
 	wp_register_script(
 		'wsu-blocks',
-		get_stylesheet_directory_uri() . '/includes/js/block/wsu-blocks.build.js',
+		get_stylesheet_directory_uri() . '/js/wsu-blocks.min.js',
 		array(
 			'wp-blocks',
 			'wp-element',
