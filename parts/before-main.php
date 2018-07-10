@@ -62,7 +62,7 @@ if ( is_front_page() || is_404() || wsu_home_is_site( 'wsu-features' ) || wsu_ho
 
 		<ul class="nav-search-give">
 			<li class="nav-give">
-				<a href="https://foundation.wsu">Give to WSU</a>
+				<a href="https://foundation.wsu.edu/give/">Give to WSU</a>
 			</li>
 			<li class="nav-search">
 				<button>Search</button>
