@@ -1,0 +1,37 @@
+.accent-bar {
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	border-top: solid 1px #7c1929;
+	border-bottom: solid 1px #7c1929;
+	background-color: #981e32;
+	height: auto;
+	padding: 1em;
+	text-align: center;
+}
+
+.accent-bar .column {
+	padding: 0;
+}
+
+.accent-bar .column div {
+	margin-top: 0;
+	max-width: 100%;
+	color: #fff;
+}
+
+.accent-bar .column span,
+.accent-bar .column span:focus,
+.accent-bar .column span:hover {
+	color: #fff;
+	background-color: #981e32;
+	box-shadow: none;
+	padding: .5rem 2rem;
+	border: 1px solid #fff;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.accent-bar .column span:focus,
+.accent-bar .column span:hover {
+	color: #981e32;
+	background-color: #fff;
+}

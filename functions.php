@@ -6,6 +6,8 @@ include_once( __DIR__ . '/includes/fields-of-study.php' );
 include_once( __DIR__ . '/includes/academic-calendar.php' );
 include_once( __DIR__ . '/includes/feature-youtube-embed.php' );
 include_once( __DIR__ . '/includes/top-ten-card-shortcode.php' );
+include_once __DIR__ . '/includes/block-editor.php';
+include_once __DIR__ . '/includes/block-config.php';
 
 class WSU_Home_Theme {
 	/**
@@ -142,6 +144,7 @@ class WSU_Home_Theme {
 		if ( $this->is_wsu_site( 'wsu-home' ) ) {
 			wp_enqueue_style( 'wsu-home-custom-style', get_stylesheet_directory_uri() . '/css/edit-css.css', array(), $this->script_version() );
 			wp_enqueue_style( 'wsu-home-style', get_stylesheet_directory_uri() . '/css/home-style.css', array(), $this->script_version() );
+			wp_enqueue_style( 'wsu-components-home', get_stylesheet_directory_uri() . '/css/components.home.css', array(), $this->script_version() );
 		}
 
 		if ( $this->is_wsu_site( 'wsu-internal' ) && ! is_404() ) {

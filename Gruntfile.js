@@ -52,7 +52,20 @@ module.exports = function( grunt ) {
 					"src/css-top-ten/top-ten.css"
 				],
 				dest: "src/css-top-ten/temp-combined-top-ten.css"
-			}
+			},
+			component_display_styles: {
+				src: [
+					"src/block/**/style.home.css",
+				],
+				dest: "src/css/components.home.tmp.css",
+			},
+			block_editor_styles: {
+				src: [
+					"src/block/**/editor.css",
+					"src/css/editor-blocks/*.css",
+				],
+				dest: "src/css/editor-blocks.tmp.css",
+			},
 		},
 
 		postcss: {
@@ -133,14 +146,42 @@ module.exports = function( grunt ) {
 				},
 				src: "temp-style.css",
 				dest: "style.css"
-			}
+			},
+			component_display_styles: {
+				options: {
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 10-11" ]
+						} )
+					]
+				},
+				src: "src/css/components.home.tmp.css",
+				dest: "css/components.home.css",
+			},
+			block_editor_styles: {
+				options: {
+					map: true,
+					diff: false,
+					processors: [
+						require( "autoprefixer" )( {
+							browsers: [ "> 1%", "ie 10-11" ]
+						} )
+					]
+				},
+				src: "src/css/editor-blocks.tmp.css",
+				dest: "css/editor-blocks.css",
+			},
 		},
 
 		clean: {
 			options: {
 				force: true
 			},
-			temp: [ "src/css-top-ten/temp*.*", "temp-style.css" ]
+			temp: [
+				"src/css-top-ten/temp*.*",
+				"temp-style.css",
+				"src/css/*.tmp.css",
+			],
 		},
 
 		jscs: {
@@ -149,10 +190,10 @@ module.exports = function( grunt ) {
 				options: {
 					preset: "jquery",
 					requireCamelCaseOrUpperCaseIdentifiers: false, // We rely on name_name too much to change them all.
-					maximumLineLength: 250,
 					disallowTrailingComma: false,
-				}
-			}
+					maximumLineLength: 250,
+				},
+			},
 		},
 
 		jshint: {

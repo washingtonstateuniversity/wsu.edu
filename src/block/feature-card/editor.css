@@ -1,0 +1,105 @@
+.card--feature {
+	min-height: 200px;
+	background-size: cover;
+	background-position: center top;
+	margin-left: -64px;
+	margin-right: -64px;
+}
+
+.is-typing .card--feature,
+.is-selected .card--feature {
+	min-height: 450px; /* 75% of 600px on home page */
+	background-position: center right;
+}
+
+.card--feature .feature-content-wrapper {
+	position: absolute;
+	bottom: 5%;
+	zoom: 50%;
+	width: 450px;
+	margin: 0 0 0 3em;
+	font-family: Proxima-Nova, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+.is-typing .card--feature .feature-content-wrapper,
+.is-selected .card--feature .feature-content-wrapper {
+	zoom: 75%;
+}
+
+.card--feature textarea.home-title,
+.card--feature h2.blocks-rich-text__tinymce.mce-content-body {
+	line-height: .9;
+	padding-bottom: .75rem;
+}
+
+.card--feature textarea.home-title,
+.card--feature .home-subtitle,
+.card--feature h2 {
+	color: #fff;
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	padding: 0 1rem;
+	margin: 0;
+	background: #981e32;
+}
+
+.card--feature textarea.home-title,
+.card--feature h2 {
+	border-left: none;
+	color: #fff;
+	font-size: 2.4rem;
+	text-transform: initial;
+	font-weight: 300;
+	padding-top: 1rem;
+}
+
+.card--feature .home-subtitle {
+	padding-bottom: 1rem;
+	font-weight: 300;
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+
+.card--feature .home-cta {
+	margin-top: 2rem;
+	color: #fff;
+}
+
+.card--feature .home-cta textarea,
+.card--feature .home-cta textarea:hover {
+	color: #fff;
+	box-shadow: none;
+	padding: .5rem 1rem;
+	border: 1px solid #981e32;
+	background-color: #981e32;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.card--feature .home-cta textarea:hover {
+	color: #981e32;
+	border: 1px solid #981e32;
+	background-color: #fff;
+}
+
+@media screen and (max-width: 791px) {
+
+	.card--feature {
+		background-position: center center;
+	}
+
+	.card--feature .feature-content-wrapper {
+		width: 80%;
+	}
+
+	.card--feature textarea.home-title,
+	.card--feature h2 {
+		font-size: 2rem;
+	}
+
+	.card--feature .home-cta {
+		padding: 0 0 0 2rem;
+		margin-left: 0;
+	}
+}
