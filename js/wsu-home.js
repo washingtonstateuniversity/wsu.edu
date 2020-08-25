@@ -248,7 +248,7 @@ var wsuFOS = wsuFOS || {};
 			}
 
 			html += "<li data-id='" + id + "' class='" + active_class + "'><span class='home-headline-nav-headline'><a href='" + url + "'>" + headline + "</a></span>" +
-					"<span class='home-headline-nav-date'>" + date + "</span></li>";
+					"<span class='home-headline-nav-date' tabindex='0'>" + date + "</span></li>";
 		} );
 
 		html += "</ul>";
