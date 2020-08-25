@@ -247,12 +247,21 @@ var wsuFOS = wsuFOS || {};
 				active_class = "";
 			}
 
-			html += "<li data-id='" + id + "' class='" + active_class + "'><span class='home-headline-nav-headline'><a href='" + url + "'>" + headline + "</a></span>" +
-					"<span class='home-headline-nav-date' tabindex='0'>" + date + "</span></li>";
+			html += "<li data-id='" + id + "' class='" + active_class + "' tabindex='0'><span class='home-headline-nav-headline'><a href='" + url + "'>" + headline + "</a></span>" +
+					"<span class='home-headline-nav-date'>" + date + "</span></li>";
 		} );
 
 		html += "</ul>";
 		$features_container.append( html );
+
+		$('.home-headline-nav li').keypress(function (e) {
+			var key = e.which;
+			if(key == 13)  // the enter key code
+			 {
+			   this.trigger( 'click');
+			   return false;  
+			 }
+		}); 
 
 		$( ".home-headline-nav" ).on( "click", function( evt ) {
 			var id = false;
