@@ -258,7 +258,7 @@ var wsuFOS = wsuFOS || {};
 			var key = e.which;
 			if(key == 13)  // the enter key code
 			 {
-			   this.trigger( 'click');
+			   $( this ).trigger( 'click');
 			   return false;  
 			 }
 		}); 
