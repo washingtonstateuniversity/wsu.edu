@@ -22,7 +22,8 @@
 }
 
 .site-header-mega .wsu-signature img {
-	align-self: center;
+	align-self: flex-start;
+	padding-top: 2.625rem;
 	width: 100%;
 }
 

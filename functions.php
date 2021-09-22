@@ -1,17 +1,17 @@
 <?php
 
-include_once( __DIR__ . '/includes/mega-menu.php' );
-include_once( __DIR__ . '/includes/wsu-home-overlay.php' );
-include_once( __DIR__ . '/includes/fields-of-study.php' );
-include_once( __DIR__ . '/includes/academic-calendar.php' );
-include_once( __DIR__ . '/includes/feature-youtube-embed.php' );
-include_once( __DIR__ . '/includes/top-ten-card-shortcode.php' );
+require_once __DIR__ . '/includes/mega-menu.php';
+require_once __DIR__ . '/includes/wsu-home-overlay.php';
+require_once __DIR__ . '/includes/fields-of-study.php';
+require_once __DIR__ . '/includes/academic-calendar.php';
+require_once __DIR__ . '/includes/feature-youtube-embed.php';
+require_once __DIR__ . '/includes/top-ten-card-shortcode.php';
 
 class WSU_Home_Theme {
 	/**
 	 * @var string The version of the WSU Home theme for cache breaking.
 	 */
-	public $version = '0.15.5.2';
+	public $version = '0.15.5.3';
 
 	/**
 	 * Configure our default hooks.
@@ -92,9 +92,9 @@ class WSU_Home_Theme {
 	public function is_wsu_site( $name ) {
 		$site = get_site();
 
-		$home_path = apply_filters( 'wsu_home_path', '/' );
+		$home_path     = apply_filters( 'wsu_home_path', '/' );
 		$features_path = apply_filters( 'wsu_home_feature_path', '/125/' );
-		$impact_path = apply_filters( 'wsu_home_impact_path', '/impact/' );
+		$impact_path   = apply_filters( 'wsu_home_impact_path', '/impact/' );
 
 		if ( 'wsu-home' === $name && $home_path === $site->path && is_front_page() ) {
 			return true;
@@ -199,7 +199,7 @@ class WSU_Home_Theme {
 	 */
 	public function update_nav_menu( $menu_id ) {
 		$theme_mods_option = 'theme_mods_' . sanitize_key( get_stylesheet() );
-		$menu_assignments = get_option( $theme_mods_option, array() );
+		$menu_assignments  = get_option( $theme_mods_option, array() );
 
 		if ( ! isset( $menu_assignments['nav_menu_locations'] ) ) {
 			return;
@@ -210,7 +210,7 @@ class WSU_Home_Theme {
 				continue;
 			}
 
-			$menu_incr_key = md5( $location );
+			$menu_incr_key  = md5( $location );
 			$nav_cache_incr = wp_cache_incr( $menu_incr_key, 1, 'wsu-home-nav' );
 			if ( empty( $nav_cache_incr ) || 1000 < $nav_cache_incr ) {
 				wp_cache_set( $menu_incr_key, 0, 'wsu-home-nav' );
@@ -273,8 +273,8 @@ class WSU_Home_Theme {
 	 */
 	public function allow_source_element( $tags ) {
 		$tags['source'] = array(
-			'src' => true,
-			'type' => true,
+			'src'   => true,
+			'type'  => true,
 			'media' => true,
 		);
 
@@ -327,7 +327,12 @@ class WSU_Home_Theme {
 	 * @since 0.10.3
 	 */
 	public function add_settings_fields() {
-		add_settings_field( 'wsu-home-message', 'WSU Home Alert Message', array( $this, 'display_wsu_home_alert_message' ), 'general', 'default',
+		add_settings_field(
+			'wsu-home-message',
+			'WSU Home Alert Message',
+			array( $this, 'display_wsu_home_alert_message' ),
+			'general',
+			'default',
 			array(
 				'label_for' => 'wsu_home_alert',
 			)
